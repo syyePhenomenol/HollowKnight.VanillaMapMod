@@ -1,8 +1,9 @@
 ﻿using System;
+using Modding;
 
 namespace MapMod
 {
-    public class Class1
+    public class MapMod : Mod
     {
     }
 }
