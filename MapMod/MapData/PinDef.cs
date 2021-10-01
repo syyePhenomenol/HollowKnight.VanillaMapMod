@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace MapMod.MapData
 {
-    class PinDef
+    public class PinDef
     {
         public string name;
         public string objectName;
         public string sceneName;
-        public string sprite;
+
+        public string pool;
 
         public string pinScene;
         public string mapArea;
         public float offsetX;
         public float offsetY;
+        public float offsetZ;
     }
 }

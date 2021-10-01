@@ -5,59 +5,60 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Modding;
+using SFCore.Generics;
 using MapMod.Settings;
 
-
-// Code heavily borrowed from homothetyhk: https://github.com/homothetyhk/RandomizerMod/
 namespace MapMod
 {
-    public class MapMod : Mod, IGlobalSettings<GlobalSettings>
+    public class MapMod : FullSettingsMod<SaveSettings, GlobalSettings>
     {
-        private readonly string _version = $"PRERELEASE: {GetSHA1()}";
+        private readonly string _version = "PRERELEASE";
         public override string GetVersion()
         {
             return _version;
         }
 
-        public MapMod() : base("Vanilla Map Mod") { }
+        public MapMod() : base("VanillaMapMod") { }
+
+        public static SaveSettings SS { get; private set; } = new();
+        public static GlobalSettings GS { get; private set; } = new();
 
         public override void Initialize()
         {
             base.Initialize();
-            
+
+            try
+            {
+                SpriteManager.LoadEmbeddedPngs("MapMod.Resources.Pins");
+            }
+            catch (Exception e)
+            {
+                LogError($"Error loading sprites!\n{e}");
+                throw;
+            }
+
+            if (Compatibility.CheckAMapsInstalled())
+            {
+                Log("Additional Maps is installed.");
+            }
+            else
+            {
+                Log("Additional Maps is not installed.");
+            }
+
+            try
+            {
+                MapData.Data.Load();
+            }
+            catch (Exception e)
+            {
+                LogError($"Error loading MapData!\n{e}");
+                throw;
+            }
+
+            WorldMap.Hook();
+
             Log("Initialization complete.");
         }
-
-        public static string GetSHA1()
-        {
-            using System.Security.Cryptography.SHA1 sha1 = System.Security.Cryptography.SHA1.Create();
-            using FileStream sr = File.OpenRead(Location);
-            return Convert.ToBase64String(sha1.ComputeHash(sr));
-        }
-
-        public static GlobalSettings GS { get; private set; } = new();
-
-        public void OnLoadGlobal(GlobalSettings s)
-        {
-            GS = s;
-        }
-
-        public GlobalSettings OnSaveGlobal()
-        {
-            return GS;
-        }
-
-        public static string Folder { get; }
-        public static string Location { get; }
-        public static Assembly Assembly { get; }
-
-        static MapMod()
-        {
-            Assembly = typeof(MapMod).Assembly;
-            Location = Assembly.Location;
-            Folder = Path.GetDirectoryName(Location);
-        }
     }
-
-    
 }

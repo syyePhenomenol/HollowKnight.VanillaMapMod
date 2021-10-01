@@ -13,6 +13,86 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\GUI\ButtonRect.png" />
+    <None Remove="Resources\GUI\ButtonRectEmpty.png" />
+    <None Remove="Resources\GUI\ButtonsMenuBG.png" />
+    <None Remove="Resources\GUI\DropdownBG.png" />
+    <None Remove="Resources\pins.json" />
+    <None Remove="Resources\Pins\pinCharm.png" />
+    <None Remove="Resources\Pins\pinCocoon.png" />
+    <None Remove="Resources\Pins\pinDreamer.png" />
+    <None Remove="Resources\Pins\pinEgg.png" />
+    <None Remove="Resources\Pins\pinEssenceBoss.png" />
+    <None Remove="Resources\Pins\pinFlame.png" />
+    <None Remove="Resources\Pins\pinGeo.png" />
+    <None Remove="Resources\Pins\pinGrub.png" />
+    <None Remove="Resources\Pins\pinKey.png" />
+    <None Remove="Resources\Pins\pinLore.png" />
+    <None Remove="Resources\Pins\pinMap.png" />
+    <None Remove="Resources\Pins\pinMask.png" />
+    <None Remove="Resources\Pins\pinNotch.png" />
+    <None Remove="Resources\Pins\pinOre.png" />
+    <None Remove="Resources\Pins\pinQWhite.png" />
+    <None Remove="Resources\Pins\pinRelic.png" />
+    <None Remove="Resources\Pins\pinRock.png" />
+    <None Remove="Resources\Pins\pinRoot.png" />
+    <None Remove="Resources\Pins\pinShop.png" />
+    <None Remove="Resources\Pins\pinSkill.png" />
+    <None Remove="Resources\Pins\pinStag.png" />
+    <None Remove="Resources\Pins\pinTotem.png" />
+    <None Remove="Resources\Pins\pinUnknown.png" />
+    <None Remove="Resources\Pins\pinUnknown_GeoRock.png" />
+    <None Remove="Resources\Pins\pinUnknown_GeoRockInv.png" />
+    <None Remove="Resources\Pins\pinUnknown_Grub.png" />
+    <None Remove="Resources\Pins\pinUnknown_GrubInv.png" />
+    <None Remove="Resources\Pins\pinUnknown_Lifeblood.png" />
+    <None Remove="Resources\Pins\pinUnknown_LifebloodInv.png" />
+    <None Remove="Resources\Pins\pinUnknown_Totem.png" />
+    <None Remove="Resources\Pins\pinUnknown_TotemInv.png" />
+    <None Remove="Resources\Pins\pinVessel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GUI\ButtonRect.png" />
+    <EmbeddedResource Include="Resources\GUI\ButtonRectEmpty.png" />
+    <EmbeddedResource Include="Resources\GUI\ButtonsMenuBG.png" />
+    <EmbeddedResource Include="Resources\GUI\DropdownBG.png" />
+    <EmbeddedResource Include="Resources\pins.json" />
+    <EmbeddedResource Include="Resources\Pins\pinCharm.png" />
+    <EmbeddedResource Include="Resources\Pins\pinCocoon.png" />
+    <EmbeddedResource Include="Resources\Pins\pinDreamer.png" />
+    <EmbeddedResource Include="Resources\Pins\pinEgg.png" />
+    <EmbeddedResource Include="Resources\Pins\pinEssenceBoss.png" />
+    <EmbeddedResource Include="Resources\Pins\pinFlame.png" />
+    <EmbeddedResource Include="Resources\Pins\pinGeo.png" />
+    <EmbeddedResource Include="Resources\Pins\pinGrub.png" />
+    <EmbeddedResource Include="Resources\Pins\pinKey.png" />
+    <EmbeddedResource Include="Resources\Pins\pinLore.png" />
+    <EmbeddedResource Include="Resources\Pins\pinMap.png" />
+    <EmbeddedResource Include="Resources\Pins\pinMask.png" />
+    <EmbeddedResource Include="Resources\Pins\pinNotch.png" />
+    <EmbeddedResource Include="Resources\Pins\pinOre.png" />
+    <EmbeddedResource Include="Resources\Pins\pinQWhite.png" />
+    <EmbeddedResource Include="Resources\Pins\pinRelic.png" />
+    <EmbeddedResource Include="Resources\Pins\pinRock.png" />
+    <EmbeddedResource Include="Resources\Pins\pinRoot.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShop.png" />
+    <EmbeddedResource Include="Resources\Pins\pinSkill.png" />
+    <EmbeddedResource Include="Resources\Pins\pinStag.png" />
+    <EmbeddedResource Include="Resources\Pins\pinTotem.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_GeoRock.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_GeoRockInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_Grub.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_GrubInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_Lifeblood.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_LifebloodInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_Totem.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_TotemInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinVessel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>false</Private>
@@ -37,6 +117,9 @@
       <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\PlayMaker.dll</HintPath>
       <Private>false</Private>
       <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SFCore">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\SFCore\SFCore.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.dll</HintPath>
