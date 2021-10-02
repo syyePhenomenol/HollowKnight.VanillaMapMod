@@ -1,31 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using Modding;
-using SFCore.Generics;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using MapMod.Settings;
+using Modding;
+using UnityEngine;
+using HutongGames.PlayMaker;
+using HutongGames.PlayMaker.Actions;
+using SFCore.Generics;
+using SFCore.Utils;
+using UnityEngine.SceneManagement;
+using Logger = Modding.Logger;
+using UObject = UnityEngine.Object;
+
 
 namespace MapMod
 {
-    public class MapMod : FullSettingsMod<SaveSettings, GlobalSettings>
+    public class MapMod : Mod, ILocalSettings<LocalSettings>, IGlobalSettings<GlobalSettings>
     {
-        private readonly string _version = "PRERELEASE";
-        public override string GetVersion()
-        {
-            return _version;
-        }
+        public static MapMod Instance;
 
-        public MapMod() : base("VanillaMapMod") { }
+        private readonly string _version = "Vanilla PRERELEASE";
+        public override string GetVersion() => _version;
 
-        public static SaveSettings SS { get; private set; } = new();
-        public static GlobalSettings GS { get; private set; } = new();
+        public override int LoadPriority() => 10;
+
+        public static LocalSettings LS { get; set; } = new LocalSettings();
+        public void OnLoadLocal(LocalSettings s) => LS = s;
+        public LocalSettings OnSaveLocal() => LS;
+
+        public static GlobalSettings GS { get; set; } = new GlobalSettings();
+        public void OnLoadGlobal(GlobalSettings s) => GS = s;
+        public GlobalSettings OnSaveGlobal() => GS;
 
         public override void Initialize()
         {
-            base.Initialize();
+            Log("Initializing...");
+
+            Instance = this;
 
             try
             {
@@ -35,15 +48,6 @@ namespace MapMod
             {
                 LogError($"Error loading sprites!\n{e}");
                 throw;
-            }
-
-            if (Compatibility.CheckAMapsInstalled())
-            {
-                Log("Additional Maps is installed.");
-            }
-            else
-            {
-                Log("Additional Maps is not installed.");
             }
 
             try
@@ -57,6 +61,7 @@ namespace MapMod
             }
 
             WorldMap.Hook();
+            QuickMap.Hook();
 
             Log("Initialization complete.");
         }

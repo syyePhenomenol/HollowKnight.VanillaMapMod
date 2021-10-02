@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using MapMod.MapData;
-using Logger = Modding.Logger;
 
 namespace MapMod
 {
@@ -27,7 +26,7 @@ namespace MapMod
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    MapMod.Instance.LogError(e);
                 }
             }
         }
@@ -38,6 +37,7 @@ namespace MapMod
             {
                 Destroy(pin.gameObject);
             }
+
             _pins.Clear();
         }
 
@@ -45,7 +45,7 @@ namespace MapMod
         {
             if (_pins.Any(pin => pin.PinData.name == pinData.name))
             {
-                Logger.LogWarn($"Duplicate pin found for group: {pinData.name} - Skipped.");
+                MapMod.Instance.LogWarn($"Duplicate pin found for group: {pinData.name} - Skipped.");
                 return;
             }
 
@@ -61,6 +61,8 @@ namespace MapMod
 
             //pinObject.transform.localScale *= 1.2f;
 
+            pinObject.transform.localScale *= MapMod.GS.PinScaleSize;
+
             SpriteRenderer sr = pinObject.AddComponent<SpriteRenderer>();
             sr.sprite = pinSprite;
             sr.sortingLayerName = "HUD";
@@ -68,13 +70,8 @@ namespace MapMod
 
             Vector3 vec = GetRoomPos(roomName, gameMap);
 
-            if (vec == new Vector3(0, 0, 0))
-            {
-                Logger.LogWarn($"{pinData.name} doesn't have a valid room name!");
-            }
-
             vec.Scale(new Vector3(1.46f, 1.46f, 1));
-            vec += new Vector3(pinData.offsetX, pinData.offsetY, 0f);
+            vec += new Vector3(pinData.offsetX, pinData.offsetY, pinData.offsetZ);
 
             pinObject.transform.localPosition = new Vector3(vec.x, vec.y, vec.z - 1f);
 
@@ -101,6 +98,8 @@ namespace MapMod
                     }
                 }
             }
+
+            MapMod.Instance.LogWarn($"{roomName} is not a valid room name!");
             return new Vector3(0, 0, 0);
         }
 

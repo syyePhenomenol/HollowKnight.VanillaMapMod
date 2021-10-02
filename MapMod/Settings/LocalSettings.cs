@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modding;
+using SFCore;
 
 namespace MapMod.Settings
 {
-    public class SaveSettings
+    [Serializable]
+    public class LocalSettings
     {
+        public Dictionary<string, bool> ObtainedItems = new();
     }
 }

@@ -5,89 +5,100 @@
   //  "mapArea": "Start",
   //  "pool": true
   //},
-  "Sly": {
-    "name": "Sly",
-    "sceneName": "Room_shop",
-    "mapArea": "Dirtmouth",
-    "pool": "Shop"
-  },
-  "Sly_(Key)": {
-    "name": "Sly_(Key)",
-    "sceneName": "Room_shop",
-    "mapArea": "Dirtmouth",
-    "pool": "Shop"
-  },
-  "Iselda": {
-    "name": "Iselda",
-    "sceneName": "Room_mapper",
-    "mapArea": "Dirtmouth",
-    "pool": "Shop"
-  },
-  "Salubra": {
-    "name": "Salubra",
-    "sceneName": "Room_Charm_Shop",
-    "mapArea": "Dirtmouth",
-    "pool": "Shop"
-  },
-  "Leg_Eater": {
-    "name": "Leg_Eater",
-    "sceneName": "Fungus2_26",
-    "mapArea": "Dirtmouth",
-    "pool": "Shop"
-  },
-  "Grubfather": {
-    "name": "Grubfather",
-    "sceneName": "Crossroads_38",
-    "mapArea": "Forgotten_Crossroads",
-    "pool": "Shop"
-  },
-  "Seer": {
-    "name": "Seer",
-    "sceneName": "RestingGrounds_07",
-    "mapArea": "Resting_Grounds",
-    "pool": "Shop"
-  },
+  //"Sly": {
+  //  "name": "Sly",
+  //  "sceneName": "Room_shop",
+  //  "mapArea": "Dirtmouth",
+  //  "pool": "Shop"
+  //},
+  //"Sly_(Key)": {
+  //  "name": "Sly_(Key)",
+  //  "sceneName": "Room_shop",
+  //  "mapArea": "Dirtmouth",
+  //  "pool": "Shop"
+  //},
+  //"Iselda": {
+  //  "name": "Iselda",
+  //  "sceneName": "Room_mapper",
+  //  "mapArea": "Dirtmouth",
+  //  "pool": "Shop"
+  //},
+  //"Salubra": {
+  //  "name": "Salubra",
+  //  "sceneName": "Room_Charm_Shop",
+  //  "mapArea": "Dirtmouth",
+  //  "pool": "Shop"
+  //},
+  //"Leg_Eater": {
+  //  "name": "Leg_Eater",
+  //  "sceneName": "Fungus2_26",
+  //  "mapArea": "Dirtmouth",
+  //  "pool": "Shop"
+  //},
+  //"Grubfather": {
+  //  "name": "Grubfather",
+  //  "sceneName": "Crossroads_38",
+  //  "mapArea": "Forgotten_Crossroads",
+  //  "pool": "Shop"
+  //},
+  //"Seer": {
+  //  "name": "Seer",
+  //  "sceneName": "RestingGrounds_07",
+  //  "mapArea": "Resting_Grounds",
+  //  "pool": "Shop"
+  //},
   //"Lurien": {
   //  "name": "Lurien",
   //  "sceneName": "Ruins2_Watcher_Room",
   //  "mapArea": "City_of_Tears",
-  //  "pool": false
+  //  "pool": "Dreamer"
   //},
   //"Monomon": {
   //  "name": "Monomon",
   //  "sceneName": "Fungus3_archive_02",
-  //  "mapArea": "Teachers_Archives",
-  //  "pool": false
+  //  "mapArea": "Fog_Canyon",
+  //  "pool": "Dreamer"
   //},
   //"Herrah": {
   //  "name": "Herrah",
   //  "sceneName": "Deepnest_Spider_Town",
-  //  "mapArea": "Beasts_Den",
-  //  "pool": false
+  //  "mapArea": "Deepnest",
+  //  "pool": "Dreamer"
   //},
-  "World_Sense": {
-    "name": "World_Sense",
-    "sceneName": "Room_Final_Boss_Atrium",
-    "mapArea": "Forgotten_Crossroads",
-    "pool": "Skill"
-  },
+  //"World_Sense": {
+  //  "name": "World_Sense",
+  //  "sceneName": "Room_Final_Boss_Atrium",
+  //  "pinScene": "Crossroads_02",
+  //  "mapArea": "Forgotten_Crossroads",
+  //  "pool": "Skill",
+  //  "offsetX": 0.2,
+  //  "offsetY": -0.2,
+  //  "offsetZ": 0.1
+  //},
   "Mothwing_Cloak": {
     "name": "Mothwing_Cloak",
+    "objectName": [ "Shiny Item" ],
     "sceneName": "Fungus1_04",
     "mapArea": "Greenpath",
-    "pool": "Skill"
+    "pool": "Skill",
+    "offsetX": -0.25,
+    "offsetY": 0.0
   },
   "Mantis_Claw": {
     "name": "Mantis_Claw",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
-    "pool": "Skill"
+    "mapArea": "Fungal_Wastes",
+    "pool": "Skill",
+    "offsetX": -1.8,
+    "offsetY": 0.0
   },
   "Crystal_Heart": {
     "name": "Crystal_Heart",
     "sceneName": "Mines_31",
     "mapArea": "Crystal_Peak",
-    "pool": "Skill"
+    "pool": "Skill",
+    "offsetX": 2.5,
+    "offsetY": -0.55
   },
   "Monarch_Wings": {
     "name": "Monarch_Wings",
@@ -104,19 +115,21 @@
   "Isma's_Tear": {
     "name": "Isma's_Tear",
     "sceneName": "Waterways_13",
-    "mapArea": "Ismas_Grove",
+    "mapArea": "Royal_Waterways",
     "pool": "Skill"
   },
   "Dream_Nail": {
     "name": "Dream_Nail",
     "sceneName": "Dream_Nailcollection",
+    "pinScene": "RestingGrounds_04",
     "mapArea": "Resting_Grounds",
     "pool": "Skill"
   },
   "Vengeful_Spirit": {
     "name": "Vengeful_Spirit",
     "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
+    "pinScene": "Crossroads_06",
+    "mapArea": "Forgotten_Crossroads",
     "pool": "Skill"
   },
   "Shade_Soul": {
@@ -128,19 +141,21 @@
   "Desolate_Dive": {
     "name": "Desolate_Dive",
     "sceneName": "Ruins1_24",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Skill"
   },
   "Descending_Dark": {
     "name": "Descending_Dark",
     "sceneName": "Mines_35",
-    "mapArea": "Crystallized_Mound",
+    "pinScene": "Mines_28",
+    "mapArea": "Crystal_Peak",
     "pool": "Skill"
   },
   "Howling_Wraiths": {
     "name": "Howling_Wraiths",
     "sceneName": "Room_Fungus_Shaman",
-    "mapArea": "Overgrown_Mound",
+    "pinScene": "Fungus3_44",
+    "mapArea": "Fog_Canyon",
     "pool": "Skill"
   },
   "Abyss_Shriek": {
@@ -152,25 +167,28 @@
   "Cyclone_Slash": {
     "name": "Cyclone_Slash",
     "sceneName": "Room_nailmaster",
+    "pinScene": "Cliffs_02",
     "mapArea": "Howling_Cliffs",
     "pool": "Skill"
   },
   "Dash_Slash": {
     "name": "Dash_Slash",
     "sceneName": "Room_nailmaster_03",
+    "pinScene": "Deepnest_East_16",
     "mapArea": "Kingdoms_Edge",
     "pool": "Skill"
   },
   "Great_Slash": {
     "name": "Great_Slash",
     "sceneName": "Room_nailmaster_02",
+    "pinScene": "Fungus1_15",
     "mapArea": "Greenpath",
     "pool": "Skill"
   },
   //"Focus": {
   //  "name": "Focus",
   //  "sceneName": "Tutorial_01",
-  //  "mapArea": "Kings_Pass",
+  //  "mapArea": "Dirtmouth",
   //  "pool": "Skill"
   //},
   "Baldur_Shell": {
@@ -182,7 +200,7 @@
   "Fury_of_the_Fallen": {
     "name": "Fury_of_the_Fallen",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Charm"
   },
   "Lifeblood_Core": {
@@ -212,7 +230,7 @@
   "Mark_of_Pride": {
     "name": "Mark_of_Pride",
     "sceneName": "Fungus2_31",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Charm"
   },
   "Sharp_Shadow": {
@@ -230,7 +248,8 @@
   "Soul_Catcher": {
     "name": "Soul_Catcher",
     "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
+    "pinScene": "Crossroads_06",
+    "mapArea": "Forgotten_Crossroads",
     "pool": "Charm"
   },
   "Soul_Eater": {
@@ -248,6 +267,7 @@
   "Nailmaster's_Glory": {
     "name": "Nailmaster's_Glory",
     "sceneName": "Room_Sly_Storeroom",
+    "pinScene": "Town",
     "mapArea": "Dirtmouth",
     "pool": "Charm"
   },
@@ -260,19 +280,19 @@
   "Shape_of_Unn": {
     "name": "Shape_of_Unn",
     "sceneName": "Fungus1_Slug",
-    "mapArea": "Lake_of_Unn",
+    "mapArea": "Greenpath",
     "pool": "Charm"
   },
   "Hiveblood": {
     "name": "Hiveblood",
     "sceneName": "Hive_05",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Charm"
   },
   "Dashmaster": {
     "name": "Dashmaster",
     "sceneName": "Fungus2_23",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Charm"
   },
   "Quick_Slash": {
@@ -284,7 +304,7 @@
   "Spell_Twister": {
     "name": "Spell_Twister",
     "sceneName": "Ruins1_30",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Charm"
   },
   "Deep_Focus": {
@@ -296,18 +316,21 @@
   "Queen_Fragment": {
     "name": "Queen_Fragment",
     "sceneName": "Room_Queen",
+    "pinScene": "Fungus3_48",
     "mapArea": "Queens_Gardens",
     "pool": "Charm"
   },
   "King_Fragment": {
     "name": "King_Fragment",
     "sceneName": "White_Palace_09",
-    "mapArea": "Ancient_Basin",
+    "pinScene": "Abyss_05",
+    "mapArea": "White_Palace",
     "pool": "Charm"
   },
   "Void_Heart": {
     "name": "Void_Heart",
     "sceneName": "Abyss_15",
+    "pinScene": "Abyss_06_Core",
     "mapArea": "Ancient_Basin",
     "pool": "Charm"
   },
@@ -320,12 +343,14 @@
   "Weaversong": {
     "name": "Weaversong",
     "sceneName": "Deepnest_45_v02",
-    "mapArea": "Weavers_Den",
+    "pinScene": "Deepnest_39",
+    "mapArea": "Deepnest",
     "pool": "Charm"
   },
   "Grimmchild": {
     "name": "Grimmchild",
     "sceneName": "Grimm_Main_Tent",
+    "pinScene": "Town",
     "mapArea": "Dirtmouth",
     "pool": "Charm"
   },
@@ -338,7 +363,7 @@
   "Tram_Pass": {
     "name": "Tram_Pass",
     "sceneName": "Deepnest_26b",
-    "mapArea": "Failed_Tramway",
+    "mapArea": "Deepnest",
     "pool": "Key"
   },
   "Simple_Key-Basin": {
@@ -374,19 +399,20 @@
   "King's_Brand": {
     "name": "King's_Brand",
     "sceneName": "Room_Wyrm",
-    "mapArea": "Cast_Off_Shell",
+    "pinScene": "Deepnest_East_Hornet",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Key"
   },
   "Godtuner": {
     "name": "Godtuner",
     "sceneName": "GG_Waterways",
-    "mapArea": "Junk_Pit",
+    "mapArea": "Royal_Waterways",
     "pool": "Key"
   },
   "Collector's_Map": {
     "name": "Collector's_Map",
     "sceneName": "Ruins2_11",
-    "mapArea": "Tower_of_Love",
+    "mapArea": "City_of_Tears",
     "pool": "Map"
   },
   "Mask_Shard-Brooding_Mawlek": {
@@ -404,13 +430,14 @@
   "Mask_Shard-Stone_Sanctuary": {
     "name": "Mask_Shard-Stone_Sanctuary",
     "sceneName": "Fungus1_36",
-    "mapArea": "Stone_Sanctuary",
+    "pinScene": "Fungus1_34",
+    "mapArea": "Greenpath",
     "pool": "Mask"
   },
   "Mask_Shard-Queen's_Station": {
     "name": "Mask_Shard-Queen's_Station",
     "sceneName": "Fungus2_01",
-    "mapArea": "Queens_Station",
+    "mapArea": "Fungal_Wastes",
     "pool": "Mask"
   },
   "Mask_Shard-Deepnest": {
@@ -434,18 +461,20 @@
   "Mask_Shard-Hive": {
     "name": "Mask_Shard-Hive",
     "sceneName": "Hive_04",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Mask"
   },
   "Mask_Shard-Grey_Mourner": {
     "name": "Mask_Shard-Grey_Mourner",
     "sceneName": "Room_Mansion",
+    "pinScene": "RestingGrounds_12",
     "mapArea": "Resting_Grounds",
     "pool": "Mask"
   },
   "Mask_Shard-Bretta": {
     "name": "Mask_Shard-Bretta",
     "sceneName": "Room_Bretta",
+    "pinScene": "Town",
     "mapArea": "Dirtmouth",
     "pool": "Mask"
   },
@@ -458,7 +487,7 @@
   "Vessel_Fragment-City": {
     "name": "Vessel_Fragment-City",
     "sceneName": "Ruins2_09",
-    "mapArea": "Kings_Station",
+    "mapArea": "City_of_Tears",
     "pool": "Vessel"
   },
   "Vessel_Fragment-Crossroads": {
@@ -482,7 +511,8 @@
   "Vessel_Fragment-Stag_Nest": {
     "name": "Vessel_Fragment-Stag_Nest",
     "sceneName": "Cliffs_03",
-    "mapArea": "Stag_Nest",
+    "pinScene": "Cliffs_02",
+    "mapArea": "Howling_Cliffs",
     "pool": "Vessel"
   },
   "Charm_Notch-Shrumal_Ogres": {
@@ -500,12 +530,14 @@
   "Charm_Notch-Colosseum": {
     "name": "Charm_Notch-Colosseum",
     "sceneName": "Room_Colosseum_Bronze",
-    "mapArea": "Colosseum",
+    "pinScene": "Deepnest_East_09",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Notch"
   },
   "Charm_Notch-Grimm": {
     "name": "Charm_Notch-Grimm",
     "sceneName": "Grimm_Main_Tent",
+    "pinScene": "Town",
     "mapArea": "Dirtmouth",
     "pool": "Notch"
   },
@@ -518,7 +550,7 @@
   "Pale_Ore-Crystal_Peak": {
     "name": "Pale_Ore-Crystal_Peak",
     "sceneName": "Mines_34",
-    "mapArea": "Hallownests_Crown",
+    "mapArea": "Crystal_Peak",
     "pool": "Ore"
   },
   "Pale_Ore-Nosk": {
@@ -530,7 +562,8 @@
   "Pale_Ore-Colosseum": {
     "name": "Pale_Ore-Colosseum",
     "sceneName": "Room_Colosseum_Silver",
-    "mapArea": "Colosseum",
+    "pinScene": "Deepnest_East_09",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Ore"
   },
   "Geo_Chest-False_Knight": {
@@ -542,7 +575,7 @@
   "Geo_Chest-Soul_Master": {
     "name": "Geo_Chest-Soul_Master",
     "sceneName": "Ruins1_32",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Geo"
   },
   "Geo_Chest-Watcher_Knights": {
@@ -560,7 +593,7 @@
   "Geo_Chest-Mantis_Lords": {
     "name": "Geo_Chest-Mantis_Lords",
     "sceneName": "Fungus2_31",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Geo"
   },
   "Geo_Chest-Resting_Grounds": {
@@ -578,7 +611,16 @@
   "Geo_Chest-Weavers_Den": {
     "name": "Geo_Chest-Weavers_Den",
     "sceneName": "Deepnest_45_v02",
-    "mapArea": "Weavers_Den",
+    "pinScene": "Deepnest_39",
+    "mapArea": "Deepnest",
+    "pool": "Geo"
+  },
+  // Should represent a few chests
+  "Geo_Chest-Junk_Pit": {
+    "name": "Geo_Chest-Junk_Pit",
+    "objectName": [ "Chest", "Chest (1)", "Chest (2)", "Chest (3)", "Chest (4)" ],
+    "sceneName": "GG_Waterways",
+    "mapArea": "Royal_Waterways",
     "pool": "Geo"
   },
   "Rancid_Egg-Sheo": {
@@ -590,7 +632,7 @@
   "Rancid_Egg-Fungal_Core": {
     "name": "Rancid_Egg-Fungal_Core",
     "sceneName": "Fungus2_29",
-    "mapArea": "Fungal_Core",
+    "mapArea": "Fungal_Wastes",
     "pool": "Egg"
   },
   "Rancid_Egg-Queen's_Gardens": {
@@ -602,7 +644,7 @@
   "Rancid_Egg-Blue_Lake": {
     "name": "Rancid_Egg-Blue_Lake",
     "sceneName": "Crossroads_50",
-    "mapArea": "Blue_Lake",
+    "mapArea": "Resting_Grounds",
     "pool": "Egg"
   },
   "Rancid_Egg-Crystal_Peak_Dive_Entrance": {
@@ -632,13 +674,14 @@
   "Rancid_Egg-City_of_Tears_Pleasure_House": {
     "name": "Rancid_Egg-City_of_Tears_Pleasure_House",
     "sceneName": "Ruins_Elevator",
-    "mapArea": "Pleasure_House",
+    "mapArea": "City_of_Tears",
     "pool": "Egg"
   },
   "Rancid_Egg-Beast's_Den": {
     "name": "Rancid_Egg-Beast's_Den",
     "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
+    "pinScene": "Deepnest_10",
+    "mapArea": "Deepnest",
     "pool": "Egg"
   },
   "Rancid_Egg-Dark_Deepnest": {
@@ -650,7 +693,8 @@
   "Rancid_Egg-Weaver's_Den": {
     "name": "Rancid_Egg-Weaver's_Den",
     "sceneName": "Deepnest_45_v02",
-    "mapArea": "Weavers_Den",
+    "pinScene": "Deepnest_39",
+    "mapArea": "Deepnest",
     "pool": "Egg"
   },
   "Rancid_Egg-Near_Quick_Slash": {
@@ -734,13 +778,13 @@
   "Wanderer's_Journal-King's_Station": {
     "name": "Wanderer's_Journal-King's_Station",
     "sceneName": "Ruins2_05",
-    "mapArea": "Kings_Station",
+    "mapArea": "City_of_Tears",
     "pool": "Relic"
   },
   "Wanderer's_Journal-Pleasure_House": {
     "name": "Wanderer's_Journal-Pleasure_House",
     "sceneName": "Ruins_Elevator",
-    "mapArea": "Pleasure_House",
+    "mapArea": "City_of_Tears",
     "pool": "Relic"
   },
   "Wanderer's_Journal-City_Storerooms": {
@@ -800,7 +844,7 @@
   "Hallownest_Seal-Queen's_Station": {
     "name": "Hallownest_Seal-Queen's_Station",
     "sceneName": "Fungus2_34",
-    "mapArea": "Queens_Station",
+    "mapArea": "Fungal_Wastes",
     "pool": "Relic"
   },
   "Hallownest_Seal-Fungal_Wastes_Sporgs": {
@@ -812,7 +856,7 @@
   "Hallownest_Seal-Mantis_Lords": {
     "name": "Hallownest_Seal-Mantis_Lords",
     "sceneName": "Fungus2_31",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Relic"
   },
   "Hallownest_Seal-Resting_Grounds_Catacombs": {
@@ -824,7 +868,7 @@
   "Hallownest_Seal-King's_Station": {
     "name": "Hallownest_Seal-King's_Station",
     "sceneName": "Ruins2_08",
-    "mapArea": "Kings_Station",
+    "mapArea": "City_of_Tears",
     "pool": "Relic"
   },
   "Hallownest_Seal-City_Rafters": {
@@ -836,7 +880,7 @@
   "Hallownest_Seal-Soul_Sanctum": {
     "name": "Hallownest_Seal-Soul_Sanctum",
     "sceneName": "Ruins1_32",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Relic"
   },
   "Hallownest_Seal-Watcher_Knight": {
@@ -854,7 +898,8 @@
   "Hallownest_Seal-Beast's_Den": {
     "name": "Hallownest_Seal-Beast's_Den",
     "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
+    "pinScene": "Deepnest_10",
+    "mapArea": "Deepnest",
     "pool": "Relic"
   },
   "Hallownest_Seal-Queen's_Gardens": {
@@ -878,7 +923,7 @@
   "King's_Idol-Glade_of_Hope": {
     "name": "King's_Idol-Glade_of_Hope",
     "sceneName": "RestingGrounds_08",
-    "mapArea": "Spirits_Glade",
+    "mapArea": "Resting_Grounds",
     "pool": "Relic"
   },
   "King's_Idol-Dung_Defender": {
@@ -920,141 +965,147 @@
   "Arcane_Egg-Birthplace": {
     "name": "Arcane_Egg-Birthplace",
     "sceneName": "Abyss_15",
+    "pinScene": "Abyss_06_Core",
     "mapArea": "Ancient_Basin",
     "pool": "Relic"
   },
-  //"Whispering_Root-Crossroads": {
-  //  "name": "Whispering_Root-Crossroads",
-  //  "sceneName": "Crossroads_07",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Greenpath": {
-  //  "name": "Whispering_Root-Greenpath",
-  //  "sceneName": "Fungus1_13",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Leg_Eater": {
-  //  "name": "Whispering_Root-Leg_Eater",
-  //  "sceneName": "Fungus2_33",
-  //  "mapArea": "Fungal_Wastes",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Mantis_Village": {
-  //  "name": "Whispering_Root-Mantis_Village",
-  //  "sceneName": "Fungus2_17",
-  //  "mapArea": "Fungal_Wastes",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Deepnest": {
-  //  "name": "Whispering_Root-Deepnest",
-  //  "sceneName": "Deepnest_39",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Queens_Gardens": {
-  //  "name": "Whispering_Root-Queens_Gardens",
-  //  "sceneName": "Fungus3_11",
-  //  "mapArea": "Queens_Gardens",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Kingdoms_Edge": {
-  //  "name": "Whispering_Root-Kingdoms_Edge",
-  //  "sceneName": "Deepnest_East_07",
-  //  "mapArea": "Kingdoms_Edge",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Waterways": {
-  //  "name": "Whispering_Root-Waterways",
-  //  "sceneName": "Abyss_01",
-  //  "mapArea": "Royal_Waterways",
-  //  "pool": false
-  //},
-  //"Whispering_Root-City": {
-  //  "name": "Whispering_Root-City",
-  //  "sceneName": "Ruins1_17",
-  //  "mapArea": "City_of_Tears",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Resting_Grounds": {
-  //  "name": "Whispering_Root-Resting_Grounds",
-  //  "sceneName": "RestingGrounds_05",
-  //  "mapArea": "Resting_Grounds",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Spirits_Glade": {
-  //  "name": "Whispering_Root-Spirits_Glade",
-  //  "sceneName": "RestingGrounds_08",
-  //  "mapArea": "Spirits_Glade",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Crystal_Peak": {
-  //  "name": "Whispering_Root-Crystal_Peak",
-  //  "sceneName": "Mines_23",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Howling_Cliffs": {
-  //  "name": "Whispering_Root-Howling_Cliffs",
-  //  "sceneName": "Cliffs_01",
-  //  "mapArea": "Howling_Cliffs",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Ancestral_Mound": {
-  //  "name": "Whispering_Root-Ancestral_Mound",
-  //  "sceneName": "Crossroads_ShamanTemple",
-  //  "mapArea": "Ancestral_Mound",
-  //  "pool": false
-  //},
-  //"Whispering_Root-Hive": {
-  //  "name": "Whispering_Root-Hive",
-  //  "sceneName": "Hive_02",
-  //  "mapArea": "Hive",
-  //  "pool": false
-  //},
-  //"Boss_Essence-Elder_Hu": {
-  //  "name": "Boss_Essence-Elder_Hu",
-  //  "sceneName": "Fungus2_32",
-  //  "mapArea": "Fungal_Wastes",
-  //  "pool": false
-  //},
-  //"Boss_Essence-Xero": {
-  //  "name": "Boss_Essence-Xero",
-  //  "sceneName": "RestingGrounds_02_boss",
-  //  "mapArea": "Resting_Grounds",
-  //  "pool": false
-  //},
-  //"Boss_Essence-Gorb": {
-  //  "name": "Boss_Essence-Gorb",
-  //  "sceneName": "Cliffs_02_boss",
-  //  "mapArea": "Howling_Cliffs",
-  //  "pool": false
-  //},
-  //"Boss_Essence-Marmu": {
-  //  "name": "Boss_Essence-Marmu",
-  //  "sceneName": "Fungus3_40_boss",
-  //  "mapArea": "Queens_Gardens",
-  //  "pool": false
-  //},
-  //"Boss_Essence-No_Eyes": {
-  //  "name": "Boss_Essence-No_Eyes",
-  //  "sceneName": "Fungus1_35",
-  //  "mapArea": "Stone_Sanctuary",
-  //  "pool": false
-  //},
-  //"Boss_Essence-Galien": {
-  //  "name": "Boss_Essence-Galien",
-  //  "sceneName": "Deepnest_40",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Boss_Essence-Markoth": {
-  //  "name": "Boss_Essence-Markoth",
-  //  "sceneName": "Deepnest_East_10",
-  //  "mapArea": "Kingdoms_Edge",
-  //  "pool": false
-  //},
+  "Whispering_Root-Crossroads": {
+    "name": "Whispering_Root-Crossroads",
+    "sceneName": "Crossroads_07",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Root"
+  },
+  "Whispering_Root-Greenpath": {
+    "name": "Whispering_Root-Greenpath",
+    "sceneName": "Fungus1_13",
+    "mapArea": "Greenpath",
+    "pool": "Root"
+  },
+  "Whispering_Root-Leg_Eater": {
+    "name": "Whispering_Root-Leg_Eater",
+    "sceneName": "Fungus2_33",
+    "mapArea": "Fungal_Wastes",
+    "pool": "Root"
+  },
+  "Whispering_Root-Mantis_Village": {
+    "name": "Whispering_Root-Mantis_Village",
+    "sceneName": "Fungus2_17",
+    "mapArea": "Fungal_Wastes",
+    "pool": "Root"
+  },
+  "Whispering_Root-Deepnest": {
+    "name": "Whispering_Root-Deepnest",
+    "sceneName": "Deepnest_39",
+    "mapArea": "Deepnest",
+    "pool": "Root"
+  },
+  "Whispering_Root-Queens_Gardens": {
+    "name": "Whispering_Root-Queens_Gardens",
+    "sceneName": "Fungus3_11",
+    "mapArea": "Queens_Gardens",
+    "pool": "Root"
+  },
+  "Whispering_Root-Kingdoms_Edge": {
+    "name": "Whispering_Root-Kingdoms_Edge",
+    "sceneName": "Deepnest_East_07",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Root"
+  },
+  "Whispering_Root-Waterways": {
+    "name": "Whispering_Root-Waterways",
+    "sceneName": "Abyss_01",
+    "mapArea": "Royal_Waterways",
+    "pool": "Root"
+  },
+  "Whispering_Root-City": {
+    "name": "Whispering_Root-City",
+    "sceneName": "Ruins1_17",
+    "mapArea": "City_of_Tears",
+    "pool": "Root"
+  },
+  "Whispering_Root-Resting_Grounds": {
+    "name": "Whispering_Root-Resting_Grounds",
+    "sceneName": "RestingGrounds_05",
+    "mapArea": "Resting_Grounds",
+    "pool": "Root"
+  },
+  "Whispering_Root-Spirits_Glade": {
+    "name": "Whispering_Root-Spirits_Glade",
+    "sceneName": "RestingGrounds_08",
+    "mapArea": "Resting_Grounds",
+    "pool": "Root"
+  },
+  "Whispering_Root-Crystal_Peak": {
+    "name": "Whispering_Root-Crystal_Peak",
+    "sceneName": "Mines_23",
+    "mapArea": "Crystal_Peak",
+    "pool": "Root"
+  },
+  "Whispering_Root-Howling_Cliffs": {
+    "name": "Whispering_Root-Howling_Cliffs",
+    "sceneName": "Cliffs_01",
+    "mapArea": "Howling_Cliffs",
+    "pool": "Root"
+  },
+  "Whispering_Root-Ancestral_Mound": {
+    "name": "Whispering_Root-Ancestral_Mound",
+    "sceneName": "Crossroads_ShamanTemple",
+    "pinScene": "Crossroads_06",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Root"
+  },
+  "Whispering_Root-Hive": {
+    "name": "Whispering_Root-Hive",
+    "sceneName": "Hive_02",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Root"
+  },
+  "Boss_Essence-Elder_Hu": {
+    "name": "Boss_Essence-Elder_Hu",
+    "sceneName": "Fungus2_32",
+    "mapArea": "Fungal_Wastes",
+    "pool": "EssenceBoss"
+  },
+  "Boss_Essence-Xero": {
+    "name": "Boss_Essence-Xero",
+    "sceneName": "RestingGrounds_02_boss",
+    "pinScene": "RestingGrounds_02",
+    "mapArea": "Resting_Grounds",
+    "pool": "EssenceBoss"
+  },
+  "Boss_Essence-Gorb": {
+    "name": "Boss_Essence-Gorb",
+    "sceneName": "Cliffs_02_boss",
+    "pinScene": "Cliffs_02",
+    "mapArea": "Howling_Cliffs",
+    "pool": "EssenceBoss"
+  },
+  "Boss_Essence-Marmu": {
+    "name": "Boss_Essence-Marmu",
+    "sceneName": "Fungus3_40_boss",
+    "pinScene": "Fungus3_40",
+    "mapArea": "Queens_Gardens",
+    "pool": "EssenceBoss"
+  },
+  "Boss_Essence-No_Eyes": {
+    "name": "Boss_Essence-No_Eyes",
+    "sceneName": "Fungus1_35",
+    "pinScene": "Fungus1_34",
+    "mapArea": "Greenpath",
+    "pool": "EssenceBoss"
+  },
+  "Boss_Essence-Galien": {
+    "name": "Boss_Essence-Galien",
+    "sceneName": "Deepnest_40",
+    "mapArea": "Deepnest",
+    "pool": "EssenceBoss"
+  },
+  "Boss_Essence-Markoth": {
+    "name": "Boss_Essence-Markoth",
+    "sceneName": "Deepnest_East_10",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "EssenceBoss"
+  },
   "Boss_Essence-Failed_Champion": {
     "name": "Boss_Essence-Failed_Champion",
     "sceneName": "Crossroads_10",
@@ -1064,7 +1115,8 @@
   "Boss_Essence-Soul_Tyrant": {
     "name": "Boss_Essence-Soul_Tyrant",
     "sceneName": "Ruins1_24_boss_defeated",
-    "mapArea": "Soul_Sanctum",
+    "pinScene": "Ruins1_24",
+    "mapArea": "City_of_Tears",
     "pool": "EssenceBoss"
   },
   "Boss_Essence-Lost_Kin": {
@@ -1082,285 +1134,289 @@
   "Boss_Essence-Grey_Prince_Zote": {
     "name": "Boss_Essence-Grey_Prince_Zote",
     "sceneName": "Room_Bretta_Basement",
+    "pinScene": "Town",
     "mapArea": "Dirtmouth",
     "pool": "EssenceBoss"
   },
-  //"Grub-Crossroads_Acid": {
-  //  "name": "Grub-Crossroads_Acid",
-  //  "sceneName": "Crossroads_35",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Grub-Crossroads_Center": {
-  //  "name": "Grub-Crossroads_Center",
-  //  "sceneName": "Crossroads_05",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Grub-Crossroads_Stag": {
-  //  "name": "Grub-Crossroads_Stag",
-  //  "sceneName": "Crossroads_03",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Grub-Crossroads_Spike": {
-  //  "name": "Grub-Crossroads_Spike",
-  //  "sceneName": "Crossroads_31",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Grub-Crossroads_Guarded": {
-  //  "name": "Grub-Crossroads_Guarded",
-  //  "sceneName": "Crossroads_48",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Grub-Greenpath_Cornifer": {
-  //  "name": "Grub-Greenpath_Cornifer",
-  //  "sceneName": "Fungus1_06",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Grub-Greenpath_Journal": {
-  //  "name": "Grub-Greenpath_Journal",
-  //  "sceneName": "Fungus1_07",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Grub-Greenpath_MMC": {
-  //  "name": "Grub-Greenpath_MMC",
-  //  "sceneName": "Fungus1_13",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Grub-Greenpath_Stag": {
-  //  "name": "Grub-Greenpath_Stag",
-  //  "sceneName": "Fungus1_21",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Grub-Fog_Canyon": {
-  //  "name": "Grub-Fog_Canyon",
-  //  "sceneName": "Fungus3_47",
-  //  "mapArea": "Fog_Canyon",
-  //  "pool": false
-  //},
-  //"Grub-Fungal_Bouncy": {
-  //  "name": "Grub-Fungal_Bouncy",
-  //  "sceneName": "Fungus2_18",
-  //  "mapArea": "Fungal_Wastes",
-  //  "pool": false
-  //},
-  //"Grub-Fungal_Spore_Shroom": {
-  //  "name": "Grub-Fungal_Spore_Shroom",
-  //  "sceneName": "Fungus2_20",
-  //  "mapArea": "Fungal_Wastes",
-  //  "pool": false
-  //},
-  //"Grub-Deepnest_Mimic": {
-  //  "name": "Grub-Deepnest_Mimic",
-  //  "sceneName": "Deepnest_36",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Grub-Deepnest_Nosk": {
-  //  "name": "Grub-Deepnest_Nosk",
-  //  "sceneName": "Deepnest_31",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Grub-Deepnest_Spike": {
-  //  "name": "Grub-Deepnest_Spike",
-  //  "sceneName": "Deepnest_03",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Grub-Dark_Deepnest": {
-  //  "name": "Grub-Dark_Deepnest",
-  //  "sceneName": "Deepnest_39",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Grub-Beast's_Den": {
-  //  "name": "Grub-Beast's_Den",
-  //  "sceneName": "Deepnest_Spider_Town",
-  //  "mapArea": "Beasts_Den",
-  //  "pool": false
-  //},
-  //"Grub-Kingdom's_Edge_Oro": {
-  //  "name": "Grub-Kingdom's_Edge_Oro",
-  //  "sceneName": "Deepnest_East_14",
-  //  "mapArea": "Kingdoms_Edge",
-  //  "pool": false
-  //},
-  //"Grub-Kingdom's_Edge_Camp": {
-  //  "name": "Grub-Kingdom's_Edge_Camp",
-  //  "sceneName": "Deepnest_East_11",
-  //  "mapArea": "Kingdoms_Edge",
-  //  "pool": false
-  //},
-  //"Grub-Hive_External": {
-  //  "name": "Grub-Hive_External",
-  //  "sceneName": "Hive_03",
-  //  "mapArea": "Hive",
-  //  "pool": false
-  //},
-  //"Grub-Hive_Internal": {
-  //  "name": "Grub-Hive_Internal",
-  //  "sceneName": "Hive_04",
-  //  "mapArea": "Hive",
-  //  "pool": false
-  //},
-  //"Grub-Basin_Requires_Wings": {
-  //  "name": "Grub-Basin_Requires_Wings",
-  //  "sceneName": "Abyss_19",
-  //  "mapArea": "Ancient_Basin",
-  //  "pool": false
-  //},
-  //"Grub-Basin_Requires_Dive": {
-  //  "name": "Grub-Basin_Requires_Dive",
-  //  "sceneName": "Abyss_17",
-  //  "mapArea": "Ancient_Basin",
-  //  "pool": false
-  //},
-  //"Grub-Waterways_Main": {
-  //  "name": "Grub-Waterways_Main",
-  //  "sceneName": "Waterways_04",
-  //  "mapArea": "Royal_Waterways",
-  //  "pool": false
-  //},
-  //"Grub-Waterways_East": {
-  //  "name": "Grub-Waterways_East",
-  //  "sceneName": "Waterways_13",
-  //  "mapArea": "Ismas_Grove",
-  //  "pool": false
-  //},
-  //"Grub-Waterways_Requires_Tram": {
-  //  "name": "Grub-Waterways_Requires_Tram",
-  //  "sceneName": "Waterways_14",
-  //  "mapArea": "Royal_Waterways",
-  //  "pool": false
-  //},
-  //"Grub-City_of_Tears_Left": {
-  //  "name": "Grub-City_of_Tears_Left",
-  //  "sceneName": "Ruins1_05",
-  //  "mapArea": "City_of_Tears",
-  //  "pool": false
-  //},
-  //"Grub-Soul_Sanctum": {
-  //  "name": "Grub-Soul_Sanctum",
-  //  "sceneName": "Ruins1_32",
-  //  "mapArea": "Soul_Sanctum",
-  //  "pool": false
-  //},
-  //"Grub-Watcher's_Spire": {
-  //  "name": "Grub-Watcher's_Spire",
-  //  "sceneName": "Ruins2_03",
-  //  "mapArea": "City_of_Tears",
-  //  "pool": false
-  //},
-  //"Grub-City_of_Tears_Guarded": {
-  //  "name": "Grub-City_of_Tears_Guarded",
-  //  "sceneName": "Ruins_House_01",
-  //  "mapArea": "City_of_Tears",
-  //  "pool": false
-  //},
-  //"Grub-King's_Station": {
-  //  "name": "Grub-King's_Station",
-  //  "sceneName": "Ruins2_07",
-  //  "mapArea": "Kings_Station",
-  //  "pool": false
-  //},
-  //"Grub-Resting_Grounds": {
-  //  "name": "Grub-Resting_Grounds",
-  //  "sceneName": "RestingGrounds_10",
-  //  "mapArea": "Resting_Grounds",
-  //  "pool": false
-  //},
-  //"Grub-Crystal_Peak_Below_Chest": {
-  //  "name": "Grub-Crystal_Peak_Below_Chest",
-  //  "sceneName": "Mines_04",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Grub-Crystallized_Mound": {
-  //  "name": "Grub-Crystallized_Mound",
-  //  "sceneName": "Mines_35",
-  //  "mapArea": "Crystallized_Mound",
-  //  "pool": false
-  //},
-  //"Grub-Crystal_Peak_Spike": {
-  //  "name": "Grub-Crystal_Peak_Spike",
-  //  "sceneName": "Mines_03",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Grub-Crystal_Peak_Mimic": {
-  //  "name": "Grub-Crystal_Peak_Mimic",
-  //  "sceneName": "Mines_16",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Grub-Crystal_Peak_Crushers": {
-  //  "name": "Grub-Crystal_Peak_Crushers",
-  //  "sceneName": "Mines_19",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Grub-Crystal_Heart": {
-  //  "name": "Grub-Crystal_Heart",
-  //  "sceneName": "Mines_31",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Grub-Hallownest_Crown": {
-  //  "name": "Grub-Hallownest_Crown",
-  //  "sceneName": "Mines_24",
-  //  "mapArea": "Crystal_Peak",
-  //  "pool": false
-  //},
-  //"Grub-Howling_Cliffs": {
-  //  "name": "Grub-Howling_Cliffs",
-  //  "sceneName": "Fungus1_28",
-  //  "mapArea": "Howling_Cliffs",
-  //  "pool": false
-  //},
-  //"Grub-Queen's_Gardens_Stag": {
-  //  "name": "Grub-Queen's_Gardens_Stag",
-  //  "sceneName": "Fungus3_10",
-  //  "mapArea": "Queens_Gardens",
-  //  "pool": false
-  //},
-  //"Grub-Queen's_Gardens_Marmu": {
-  //  "name": "Grub-Queen's_Gardens_Marmu",
-  //  "sceneName": "Fungus3_48",
-  //  "mapArea": "Queens_Gardens",
-  //  "pool": false
-  //},
-  //"Grub-Queen's_Gardens_Top": {
-  //  "name": "Grub-Queen's_Gardens_Top",
-  //  "sceneName": "Fungus3_22",
-  //  "mapArea": "Queens_Gardens",
-  //  "pool": false
-  //},
-  //"Grub-Collector_1": {
-  //  "name": "Grub-Collector_1",
-  //  "sceneName": "Ruins2_11",
-  //  "mapArea": "Tower_of_Love",
-  //  "pool": false
-  //},
-  //"Grub-Collector_2": {
-  //  "name": "Grub-Collector_2",
-  //  "sceneName": "Ruins2_11",
-  //  "mapArea": "Tower_of_Love",
-  //  "pool": false
-  //},
-  //"Grub-Collector_3": {
-  //  "name": "Grub-Collector_3",
-  //  "sceneName": "Ruins2_11",
-  //  "mapArea": "Tower_of_Love",
-  //  "pool": false
-  //},
+  "Grub-Crossroads_Acid": {
+    "name": "Grub-Crossroads_Acid",
+    "sceneName": "Crossroads_35",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Grub"
+  },
+  "Grub-Crossroads_Center": {
+    "name": "Grub-Crossroads_Center",
+    "sceneName": "Crossroads_05",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Grub"
+  },
+  "Grub-Crossroads_Stag": {
+    "name": "Grub-Crossroads_Stag",
+    "sceneName": "Crossroads_03",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Grub"
+  },
+  "Grub-Crossroads_Spike": {
+    "name": "Grub-Crossroads_Spike",
+    "sceneName": "Crossroads_31",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Grub"
+  },
+  "Grub-Crossroads_Guarded": {
+    "name": "Grub-Crossroads_Guarded",
+    "sceneName": "Crossroads_48",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Grub"
+  },
+  "Grub-Greenpath_Cornifer": {
+    "name": "Grub-Greenpath_Cornifer",
+    "sceneName": "Fungus1_06",
+    "mapArea": "Greenpath",
+    "pool": "Grub"
+  },
+  "Grub-Greenpath_Journal": {
+    "name": "Grub-Greenpath_Journal",
+    "sceneName": "Fungus1_07",
+    "mapArea": "Greenpath",
+    "pool": "Grub"
+  },
+  "Grub-Greenpath_MMC": {
+    "name": "Grub-Greenpath_MMC",
+    "sceneName": "Fungus1_13",
+    "mapArea": "Greenpath",
+    "pool": "Grub"
+  },
+  "Grub-Greenpath_Stag": {
+    "name": "Grub-Greenpath_Stag",
+    "sceneName": "Fungus1_21",
+    "mapArea": "Greenpath",
+    "pool": "Grub"
+  },
+  "Grub-Fog_Canyon": {
+    "name": "Grub-Fog_Canyon",
+    "sceneName": "Fungus3_47",
+    "mapArea": "Fog_Canyon",
+    "pool": "Grub"
+  },
+  "Grub-Fungal_Bouncy": {
+    "name": "Grub-Fungal_Bouncy",
+    "sceneName": "Fungus2_18",
+    "mapArea": "Fungal_Wastes",
+    "pool": "Grub"
+  },
+  "Grub-Fungal_Spore_Shroom": {
+    "name": "Grub-Fungal_Spore_Shroom",
+    "sceneName": "Fungus2_20",
+    "mapArea": "Fungal_Wastes",
+    "pool": "Grub"
+  },
+  "Grub-Deepnest_Mimic": {
+    "name": "Grub-Deepnest_Mimic",
+    "sceneName": "Deepnest_36",
+    "mapArea": "Deepnest",
+    "pool": "Grub"
+  },
+  "Grub-Deepnest_Nosk": {
+    "name": "Grub-Deepnest_Nosk",
+    "sceneName": "Deepnest_31",
+    "mapArea": "Deepnest",
+    "pool": "Grub"
+  },
+  "Grub-Deepnest_Spike": {
+    "name": "Grub-Deepnest_Spike",
+    "sceneName": "Deepnest_03",
+    "mapArea": "Deepnest",
+    "pool": "Grub"
+  },
+  "Grub-Dark_Deepnest": {
+    "name": "Grub-Dark_Deepnest",
+    "sceneName": "Deepnest_39",
+    "mapArea": "Deepnest",
+    "pool": "Grub"
+  },
+  "Grub-Beast's_Den": {
+    "name": "Grub-Beast's_Den",
+    "sceneName": "Deepnest_Spider_Town",
+    "pinScene": "Deepnest_10",
+    "mapArea": "Deepnest",
+    "pool": "Grub"
+  },
+  "Grub-Kingdom's_Edge_Oro": {
+    "name": "Grub-Kingdom's_Edge_Oro",
+    "sceneName": "Deepnest_East_14",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Grub"
+  },
+  "Grub-Kingdom's_Edge_Camp": {
+    "name": "Grub-Kingdom's_Edge_Camp",
+    "sceneName": "Deepnest_East_11",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Grub"
+  },
+  "Grub-Hive_External": {
+    "name": "Grub-Hive_External",
+    "sceneName": "Hive_03",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Grub"
+  },
+  "Grub-Hive_Internal": {
+    "name": "Grub-Hive_Internal",
+    "sceneName": "Hive_04",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Grub"
+  },
+  "Grub-Basin_Requires_Wings": {
+    "name": "Grub-Basin_Requires_Wings",
+    "sceneName": "Abyss_19",
+    "mapArea": "Ancient_Basin",
+    "pool": "Grub"
+  },
+  "Grub-Basin_Requires_Dive": {
+    "name": "Grub-Basin_Requires_Dive",
+    "sceneName": "Abyss_17",
+    "mapArea": "Ancient_Basin",
+    "pool": "Grub"
+  },
+  "Grub-Waterways_Main": {
+    "name": "Grub-Waterways_Main",
+    "sceneName": "Waterways_04",
+    "mapArea": "Royal_Waterways",
+    "pool": "Grub"
+  },
+  "Grub-Waterways_East": {
+    "name": "Grub-Waterways_East",
+    "sceneName": "Waterways_13",
+    "mapArea": "Royal_Waterways",
+    "pool": "Grub"
+  },
+  "Grub-Waterways_Requires_Tram": {
+    "name": "Grub-Waterways_Requires_Tram",
+    "sceneName": "Waterways_14",
+    "mapArea": "Royal_Waterways",
+    "pool": "Grub"
+  },
+  "Grub-City_of_Tears_Left": {
+    "name": "Grub-City_of_Tears_Left",
+    "sceneName": "Ruins1_05",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-Soul_Sanctum": {
+    "name": "Grub-Soul_Sanctum",
+    "sceneName": "Ruins1_32",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-Watcher's_Spire": {
+    "name": "Grub-Watcher's_Spire",
+    "sceneName": "Ruins2_03",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-City_of_Tears_Guarded": {
+    "name": "Grub-City_of_Tears_Guarded",
+    "sceneName": "Ruins_House_01",
+    "pinScene": "Ruins2_04",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-King's_Station": {
+    "name": "Grub-King's_Station",
+    "sceneName": "Ruins2_07",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-Resting_Grounds": {
+    "name": "Grub-Resting_Grounds",
+    "sceneName": "RestingGrounds_10",
+    "mapArea": "Resting_Grounds",
+    "pool": "Grub"
+  },
+  "Grub-Crystal_Peak_Below_Chest": {
+    "name": "Grub-Crystal_Peak_Below_Chest",
+    "sceneName": "Mines_04",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Crystallized_Mound": {
+    "name": "Grub-Crystallized_Mound",
+    "sceneName": "Mines_35",
+    "pinScene": "Mines_28",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Crystal_Peak_Spike": {
+    "name": "Grub-Crystal_Peak_Spike",
+    "sceneName": "Mines_03",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Crystal_Peak_Mimic": {
+    "name": "Grub-Crystal_Peak_Mimic",
+    "sceneName": "Mines_16",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Crystal_Peak_Crushers": {
+    "name": "Grub-Crystal_Peak_Crushers",
+    "sceneName": "Mines_19",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Crystal_Heart": {
+    "name": "Grub-Crystal_Heart",
+    "sceneName": "Mines_31",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Hallownest_Crown": {
+    "name": "Grub-Hallownest_Crown",
+    "sceneName": "Mines_24",
+    "mapArea": "Crystal_Peak",
+    "pool": "Grub"
+  },
+  "Grub-Howling_Cliffs": {
+    "name": "Grub-Howling_Cliffs",
+    "sceneName": "Fungus1_28",
+    "mapArea": "Howling_Cliffs",
+    "pool": "Grub"
+  },
+  "Grub-Queen's_Gardens_Stag": {
+    "name": "Grub-Queen's_Gardens_Stag",
+    "sceneName": "Fungus3_10",
+    "mapArea": "Queens_Gardens",
+    "pool": "Grub"
+  },
+  "Grub-Queen's_Gardens_Marmu": {
+    "name": "Grub-Queen's_Gardens_Marmu",
+    "sceneName": "Fungus3_48",
+    "mapArea": "Queens_Gardens",
+    "pool": "Grub"
+  },
+  "Grub-Queen's_Gardens_Top": {
+    "name": "Grub-Queen's_Gardens_Top",
+    "sceneName": "Fungus3_22",
+    "mapArea": "Queens_Gardens",
+    "pool": "Grub"
+  },
+  "Grub-Collector_1": {
+    "name": "Grub-Collector_1",
+    "sceneName": "Ruins2_11",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-Collector_2": {
+    "name": "Grub-Collector_2",
+    "sceneName": "Ruins2_11",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
+  "Grub-Collector_3": {
+    "name": "Grub-Collector_3",
+    "sceneName": "Ruins2_11",
+    "mapArea": "City_of_Tears",
+    "pool": "Grub"
+  },
   "Crossroads_Map": {
     "name": "Crossroads_Map",
     "sceneName": "Crossroads_33",
@@ -1445,179 +1501,182 @@
     "mapArea": "Resting_Grounds",
     "pool": "Map"
   },
-  //"Dirtmouth_Stag": {
-  //  "name": "Dirtmouth_Stag",
-  //  "sceneName": "Room_Town_Stag_Station",
-  //  "mapArea": "Dirtmouth",
-  //  "pool": false
-  //},
-  //"Crossroads_Stag": {
-  //  "name": "Crossroads_Stag",
-  //  "sceneName": "Crossroads_47",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": false
-  //},
-  //"Greenpath_Stag": {
-  //  "name": "Greenpath_Stag",
-  //  "sceneName": "Fungus1_16_alt",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Queen's_Station_Stag": {
-  //  "name": "Queen's_Station_Stag",
-  //  "sceneName": "Fungus2_02",
-  //  "mapArea": "Queens_Station",
-  //  "pool": false
-  //},
-  //"Queen's_Gardens_Stag": {
-  //  "name": "Queen's_Gardens_Stag",
-  //  "sceneName": "Fungus3_40",
-  //  "mapArea": "Queens_Gardens",
-  //  "pool": false
-  //},
-  //"City_Storerooms_Stag": {
-  //  "name": "City_Storerooms_Stag",
-  //  "sceneName": "Ruins1_29",
-  //  "mapArea": "City_of_Tears",
-  //  "pool": false
-  //},
-  //"King's_Station_Stag": {
-  //  "name": "King's_Station_Stag",
-  //  "sceneName": "Ruins2_08",
-  //  "mapArea": "Kings_Station",
-  //  "pool": false
-  //},
-  //"Resting_Grounds_Stag": {
-  //  "name": "Resting_Grounds_Stag",
-  //  "sceneName": "RestingGrounds_09",
-  //  "mapArea": "Resting_Grounds",
-  //  "pool": false
-  //},
-  //"Distant_Village_Stag": {
-  //  "name": "Distant_Village_Stag",
-  //  "sceneName": "Deepnest_09",
-  //  "mapArea": "Distant_Village",
-  //  "pool": false
-  //},
-  //"Hidden_Station_Stag": {
-  //  "name": "Hidden_Station_Stag",
-  //  "sceneName": "Abyss_22",
-  //  "mapArea": "Palace_Grounds",
-  //  "pool": false
-  //},
-  //"Stag_Nest_Stag": {
-  //  "name": "Stag_Nest_Stag",
-  //  "sceneName": "Cliffs_03",
-  //  "mapArea": "Stag_Nest",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-King's_Pass": {
-  //  "name": "Lifeblood_Cocoon-King's_Pass",
-  //  "sceneName": "Tutorial_01",
-  //  "mapArea": "Kings_Pass",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Ancestral_Mound": {
-  //  "name": "Lifeblood_Cocoon-Ancestral_Mound",
-  //  "sceneName": "Crossroads_ShamanTemple",
-  //  "mapArea": "Ancestral_Mound",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Greenpath": {
-  //  "name": "Lifeblood_Cocoon-Greenpath",
-  //  "sceneName": "Fungus1_32",
-  //  "mapArea": "Greenpath",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Fog_Canyon_West": {
-  //  "name": "Lifeblood_Cocoon-Fog_Canyon_West",
-  //  "sceneName": "Fungus3_30",
-  //  "mapArea": "Fog_Canyon",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Mantis_Village": {
-  //  "name": "Lifeblood_Cocoon-Mantis_Village",
-  //  "sceneName": "Fungus2_15",
-  //  "mapArea": "Mantis_Village",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Failed_Tramway": {
-  //  "name": "Lifeblood_Cocoon-Failed_Tramway",
-  //  "sceneName": "Deepnest_26",
-  //  "mapArea": "Failed_Tramway",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Galien": {
-  //  "name": "Lifeblood_Cocoon-Galien",
-  //  "sceneName": "Deepnest_40",
-  //  "mapArea": "Deepnest",
-  //  "pool": false
-  //},
-  //"Lifeblood_Cocoon-Kingdom's_Edge": {
-  //  "name": "Lifeblood_Cocoon-Kingdom's_Edge",
-  //  "sceneName": "Deepnest_East_15",
-  //  "mapArea": "Kingdoms_Edge",
-  //  "pool": false
-  //},
+  "Dirtmouth_Stag": {
+    "name": "Dirtmouth_Stag",
+    "sceneName": "Room_Town_Stag_Station",
+    "pinScene": "Town",
+    "mapArea": "Dirtmouth",
+    "pool": "Stag"
+  },
+  "Crossroads_Stag": {
+    "name": "Crossroads_Stag",
+    "sceneName": "Crossroads_47",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Stag"
+  },
+  "Greenpath_Stag": {
+    "name": "Greenpath_Stag",
+    "sceneName": "Fungus1_16_alt",
+    "mapArea": "Greenpath",
+    "pool": "Stag"
+  },
+  "Queen's_Station_Stag": {
+    "name": "Queen's_Station_Stag",
+    "sceneName": "Fungus2_02",
+    "mapArea": "Fungal_Wastes",
+    "pool": "Stag"
+  },
+  "Queen's_Gardens_Stag": {
+    "name": "Queen's_Gardens_Stag",
+    "sceneName": "Fungus3_40",
+    "mapArea": "Queens_Gardens",
+    "pool": "Stag"
+  },
+  "City_Storerooms_Stag": {
+    "name": "City_Storerooms_Stag",
+    "sceneName": "Ruins1_29",
+    "mapArea": "City_of_Tears",
+    "pool": "Stag"
+  },
+  "King's_Station_Stag": {
+    "name": "King's_Station_Stag",
+    "sceneName": "Ruins2_08",
+    "mapArea": "City_of_Tears",
+    "pool": "Stag"
+  },
+  "Resting_Grounds_Stag": {
+    "name": "Resting_Grounds_Stag",
+    "sceneName": "RestingGrounds_09",
+    "mapArea": "Resting_Grounds",
+    "pool": "Stag"
+  },
+  "Distant_Village_Stag": {
+    "name": "Distant_Village_Stag",
+    "sceneName": "Deepnest_09",
+    "mapArea": "Deepnest",
+    "pool": "Stag"
+  },
+  "Hidden_Station_Stag": {
+    "name": "Hidden_Station_Stag",
+    "sceneName": "Abyss_22",
+    "mapArea": "Ancient_Basin",
+    "pool": "Stag"
+  },
+  "Stag_Nest_Stag": {
+    "name": "Stag_Nest_Stag",
+    "sceneName": "Cliffs_03",
+    "pinScene": "Cliffs_02",
+    "mapArea": "Howling_Cliffs",
+    "pool": "Stag"
+  },
+  "Lifeblood_Cocoon-King's_Pass": {
+    "name": "Lifeblood_Cocoon-King's_Pass",
+    "sceneName": "Tutorial_01",
+    "mapArea": "Dirtmouth",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Ancestral_Mound": {
+    "name": "Lifeblood_Cocoon-Ancestral_Mound",
+    "sceneName": "Crossroads_ShamanTemple",
+    "pinScene": "Crossroads_06",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Greenpath": {
+    "name": "Lifeblood_Cocoon-Greenpath",
+    "sceneName": "Fungus1_32",
+    "mapArea": "Greenpath",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Fog_Canyon_West": {
+    "name": "Lifeblood_Cocoon-Fog_Canyon_West",
+    "sceneName": "Fungus3_30",
+    "mapArea": "Fog_Canyon",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Mantis_Village": {
+    "name": "Lifeblood_Cocoon-Mantis_Village",
+    "sceneName": "Fungus2_15",
+    "mapArea": "Fungal_Wastes",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Failed_Tramway": {
+    "name": "Lifeblood_Cocoon-Failed_Tramway",
+    "sceneName": "Deepnest_26",
+    "mapArea": "Deepnest",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Galien": {
+    "name": "Lifeblood_Cocoon-Galien",
+    "sceneName": "Deepnest_40",
+    "mapArea": "Deepnest",
+    "pool": "Cocoon"
+  },
+  "Lifeblood_Cocoon-Kingdom's_Edge": {
+    "name": "Lifeblood_Cocoon-Kingdom's_Edge",
+    "sceneName": "Deepnest_East_15",
+    "mapArea": "Kingdoms_Edge",
+    "pool": "Cocoon"
+  },
   //"Grimmkin_Flame-City_Storerooms": {
   //  "name": "Grimmkin_Flame-City_Storerooms",
   //  "sceneName": "Ruins1_28",
   //  "mapArea": "City_of_Tears",
-  //  "pool": false
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Greenpath": {
   //  "name": "Grimmkin_Flame-Greenpath",
   //  "sceneName": "Fungus1_10",
   //  "mapArea": "Greenpath",
-  //  "pool": false
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Crystal_Peak": {
   //  "name": "Grimmkin_Flame-Crystal_Peak",
   //  "sceneName": "Mines_10",
   //  "mapArea": "Crystal_Peak",
-  //  "pool": false
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-King's_Pass": {
   //  "name": "Grimmkin_Flame-King's_Pass",
   //  "sceneName": "Tutorial_01",
-  //  "mapArea": "Kings_Pass",
-  //  "pool": false
+  //  "mapArea": "Dirtmouth",
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Resting_Grounds": {
   //  "name": "Grimmkin_Flame-Resting_Grounds",
   //  "sceneName": "RestingGrounds_06",
   //  "mapArea": "Resting_Grounds",
-  //  "pool": false
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Kingdom's_Edge": {
   //  "name": "Grimmkin_Flame-Kingdom's_Edge",
   //  "sceneName": "Deepnest_East_03",
   //  "mapArea": "Kingdoms_Edge",
-  //  "pool": false
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Fungal_Core": {
   //  "name": "Grimmkin_Flame-Fungal_Core",
   //  "sceneName": "Fungus2_30",
-  //  "mapArea": "Fungal_Core",
-  //  "pool": false
+  //  "mapArea": "Fungal_Wastes",
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Ancient_Basin": {
   //  "name": "Grimmkin_Flame-Ancient_Basin",
   //  "sceneName": "Abyss_02",
   //  "mapArea": "Ancient_Basin",
-  //  "pool": false
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Hive": {
   //  "name": "Grimmkin_Flame-Hive",
   //  "sceneName": "Hive_03",
-  //  "mapArea": "Hive",
-  //  "pool": false
+  //  "mapArea": "Kingdoms_Edge",
+  //  "pool": "Flame"
   //},
   //"Grimmkin_Flame-Brumm": {
   //  "name": "Grimmkin_Flame-Brumm",
   //  "sceneName": "Room_spider_small",
-  //  "mapArea": "Distant_Village",
-  //  "pool": false
+  //  "mapArea": "Deepnest",
+  //  "pool": "Flame"
   //},
   //"Split_Mothwing_Cloak": {
   //  "name": "Split_Mothwing_Cloak",
@@ -1628,31 +1687,31 @@
   //"Left_Mantis_Claw": {
   //  "name": "Left_Mantis_Claw",
   //  "sceneName": "Fungus2_14",
-  //  "mapArea": "Mantis_Village",
+  //  "mapArea": "Fungal_Wastes",
   //  "pool": false
   //},
   //"Right_Mantis_Claw": {
   //  "name": "Right_Mantis_Claw",
   //  "sceneName": "Fungus2_14",
-  //  "mapArea": "Mantis_Village",
+  //  "mapArea": "Fungal_Wastes",
   //  "pool": false
   //},
   //"Leftslash": {
   //  "name": "Leftslash",
   //  "sceneName": "Tutorial_01",
-  //  "mapArea": "Kings_Pass",
+  //  "mapArea": "Dirtmouth",
   //  "pool": false
   //},
   //"Rightslash": {
   //  "name": "Rightslash",
   //  "sceneName": "Tutorial_01",
-  //  "mapArea": "Kings_Pass",
+  //  "mapArea": "Dirtmouth",
   //  "pool": false
   //},
   //"Upslash": {
   //  "name": "Upslash",
   //  "sceneName": "Tutorial_01",
-  //  "mapArea": "Kings_Pass",
+  //  "mapArea": "Dirtmouth",
   //  "pool": false
   //},
   "Geo_Rock-Broken_Elevator_1": {
@@ -1925,30 +1984,33 @@
     "mapArea": "Forgotten_Crossroads",
     "pool": "Rock"
   },
+  // Turned 4 checks into 1 pin. Mound Dupe is Geo Rock 1 (1), Mound Tree is Geo Rock 2
   "Geo_Rock-Ancestral_Mound": {
     "name": "Geo_Rock-Ancestral_Mound",
+    "objectName": [ "Geo Rock 1", "Geo Rock 1 (1)", "Geo Rock 2", "Geo Rock 2 (1)" ],
     "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
+    "pinScene": "Crossroads_06",
+    "mapArea": "Forgotten_Crossroads",
     "pool": "Rock"
   },
-  "Geo_Rock-Ancestral_Mound_Dupe": {
-    "name": "Geo_Rock-Ancestral_Mound_Dupe",
-    "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Ancestral_Mound_Tree": {
-    "name": "Geo_Rock-Ancestral_Mound_Tree",
-    "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Ancestral_Mound_Tree_Dupe": {
-    "name": "Geo_Rock-Ancestral_Mound_Tree_Dupe",
-    "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
-    "pool": "Rock"
-  },
+  //"Geo_Rock-Ancestral_Mound_Dupe": {
+  //  "name": "Geo_Rock-Ancestral_Mound_Dupe",
+  //  "sceneName": "Crossroads_ShamanTemple",
+  //  "mapArea": "Forgotten_Crossroads",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Ancestral_Mound_Tree": {
+  //  "name": "Geo_Rock-Ancestral_Mound_Tree",
+  //  "sceneName": "Crossroads_ShamanTemple",
+  //  "mapArea": "Forgotten_Crossroads",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Ancestral_Mound_Tree_Dupe": {
+  //  "name": "Geo_Rock-Ancestral_Mound_Tree_Dupe",
+  //  "sceneName": "Crossroads_ShamanTemple",
+  //  "mapArea": "Forgotten_Crossroads",
+  //  "pool": "Rock"
+  //},
   "Geo_Rock-Moss_Prophet": {
     "name": "Geo_Rock-Moss_Prophet",
     "sceneName": "Deepnest_01",
@@ -2156,63 +2218,74 @@
   "Geo_Rock-Kingdom's_Edge_Above_420_Geo_Rock": {
     "name": "Geo_Rock-Kingdom's_Edge_Above_420_Geo_Rock",
     "sceneName": "Deepnest_East_17",
+    "pinScene": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Kingdom's_Edge_420_Geo_Rock": {
     "name": "Geo_Rock-Kingdom's_Edge_420_Geo_Rock",
     "sceneName": "Deepnest_East_17",
+    "pinScene": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
-  "Geo_Rock-Beast's_Den_Above_Trilobite": {
+  // Compressed all 8 Beast Den rocks into 1 pin
+  "Geo_Rock-Beast's_Den": {
     "name": "Geo_Rock-Beast's_Den_Above_Trilobite",
+    "objectName": [ "Geo Rock Deepnest", "Geo Rock Deepnest (1)", "Geo Rock Deepnest (2)", "Geo Rock Deepnest (3)", "Geo Rock Deepnest (4)", "Geo Rock Deepnest (5)", "Geo Rock Deepnest (6)", "Geo Rock Deepnest (7)" ],
     "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
+    "pinScene": "Deepnest_10",
+    "mapArea": "Deepnest",
     "pool": "Rock"
   },
-  "Geo_Rock-Beast's_Den_Above_Trilobite_Dupe": {
-    "name": "Geo_Rock-Beast's_Den_Above_Trilobite_Dupe",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Beast's_Den_Below_Herrah": {
-    "name": "Geo_Rock-Beast's_Den_Below_Herrah",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Beast's_Den_Below_Egg": {
-    "name": "Geo_Rock-Beast's_Den_Below_Egg",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Beast's_Den_Below_Egg_Dupe": {
-    "name": "Geo_Rock-Beast's_Den_Below_Egg_Dupe",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Beast's_Den_Bottom": {
-    "name": "Geo_Rock-Beast's_Den_Bottom",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Beast's_Den_Bottom_Dupe": {
-    "name": "Geo_Rock-Beast's_Den_Bottom_Dupe",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Beast's_Den_After_Herrah": {
-    "name": "Geo_Rock-Beast's_Den_After_Herrah",
-    "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Rock"
-  },
+  //"Geo_Rock-Beast's_Den_Above_Trilobite": {
+  //  "name": "Geo_Rock-Beast's_Den_Above_Trilobite",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_Above_Trilobite_Dupe": {
+  //  "name": "Geo_Rock-Beast's_Den_Above_Trilobite_Dupe",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_Below_Herrah": {
+  //  "name": "Geo_Rock-Beast's_Den_Below_Herrah",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_Below_Egg": {
+  //  "name": "Geo_Rock-Beast's_Den_Below_Egg",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_Below_Egg_Dupe": {
+  //  "name": "Geo_Rock-Beast's_Den_Below_Egg_Dupe",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_Bottom": {
+  //  "name": "Geo_Rock-Beast's_Den_Bottom",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_Bottom_Dupe": {
+  //  "name": "Geo_Rock-Beast's_Den_Bottom_Dupe",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
+  //"Geo_Rock-Beast's_Den_After_Herrah": {
+  //  "name": "Geo_Rock-Beast's_Den_After_Herrah",
+  //  "sceneName": "Deepnest_Spider_Town",
+  //  "mapArea": "Deepnest",
+  //  "pool": "Rock"
+  //},
   "Geo_Rock-Greenpath_Entrance": {
     "name": "Geo_Rock-Greenpath_Entrance",
     "sceneName": "Fungus1_01",
@@ -2303,20 +2376,10 @@
     "mapArea": "Greenpath",
     "pool": "Rock"
   },
+  // Three checks
   "Geo_Rock-Greenpath_Moss_Knights": {
     "name": "Geo_Rock-Greenpath_Moss_Knights",
-    "sceneName": "Fungus1_21",
-    "mapArea": "Greenpath",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Greenpath_Moss_Knights_Dupe_1": {
-    "name": "Geo_Rock-Greenpath_Moss_Knights_Dupe_1",
-    "sceneName": "Fungus1_21",
-    "mapArea": "Greenpath",
-    "pool": "Rock"
-  },
-  "Geo_Rock-Greenpath_Moss_Knights_Dupe_2": {
-    "name": "Geo_Rock-Greenpath_Moss_Knights_Dupe_2",
+    "objectName": [ "Geo Rock Green Path 02", "Geo Rock Green Path 02 (1)", "Geo Rock Green Path 02 (2)" ],
     "sceneName": "Fungus1_21",
     "mapArea": "Greenpath",
     "pool": "Rock"
@@ -2402,61 +2465,61 @@
   "Geo_Rock-Mantis_Outskirts_Guarded": {
     "name": "Geo_Rock-Mantis_Outskirts_Guarded",
     "sceneName": "Fungus2_13",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Outskirts_Guarded_Dupe": {
     "name": "Geo_Rock-Mantis_Outskirts_Guarded_Dupe",
     "sceneName": "Fungus2_13",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Outskirts_Alcove": {
     "name": "Geo_Rock-Mantis_Outskirts_Alcove",
     "sceneName": "Fungus2_13",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Village_After_Lever": {
     "name": "Geo_Rock-Mantis_Village_After_Lever",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Village_Above_Claw": {
     "name": "Geo_Rock-Mantis_Village_Above_Claw",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Village_Above_Claw_Dupe": {
     "name": "Geo_Rock-Mantis_Village_Above_Claw_Dupe",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Village_Below_Lore": {
     "name": "Geo_Rock-Mantis_Village_Below_Lore",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Mantis_Village_Above_Lever": {
     "name": "Geo_Rock-Mantis_Village_Above_Lever",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Above_Mantis_Lords_1": {
     "name": "Geo_Rock-Above_Mantis_Lords_1",
     "sceneName": "Fungus2_15",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Above_Mantis_Lords_2": {
     "name": "Geo_Rock-Above_Mantis_Lords_2",
     "sceneName": "Fungus2_15",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Fungal_After_Bouncy_Grub": {
@@ -2510,19 +2573,19 @@
   "Geo_Rock-Fungal_Core_Entrance": {
     "name": "Geo_Rock-Fungal_Core_Entrance",
     "sceneName": "Fungus2_29",
-    "mapArea": "Fungal_Core",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Fungal_Core_Hidden": {
     "name": "Geo_Rock-Fungal_Core_Hidden",
     "sceneName": "Fungus2_30",
-    "mapArea": "Fungal_Core",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Fungal_Core_Above_Elder": {
     "name": "Geo_Rock-Fungal_Core_Above_Elder",
     "sceneName": "Fungus2_30",
-    "mapArea": "Fungal_Core",
+    "mapArea": "Fungal_Wastes",
     "pool": "Rock"
   },
   "Geo_Rock-Queen's_Gardens_Acid_Entrance": {
@@ -2576,55 +2639,55 @@
   "Geo_Rock-Hive_Entrance": {
     "name": "Geo_Rock-Hive_Entrance",
     "sceneName": "Hive_01",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Outside_Bench": {
     "name": "Geo_Rock-Hive_Outside_Bench",
     "sceneName": "Hive_02",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Below_Root": {
     "name": "Geo_Rock-Hive_Below_Root",
     "sceneName": "Hive_02",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_After_Root": {
     "name": "Geo_Rock-Hive_After_Root",
     "sceneName": "Hive_02",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Below_Stash": {
     "name": "Geo_Rock-Hive_Below_Stash",
     "sceneName": "Hive_03",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Stash": {
     "name": "Geo_Rock-Hive_Stash",
     "sceneName": "Hive_03",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Stash_Dupe": {
     "name": "Geo_Rock-Hive_Stash_Dupe",
     "sceneName": "Hive_03",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Below_Grub": {
     "name": "Geo_Rock-Hive_Below_Grub",
     "sceneName": "Hive_04",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Hive_Above_Mask": {
     "name": "Geo_Rock-Hive_Above_Mask",
     "sceneName": "Hive_04",
-    "mapArea": "Hive",
+    "mapArea": "Kingdoms_Edge",
     "pool": "Rock"
   },
   "Geo_Rock-Crystal_Peak_Lower_Middle": {
@@ -2690,31 +2753,31 @@
   "Geo_Rock-Hallownest_Crown_Dive": {
     "name": "Geo_Rock-Hallownest_Crown_Dive",
     "sceneName": "Mines_25",
-    "mapArea": "Hallownests_Crown",
+    "mapArea": "Crystal_Peak",
     "pool": "Rock"
   },
   "Geo_Rock-Hallownest_Crown_Dive_Dupe": {
     "name": "Geo_Rock-Hallownest_Crown_Dive_Dupe",
     "sceneName": "Mines_25",
-    "mapArea": "Hallownests_Crown",
+    "mapArea": "Crystal_Peak",
     "pool": "Rock"
   },
   "Geo_Rock-Hallownest_Crown_Hidden": {
     "name": "Geo_Rock-Hallownest_Crown_Hidden",
     "sceneName": "Mines_25",
-    "mapArea": "Hallownests_Crown",
+    "mapArea": "Crystal_Peak",
     "pool": "Rock"
   },
   "Geo_Rock-Hallownest_Crown_Hidden_Dupe_1": {
     "name": "Geo_Rock-Hallownest_Crown_Hidden_Dupe_1",
     "sceneName": "Mines_25",
-    "mapArea": "Hallownests_Crown",
+    "mapArea": "Crystal_Peak",
     "pool": "Rock"
   },
   "Geo_Rock-Hallownest_Crown_Hidden_Dupe_2": {
     "name": "Geo_Rock-Hallownest_Crown_Hidden_Dupe_2",
     "sceneName": "Mines_25",
-    "mapArea": "Hallownests_Crown",
+    "mapArea": "Crystal_Peak",
     "pool": "Rock"
   },
   "Geo_Rock-Crystal_Peak_Before_Crystal_Heart": {
@@ -2774,25 +2837,29 @@
   "Geo_Rock-Overgrown_Mound": {
     "name": "Geo_Rock-Overgrown_Mound",
     "sceneName": "Room_Fungus_Shaman",
-    "mapArea": "Overgrown_Mound",
+    "pinScene": "Fungus3_44",
+    "mapArea": "Fog_Canyon",
     "pool": "Rock"
   },
-  "Geo_Rock-Fluke_Hermit_Dupe": {
-    "name": "Geo_Rock-Fluke_Hermit_Dupe",
-    "sceneName": "Room_GG_Shortcut",
-    "mapArea": "Junk_Pit",
-    "pool": "Rock"
-  },
+  // Compressed 2 rocks into 1 pin
+  //"Geo_Rock-Fluke_Hermit_Dupe": {
+  //  "name": "Geo_Rock-Fluke_Hermit_Dupe",
+  //  "sceneName": "Room_GG_Shortcut",
+  //  "mapArea": "Royal_Waterways",
+  //  "pool": "Rock"
+  //},
   "Geo_Rock-Fluke_Hermit": {
     "name": "Geo_Rock-Fluke_Hermit",
+    "objectName": [ "Geo Rock Fung 01", "Geo Rock Fung 02 (1)" ],
     "sceneName": "Room_GG_Shortcut",
-    "mapArea": "Junk_Pit",
+    "pinScene": "GG_Waterways",
+    "mapArea": "Royal_Waterways",
     "pool": "Rock"
   },
   "Geo_Rock-Pleasure_House": {
     "name": "Geo_Rock-Pleasure_House",
     "sceneName": "Ruins_Elevator",
-    "mapArea": "Pleasure_House",
+    "mapArea": "City_of_Tears",
     "pool": "Rock"
   },
   "Geo_Rock-City_of_Tears_Quirrel": {
@@ -2816,7 +2883,7 @@
   "Geo_Rock-Soul_Sanctum": {
     "name": "Geo_Rock-Soul_Sanctum",
     "sceneName": "Ruins1_32",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Rock"
   },
   "Geo_Rock-Watcher's_Spire": {
@@ -2828,43 +2895,43 @@
   "Geo_Rock-Above_King's_Station": {
     "name": "Geo_Rock-Above_King's_Station",
     "sceneName": "Ruins2_05",
-    "mapArea": "Kings_Station",
+    "mapArea": "City_of_Tears",
     "pool": "Rock"
   },
   "Geo_Rock-King's_Station": {
     "name": "Geo_Rock-King's_Station",
     "sceneName": "Ruins2_06",
-    "mapArea": "Kings_Station",
+    "mapArea": "City_of_Tears",
     "pool": "Rock"
   },
   "Geo_Rock-King's_Pass_Left": {
     "name": "Geo_Rock-King's_Pass_Left",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Rock"
   },
   "Geo_Rock-King's_Pass_Below_Fury": {
     "name": "Geo_Rock-King's_Pass_Below_Fury",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Rock"
   },
   "Geo_Rock-King's_Pass_Hidden": {
     "name": "Geo_Rock-King's_Pass_Hidden",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Rock"
   },
   "Geo_Rock-King's_Pass_Collapse": {
     "name": "Geo_Rock-King's_Pass_Collapse",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Rock"
   },
   "Geo_Rock-King's_Pass_Above_Fury": {
     "name": "Geo_Rock-King's_Pass_Above_Fury",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Rock"
   },
   "Geo_Rock-Waterways_Tuk": {
@@ -2906,13 +2973,14 @@
   "Boss_Geo-Gorgeous_Husk": {
     "name": "Boss_Geo-Gorgeous_Husk",
     "sceneName": "Ruins_House_02",
+    "pinScene": "Ruins2_04",
     "mapArea": "City_of_Tears",
     "pool": "Geo"
   },
   "Boss_Geo-Sanctum_Soul_Warrior": {
     "name": "Boss_Geo-Sanctum_Soul_Warrior",
     "sceneName": "Ruins1_23",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Geo"
   },
   "Boss_Geo-Elegant_Soul_Warrior": {
@@ -2949,355 +3017,359 @@
     "name": "Soul_Totem-Basin",
     "sceneName": "Abyss_04",
     "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Cliffs_Main": {
     "name": "Soul_Totem-Cliffs_Main",
     "sceneName": "Cliffs_01",
     "mapArea": "Howling_Cliffs",
-    "pool": "Soul"
+    "pool": "Totem"
   },
+  // Not sure about this one, check the pin location for the right pinScene?
   "Soul_Totem-Cliffs_Gorb": {
     "name": "Soul_Totem-Cliffs_Gorb",
     "sceneName": "Cliffs_02",
     "mapArea": "Howling_Cliffs",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Cliffs_Joni's": {
     "name": "Soul_Totem-Cliffs_Joni's",
     "sceneName": "Cliffs_04",
     "mapArea": "Howling_Cliffs",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crossroads_Goam_Journal": {
     "name": "Soul_Totem-Crossroads_Goam_Journal",
     "sceneName": "Crossroads_18",
     "mapArea": "Forgotten_Crossroads",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crossroads_Shops": {
     "name": "Soul_Totem-Crossroads_Shops",
     "sceneName": "Crossroads_19",
     "mapArea": "Forgotten_Crossroads",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crossroads_Mawlek_Upper": {
     "name": "Soul_Totem-Crossroads_Mawlek_Upper",
     "sceneName": "Crossroads_25",
     "mapArea": "Forgotten_Crossroads",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crossroads_Acid": {
     "name": "Soul_Totem-Crossroads_Acid",
     "sceneName": "Crossroads_35",
     "mapArea": "Forgotten_Crossroads",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crossroads_Mawlek_Lower": {
     "name": "Soul_Totem-Crossroads_Mawlek_Lower",
     "sceneName": "Crossroads_36",
     "mapArea": "Forgotten_Crossroads",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crossroads_Myla": {
     "name": "Soul_Totem-Crossroads_Myla",
     "sceneName": "Crossroads_45",
     "mapArea": "Forgotten_Crossroads",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Ancestral_Mound": {
     "name": "Soul_Totem-Ancestral_Mound",
     "sceneName": "Crossroads_ShamanTemple",
-    "mapArea": "Ancestral_Mound",
-    "pool": "Soul"
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Totem"
   },
   "Soul_Totem-Distant_Village": {
     "name": "Soul_Totem-Distant_Village",
     "sceneName": "Deepnest_10",
-    "mapArea": "Distant_Village",
-    "pool": "Soul"
+    "mapArea": "Deepnest",
+    "pool": "Totem"
   },
   "Soul_Totem-Deepnest_Vessel": {
     "name": "Soul_Totem-Deepnest_Vessel",
     "sceneName": "Deepnest_38",
     "mapArea": "Deepnest",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Mask_Maker": {
     "name": "Soul_Totem-Mask_Maker",
     "sceneName": "Deepnest_42",
     "mapArea": "Deepnest",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Lower_Kingdom's_Edge_1": {
     "name": "Soul_Totem-Lower_Kingdom's_Edge_1",
     "sceneName": "Deepnest_East_01",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Lower_Kingdom's_Edge_2": {
     "name": "Soul_Totem-Lower_Kingdom's_Edge_2",
     "sceneName": "Deepnest_East_02",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Upper_Kingdom's_Edge": {
     "name": "Soul_Totem-Upper_Kingdom's_Edge",
     "sceneName": "Deepnest_East_07",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Kingdom's_Edge_Camp": {
     "name": "Soul_Totem-Kingdom's_Edge_Camp",
     "sceneName": "Deepnest_East_11",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Oro_Dive_2": {
     "name": "Soul_Totem-Oro_Dive_2",
     "sceneName": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Oro_Dive_1": {
     "name": "Soul_Totem-Oro_Dive_1",
     "sceneName": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Oro": {
     "name": "Soul_Totem-Oro",
     "sceneName": "Deepnest_East_16",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-420_Geo_Rock": {
     "name": "Soul_Totem-420_Geo_Rock",
     "sceneName": "Deepnest_East_17",
+    "pinScene": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Beast's_Den": {
     "name": "Soul_Totem-Beast's_Den",
     "sceneName": "Deepnest_Spider_Town",
-    "mapArea": "Beasts_Den",
-    "pool": "Soul"
+    "pinScene": "Deepnest_10",
+    "mapArea": "Deepnest",
+    "pool": "Totem"
   },
   "Soul_Totem-Greenpath_Hunter's_Journal": {
     "name": "Soul_Totem-Greenpath_Hunter's_Journal",
     "sceneName": "Fungus1_07",
     "mapArea": "Greenpath",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Greenpath_MMC": {
     "name": "Soul_Totem-Greenpath_MMC",
     "sceneName": "Fungus1_29",
     "mapArea": "Greenpath",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Greenpath_Below_Toll": {
     "name": "Soul_Totem-Greenpath_Below_Toll",
     "sceneName": "Fungus1_30",
     "mapArea": "Greenpath",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Before_Pilgrim's_Way": {
     "name": "Soul_Totem-Before_Pilgrim's_Way",
     "sceneName": "Fungus2_10",
     "mapArea": "Fungal_Wastes",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Pilgrim's_Way": {
     "name": "Soul_Totem-Pilgrim's_Way",
     "sceneName": "Fungus2_21",
     "mapArea": "Fungal_Wastes",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Fungal_Core": {
     "name": "Soul_Totem-Fungal_Core",
     "sceneName": "Fungus2_29",
-    "mapArea": "Fungal_Core",
-    "pool": "Soul"
+    "mapArea": "Fungal_Wastes",
+    "pool": "Totem"
   },
   "Soul_Totem-Top_Left_Queen's_Gardens": {
     "name": "Soul_Totem-Top_Left_Queen's_Gardens",
     "sceneName": "Fungus3_21",
     "mapArea": "Queens_Gardens",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Below_Marmu": {
     "name": "Soul_Totem-Below_Marmu",
     "sceneName": "Fungus3_40",
     "mapArea": "Queens_Gardens",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Upper_Crystal_Peak": {
     "name": "Soul_Totem-Upper_Crystal_Peak",
     "sceneName": "Mines_20",
     "mapArea": "Crystal_Peak",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Hallownest_Crown": {
     "name": "Soul_Totem-Hallownest_Crown",
     "sceneName": "Mines_25",
-    "mapArea": "Hallownests_Crown",
-    "pool": "Soul"
+    "mapArea": "Crystal_Peak",
+    "pool": "Totem"
   },
   "Soul_Totem-Outside_Crystallized_Mound": {
     "name": "Soul_Totem-Outside_Crystallized_Mound",
     "sceneName": "Mines_28",
     "mapArea": "Crystal_Peak",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crystal_Heart_1": {
     "name": "Soul_Totem-Crystal_Heart_1",
     "sceneName": "Mines_31",
     "mapArea": "Crystal_Peak",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crystal_Heart_2": {
     "name": "Soul_Totem-Crystal_Heart_2",
     "sceneName": "Mines_31",
     "mapArea": "Crystal_Peak",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Crystallized_Mound": {
     "name": "Soul_Totem-Crystallized_Mound",
     "sceneName": "Mines_35",
-    "mapArea": "Crystallized_Mound",
-    "pool": "Soul"
+    "pinScene": "Mines_28",
+    "mapArea": "Crystal_Peak",
+    "pool": "Totem"
   },
   "Soul_Totem-Resting_Grounds": {
     "name": "Soul_Totem-Resting_Grounds",
     "sceneName": "RestingGrounds_05",
     "mapArea": "Resting_Grounds",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Below_Xero": {
     "name": "Soul_Totem-Below_Xero",
     "sceneName": "RestingGrounds_06",
     "mapArea": "Resting_Grounds",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Sanctum_Below_Soul_Master": {
     "name": "Soul_Totem-Sanctum_Below_Soul_Master",
     "sceneName": "Ruins1_24",
-    "mapArea": "Soul_Sanctum",
-    "pool": "Soul"
+    "mapArea": "City_of_Tears",
+    "pool": "Totem"
   },
   "Soul_Totem-Sanctum_Below_Chest": {
     "name": "Soul_Totem-Sanctum_Below_Chest",
     "sceneName": "Ruins1_32",
-    "mapArea": "Soul_Sanctum",
-    "pool": "Soul"
+    "mapArea": "City_of_Tears",
+    "pool": "Totem"
   },
   "Soul_Totem-Sanctum_Above_Grub": {
     "name": "Soul_Totem-Sanctum_Above_Grub",
     "sceneName": "Ruins1_32",
-    "mapArea": "Soul_Sanctum",
-    "pool": "Soul"
+    "mapArea": "City_of_Tears",
+    "pool": "Totem"
   },
   "Soul_Totem-Waterways_Entrance": {
     "name": "Soul_Totem-Waterways_Entrance",
     "sceneName": "Waterways_01",
     "mapArea": "Royal_Waterways",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Top_Left_Waterways": {
     "name": "Soul_Totem-Top_Left_Waterways",
     "sceneName": "Waterways_04b",
     "mapArea": "Royal_Waterways",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Waterways_East": {
     "name": "Soul_Totem-Waterways_East",
     "sceneName": "Waterways_07",
     "mapArea": "Royal_Waterways",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-Waterways_Flukemarm": {
     "name": "Soul_Totem-Waterways_Flukemarm",
     "sceneName": "Waterways_08",
     "mapArea": "Royal_Waterways",
-    "pool": "Soul"
+    "pool": "Totem"
   },
   "Soul_Totem-White_Palace_Entrance": {
     "name": "Soul_Totem-White_Palace_Entrance",
     "sceneName": "White_Palace_02",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-White_Palace_Hub": {
     "name": "Soul_Totem-White_Palace_Hub",
     "sceneName": "White_Palace_03_hub",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-White_Palace_Left": {
     "name": "Soul_Totem-White_Palace_Left",
     "sceneName": "White_Palace_04",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-White_Palace_Final": {
     "name": "Soul_Totem-White_Palace_Final",
     "sceneName": "White_Palace_09",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-White_Palace_Right": {
     "name": "Soul_Totem-White_Palace_Right",
     "sceneName": "White_Palace_15",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Below_Lever": {
     "name": "Soul_Totem-Path_of_Pain_Below_Lever",
     "sceneName": "White_Palace_17",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Left_of_Lever": {
     "name": "Soul_Totem-Path_of_Pain_Left_of_Lever",
     "sceneName": "White_Palace_17",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Entrance": {
     "name": "Soul_Totem-Path_of_Pain_Entrance",
     "sceneName": "White_Palace_18",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Second": {
     "name": "Soul_Totem-Path_of_Pain_Second",
     "sceneName": "White_Palace_18",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Hidden": {
     "name": "Soul_Totem-Path_of_Pain_Hidden",
     "sceneName": "White_Palace_19",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Below_Thornskip": {
     "name": "Soul_Totem-Path_of_Pain_Below_Thornskip",
     "sceneName": "White_Palace_19",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Path_of_Pain_Final": {
     "name": "Soul_Totem-Path_of_Pain_Final",
     "sceneName": "White_Palace_20",
-    "mapArea": "Ancient_Basin",
-    "pool": "Soul"
+    "mapArea": "White_Palace",
+    "pool": "Totem"
   },
   "Soul_Totem-Pale_Lurker": {
     "name": "Soul_Totem-Pale_Lurker",
     "sceneName": "GG_Lurker",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Soul"
+    "pool": "Lore"
   },
   "Lore_Tablet-City_Entrance": {
     "name": "Lore_Tablet-City_Entrance",
@@ -3308,19 +3380,19 @@
   "Lore_Tablet-Pleasure_House": {
     "name": "Lore_Tablet-Pleasure_House",
     "sceneName": "Ruins_Elevator",
-    "mapArea": "Pleasure_House",
+    "mapArea": "City_of_Tears",
     "pool": "Lore"
   },
   "Lore_Tablet-Sanctum_Entrance": {
     "name": "Lore_Tablet-Sanctum_Entrance",
     "sceneName": "Ruins1_23",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Lore"
   },
   "Lore_Tablet-Sanctum_Past_Soul_Master": {
     "name": "Lore_Tablet-Sanctum_Past_Soul_Master",
     "sceneName": "Ruins1_32",
-    "mapArea": "Soul_Sanctum",
+    "mapArea": "City_of_Tears",
     "pool": "Lore"
   },
   "Lore_Tablet-Watcher's_Spire": {
@@ -3329,24 +3401,33 @@
     "mapArea": "City_of_Tears",
     "pool": "Lore"
   },
-  "Lore_Tablet-Archives_Upper": {
+  // Compress 3 Tablets into 1 pin
+  "Lore_Tablet-Archives": {
     "name": "Lore_Tablet-Archives_Upper",
+    "objectName": [ "Inspect Region", "Inspect Region (1)", "Inspect Region (2)" ],
     "sceneName": "Fungus3_archive_02",
-    "mapArea": "Teachers_Archives",
+    "pinScene": "Fungus3_47",
+    "mapArea": "Fog_Canyon",
     "pool": "Lore"
   },
-  "Lore_Tablet-Archives_Left": {
-    "name": "Lore_Tablet-Archives_Left",
-    "sceneName": "Fungus3_archive_02",
-    "mapArea": "Teachers_Archives",
-    "pool": "Lore"
-  },
-  "Lore_Tablet-Archives_Right": {
-    "name": "Lore_Tablet-Archives_Right",
-    "sceneName": "Fungus3_archive_02",
-    "mapArea": "Teachers_Archives",
-    "pool": "Lore"
-  },
+  //"Lore_Tablet-Archives_Upper": {
+  //  "name": "Lore_Tablet-Archives_Upper",
+  //  "sceneName": "Fungus3_archive_02",
+  //  "mapArea": "Fog_Canyon",
+  //  "pool": "Lore"
+  //},
+  //"Lore_Tablet-Archives_Left": {
+  //  "name": "Lore_Tablet-Archives_Left",
+  //  "sceneName": "Fungus3_archive_02",
+  //  "mapArea": "Fog_Canyon",
+  //  "pool": "Lore"
+  //},
+  //"Lore_Tablet-Archives_Right": {
+  //  "name": "Lore_Tablet-Archives_Right",
+  //  "sceneName": "Fungus3_archive_02",
+  //  "mapArea": "Fog_Canyon",
+  //  "pool": "Lore"
+  //},
   "Lore_Tablet-Pilgrim's_Way_1": {
     "name": "Lore_Tablet-Pilgrim's_Way_1",
     "sceneName": "Crossroads_11_alt",
@@ -3362,13 +3443,13 @@
   "Lore_Tablet-Mantis_Outskirts": {
     "name": "Lore_Tablet-Mantis_Outskirts",
     "sceneName": "Fungus2_12",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Lore"
   },
   "Lore_Tablet-Mantis_Village": {
     "name": "Lore_Tablet-Mantis_Village",
     "sceneName": "Fungus2_14",
-    "mapArea": "Mantis_Village",
+    "mapArea": "Fungal_Wastes",
     "pool": "Lore"
   },
   "Lore_Tablet-Greenpath_Upper_Hidden": {
@@ -3434,7 +3515,7 @@
   "Lore_Tablet-Fungal_Core": {
     "name": "Lore_Tablet-Fungal_Core",
     "sceneName": "Fungus2_30",
-    "mapArea": "Fungal_Core",
+    "mapArea": "Fungal_Wastes",
     "pool": "Lore"
   },
   "Lore_Tablet-Ancient_Basin": {
@@ -3446,25 +3527,27 @@
   "Lore_Tablet-King's_Pass_Focus": {
     "name": "Lore_Tablet-King's_Pass_Focus",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Lore"
   },
   "Lore_Tablet-King's_Pass_Fury": {
     "name": "Lore_Tablet-King's_Pass_Fury",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Lore"
   },
   "Lore_Tablet-King's_Pass_Exit": {
     "name": "Lore_Tablet-King's_Pass_Exit",
     "sceneName": "Tutorial_01",
-    "mapArea": "Kings_Pass",
+    "mapArea": "Dirtmouth",
     "pool": "Lore"
   },
   "Lore_Tablet-World_Sense": {
     "name": "Lore_Tablet-World_Sense",
+    "objectName": [ "Tut_tablet_top" ],
     "sceneName": "Room_Final_Boss_Atrium",
-    "mapArea": "Black_Egg_Temple",
+    "pinScene": "Crossroads_02",
+    "mapArea": "Forgotten_Crossroads",
     "pool": "Lore"
   },
   "Lore_Tablet-Howling_Cliffs": {
@@ -3476,25 +3559,26 @@
   "Lore_Tablet-Kingdom's_Edge": {
     "name": "Lore_Tablet-Kingdom's_Edge",
     "sceneName": "Deepnest_East_17",
+    "pinScene": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
     "pool": "Lore"
   },
   "Lore_Tablet-Palace_Workshop": {
     "name": "Lore_Tablet-Palace_Workshop",
     "sceneName": "White_Palace_08",
-    "mapArea": "Ancient_Basin",
+    "mapArea": "White_Palace",
     "pool": "Lore"
   },
   "Lore_Tablet-Palace_Throne": {
     "name": "Lore_Tablet-Palace_Throne",
     "sceneName": "White_Palace_09",
-    "mapArea": "Ancient_Basin",
+    "mapArea": "White_Palace",
     "pool": "Lore"
   },
   "Lore_Tablet-Path_of_Pain_Entrance": {
     "name": "Lore_Tablet-Path_of_Pain_Entrance",
     "sceneName": "White_Palace_18",
-    "mapArea": "Ancient_Basin",
+    "mapArea": "White_Palace",
     "pool": "Lore"
   }
 }

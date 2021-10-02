@@ -1,12 +1,7 @@
 ﻿using System;
-using UnityEngine;
-using System.Reflection;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HutongGames.PlayMaker.Actions;
-using Logger = Modding.Logger;
+using System.Reflection;
+using UnityEngine;
 
 namespace MapMod
 {
@@ -16,63 +11,88 @@ namespace MapMod
         public static PinGroup PG => goPG?.GetComponent<PinGroup>();
         public static void Hook()
         {
+            // This is the approximate order in which the callbacks occur
             On.GameMap.Start += GameMap_Start;
+            On.GameManager.SetGameMap += GameManager_SetGameMap;
             On.GameMap.WorldMap += GameMap_WorldMap;
             On.GameMap.SetupMapMarkers += GameMap_SetupMapMarkers;
             On.GameMap.DisableMarkers += GameMap_DisableMarkers;
-
-            //if (callback != null) callbacks.Add(callback);
         }
 
-        public static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
+        private static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
         {
             orig(self);
 
-            Logger.Log(self.name);
-
             RemoveBuggyPins(self);
-            ForceMapUpdate(self);
+        }
+
+        // AdditionalMaps also uses this hook, but because mods are loaded alphabetically VMM should be the second subscriber
+        private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
+        {
+            orig(self, go_gameMap);
+
+            GameMap gameMap = go_gameMap.GetComponent<GameMap>();
+
+            //foreach (Transform areaObj in go_gameMap.transform)
+            //{
+            //    Logger.Log($"-{areaObj.gameObject.name}");
+
+            //    foreach (Transform roomObj in areaObj.transform)
+            //    {
+            //        Logger.Log($"--{roomObj.gameObject.name}");
+            //    }
+            //}
 
             foreach (FieldInfo field in typeof(PlayerData).GetFields().Where(field => field.Name.StartsWith("map") && field.FieldType == typeof(bool)))
             {
                 PlayerData.instance.SetBool(field.Name, true);
             }
 
+            ForceMapUpdate(gameMap);
+
             if (goPG == null)
             {
-                Logger.Log("Adding Pin Group and Populating...");
+                MapMod.Instance.Log("Adding Pin Group and Populating...");
                 goPG = new GameObject($"Map Mod Pin Group");
                 goPG.AddComponent<PinGroup>();
-                goPG.transform.SetParent(self.transform);
+                goPG.transform.SetParent(go_gameMap.GetComponent<GameMap>().transform);
 
-                PG.MakePins(self);
+                PG.MakePins(go_gameMap.GetComponent<GameMap>());
+                MapMod.Instance.Log("Adding Pins done.");
             }
         }
 
-        public static void GameMap_WorldMap(On.GameMap.orig_WorldMap orig, GameMap self)
+        private static void GameMap_WorldMap(On.GameMap.orig_WorldMap orig, GameMap self)
         {
             orig(self);
 
-            PG.UpdatePins("WorldMap");
-
-            Logger.Log(self.name);
+            if (goPG != null)
+            {
+                PG.UpdatePins("WorldMap");
+            }
         }
 
-        public static void GameMap_SetupMapMarkers(On.GameMap.orig_SetupMapMarkers orig, GameMap self)
+        private static void GameMap_SetupMapMarkers(On.GameMap.orig_SetupMapMarkers orig, GameMap self)
         {
             orig(self);
 
-            PG.Show();
+            if (goPG != null)
+            {
+                PG.Show();
+            }
         }
 
-        public static void GameMap_DisableMarkers(On.GameMap.orig_DisableMarkers orig, GameMap self)
+        private static void GameMap_DisableMarkers(On.GameMap.orig_DisableMarkers orig, GameMap self)
         {
-            PG.Hide();
+            if (goPG != null)
+            {
+                PG.Hide();
+            }
 
             orig(self);
         }
 
-        public static void RemoveBuggyPins(GameMap gameMap)
+        private static void RemoveBuggyPins(GameMap gameMap)
         {
             foreach (Transform child in gameMap.transform)
             {
@@ -83,7 +103,7 @@ namespace MapMod
 
                 }
 
-                Logger.Log(child.gameObject.name);
+                //Logger.Log(child.gameObject.name);
             }
 
             GameObject lifebloodPin = gameMap.transform.Find("Deepnest")?.Find("Deepnest_26")?.Find("pin_blue_health")?.gameObject;
@@ -94,7 +114,7 @@ namespace MapMod
             }
         }
 
-        public static void ForceMapUpdate(GameMap gameMap)
+        private static void ForceMapUpdate(GameMap gameMap)
         {
             PlayerData pd = PlayerData.instance;
 
@@ -113,7 +133,7 @@ namespace MapMod
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    MapMod.Instance.LogError(e);
                 }
             }
         }

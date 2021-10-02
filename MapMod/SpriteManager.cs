@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Logger = Modding.Logger;
 
 // Code borrowed from homothety: https://github.com/homothetyhk/RandomizerMod/
 namespace MapMod
@@ -36,7 +35,7 @@ namespace MapMod
                 Sprite sprite = FromStream(a.GetManifestResourceStream(name));
                 _sprites[altName] = sprite;
 
-                Logger.Log(altName);
+                MapMod.Instance.Log(altName);
             }
         }
 
@@ -52,11 +51,16 @@ namespace MapMod
                 "Notch" => "pinNotch",
                 "Ore" => "pinOre",
                 "Geo" => "pinGeo",
+                "Egg" => "pinEgg",
                 "Relic" => "pinRelic",
+                "Root" => "pinRoot",
                 "EssenceBoss" => "pinEssenceBoss",
+                "Grub" => "pinGrub",
                 "Map" => "pinMap",
+                "Stag" => "pinStag",
+                "Cocoon" => "pinCocoon",
                 "Rock" => "pinRock",
-                "Soul" => "pinTotem",
+                "Totem" => "pinTotem",
                 "Lore" => "pinLore",
                 "Shop" => "pinShop",
                 _ => "pinUnknown",
@@ -72,11 +76,8 @@ namespace MapMod
                 return sprite;
             }
 
-            Logger.Log("Failed to load sprite named '" + name + "'");
+            MapMod.Instance.Log("Failed to load sprite named '" + name + "'");
             return null;
-            //return _sprites != null && _sprites.TryGetValue(name, out Sprite sprite)
-            //    ? sprite
-            //    : FromStream(typeof(SpriteManager).Assembly.GetManifestResourceStream(name));
         }
 
         private static Sprite FromStream(Stream s)

@@ -14,6 +14,6 @@ namespace MapMod.Settings
 {
     public class GlobalSettings
     {
-        // I'll add this here later if I need to
+        public float PinScaleSize = 0.84f;
     }
 }

@@ -13,6 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Compatibility.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\GUI\ButtonRect.png" />
     <None Remove="Resources\GUI\ButtonRectEmpty.png" />
     <None Remove="Resources\GUI\ButtonsMenuBG.png" />

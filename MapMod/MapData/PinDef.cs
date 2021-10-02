@@ -9,7 +9,7 @@ namespace MapMod.MapData
     public class PinDef
     {
         public string name;
-        public string objectName;
+        public string[] objectName;
         public string sceneName;
 
         public string pool;
