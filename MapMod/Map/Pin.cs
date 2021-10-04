@@ -2,7 +2,7 @@
 using UnityEngine;
 using MapMod.MapData;
 
-namespace MapMod {
+namespace MapMod.Map {
     internal class Pin : MonoBehaviour
     {
         //private Vector3 _origScale;
@@ -12,11 +12,6 @@ namespace MapMod {
         public void SetPinData(PinDef pd)
         {
             PinData = pd;
-
-            //_origScale = transform.localScale;
-            //transform.localScale = _origScale * 0.7f;
-
-            //SetPinSprite();
         }
 
         //public void SetPinSprite()
@@ -58,11 +53,20 @@ namespace MapMod {
 
         private void HideIfFound()
         {
-            //if (MapMod.MapMod.
+            if (PinData.objectName == null)
+            {
+                return;
+            }
 
-            //{
-            //    gameObject.SetActive(false);
-            //}
+            foreach (string oName in PinData.objectName)
+            {
+                if (!MapMod.LS.ObtainedItems.ContainsKey(oName + PinData.sceneName))
+                {
+                    return;
+                }
+            }
+
+            gameObject.SetActive(false);
         }
     }
 }

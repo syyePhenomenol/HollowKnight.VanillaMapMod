@@ -1,9 +1,4 @@
-﻿using System.Linq;
-using HutongGames.PlayMaker;
-using SFCore.Utils;
-using UnityEngine;
-
-namespace MapMod
+﻿namespace MapMod.Map
 {
     public static class QuickMap
     {
@@ -24,16 +19,16 @@ namespace MapMod
 			On.GameMap.QuickMapRestingGrounds += GameMap_QuickMapRestingGrounds;
 			On.GameMap.QuickMapWaterways += GameMap_QuickMapWaterways;
 
-			On.GameManager.SetGameMap += GameManager_SetGameMap;
+			//On.GameManager.SetGameMap += GameManager_SetGameMap;
 		}
 
 		private static void GameMap_QuickMapAncientBasin(On.GameMap.orig_QuickMapAncientBasin orig, GameMap self)
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
             {
-				WorldMap.PG.UpdatePins("Ancient_Basin");
+				WorldMap.CustomPins.UpdatePins("Ancient_Basin");
 			}
 		}
 
@@ -41,9 +36,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("City_of_Tears");
+				WorldMap.CustomPins.UpdatePins("City_of_Tears");
 			}
 		}
 
@@ -51,9 +46,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Howling_Cliffs");
+				WorldMap.CustomPins.UpdatePins("Howling_Cliffs");
 			}
 		}
 
@@ -61,9 +56,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Forgotten_Crossroads");
+				WorldMap.CustomPins.UpdatePins("Forgotten_Crossroads");
 			}
 		}
 
@@ -71,9 +66,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Crystal_Peak");
+				WorldMap.CustomPins.UpdatePins("Crystal_Peak");
 			}
 		}
 
@@ -81,9 +76,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Deepnest");
+				WorldMap.CustomPins.UpdatePins("Deepnest");
 			}
 		}
 
@@ -91,9 +86,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Dirtmouth");
+				WorldMap.CustomPins.UpdatePins("Dirtmouth");
 			}
 		}
 
@@ -101,9 +96,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Fog_Canyon");
+				WorldMap.CustomPins.UpdatePins("Fog_Canyon");
 			}
 		}
 
@@ -111,9 +106,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Fungal_Wastes");
+				WorldMap.CustomPins.UpdatePins("Fungal_Wastes");
 			}
 		}
 
@@ -121,9 +116,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Greenpath");
+				WorldMap.CustomPins.UpdatePins("Greenpath");
 			}
 		}
 
@@ -131,9 +126,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Kingdoms_Edge");
+				WorldMap.CustomPins.UpdatePins("Kingdoms_Edge");
 			}
 		}
 
@@ -141,9 +136,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Queens_Gardens");
+				WorldMap.CustomPins.UpdatePins("Queens_Gardens");
 			}
 		}
 
@@ -151,9 +146,9 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Resting_Grounds");
+				WorldMap.CustomPins.UpdatePins("Resting_Grounds");
 			}
 		}
 
@@ -161,46 +156,45 @@ namespace MapMod
 		{
 			orig(self);
 
-			if (WorldMap.goPG != null)
+			if (WorldMap.goCustomPins != null)
 			{
-				WorldMap.PG.UpdatePins("Royal_Waterways");
+				WorldMap.CustomPins.UpdatePins("Royal_Waterways");
 			}
 		}
 
-		private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject goGameMap)
-		{
-			orig(self, goGameMap);
+		//private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject goGameMap)
+		//{
+		//	orig(self, goGameMap);
 
-			GameObject goQuickMap = GameObject.Find("Quick Map");
+		//	GameObject goQuickMap = GameObject.Find("Quick Map");
 
-			PlayMakerFSM fsmQuickMap = goQuickMap.LocateMyFSM("Quick Map");
+		//	PlayMakerFSM fsmQuickMap = goQuickMap.LocateMyFSM("Quick Map");
 
-            if (fsmQuickMap.FsmStates.Any(state => state.Name == "WHITE_PALACE"))
-            {
-				MapMod.Instance.Log("AdditionalMaps WHITE_PALACE map detected");
+  //          if (fsmQuickMap.FsmStates.Any(state => state.Name == "WHITE_PALACE"))
+  //          {
+		//		MapMod.Instance.Log("AdditionalMaps WHITE_PALACE map detected");
 
-				FsmUtil.AddAction(fsmQuickMap, "WHITE_PALACE", new QuickMapWhitePalace());
-			} else
-            {
-				MapMod.Instance.Log("AdditionalMaps WHITE_PALACE map NOT detected");
-			}
-        }
+		//		FsmUtil.AddAction(fsmQuickMap, "WHITE_PALACE", new QuickMapWhitePalace());
+		//	} else
+  //          {
+		//		MapMod.Instance.Log("AdditionalMaps WHITE_PALACE map NOT detected");
+		//	}
+  //      }
 
-		private class QuickMapWhitePalace : FsmStateAction
-		{
-			public override void OnEnter()
-			{
-				WorldMap.PG.Show();
+		//private class QuickMapWhitePalace : FsmStateAction
+		//{
+		//	public override void OnEnter()
+		//	{
+		//		WorldMap.PG.Show();
 
-				if (WorldMap.goPG != null)
-				{
-					Log("Update Pins White Palace");
-					WorldMap.PG.UpdatePins("White_Palace");
-				}
+		//		if (WorldMap.goPG != null)
+		//		{
+		//			Log("Update Pins White Palace");
+		//			WorldMap.PG.UpdatePins("White_Palace");
+		//		}
 
-				Finish();
-			}
-
-		}
+		//		Finish();
+		//	}
+		//}
 	}
 }

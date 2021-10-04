@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Xml;
-using Logger = Modding.Logger;
 
 namespace MapMod.MapData
 {
@@ -18,7 +14,7 @@ namespace MapMod.MapData
                 return def;
             }
 
-            Logger.LogWarn($"Unable to find ItemDef for {name}.");
+            MapMod.Instance.LogWarn($"Unable to find ItemDef for {name}.");
             return null;
         }
 

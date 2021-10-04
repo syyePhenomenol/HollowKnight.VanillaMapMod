@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Converters;
 using System.IO;
-using System.Reflection;
+using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 // Code taken from homothety: https://github.com/homothetyhk/RandomizerMod/
 

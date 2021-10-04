@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Reflection;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using MapMod.Map;
+using MapMod.MapData;
+using MapMod.Resources;
 using MapMod.Settings;
+using MapMod.Trackers;
 using Modding;
-using UnityEngine;
-using HutongGames.PlayMaker;
-using HutongGames.PlayMaker.Actions;
-using SFCore.Generics;
-using SFCore.Utils;
-using UnityEngine.SceneManagement;
-using Logger = Modding.Logger;
-using UObject = UnityEngine.Object;
 
 
 namespace MapMod
@@ -52,7 +44,7 @@ namespace MapMod
 
             try
             {
-                MapData.Data.Load();
+                Data.Load();
             }
             catch (Exception e)
             {
@@ -60,8 +52,19 @@ namespace MapMod
                 throw;
             }
 
+            // Handles adding Custom Pins to World Map and Show/Hide behaviour when opening the Map
             WorldMap.Hook();
+
+            // Handles Show/Hide behaviour when Quick Map is opened
             QuickMap.Hook();
+
+            // Modifies existing Vanilla Pins to match Custom Pins behaviour
+            PinsVanilla.Hook();
+
+            // The following updates obtained items based on certain triggers
+            OnGameLoad.Hook();
+            GeoRockTracker.Hook();
+            ShinyItemTracker.Hook();
 
             Log("Initialization complete.");
         }
