@@ -12,6 +12,7 @@ namespace MapMod.Data
         public string nameConvo;
         public string descConvo;
         public string requiredPlayerDataBool;
+        public string pool;
         public int cost;
         public string spriteName;
     }

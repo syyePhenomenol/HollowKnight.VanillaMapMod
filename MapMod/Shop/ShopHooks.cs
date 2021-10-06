@@ -3,6 +3,7 @@ using System.Linq;
 using Modding;
 using MapMod.Data;
 using MapMod.Settings;
+using UnityEngine;
 
 namespace MapMod.Shop
 {
@@ -11,6 +12,7 @@ namespace MapMod.Shop
         public static void Hook()
         {
             ModHooks.LanguageGetHook += GetLanguageString;
+            ModHooks.GetPlayerBoolHook += BoolGetOverride;
             ModHooks.SetPlayerBoolHook += BoolSetOverride;
         }
 
@@ -24,9 +26,29 @@ namespace MapMod.Shop
             return orig;
         }
 
+        public static bool BoolGetOverride(string boolName, bool orig)
+        {
+            if (SettingsUtil.IsMapModSetting(boolName))
+            {
+                return SettingsUtil.GetMapModSettingFromBoolName(boolName);
+            }
+
+            return orig;
+        }
+
         private static bool BoolSetOverride(string boolName, bool orig)
         {
-            SettingsUtil.SetMapModSetting(boolName, orig);
+            if (SettingsUtil.SetMapModSetting(boolName, orig))
+            {
+                foreach (GameObject shopObj in Object.FindObjectsOfType<GameObject>())
+                {
+                    if (shopObj.name != "Shop Menu") continue;
+
+                    ShopMenuStock shop = shopObj.GetComponent<ShopMenuStock>();
+
+                    shop.UpdateStock();
+                }
+            }
 
             return orig;
         }

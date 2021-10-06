@@ -551,24 +551,24 @@
     "offsetX": -0.4,
     "offsetY": -1.0
   },
-  "Godtuner": {
-    "name": "Godtuner",
-    "objectName": [ "Shiny Item Godfinder" ],
-    "sceneName": "GG_Waterways",
-    "mapArea": "Royal_Waterways",
-    "pool": "Key",
-    "offsetX": -0.8,
-    "offsetY": -0.6
-  },
-  "Collector's_Map": {
-    "name": "Collector's_Map",
-    "objectName": [ "Shiny Item CollectorMap" ],
-    "sceneName": "Ruins2_11",
-    "mapArea": "City_of_Tears",
-    "pool": "Map",
-    "offsetX": -0.6,
-    "offsetY": 1.3
-  },
+  //"Godtuner": {
+  //  "name": "Godtuner",
+  //  "objectName": [ "Shiny Item Godfinder" ],
+  //  "sceneName": "GG_Waterways",
+  //  "mapArea": "Royal_Waterways",
+  //  "pool": "Key",
+  //  "offsetX": -0.8,
+  //  "offsetY": -0.6
+  //},
+  //"Collector's_Map": {
+  //  "name": "Collector's_Map",
+  //  "objectName": [ "Shiny Item CollectorMap" ],
+  //  "sceneName": "Ruins2_11",
+  //  "mapArea": "City_of_Tears",
+  //  "pool": "Map",
+  //  "offsetX": -0.6,
+  //  "offsetY": 1.3
+  //},
   "Mask_Shard-Brooding_Mawlek": {
     "name": "Mask_Shard-Brooding_Mawlek",
     "objectName": [ "Heart Piece" ],
@@ -3854,73 +3854,73 @@
     "offsetX": -1.2,
     "offsetY": 0.1
   },
-  "Boss_Geo-Massive_Moss_Charger": {
-    "name": "Boss_Geo-Massive_Moss_Charger",
-    "sceneName": "Fungus1_29",
-    "mapArea": "Greenpath",
-    "pool": "Geo",
-    "offsetX": 0.2,
-    "offsetY": -0.2
-  },
-  "Boss_Geo-Gorgeous_Husk": {
-    "name": "Boss_Geo-Gorgeous_Husk",
-    "sceneName": "Ruins_House_02",
-    "pinScene": "Ruins2_04",
-    "mapArea": "City_of_Tears",
-    "pool": "Geo",
-    "offsetX": -0.1,
-    "offsetY": 0.0
-  },
-  "Boss_Geo-Sanctum_Soul_Warrior": {
-    "name": "Boss_Geo-Sanctum_Soul_Warrior",
-    "sceneName": "Ruins1_23",
-    "mapArea": "City_of_Tears",
-    "pool": "Geo",
-    "offsetX": -0.2,
-    "offsetY": 0.6
-  },
-  "Boss_Geo-Elegant_Soul_Warrior": {
-    "name": "Boss_Geo-Elegant_Soul_Warrior",
-    "sceneName": "Ruins1_31b",
-    "mapArea": "City_of_Tears",
-    "pool": "Geo",
-    "offsetX": -0.1,
-    "offsetY": -0.2,
-    "offsetZ": 0.001
-  },
-  "Boss_Geo-Crystal_Guardian": {
-    "name": "Boss_Geo-Crystal_Guardian",
-    "sceneName": "Mines_18",
-    "mapArea": "Crystal_Peak",
-    "pool": "Geo",
-    "offsetX": -0.1,
-    "offsetY": -0.1
-  },
-  "Boss_Geo-Enraged_Guardian": {
-    "name": "Boss_Geo-Enraged_Guardian",
-    "sceneName": "Mines_32",
-    "mapArea": "Crystal_Peak",
-    "pool": "Geo",
-    "offsetX": 0.0,
-    "offsetY": 0.0,
-    "offsetZ": 0.001
-  },
-  "Boss_Geo-Gruz_Mother": {
-    "name": "Boss_Geo-Gruz_Mother",
-    "sceneName": "Crossroads_04",
-    "mapArea": "Forgotten_Crossroads",
-    "pool": "Geo",
-    "offsetX": 0.3,
-    "offsetY": 0.2
-  },
-  "Boss_Geo-Vengefly_King": {
-    "name": "Boss_Geo-Vengefly_King",
-    "sceneName": "Fungus1_20_v02",
-    "mapArea": "Greenpath",
-    "pool": "Geo",
-    "offsetX": -1.0,
-    "offsetY": 0.0
-  },
+  //"Boss_Geo-Massive_Moss_Charger": {
+  //  "name": "Boss_Geo-Massive_Moss_Charger",
+  //  "sceneName": "Fungus1_29",
+  //  "mapArea": "Greenpath",
+  //  "pool": "Geo",
+  //  "offsetX": 0.2,
+  //  "offsetY": -0.2
+  //},
+  //"Boss_Geo-Gorgeous_Husk": {
+  //  "name": "Boss_Geo-Gorgeous_Husk",
+  //  "sceneName": "Ruins_House_02",
+  //  "pinScene": "Ruins2_04",
+  //  "mapArea": "City_of_Tears",
+  //  "pool": "Geo",
+  //  "offsetX": -0.1,
+  //  "offsetY": 0.0
+  //},
+  //"Boss_Geo-Sanctum_Soul_Warrior": {
+  //  "name": "Boss_Geo-Sanctum_Soul_Warrior",
+  //  "sceneName": "Ruins1_23",
+  //  "mapArea": "City_of_Tears",
+  //  "pool": "Geo",
+  //  "offsetX": -0.2,
+  //  "offsetY": 0.6
+  //},
+  //"Boss_Geo-Elegant_Soul_Warrior": {
+  //  "name": "Boss_Geo-Elegant_Soul_Warrior",
+  //  "sceneName": "Ruins1_31b",
+  //  "mapArea": "City_of_Tears",
+  //  "pool": "Geo",
+  //  "offsetX": -0.1,
+  //  "offsetY": -0.2,
+  //  "offsetZ": 0.001
+  //},
+  //"Boss_Geo-Crystal_Guardian": {
+  //  "name": "Boss_Geo-Crystal_Guardian",
+  //  "sceneName": "Mines_18",
+  //  "mapArea": "Crystal_Peak",
+  //  "pool": "Geo",
+  //  "offsetX": -0.1,
+  //  "offsetY": -0.1
+  //},
+  //"Boss_Geo-Enraged_Guardian": {
+  //  "name": "Boss_Geo-Enraged_Guardian",
+  //  "sceneName": "Mines_32",
+  //  "mapArea": "Crystal_Peak",
+  //  "pool": "Geo",
+  //  "offsetX": 0.0,
+  //  "offsetY": 0.0,
+  //  "offsetZ": 0.001
+  //},
+  //"Boss_Geo-Gruz_Mother": {
+  //  "name": "Boss_Geo-Gruz_Mother",
+  //  "sceneName": "Crossroads_04",
+  //  "mapArea": "Forgotten_Crossroads",
+  //  "pool": "Geo",
+  //  "offsetX": 0.3,
+  //  "offsetY": 0.2
+  //},
+  //"Boss_Geo-Vengefly_King": {
+  //  "name": "Boss_Geo-Vengefly_King",
+  //  "sceneName": "Fungus1_20_v02",
+  //  "mapArea": "Greenpath",
+  //  "pool": "Geo",
+  //  "offsetX": -1.0,
+  //  "offsetY": 0.0
+  //},
   "Soul_Totem-Basin": {
     "name": "Soul_Totem-Basin",
     "sceneName": "Abyss_04",

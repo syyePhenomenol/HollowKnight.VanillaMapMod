@@ -47,17 +47,30 @@ namespace MapMod.Map {
             {
                 if (mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
                 {
-                    ////Hide pin if the corresponding map item hasn't been picked up
-                    //if (SettingsUtil.GetPlayerDataMapSetting(PinData.mapArea))
-                    //{
-                    //    gameObject.SetActive(true);
-                    //}
-                    //else
-                    //{
-                    //    gameObject.SetActive(false);
-                    //}
+                    // Have these pins always on
+                    if (PinData.pool == "Skill")
+                    {
+                        gameObject.SetActive(true);
+                        return;
+                    }
 
-                    // Show pin if the corresponding area has been mapped
+                    if (PinData.pool == "Charm"
+                        || PinData.pool == "Key"
+                        || PinData.pool == "Notch"
+                        || PinData.pool == "Mask"
+                        || PinData.pool == "Vessel"
+                        || PinData.pool == "Ore"
+                        || PinData.pool == "EssenceBoss")
+                    {
+                        //Show these pins if the corresponding map item has been picked up
+                        if (SettingsUtil.GetPlayerDataMapSetting(PinData.mapArea))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
+                    }
+
+                    // For the rest, show pin if the corresponding area has been mapped
                     if (PinData.pinScene != null)
                     {
                         if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
@@ -82,7 +95,7 @@ namespace MapMod.Map {
 
         private void HideIfNotBought()
         {
-            if (!SettingsUtil.GetMapModSetting(PinData.pool))
+            if (!SettingsUtil.GetMapModSettingFromPool(PinData.pool))
             {
                 gameObject.SetActive(false);
             }

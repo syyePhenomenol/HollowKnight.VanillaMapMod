@@ -1,10 +1,128 @@
 {
+  "Skill Pin": {
+    "playerDataBoolName": "HasSkillPin",
+    "nameConvo": "MAP_MOD_SKILL_PIN_NAME",
+    "descConvo": "MAP_MOD_SKILL_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Skill",
+    "cost": 200,
+    "spriteName": "pinSkill"
+  },
+  "Charm Pin": {
+    "playerDataBoolName": "HasCharmPin",
+    "nameConvo": "MAP_MOD_CHARM_PIN_NAME",
+    "descConvo": "MAP_MOD_CHARM_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Charm",
+    "cost": 200,
+    "spriteName": "pinCharm"
+  },
+  "Key Pin": {
+    "playerDataBoolName": "HasKeyPin",
+    "nameConvo": "MAP_MOD_KEY_PIN_NAME",
+    "descConvo": "MAP_MOD_KEY_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Key",
+    "cost": 100,
+    "spriteName": "pinKey"
+  },
+  "Mask Shard Pin": {
+    "playerDataBoolName": "HasMaskPin",
+    "nameConvo": "MAP_MOD_MASK_PIN_NAME",
+    "descConvo": "MAP_MOD_MASK_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Mask",
+    "cost": 200,
+    "spriteName": "pinMask"
+  },
+  "Vessel Fragment Pin": {
+    "playerDataBoolName": "HasVesselPin",
+    "nameConvo": "MAP_MOD_VESSEL_PIN_NAME",
+    "descConvo": "MAP_MOD_VESSEL_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Vessel",
+    "cost": 200,
+    "spriteName": "pinVessel"
+  },
+  "Charm Notch Pin": {
+    "playerDataBoolName": "HasNotchPin",
+    "nameConvo": "MAP_MOD_NOTCH_PIN_NAME",
+    "descConvo": "MAP_MOD_NOTCH_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Notch",
+    "cost": 200,
+    "spriteName": "pinNotch"
+  },
+  "Pale Ore Pin": {
+    "playerDataBoolName": "HasOrePin",
+    "nameConvo": "MAP_MOD_ORE_PIN_NAME",
+    "descConvo": "MAP_MOD_ORE_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Ore",
+    "cost": 200,
+    "spriteName": "pinOre"
+  },
+  "Rancid Egg Pin": {
+    "playerDataBoolName": "HasEggPin",
+    "nameConvo": "MAP_MOD_EGG_PIN_NAME",
+    "descConvo": "MAP_MOD_EGG_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Egg",
+    "cost": 50,
+    "spriteName": "pinEgg"
+  },
+  "Relic Pin": {
+    "playerDataBoolName": "HasRelicPin",
+    "nameConvo": "MAP_MOD_RELIC_PIN_NAME",
+    "descConvo": "MAP_MOD_RELIC_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Relic",
+    "cost": 100,
+    "spriteName": "pinRelic"
+  },
+  "Essence Boss Pin": {
+    "playerDataBoolName": "HasEssenceBossPin",
+    "nameConvo": "MAP_MOD_ESSENCEBOSS_PIN_NAME",
+    "descConvo": "MAP_MOD_ESSENCEBOSS_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "EssenceBoss",
+    "cost": 50,
+    "spriteName": "pinEssenceBoss"
+  },
+  "Geo Chest Pin": {
+    "playerDataBoolName": "HasGeoPin",
+    "nameConvo": "MAP_MOD_GEO_PIN_NAME",
+    "descConvo": "MAP_MOD_GEO_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Geo",
+    "cost": 100,
+    "spriteName": "pinGeo"
+  },
   "Geo Rock Pin": {
     "playerDataBoolName": "HasRockPin",
     "nameConvo": "MAP_MOD_ROCK_PIN_NAME",
     "descConvo": "MAP_MOD_ROCK_PIN_DESC",
     "requiredPlayerDataBool": "hasQuill",
+    "pool": "Rock",
     "cost": 100,
     "spriteName": "pinRock"
+  },
+  "Soul Totem Pin": {
+    "playerDataBoolName": "HasTotemPin",
+    "nameConvo": "MAP_MOD_TOTEM_PIN_NAME",
+    "descConvo": "MAP_MOD_TOTEM_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Totem",
+    "cost": 50,
+    "spriteName": "pinTotem"
+  },
+  "Lore Tablet Pin": {
+    "playerDataBoolName": "HasLorePin",
+    "nameConvo": "MAP_MOD_LORE_PIN_NAME",
+    "descConvo": "MAP_MOD_LORE_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "pool": "Lore",
+    "cost": 50,
+    "spriteName": "pinLore"
   }
 }

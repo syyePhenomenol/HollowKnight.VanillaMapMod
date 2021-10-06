@@ -59,7 +59,6 @@ namespace MapMod.Map
                 "Rock" => "pinRock",
                 "Totem" => "pinTotem",
                 "Lore" => "pinLore",
-                "Shop" => "pinShop",
                 _ => "pinUnknown",
             };
 
@@ -79,11 +78,11 @@ namespace MapMod.Map
 
         private static Sprite FromStream(Stream s)
         {
-            Texture2D tex = new(1, 1, TextureFormat.RGBA32, true);
+            Texture2D tex = new(1, 1);
             byte[] buffer = ToArray(s);
             _ = tex.LoadImage(buffer, markNonReadable: true);
             tex.filterMode = FilterMode.Bilinear;
-            return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+            return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 55);
         }
 
         private static byte[] ToArray(Stream s)

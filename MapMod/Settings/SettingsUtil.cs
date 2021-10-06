@@ -9,6 +9,7 @@ namespace MapMod.Settings
 {
     public static class SettingsUtil
     {
+		// TODO: Clean up this mess
 		public static bool GetPlayerDataMapSetting(string mapArea)
 		{
 			return mapArea switch
@@ -23,7 +24,7 @@ namespace MapMod.Settings
 				"Fog_Canyon" => PlayerData.instance.mapFogCanyon,
 				"Fungal_Wastes" => PlayerData.instance.mapFungalWastes,
 				"Greenpath" => PlayerData.instance.mapGreenpath,
-				"Kingdom's_Edge" => PlayerData.instance.mapOutskirts,
+				"Kingdoms_Edge" => PlayerData.instance.mapOutskirts,
 				"Queens_Gardens" => PlayerData.instance.mapRoyalGardens,
 				"Resting_Grounds" => PlayerData.instance.mapRestingGrounds,
 				"Royal_Waterways" => PlayerData.instance.mapWaterways,
@@ -31,7 +32,7 @@ namespace MapMod.Settings
 			};
 		}
 
-		public static bool GetMapModSetting(string pool)
+		public static bool GetMapModSettingFromPool(string pool)
 		{
 			return pool switch
 			{
@@ -46,6 +47,7 @@ namespace MapMod.Settings
 				"Relic" => MapMod.LS.HasRelicPin,
 				"EssenceBoss" => MapMod.LS.HasEssenceBossPin,
 				"Cocoon" => MapMod.LS.HasCocoonPin,
+				"Geo" => MapMod.LS.HasGeoPin,
 				"Rock" => MapMod.LS.HasRockPin,
 				"Totem" => MapMod.LS.HasTotemPin,
 				"Lore" => MapMod.LS.HasLorePin,
@@ -53,54 +55,106 @@ namespace MapMod.Settings
 			};
 		}
 
-		public static void SetMapModSetting(string boolName, bool value)
+		public static bool GetMapModSettingFromBoolName(string pool)
+		{
+			return pool switch
+			{
+				"HasSkillPin" => MapMod.LS.HasSkillPin,
+				"HasCharmPin" => MapMod.LS.HasCharmPin,
+				"HasKeyPin" => MapMod.LS.HasKeyPin,
+				"HasMaskPin" => MapMod.LS.HasMaskPin,
+				"HasVesselPin" => MapMod.LS.HasVesselPin,
+				"HasNotchPin" => MapMod.LS.HasNotchPin,
+				"HasOrePin" => MapMod.LS.HasOrePin,
+				"HasEggPin" => MapMod.LS.HasEggPin,
+				"HasRelicPin" => MapMod.LS.HasRelicPin,
+				"HasEssenceBossPin" => MapMod.LS.HasEssenceBossPin,
+				"HasPinCocoon" => MapMod.LS.HasCocoonPin,
+				"HasGeoPin" => MapMod.LS.HasGeoPin,
+				"HasRockPin" => MapMod.LS.HasRockPin,
+				"HasTotemPin" => MapMod.LS.HasTotemPin,
+				"HasLorePin" => MapMod.LS.HasLorePin,
+				_ => true,
+			};
+		}
+
+		public static bool IsMapModSetting(string boolName)
+		{
+			switch (boolName) {
+				case "HasSkillPin":
+				case "HasCharmPin":
+				case "HasKeyPin":
+				case "HasMaskPin":
+				case "HasVesselPin":
+				case "HasNotchPin":
+				case "HasOrePin":
+				case "HasEggPin":
+				case "HasRelicPin":
+				case "HasEssenceBossPin":
+				case "HasCocoonPin":
+				case "HasGeoPin":
+				case "HasRockPin":
+				case "HasTotemPin":
+				case "HasLorePin":
+					return true;
+				default:
+					return false;
+			}
+		}
+
+		public static bool SetMapModSetting(string boolName, bool value)
 		{
 			switch (boolName)
             {
 				case "HasSkillPin":
 					MapMod.LS.HasSkillPin = value;
-					break;
+					return true;
 				case "HasCharmPin":
 					MapMod.LS.HasCharmPin = value;
-					break;
+					return true;
 				case "HasKeyPin":
 					MapMod.LS.HasKeyPin = value;
-					break;
+					return true;
 				case "HasMaskPin":
 					MapMod.LS.HasMaskPin = value;
-					break;
+					return true;
 				case "HasVesselPin":
 					MapMod.LS.HasVesselPin = value;
-					break;
+					return true;
 				case "HasNotchPin":
 					MapMod.LS.HasNotchPin = value;
-					break;
+					return true;
 				case "HasOrePin":
 					MapMod.LS.HasOrePin = value;
-					break;
+					return true;
 				case "HasEggPin":
 					MapMod.LS.HasEggPin = value;
-					break;
+					return true;
 				case "HasRelicPin":
 					MapMod.LS.HasRelicPin = value;
-					break;
+					return true;
 				case "HasEssenceBossPin":
 					MapMod.LS.HasEssenceBossPin = value;
-					break;
-				case "HasCocoonPin":
+					return true;
+				// Overwrite vanilla behaviour of cocoon pins
+				case "hasPinCocoon":
 					MapMod.LS.HasCocoonPin = value;
-					break;
+					PlayerData.instance.hasPinCocoon = value;
+					return true;
+				case "HasGeoPin":
+					MapMod.LS.HasGeoPin = value;
+					return true;
 				case "HasRockPin":
 					MapMod.LS.HasRockPin = value;
-					break;
+					return true;
 				case "HasTotemPin":
 					MapMod.LS.HasTotemPin = value;
-					break;
+					return true;
 				case "HasLorePin":
 					MapMod.LS.HasLorePin = value;
-					break;
+					return true;
 				default:
-					break;
+					return false;
 			}
 		}
 	}

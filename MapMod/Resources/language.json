@@ -1,6 +1,32 @@
 {
   "UI": {
+    "MAP_MOD_SKILL_PIN_NAME": "Skill Pin",
+    "MAP_MOD_SKILL_PIN_DESC": "I've heard that there are certain items that could really help you on your adventure if you're stuck.\\n\\nOn top of that, there are those you might come across who are willing to teach you what they know.",
+    "MAP_MOD_CHARM_PIN_NAME": "Charm Pin",
+    "MAP_MOD_CHARM_PIN_DESC": "Hallownest is dangerous to explore, but if you are lucky enough or look in the right places, you''ll find many trinkets that can augment your abilities.",
+    "MAP_MOD_KEY_PIN_NAME": "Key Pin",
+    "MAP_MOD_KEY_PIN_DESC": "There are a handful of locked doors in Hallownest, and it seems like their matching keys have been either misplaced or left behind by beings of the past. These locations are likely to be of interest.",
+    "MAP_MOD_MASK_PIN_NAME": "Mask Shard Pin",
+    "MAP_MOD_MASK_PIN_DESC": "If you collect enough of those Mask Shards, you'll be granted some more longevity - or so I've been told. Anyhow, these pins will show you where to look.",
+    "MAP_MOD_VESSEL_PIN_NAME": "Vessel Fragment Pin",
+    "MAP_MOD_VESSEL_PIN_DESC": "Rumor has it that collecting Vessel Fragments will help with casting spells. This seems like something straight out of a fairy tale, but who am I to judge? These pins are for sale!",
+    "MAP_MOD_NOTCH_PIN_NAME": "Charm Notch Pin",
+    "MAP_MOD_NOTCH_PIN_DESC": "You'll be able to equip more Charms with more Charm Notches. That's a good thing, right? Let me show you where to look for them.",
+    "MAP_MOD_ORE_PIN_NAME": "Pale Ore Pin",
+    "MAP_MOD_ORE_PIN_DESC": "To a nailsmith, those shiny rocks are a dream to acquire. To me, it's just another set of pins I can sell to you.\\n\\nIndifference aside, I think you'll actually want to seek these out, considering you're a nail user yourself.",
+    "MAP_MOD_EGG_PIN_NAME": "Rancid Egg Pin",
+    "MAP_MOD_EGG_PIN_DESC": "Those egg sacs are absolutely disgusting - but maybe their eggs are useful in some way.",
+    "MAP_MOD_RELIC_PIN_NAME": "Relic Pin",
+    "MAP_MOD_RELIC_PIN_DESC": "Let this be a secret between you and me, but I happen to know where some of those pricey artifacts are. Just don't tell Lemm!",
+    "MAP_MOD_ESSENCEBOSS_PIN_NAME": "Essence Pin",
+    "MAP_MOD_ESSENCEBOSS_PIN_DESC": "Cornifer told me that he felt strangely lethargic when he was near these locations. He insists it wasn't placebo!\\n\\nMake whatever you will of his claims, you are free to go and see for yourself if there's anything special.",
+    "MAP_MOD_GEO_PIN_NAME": "Geo Chest Pin",
+    "MAP_MOD_GEO_PIN_DESC": "Someone had to put their hard-earned Geo into those chests, but they don't seem to be around anymore. So, why not grab it yourself? Maybe you can pay me in return for telling you where the chests are.",
     "MAP_MOD_ROCK_PIN_NAME": "Geo Rock Pin",
-    "MAP_MOD_ROCK_PIN_DESC": "Are you having trouble finding some of those hard-to-reach Geo Rocks on your travels? Don't worry - with these pins you won't leave any stone unturned.\\n\\nCorny said he came across a fair number of deposits. I wish he would bring some of that Geo back to me!"
+    "MAP_MOD_ROCK_PIN_DESC": "Are you having trouble finding some of those hard-to-reach Geo Rocks on your travels? Don't worry - with these pins you won't leave any stone unturned.\\n\\nCorny said he came across a fair number of deposits. I wish he would bring some of that Geo back to me!",
+    "MAP_MOD_TOTEM_PIN_NAME": "Soul Totem Pin",
+    "MAP_MOD_TOTEM_PIN_DESC": "These odd looking statues have an aura about them. I can't quite put my finger on it but it seems like they are brimming with energy. I'll be happy to mark their locations on your map.",
+    "MAP_MOD_LORE_PIN_NAME": "Lore Tablet Pin",
+    "MAP_MOD_LORE_PIN_DESC": "Much of Hallownest is dark and despondent, but here and there, someone has left behind a story to tell."
   }
 }

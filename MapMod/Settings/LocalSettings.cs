@@ -8,6 +8,25 @@ namespace MapMod.Settings
     {
         public Dictionary<string, bool> ObtainedItems = new();
 
+        public void GetAllPins()
+        {
+            HasSkillPin = true;
+            HasCharmPin = true;
+            HasKeyPin = true;
+            HasMaskPin = true;
+            HasVesselPin = true;
+            HasNotchPin = true;
+            HasOrePin = true;
+            HasEggPin = true;
+            HasRelicPin = true;
+            HasEssenceBossPin = true;
+            HasCocoonPin = true;
+            HasGeoPin = true;
+            HasRockPin = true;
+            HasTotemPin = true;
+            HasLorePin = true;
+        }
+
         public bool HasSkillPin = false;
         public bool HasCharmPin = false;
         public bool HasKeyPin = false;
@@ -19,6 +38,7 @@ namespace MapMod.Settings
         public bool HasRelicPin = false;
         public bool HasEssenceBossPin = false;
         public bool HasCocoonPin = false;
+        public bool HasGeoPin = false;
         public bool HasRockPin = false;
         public bool HasTotemPin = false;
         public bool HasLorePin = false;

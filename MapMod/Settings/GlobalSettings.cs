@@ -2,6 +2,6 @@
 {
     public class GlobalSettings
     {
-        public float PinScaleSize = 0.55f;
+        public float PinScaleSize = 0.36f;
     }
 }

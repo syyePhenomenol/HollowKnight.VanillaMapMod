@@ -39,7 +39,8 @@ namespace MapMod.Map
             GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
             foreach (GameObject go in allObjects)
             {
-                if (go.name == "Map Markers")
+                if (go.name == "Map Markers"
+                    || go.name == "Map Key")
                 {
                     go.transform.parent = null;
                     go.gameObject.SetActive(false);

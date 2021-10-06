@@ -23,26 +23,31 @@ namespace MapMod.Map
         {
             orig(self);
 
-            //PlayerData.instance.hasMap = true;
+            PlayerData.instance.hasMap = true;
 
-            //foreach (FieldInfo field in typeof(PlayerData).GetFields().Where(field => field.Name.StartsWith("map") && field.FieldType == typeof(bool)))
-            //{
-            //    PlayerData.instance.SetBool(field.Name, true);
-            //}
+            foreach (FieldInfo field in typeof(PlayerData).GetFields().Where(field => field.Name.StartsWith("map") && field.FieldType == typeof(bool)))
+            {
+                PlayerData.instance.SetBool(field.Name, true);
+            }
 
-            //PlayerData.instance.hasPin = true;
-            //PlayerData.instance.hasPinBench = true;
-            //PlayerData.instance.hasPinBlackEgg = true;
-            //PlayerData.instance.hasPinCocoon = true;
-            //PlayerData.instance.hasPinDreamPlant = true;
-            //PlayerData.instance.hasPinGhost = true;
-            //PlayerData.instance.hasPinGrub = true;
-            //PlayerData.instance.hasPinGuardian = true;
-            //PlayerData.instance.hasPinShop = true;
-            //PlayerData.instance.hasPinSpa = true;
-            //PlayerData.instance.hasPinStag = true;
-            //PlayerData.instance.hasPinTram = true;
-            //PlayerData.instance.collectorDefeated = true;
+            PlayerData.instance.CheckAllMaps();
+            PlayerData.instance.UpdateGameMap();
+
+            PlayerData.instance.hasPin = true;
+            PlayerData.instance.hasPinBench = true;
+            PlayerData.instance.hasPinBlackEgg = true;
+            PlayerData.instance.hasPinCocoon = true;
+            PlayerData.instance.hasPinDreamPlant = true;
+            PlayerData.instance.hasPinGhost = true;
+            PlayerData.instance.hasPinGrub = true;
+            PlayerData.instance.hasPinGuardian = true;
+            PlayerData.instance.hasPinShop = true;
+            PlayerData.instance.hasPinSpa = true;
+            PlayerData.instance.hasPinStag = true;
+            PlayerData.instance.hasPinTram = true;
+            PlayerData.instance.collectorDefeated = true;
+
+            MapMod.LS.GetAllPins();
 
             //ForceMapUpdate(self);
 
@@ -131,8 +136,6 @@ namespace MapMod.Map
             {
                 CustomPins.Show();
             }
-
-            //GetChildRecursive(self.gameObject);
         }
 
         private static void GameMap_DisableMarkers(On.GameMap.orig_DisableMarkers orig, GameMap self)
