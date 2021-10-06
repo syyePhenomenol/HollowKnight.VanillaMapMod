@@ -38,17 +38,7 @@ namespace MapMod.Shop
 
         private static bool BoolSetOverride(string boolName, bool orig)
         {
-            if (SettingsUtil.SetMapModSetting(boolName, orig))
-            {
-                foreach (GameObject shopObj in Object.FindObjectsOfType<GameObject>())
-                {
-                    if (shopObj.name != "Shop Menu") continue;
-
-                    ShopMenuStock shop = shopObj.GetComponent<ShopMenuStock>();
-
-                    shop.UpdateStock();
-                }
-            }
+            SettingsUtil.SetMapModSetting(boolName, orig);
 
             return orig;
         }

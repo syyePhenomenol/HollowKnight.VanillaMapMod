@@ -102,59 +102,59 @@ namespace MapMod.Settings
 			}
 		}
 
-		public static bool SetMapModSetting(string boolName, bool value)
+		public static void SetMapModSetting(string boolName, bool value)
 		{
 			switch (boolName)
             {
 				case "HasSkillPin":
 					MapMod.LS.HasSkillPin = value;
-					return true;
+					break;
 				case "HasCharmPin":
 					MapMod.LS.HasCharmPin = value;
-					return true;
+					break;
 				case "HasKeyPin":
 					MapMod.LS.HasKeyPin = value;
-					return true;
+					break;
 				case "HasMaskPin":
 					MapMod.LS.HasMaskPin = value;
-					return true;
+					break;
 				case "HasVesselPin":
 					MapMod.LS.HasVesselPin = value;
-					return true;
+					break;
 				case "HasNotchPin":
 					MapMod.LS.HasNotchPin = value;
-					return true;
+					break;
 				case "HasOrePin":
 					MapMod.LS.HasOrePin = value;
-					return true;
+					break;
 				case "HasEggPin":
 					MapMod.LS.HasEggPin = value;
-					return true;
+					break;
 				case "HasRelicPin":
 					MapMod.LS.HasRelicPin = value;
-					return true;
+					break;
 				case "HasEssenceBossPin":
 					MapMod.LS.HasEssenceBossPin = value;
-					return true;
+					break;
 				// Overwrite vanilla behaviour of cocoon pins
 				case "hasPinCocoon":
 					MapMod.LS.HasCocoonPin = value;
 					PlayerData.instance.hasPinCocoon = value;
-					return true;
+					break;
 				case "HasGeoPin":
 					MapMod.LS.HasGeoPin = value;
-					return true;
+					break;
 				case "HasRockPin":
 					MapMod.LS.HasRockPin = value;
-					return true;
+					break;
 				case "HasTotemPin":
 					MapMod.LS.HasTotemPin = value;
-					return true;
+					break;
 				case "HasLorePin":
 					MapMod.LS.HasLorePin = value;
-					return true;
+					break;
 				default:
-					return false;
+					break;
 			}
 		}
 	}
