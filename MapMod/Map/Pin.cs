@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
-using MapMod.MapData;
+using MapMod.Data;
+using MapMod.Settings;
 
 namespace MapMod.Map {
     internal class Pin : MonoBehaviour
@@ -29,6 +30,7 @@ namespace MapMod.Map {
                 }
 
                 ShowIfCorrectMap(mapAreaName);
+                HideIfNotBought();
                 HideIfFound();
 
             }
@@ -41,11 +43,46 @@ namespace MapMod.Map {
         // This method hides or shows the pin depending on which map was opened
         private void ShowIfCorrectMap(string mapAreaName)
         {
-            if (mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
+            if (PlayerData.instance.hasQuill)
             {
-                gameObject.SetActive(true);
+                if (mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
+                {
+                    ////Hide pin if the corresponding map item hasn't been picked up
+                    //if (SettingsUtil.GetPlayerDataMapSetting(PinData.mapArea))
+                    //{
+                    //    gameObject.SetActive(true);
+                    //}
+                    //else
+                    //{
+                    //    gameObject.SetActive(false);
+                    //}
+
+                    // Show pin if the corresponding area has been mapped
+                    if (PinData.pinScene != null)
+                    {
+                        if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
+                    }
+                }
             }
-            else
+
+            gameObject.SetActive(false);
+        }
+
+        private void HideIfNotBought()
+        {
+            if (!SettingsUtil.GetMapModSetting(PinData.pool))
             {
                 gameObject.SetActive(false);
             }

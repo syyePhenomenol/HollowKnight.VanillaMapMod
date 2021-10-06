@@ -26,140 +26,196 @@
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
             {
 				WorldMap.CustomPins.UpdatePins("Ancient_Basin");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapCity(On.GameMap.orig_QuickMapCity orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("City_of_Tears");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapCliffs(On.GameMap.orig_QuickMapCliffs orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Howling_Cliffs");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapCrossroads(On.GameMap.orig_QuickMapCrossroads orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Forgotten_Crossroads");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapCrystalPeak(On.GameMap.orig_QuickMapCrystalPeak orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Crystal_Peak");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapDeepnest(On.GameMap.orig_QuickMapDeepnest orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Deepnest");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapDirtmouth(On.GameMap.orig_QuickMapDirtmouth orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Dirtmouth");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapFogCanyon(On.GameMap.orig_QuickMapFogCanyon orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Fog_Canyon");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapFungalWastes(On.GameMap.orig_QuickMapFungalWastes orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Fungal_Wastes");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapGreenpath(On.GameMap.orig_QuickMapGreenpath orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Greenpath");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapKingdomsEdge(On.GameMap.orig_QuickMapKingdomsEdge orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Kingdoms_Edge");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapQueensGardens(On.GameMap.orig_QuickMapQueensGardens orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Queens_Gardens");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapRestingGrounds(On.GameMap.orig_QuickMapRestingGrounds orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Resting_Grounds");
 			}
+
+			self.SetupMap();
 		}
 
 		private static void GameMap_QuickMapWaterways(On.GameMap.orig_QuickMapWaterways orig, GameMap self)
 		{
 			orig(self);
 
+			PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
 			if (WorldMap.goCustomPins != null)
 			{
 				WorldMap.CustomPins.UpdatePins("Royal_Waterways");
 			}
+
+			self.SetupMap();
 		}
 
 		//private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject goGameMap)

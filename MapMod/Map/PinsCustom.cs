@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MapMod.Data;
 using UnityEngine;
-using MapMod.MapData;
-using MapMod.Resources;
 
 namespace MapMod.Map
 {
@@ -17,7 +16,7 @@ namespace MapMod.Map
         {
             DestroyPins();
 
-            foreach (PinDef pinData in Data.GetPinArray())
+            foreach (PinDef pinData in Data.DataLoader.GetPinArray())
             {
                 try
                 {

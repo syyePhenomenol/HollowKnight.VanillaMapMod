@@ -21,6 +21,7 @@
     <None Remove="Resources\GUI\ButtonRectEmpty.png" />
     <None Remove="Resources\GUI\ButtonsMenuBG.png" />
     <None Remove="Resources\GUI\DropdownBG.png" />
+    <None Remove="Resources\language.json" />
     <None Remove="Resources\pins.json" />
     <None Remove="Resources\Pins\pinBackerGhost.png" />
     <None Remove="Resources\Pins\pinBench.png" />
@@ -71,6 +72,7 @@
     <None Remove="Resources\Pins\pinUnknown_Totem.png" />
     <None Remove="Resources\Pins\pinUnknown_TotemInv.png" />
     <None Remove="Resources\Pins\pinVessel.png" />
+    <None Remove="Resources\shop.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +80,7 @@
     <EmbeddedResource Include="Resources\GUI\ButtonRectEmpty.png" />
     <EmbeddedResource Include="Resources\GUI\ButtonsMenuBG.png" />
     <EmbeddedResource Include="Resources\GUI\DropdownBG.png" />
+    <EmbeddedResource Include="Resources\language.json" />
     <EmbeddedResource Include="Resources\pins.json" />
     <EmbeddedResource Include="Resources\Pins\pinBackerGhost.png" />
     <EmbeddedResource Include="Resources\Pins\pinBench.png" />
@@ -128,6 +131,7 @@
     <EmbeddedResource Include="Resources\Pins\pinUnknown_Totem.png" />
     <EmbeddedResource Include="Resources\Pins\pinUnknown_TotemInv.png" />
     <EmbeddedResource Include="Resources\Pins\pinVessel.png" />
+    <EmbeddedResource Include="Resources\shop.json" />
   </ItemGroup>
 
   <ItemGroup>

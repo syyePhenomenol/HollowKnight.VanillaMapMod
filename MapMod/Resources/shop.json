@@ -1,0 +1,10 @@
+{
+  "Geo Rock Pin": {
+    "playerDataBoolName": "HasRockPin",
+    "nameConvo": "MAP_MOD_ROCK_PIN_NAME",
+    "descConvo": "MAP_MOD_ROCK_PIN_DESC",
+    "requiredPlayerDataBool": "hasQuill",
+    "cost": 100,
+    "spriteName": "pinRock"
+  }
+}

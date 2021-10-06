@@ -13,7 +13,7 @@ namespace MapMod.Map
         public static void Hook()
         {
             On.GameMap.Start += GameMap_Start;
-            On.GameManager.SetGameMap += GameManager_SetGameMap;
+            //On.GameManager.SetGameMap += GameManager_SetGameMap;
             On.GameMap.WorldMap += GameMap_WorldMap;
             On.GameMap.SetupMapMarkers += GameMap_SetupMapMarkers;
             On.GameMap.DisableMarkers += GameMap_DisableMarkers;
@@ -23,28 +23,28 @@ namespace MapMod.Map
         {
             orig(self);
 
-            PlayerData.instance.hasMap = true;
+            //PlayerData.instance.hasMap = true;
 
-            foreach (FieldInfo field in typeof(PlayerData).GetFields().Where(field => field.Name.StartsWith("map") && field.FieldType == typeof(bool)))
-            {
-                PlayerData.instance.SetBool(field.Name, true);
-            }
+            //foreach (FieldInfo field in typeof(PlayerData).GetFields().Where(field => field.Name.StartsWith("map") && field.FieldType == typeof(bool)))
+            //{
+            //    PlayerData.instance.SetBool(field.Name, true);
+            //}
 
-            PlayerData.instance.hasPin = true;
-            PlayerData.instance.hasPinBench = true;
-            PlayerData.instance.hasPinBlackEgg = true;
-            PlayerData.instance.hasPinCocoon = true;
-            PlayerData.instance.hasPinDreamPlant = true;
-            PlayerData.instance.hasPinGhost = true;
-            PlayerData.instance.hasPinGrub = true;
-            PlayerData.instance.hasPinGuardian = true;
-            PlayerData.instance.hasPinShop = true;
-            PlayerData.instance.hasPinSpa = true;
-            PlayerData.instance.hasPinStag = true;
-            PlayerData.instance.hasPinTram = true;
-            PlayerData.instance.collectorDefeated = true;
+            //PlayerData.instance.hasPin = true;
+            //PlayerData.instance.hasPinBench = true;
+            //PlayerData.instance.hasPinBlackEgg = true;
+            //PlayerData.instance.hasPinCocoon = true;
+            //PlayerData.instance.hasPinDreamPlant = true;
+            //PlayerData.instance.hasPinGhost = true;
+            //PlayerData.instance.hasPinGrub = true;
+            //PlayerData.instance.hasPinGuardian = true;
+            //PlayerData.instance.hasPinShop = true;
+            //PlayerData.instance.hasPinSpa = true;
+            //PlayerData.instance.hasPinStag = true;
+            //PlayerData.instance.hasPinTram = true;
+            //PlayerData.instance.collectorDefeated = true;
 
-            ForceMapUpdate(self);
+            //ForceMapUpdate(self);
 
             if (goCustomPins == null)
             {
@@ -62,10 +62,10 @@ namespace MapMod.Map
             }
         }
 
-        private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
-        {
-            orig(self, go_gameMap);
-        }
+        //private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
+        //{
+        //    orig(self, go_gameMap);
+        //}
 
         //private static void GetChildRecursive(GameObject obj)
         //{
@@ -109,10 +109,14 @@ namespace MapMod.Map
         {
             orig(self);
 
+            PinsVanilla.SetBenchSpritesRecursive(self.gameObject);
+
             if (goCustomPins != null)
             {
                 CustomPins.UpdatePins("WorldMap");
             }
+
+            self.SetupMap();
         }
 
         private static void GameMap_SetupMapMarkers(On.GameMap.orig_SetupMapMarkers orig, GameMap self)
@@ -143,28 +147,28 @@ namespace MapMod.Map
 
 
 
-        private static void ForceMapUpdate(GameMap gameMap)
-        {
-            PlayerData pd = PlayerData.instance;
+        //private static void ForceMapUpdate(GameMap gameMap)
+        //{
+        //    PlayerData pd = PlayerData.instance;
 
-            if (!pd.hasQuill)
-            {
-                try
-                {
-                    // Give Quill, because it's required to...
-                    pd.SetBool(nameof(pd.hasQuill), true);
+        //    if (!pd.hasQuill)
+        //    {
+        //        try
+        //        {
+        //            // Give Quill, because it's required to...
+        //            pd.SetBool(nameof(pd.hasQuill), true);
 
-                    // ... uncover the full map
-                    gameMap.SetupMap();
+        //            // ... uncover the full map
+        //            gameMap.SetupMap();
 
-                    // Remove Quill
-                    pd.SetBool(nameof(pd.hasQuill), false);
-                }
-                catch (Exception e)
-                {
-                    MapMod.Instance.LogError(e);
-                }
-            }
-        }
+        //            // Remove Quill
+        //            pd.SetBool(nameof(pd.hasQuill), false);
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            MapMod.Instance.LogError(e);
+        //        }
+        //    }
+        //}
     }
 }

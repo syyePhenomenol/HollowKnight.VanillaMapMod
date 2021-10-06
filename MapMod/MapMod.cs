@@ -1,9 +1,9 @@
 ﻿using System;
 using MapMod.Map;
-using MapMod.MapData;
-using MapMod.Resources;
+using MapMod.Data;
 using MapMod.Settings;
 using MapMod.Trackers;
+using MapMod.Shop;
 using Modding;
 
 
@@ -44,7 +44,7 @@ namespace MapMod
 
             try
             {
-                Data.Load();
+                DataLoader.Load();
             }
             catch (Exception e)
             {
@@ -61,10 +61,17 @@ namespace MapMod
             // Modifies existing Vanilla Pins to match Custom Pins behaviour
             PinsVanilla.Hook();
 
+            // Updates scenes mapped per scene change
+            SceneChanges.Hook();
+
             // The following updates obtained items based on certain triggers
             OnGameLoad.Hook();
             GeoRockTracker.Hook();
-            ShinyItemTracker.Hook();
+            ItemTracker.Hook();
+
+            // Adds new Pins to the Shop
+            ShopHooks.Hook();
+            ShopChanger.Hook();
 
             Log("Initialization complete.");
         }

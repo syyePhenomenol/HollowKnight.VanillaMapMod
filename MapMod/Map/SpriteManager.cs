@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEngine;
 
 // Code borrowed from homothety: https://github.com/homothetyhk/RandomizerMod/
-namespace MapMod.Resources
+namespace MapMod.Map
 {
     internal static class SpriteManager
     {
