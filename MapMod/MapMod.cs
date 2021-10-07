@@ -1,11 +1,10 @@
 ﻿using System;
-using MapMod.Map;
 using MapMod.Data;
+using MapMod.Map;
 using MapMod.Settings;
-using MapMod.Trackers;
 using MapMod.Shop;
+using MapMod.Trackers;
 using Modding;
-
 
 namespace MapMod
 {
@@ -14,16 +13,21 @@ namespace MapMod
         public static MapMod Instance;
 
         private readonly string _version = "Vanilla PRERELEASE";
+
         public override string GetVersion() => _version;
 
         public override int LoadPriority() => 10;
 
         public static LocalSettings LS { get; set; } = new LocalSettings();
+
         public void OnLoadLocal(LocalSettings s) => LS = s;
+
         public LocalSettings OnSaveLocal() => LS;
 
         public static GlobalSettings GS { get; set; } = new GlobalSettings();
+
         public void OnLoadGlobal(GlobalSettings s) => GS = s;
+
         public GlobalSettings OnSaveGlobal() => GS;
 
         public override void Initialize()
@@ -65,7 +69,6 @@ namespace MapMod
             SceneChanges.Hook();
 
             // The following updates obtained items based on certain triggers
-            OnGameLoad.Hook();
             GeoRockTracker.Hook();
             ItemTracker.Hook();
 

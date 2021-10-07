@@ -2,7 +2,6 @@
 using MapMod.Data;
 using MapMod.Map;
 using MapMod.Settings;
-using Modding;
 using UnityEngine;
 
 // This code was heavily borrowed from RandomizerMod 3.0
@@ -45,7 +44,6 @@ namespace MapMod.Shop
 
                 foreach (GameObject item in shop.stock)
                 {// (specialType: 0 = lantern, elegant key, quill; 1 = mask, 2 = charm, 3 = vessel, 4-7 = relics, 8 = notch, 9 = map, 10 = simple key, 11 = egg, 12-14 = repair fragile, 15 = salubra blessing, 16 = map pin, 17 = map marker)
-
                     // Remove Map Markers from the game
                     if (item.GetComponent<ShopItemStats>().specialType != 17)
                     {
@@ -69,7 +67,6 @@ namespace MapMod.Shop
                     stats.playerDataBoolName = shopItem.playerDataBoolName;
                     stats.nameConvo = shopItem.nameConvo;
                     stats.descConvo = shopItem.descConvo;
-                    stats.requiredPlayerDataBool = shopItem.requiredPlayerDataBool;
                     stats.dungDiscount = false;
                     stats.cost = shopItem.cost;
 

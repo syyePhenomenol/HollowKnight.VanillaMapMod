@@ -80,27 +80,26 @@ namespace MapMod.Settings
 
 		public static bool IsMapModSetting(string boolName)
 		{
-			switch (boolName) {
-				case "HasSkillPin":
-				case "HasCharmPin":
-				case "HasKeyPin":
-				case "HasMaskPin":
-				case "HasVesselPin":
-				case "HasNotchPin":
-				case "HasOrePin":
-				case "HasEggPin":
-				case "HasRelicPin":
-				case "HasEssenceBossPin":
-				case "HasCocoonPin":
-				case "HasGeoPin":
-				case "HasRockPin":
-				case "HasTotemPin":
-				case "HasLorePin":
-					return true;
-				default:
-					return false;
-			}
-		}
+            return boolName switch
+            {
+                "HasSkillPin"
+				or "HasCharmPin"
+				or "HasKeyPin"
+				or "HasMaskPin"
+				or "HasVesselPin"
+				or "HasNotchPin"
+				or "HasOrePin"
+				or "HasEggPin"
+				or "HasRelicPin"
+				or "HasEssenceBossPin"
+				or "HasCocoonPin"
+				or "HasGeoPin"
+				or "HasRockPin"
+				or "HasTotemPin"
+				or "HasLorePin" => true,
+                _ => false,
+            };
+        }
 
 		public static void SetMapModSetting(string boolName, bool value)
 		{

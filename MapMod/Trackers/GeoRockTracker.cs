@@ -1,19 +1,17 @@
-﻿using System;
-using HutongGames.PlayMaker;
-using SFCore.Utils;
+﻿using SFCore.Utils;
 
 namespace MapMod.Trackers
 {
     public static class GeoRockTracker
     {
-		public static void Hook()
-		{
-			On.GeoRock.OnEnable += GeoRock_OnEnable;
-		}
-
-		private static void GeoRock_OnEnable(On.GeoRock.orig_OnEnable orig, GeoRock self)
+        public static void Hook()
         {
-			orig(self);
+            On.GeoRock.OnEnable += GeoRock_OnEnable;
+        }
+
+        private static void GeoRock_OnEnable(On.GeoRock.orig_OnEnable orig, GeoRock self)
+        {
+            orig(self);
 
             PlayMakerFSM geoRockFSM = self.gameObject.LocateMyFSM("Geo Rock");
 

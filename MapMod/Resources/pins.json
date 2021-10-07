@@ -77,7 +77,7 @@
   //},
   "Mothwing_Cloak": {
     "name": "Mothwing_Cloak",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Mothwing_Cloak" ],
     "sceneName": "Fungus1_04",
     "mapArea": "Greenpath",
     "pool": "Skill",
@@ -86,7 +86,7 @@
   },
   "Mantis_Claw": {
     "name": "Mantis_Claw",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Mantis_Claw" ],
     "sceneName": "Fungus2_14",
     "mapArea": "Fungal_Wastes",
     "pool": "Skill",
@@ -96,7 +96,7 @@
   },
   "Crystal_Heart": {
     "name": "Crystal_Heart",
-    "objectName": [ "Super Dash Get" ],
+    "objectName": [ "Crystal_Heart" ],
     "sceneName": "Mines_31",
     "mapArea": "Crystal_Peak",
     "pool": "Skill",
@@ -105,7 +105,7 @@
   },
   "Monarch_Wings": {
     "name": "Monarch_Wings",
-    "objectName": [ "Shiny Item DJ" ],
+    "objectName": [ "Monarch_Wings" ],
     "sceneName": "Abyss_21",
     "mapArea": "Ancient_Basin",
     "pool": "Skill",
@@ -114,7 +114,7 @@
   },
   "Shade_Cloak": {
     "name": "Shade_Cloak",
-    "objectName": [ "Dish Plat" ],
+    "objectName": [ "Shade_Cloak" ],
     "sceneName": "Abyss_10",
     "mapArea": "Ancient_Basin",
     "pool": "Skill",
@@ -123,7 +123,7 @@
   },
   "Isma's_Tear": {
     "name": "Isma's_Tear",
-    "objectName": [ "Shiny Item Acid" ],
+    "objectName": [ "Isma's_Tear" ],
     "sceneName": "Waterways_13",
     "mapArea": "Royal_Waterways",
     "pool": "Skill",
@@ -132,7 +132,7 @@
   },
   "Dream_Nail": {
     "name": "Dream_Nail",
-    "objectName": [ "Moth NPC" ],
+    "objectName": [ "Dream_Nail" ],
     "sceneName": "Dream_Nailcollection",
     "pinScene": "RestingGrounds_04",
     "mapArea": "Resting_Grounds",
@@ -142,7 +142,7 @@
   },
   "Vengeful_Spirit": {
     "name": "Vengeful_Spirit",
-    "objectName": [ "Shaman Meeting" ],
+    "objectName": [ "Vengeful_Spirit" ],
     "sceneName": "Crossroads_ShamanTemple",
     "pinScene": "Crossroads_06",
     "mapArea": "Forgotten_Crossroads",
@@ -152,7 +152,7 @@
   },
   "Shade_Soul": {
     "name": "Shade_Soul",
-    "objectName": [ "Ruins Shaman" ],
+    "objectName": [ "Shade_Soul" ],
     "sceneName": "Ruins1_31b",
     "mapArea": "City_of_Tears",
     "pool": "Skill",
@@ -161,7 +161,7 @@
   },
   "Desolate_Dive": {
     "name": "Desolate_Dive",
-    "objectName": [ "Quake Item" ],
+    "objectName": [ "Desolate_Dive" ],
     "sceneName": "Ruins1_24",
     "mapArea": "City_of_Tears",
     "pool": "Skill",
@@ -170,7 +170,7 @@
   },
   "Descending_Dark": {
     "name": "Descending_Dark",
-    "objectName": [ "Crystal Shaman" ],
+    "objectName": [ "Descending_Dark" ],
     "sceneName": "Mines_35",
     "pinScene": "Mines_28",
     "mapArea": "Crystal_Peak",
@@ -180,7 +180,7 @@
   },
   "Howling_Wraiths": {
     "name": "Howling_Wraiths",
-    "objectName": [ "Scream Item" ],
+    "objectName": [ "Howling_Wraiths" ],
     "sceneName": "Room_Fungus_Shaman",
     "pinScene": "Fungus3_44",
     "mapArea": "Fog_Canyon",
@@ -190,7 +190,7 @@
   },
   "Abyss_Shriek": {
     "name": "Abyss_Shriek",
-    "objectName": [ "Scream 2 Get" ],
+    "objectName": [ "Abyss_Shriek" ],
     "sceneName": "Abyss_12",
     "mapArea": "Ancient_Basin",
     "pool": "Skill",
@@ -199,7 +199,7 @@
   },
   "Cyclone_Slash": {
     "name": "Cyclone_Slash",
-    "objectName": [ "NM Mato NPC" ],
+    "objectName": [ "Cyclone_Slash" ],
     "sceneName": "Room_nailmaster",
     "pinScene": "Cliffs_02",
     "mapArea": "Howling_Cliffs",
@@ -209,7 +209,7 @@
   },
   "Dash_Slash": {
     "name": "Dash_Slash",
-    "objectName": [ "NM Oro NPC" ],
+    "objectName": [ "Dash_Slash" ],
     "sceneName": "Room_nailmaster_03",
     "pinScene": "Deepnest_East_16",
     "mapArea": "Kingdoms_Edge",
@@ -219,7 +219,7 @@
   },
   "Great_Slash": {
     "name": "Great_Slash",
-    "objectName": [ "NM Sheo NPC" ],
+    "objectName": [ "Great_Slash" ],
     "sceneName": "Room_nailmaster_02",
     "pinScene": "Fungus1_15",
     "mapArea": "Greenpath",

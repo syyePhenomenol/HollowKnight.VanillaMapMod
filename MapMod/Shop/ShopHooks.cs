@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Modding;
-using MapMod.Data;
+﻿using MapMod.Data;
 using MapMod.Settings;
-using UnityEngine;
+using Modding;
 
 namespace MapMod.Shop
 {

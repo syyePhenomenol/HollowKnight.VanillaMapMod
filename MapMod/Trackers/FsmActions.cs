@@ -1,7 +1,5 @@
-﻿using System;
+﻿using HutongGames.PlayMaker;
 using UnityEngine;
-using HutongGames.PlayMaker;
-using SFCore.Utils;
 
 namespace MapMod.Trackers
 {
@@ -9,6 +7,7 @@ namespace MapMod.Trackers
     {
         private readonly GameObject _go;
         private readonly GeoRockData _grd;
+
         public TrackGeoRock(GameObject go)
         {
             _go = go;
@@ -46,16 +45,17 @@ namespace MapMod.Trackers
                 MapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
             }
 
-            //MapMod.Instance.Log(_go.transform.localPosition);
             MapMod.Instance.Log(_grd.id);
             MapMod.Instance.Log(_grd.sceneName);
 
             Finish();
         }
     }
+
     public class TrackItem : FsmStateAction
     {
         private readonly string _oName;
+
         public TrackItem(string oName)
         {
             _oName = oName;

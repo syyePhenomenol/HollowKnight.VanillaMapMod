@@ -135,8 +135,6 @@ namespace MapMod.Map
             gameObject.SetActive(false);
         }
 
-
-
         //public void RefreshPins(GameMap gameMap)
         //{
         //    foreach (KeyValuePair<string, PinDef> entry in ResourceLoader.PinDataDictionary)

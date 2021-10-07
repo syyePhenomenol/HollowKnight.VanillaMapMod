@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Modding;
 
 namespace MapMod.Data
 {
@@ -9,8 +8,6 @@ namespace MapMod.Data
         private static Dictionary<string, PinDef> _pins;
         private static Dictionary<string, ShopDef> _shop;
         private static Dictionary<string, Dictionary<string, string>> _languageStrings;
-
-        
 
         public static PinDef GetPinDef(string name)
         {
@@ -62,18 +59,17 @@ namespace MapMod.Data
             _shop = JsonUtil.Deserialize<Dictionary<string, ShopDef>>("MapMod.Resources.shop.json");
             _languageStrings = JsonUtil.Deserialize<Dictionary<string, Dictionary<string, string>>>("MapMod.Resources.language.json");
 
-            foreach (KeyValuePair<string, Dictionary<string, string>> entry in _languageStrings)
-            {
-                MapMod.Instance.Log(entry.Key);
-                foreach (KeyValuePair<string, string> entry2 in entry.Value)
-                {
-                    MapMod.Instance.Log("- " + entry2.Key);
-                    MapMod.Instance.Log("- " + entry2.Value);
-                }
-            }
+            //foreach (KeyValuePair<string, Dictionary<string, string>> entry in _languageStrings)
+            //{
+            //    MapMod.Instance.Log(entry.Key);
+            //    foreach (KeyValuePair<string, string> entry2 in entry.Value)
+            //    {
+            //        MapMod.Instance.Log("- " + entry2.Key);
+            //        MapMod.Instance.Log("- " + entry2.Value);
+            //    }
+            //}
 
             return;
         }
-
     }
 }
