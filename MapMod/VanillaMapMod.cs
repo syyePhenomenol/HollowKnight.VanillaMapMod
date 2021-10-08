@@ -1,18 +1,18 @@
 ﻿using System;
-using MapMod.Data;
-using MapMod.Map;
-using MapMod.Settings;
-using MapMod.Shop;
-using MapMod.Trackers;
+using VanillaMapMod.Data;
+using VanillaMapMod.Map;
+using VanillaMapMod.Settings;
+using VanillaMapMod.Shop;
+using VanillaMapMod.Trackers;
 using Modding;
 
-namespace MapMod
+namespace VanillaMapMod
 {
-    public class MapMod : Mod, ILocalSettings<LocalSettings>, IGlobalSettings<GlobalSettings>
+    public class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalSettings<GlobalSettings>
     {
-        public static MapMod Instance;
+        public static VanillaMapMod Instance;
 
-        private readonly string _version = "Vanilla PRERELEASE";
+        private readonly string _version = "PRERELEASE";
 
         public override string GetVersion() => _version;
 
@@ -38,7 +38,7 @@ namespace MapMod
 
             try
             {
-                SpriteManager.LoadEmbeddedPngs("MapMod.Resources.Pins");
+                SpriteManager.LoadEmbeddedPngs("VanillaMapMod.Resources.Pins");
             }
             catch (Exception e)
             {

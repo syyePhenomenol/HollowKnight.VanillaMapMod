@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MapMod.Data
+namespace VanillaMapMod.Data
 {
     public static class DataLoader
     {
@@ -16,7 +16,7 @@ namespace MapMod.Data
                 return def;
             }
 
-            MapMod.Instance.LogWarn($"Unable to find ItemDef for {name}.");
+            VanillaMapMod.Instance.LogWarn($"Unable to find ItemDef for {name}.");
             return null;
         }
 
@@ -55,9 +55,9 @@ namespace MapMod.Data
 
         public static void Load()
         {
-            _pins = JsonUtil.Deserialize<Dictionary<string, PinDef>>("MapMod.Resources.pins.json");
-            _shop = JsonUtil.Deserialize<Dictionary<string, ShopDef>>("MapMod.Resources.shop.json");
-            _languageStrings = JsonUtil.Deserialize<Dictionary<string, Dictionary<string, string>>>("MapMod.Resources.language.json");
+            _pins = JsonUtil.Deserialize<Dictionary<string, PinDef>>("VanillaMapMod.Resources.pins.json");
+            _shop = JsonUtil.Deserialize<Dictionary<string, ShopDef>>("VanillaMapMod.Resources.shop.json");
+            _languageStrings = JsonUtil.Deserialize<Dictionary<string, Dictionary<string, string>>>("VanillaMapMod.Resources.language.json");
 
             //foreach (KeyValuePair<string, Dictionary<string, string>> entry in _languageStrings)
             //{

@@ -235,7 +235,7 @@
   //},
   "Baldur_Shell": {
     "name": "Baldur_Shell",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Baldur_Shell" ],
     "sceneName": "Fungus1_28",
     "mapArea": "Howling_Cliffs",
     "pool": "Charm",
@@ -244,7 +244,7 @@
   },
   "Fury_of_the_Fallen": {
     "name": "Fury_of_the_Fallen",
-    "objectName": [ "Shiny Item (1)" ],
+    "objectName": [ "Fury_of_the_Fallen" ],
     "sceneName": "Tutorial_01",
     "mapArea": "Dirtmouth",
     "pool": "Charm",
@@ -254,7 +254,7 @@
   },
   "Lifeblood_Core": {
     "name": "Lifeblood_Core",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Lifeblood_Core" ],
     "sceneName": "Abyss_08",
     "mapArea": "Ancient_Basin",
     "pool": "Charm",
@@ -263,7 +263,7 @@
   },
   "Defender's_Crest": {
     "name": "Defender's_Crest",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Defender's_Crest" ],
     "sceneName": "Waterways_05",
     "mapArea": "Royal_Waterways",
     "pool": "Charm",
@@ -272,7 +272,7 @@
   },
   "Flukenest": {
     "name": "Flukenest",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Flukenest" ],
     "sceneName": "Waterways_12",
     "mapArea": "Royal_Waterways",
     "pool": "Charm",
@@ -281,7 +281,7 @@
   },
   "Thorns_of_Agony": {
     "name": "Thorns_of_Agony",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Thorns_of_Agony" ],
     "sceneName": "Fungus1_14",
     "mapArea": "Greenpath",
     "pool": "Charm",
@@ -290,7 +290,7 @@
   },
   "Mark_of_Pride": {
     "name": "Mark_of_Pride",
-    "objectName": [ "Shiny Item Charm" ],
+    "objectName": [ "Mark_of_Pride" ],
     "sceneName": "Fungus2_31",
     "mapArea": "Fungal_Wastes",
     "pool": "Charm",
@@ -299,7 +299,7 @@
   },
   "Sharp_Shadow": {
     "name": "Sharp_Shadow",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Sharp_Shadow" ],
     "sceneName": "Deepnest_44",
     "mapArea": "Deepnest",
     "pool": "Charm",
@@ -308,7 +308,7 @@
   },
   "Spore_Shroom": {
     "name": "Spore_Shroom",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Spore_Shroom" ],
     "sceneName": "Fungus2_20",
     "mapArea": "Fungal_Wastes",
     "pool": "Charm",
@@ -317,7 +317,7 @@
   },
   "Soul_Catcher": {
     "name": "Soul_Catcher",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Soul_Catcher" ],
     "sceneName": "Crossroads_ShamanTemple",
     "pinScene": "Crossroads_06",
     "mapArea": "Forgotten_Crossroads",
@@ -328,7 +328,7 @@
   },
   "Soul_Eater": {
     "name": "Soul_Eater",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Soul_Eater" ],
     "sceneName": "RestingGrounds_10",
     "mapArea": "Resting_Grounds",
     "pool": "Charm",
@@ -337,7 +337,7 @@
   },
   "Glowing_Womb": {
     "name": "Glowing_Womb",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Glowing_Womb" ],
     "sceneName": "Crossroads_22",
     "mapArea": "Forgotten_Crossroads",
     "pool": "Charm",
@@ -346,7 +346,7 @@
   },
   "Nailmaster's_Glory": {
     "name": "Nailmaster's_Glory",
-    "objectName": [ "Sly Basement NPC" ],
+    "objectName": [ "Nailmaster's_Glory" ],
     "sceneName": "Room_Sly_Storeroom",
     "pinScene": "Town",
     "mapArea": "Dirtmouth",
@@ -356,7 +356,7 @@
   },
   "Joni's_Blessing": {
     "name": "Joni's_Blessing",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Joni's_Blessing" ],
     "sceneName": "Cliffs_05",
     "mapArea": "Howling_Cliffs",
     "pool": "Charm",
@@ -365,7 +365,7 @@
   },
   "Shape_of_Unn": {
     "name": "Shape_of_Unn",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Shape_of_Unn" ],
     "sceneName": "Fungus1_Slug",
     "mapArea": "Greenpath",
     "pool": "Charm",
@@ -374,7 +374,7 @@
   },
   "Hiveblood": {
     "name": "Hiveblood",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Hiveblood" ],
     "sceneName": "Hive_05",
     "mapArea": "Kingdoms_Edge",
     "pool": "Charm",
@@ -383,7 +383,7 @@
   },
   "Dashmaster": {
     "name": "Dashmaster",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Dashmaster" ],
     "sceneName": "Fungus2_23",
     "mapArea": "Fungal_Wastes",
     "pool": "Charm",
@@ -392,7 +392,7 @@
   },
   "Quick_Slash": {
     "name": "Quick_Slash",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Quick_Slash" ],
     "sceneName": "Deepnest_East_14b",
     "mapArea": "Kingdoms_Edge",
     "pool": "Charm",
@@ -401,7 +401,7 @@
   },
   "Spell_Twister": {
     "name": "Spell_Twister",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Spell_Twister" ],
     "sceneName": "Ruins1_30",
     "mapArea": "City_of_Tears",
     "pool": "Charm",
@@ -410,7 +410,7 @@
   },
   "Deep_Focus": {
     "name": "Deep_Focus",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Deep_Focus" ],
     "sceneName": "Mines_36",
     "mapArea": "Crystal_Peak",
     "pool": "Charm",
@@ -419,7 +419,7 @@
   },
   "Queen_Fragment": {
     "name": "Queen_Fragment",
-    "objectName": [ "Shiny Item RoyalCharm" ],
+    "objectName": [ "Queen_Fragment" ],
     "sceneName": "Room_Queen",
     "pinScene": "Fungus3_48",
     "mapArea": "Queens_Gardens",
@@ -429,7 +429,7 @@
   },
   "King_Fragment": {
     "name": "King_Fragment",
-    "objectName": [ "Shiny Item RoyalCharm" ],
+    "objectName": [ "King_Fragment" ],
     "sceneName": "White_Palace_09",
     "pinScene": "Abyss_05",
     "mapArea": "Ancient_Basin",
@@ -438,9 +438,9 @@
     "offsetY": -0.2,
     "offsetZ": 0.005
   },
-  // Not sure about objectName
   "Void_Heart": {
     "name": "Void_Heart",
+    "objectName": [ "Void_Heart" ],
     "sceneName": "Abyss_15",
     "pinScene": "Abyss_06_Core",
     "mapArea": "Ancient_Basin",
@@ -450,7 +450,7 @@
   },
   "Dreamshield": {
     "name": "Dreamshield",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Dreamshield" ],
     "sceneName": "RestingGrounds_17",
     "mapArea": "Resting_Grounds",
     "pool": "Charm",
@@ -459,7 +459,7 @@
   },
   "Weaversong": {
     "name": "Weaversong",
-    "objectName": [ "Shiny Item (1)" ],
+    "objectName": [ "Weaversong" ],
     "sceneName": "Deepnest_45_v02",
     "pinScene": "Deepnest_39",
     "mapArea": "Deepnest",
@@ -467,9 +467,9 @@
     "offsetX": 2.5,
     "offsetY": 0.4
   },
-  // objectName?
   "Grimmchild": {
     "name": "Grimmchild",
+    "objectName": [ "Grimmchild" ],
     "sceneName": "Grimm_Main_Tent",
     "pinScene": "Town",
     "mapArea": "Dirtmouth",
@@ -480,7 +480,7 @@
   },
   "City_Crest": {
     "name": "City_Crest",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "City_Crest" ],
     "sceneName": "Crossroads_10",
     "mapArea": "Forgotten_Crossroads",
     "pool": "Key",
@@ -489,7 +489,7 @@
   },
   "Tram_Pass": {
     "name": "Tram_Pass",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Tram_Pass" ],
     "sceneName": "Deepnest_26b",
     "mapArea": "Deepnest",
     "pool": "Key",
@@ -514,9 +514,9 @@
     "offsetX": 0.8,
     "offsetY": 0.5
   },
-  // objectName??
   "Simple_Key-Lurker": {
     "name": "Simple_Key-Lurker",
+    "objectName": [ "Simple_Key-Lurker" ],
     "sceneName": "GG_Lurker",
     "mapArea": "Kingdoms_Edge",
     "pool": "Key",
@@ -525,7 +525,7 @@
   },
   "Shopkeeper's_Key": {
     "name": "Shopkeeper's_Key",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Shopkeeper's_Key" ],
     "sceneName": "Mines_11",
     "mapArea": "Crystal_Peak",
     "pool": "Key",
@@ -534,7 +534,7 @@
   },
   "Love_Key": {
     "name": "Love_Key",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "Love_Key" ],
     "sceneName": "Fungus3_39",
     "mapArea": "Queens_Gardens",
     "pool": "Key",
@@ -543,7 +543,7 @@
   },
   "King's_Brand": {
     "name": "King's_Brand",
-    "objectName": [ "Shiny Item Stand" ],
+    "objectName": [ "King's_Brand" ],
     "sceneName": "Room_Wyrm",
     "pinScene": "Deepnest_East_Hornet",
     "mapArea": "Kingdoms_Edge",

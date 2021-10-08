@@ -1,6 +1,6 @@
 ﻿using SFCore.Utils;
 
-namespace MapMod.Trackers
+namespace VanillaMapMod.Trackers
 {
     public static class GeoRockTracker
     {

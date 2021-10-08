@@ -1,4 +1,4 @@
-﻿namespace MapMod.Data
+﻿namespace VanillaMapMod.Data
 {
     public class PinDef
     {

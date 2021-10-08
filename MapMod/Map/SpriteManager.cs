@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEngine;
 
 // Code borrowed from homothety: https://github.com/homothetyhk/RandomizerMod/
-namespace MapMod.Map
+namespace VanillaMapMod.Map
 {
     internal static class SpriteManager
     {
@@ -32,7 +32,7 @@ namespace MapMod.Map
                 Sprite sprite = FromStream(a.GetManifestResourceStream(name));
                 _sprites[altName] = sprite;
 
-                MapMod.Instance.Log(altName);
+                VanillaMapMod.Instance.Log(altName);
             }
         }
 
@@ -72,7 +72,7 @@ namespace MapMod.Map
                 return sprite;
             }
 
-            MapMod.Instance.Log("Failed to load sprite named '" + name + "'");
+            VanillaMapMod.Instance.Log("Failed to load sprite named '" + name + "'");
             return null;
         }
 

@@ -4,12 +4,13 @@
     <ProjectGuid>{8B1AB441-2E8A-49EB-87BD-8E1C9729AD00}</ProjectGuid>
     <TargetFramework>net472</TargetFramework>
     <AssemblyTitle>MapMod</AssemblyTitle>
-    <RootNamespace>MapMod</RootNamespace>
+    <RootNamespace>VanillaMapMod</RootNamespace>
     <AssemblyVersion>4.0.0</AssemblyVersion>
     <OutputPath>bin\Debug\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
+    <AssemblyName>VanillaMapMod</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

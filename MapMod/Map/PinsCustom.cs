@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MapMod.Data;
+using VanillaMapMod.Data;
 using UnityEngine;
 
-namespace MapMod.Map
+namespace VanillaMapMod.Map
 {
     public class PinsCustom : MonoBehaviour
     {
@@ -24,7 +24,7 @@ namespace MapMod.Map
                 }
                 catch (Exception e)
                 {
-                    MapMod.Instance.LogError(e);
+                    VanillaMapMod.Instance.LogError(e);
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace MapMod.Map
         {
             if (_pins.Any(pin => pin.PinData.name == pinData.name))
             {
-                MapMod.Instance.LogWarn($"Duplicate pin found for group: {pinData.name} - Skipped.");
+                VanillaMapMod.Instance.LogWarn($"Duplicate pin found for group: {pinData.name} - Skipped.");
                 return;
             }
 
@@ -84,7 +84,7 @@ namespace MapMod.Map
             goPin.transform.localPosition = new Vector3(vec.x, vec.y, vec.z - 0.01f);
 
             // Scale the pin
-            goPin.transform.localScale = 1.46f * new Vector2(MapMod.GS.PinScaleSize, MapMod.GS.PinScaleSize);
+            goPin.transform.localScale = 1.46f * new Vector2(VanillaMapMod.GS.PinScaleSize, VanillaMapMod.GS.PinScaleSize);
         }
 
         private void AssignGroup(GameObject newPin, PinDef pinData)
@@ -116,7 +116,7 @@ namespace MapMod.Map
                 }
             }
 
-            MapMod.Instance.LogWarn($"{roomName} is not a valid room name!");
+            VanillaMapMod.Instance.LogWarn($"{roomName} is not a valid room name!");
             return new Vector3(0, 0, 0);
         }
 

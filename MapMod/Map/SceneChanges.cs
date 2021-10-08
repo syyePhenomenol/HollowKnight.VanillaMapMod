@@ -1,6 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 
-namespace MapMod.Map
+namespace VanillaMapMod.Map
 {
     public static class SceneChanges
     {

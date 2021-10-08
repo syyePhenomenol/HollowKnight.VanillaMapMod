@@ -1,7 +1,7 @@
 ﻿using HutongGames.PlayMaker;
 using UnityEngine;
 
-namespace MapMod.Trackers
+namespace VanillaMapMod.Trackers
 {
     public class TrackGeoRock : FsmStateAction
     {
@@ -21,11 +21,11 @@ namespace MapMod.Trackers
                 // Resolve duplicate ids by position
                 if (_go.transform.localPosition.y > 50.0f)
                 {
-                    MapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
+                    VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
                 }
                 else
                 {
-                    MapMod.LS.ObtainedItems["Geo Rock 1 (1)" + _grd.sceneName] = true;
+                    VanillaMapMod.LS.ObtainedItems["Geo Rock 1 (1)" + _grd.sceneName] = true;
                 }
             }
             else if (_grd.sceneName == "Abyss_06_Core" && _grd.id == "Geo Rock Abyss")
@@ -33,20 +33,20 @@ namespace MapMod.Trackers
                 // Resolve duplicate ids by position
                 if (_go.transform.localPosition.y > 180.0f)
                 {
-                    MapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
+                    VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
                 }
                 else
                 {
-                    MapMod.LS.ObtainedItems["Geo Rock Abyss (2)" + _grd.sceneName] = true;
+                    VanillaMapMod.LS.ObtainedItems["Geo Rock Abyss (2)" + _grd.sceneName] = true;
                 }
             }
             else
             {
-                MapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
+                VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
             }
 
-            MapMod.Instance.Log(_grd.id);
-            MapMod.Instance.Log(_grd.sceneName);
+            VanillaMapMod.Instance.Log(_grd.id);
+            VanillaMapMod.Instance.Log(_grd.sceneName);
 
             Finish();
         }
@@ -65,10 +65,10 @@ namespace MapMod.Trackers
         {
             string scene = GameManager.instance.sceneName;
 
-            MapMod.LS.ObtainedItems[_oName + scene] = true;
+            VanillaMapMod.LS.ObtainedItems[_oName + scene] = true;
 
-            MapMod.Instance.Log(_oName);
-            MapMod.Instance.Log(scene);
+            VanillaMapMod.Instance.Log(_oName);
+            VanillaMapMod.Instance.Log(scene);
 
             Finish();
         }

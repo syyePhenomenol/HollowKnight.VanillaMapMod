@@ -1,9 +1,9 @@
 ﻿using System;
-using MapMod.Data;
-using MapMod.Settings;
+using VanillaMapMod.Data;
+using VanillaMapMod.Settings;
 using UnityEngine;
 
-namespace MapMod.Map
+namespace VanillaMapMod.Map
 {
     internal class Pin : MonoBehaviour
     {
@@ -37,7 +37,7 @@ namespace MapMod.Map
             }
             catch (Exception e)
             {
-                MapMod.Instance.LogError(message: $"Failed to update pin! ID: {PinData.name}\n{e}");
+                VanillaMapMod.Instance.LogError(message: $"Failed to update pin! ID: {PinData.name}\n{e}");
             }
         }
 
@@ -46,7 +46,7 @@ namespace MapMod.Map
         {
             if (mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
             {
-                if (MapMod.LS.GotFullMap)
+                if (VanillaMapMod.LS.GotFullMap)
                 {
                     gameObject.SetActive(true);
                     return;
@@ -114,7 +114,7 @@ namespace MapMod.Map
 
             foreach (string oName in PinData.objectName)
             {
-                if (!MapMod.LS.ObtainedItems.ContainsKey(oName + PinData.sceneName))
+                if (!VanillaMapMod.LS.ObtainedItems.ContainsKey(oName + PinData.sceneName))
                 {
                     return;
                 }

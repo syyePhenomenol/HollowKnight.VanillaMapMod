@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using MapMod.Trackers;
+using VanillaMapMod.Trackers;
 using UnityEngine;
 
-namespace MapMod.Map
+namespace VanillaMapMod.Map
 {
     public static class WorldMap
     {
@@ -27,13 +27,13 @@ namespace MapMod.Map
 
             if (goCustomPins == null)
             {
-                MapMod.Instance.Log("Adding Pin Group and Populating...");
+                VanillaMapMod.Instance.Log("Adding Pin Group and Populating...");
                 goCustomPins = new GameObject($"Map Mod Pin Group");
                 goCustomPins.AddComponent<PinsCustom>();
                 goCustomPins.transform.SetParent(self.transform);
 
                 CustomPins.MakePins(self);
-                MapMod.Instance.Log("Adding Pins done.");
+                VanillaMapMod.Instance.Log("Adding Pins done.");
             }
             else
             {
@@ -113,7 +113,7 @@ namespace MapMod.Map
 
         public static void UpdateMap(GameMap gameMap, string mapArea)
         {
-            ItemTracker.UpdatePlayerDataItems();
+            ItemTracker.UpdateObtainedItems();
 
             PinsVanilla.SetBenchSpritesRecursive(gameMap.gameObject);
 
@@ -146,7 +146,7 @@ namespace MapMod.Map
             PlayerData.instance.hasPinTram = true;
             PlayerData.instance.collectorDefeated = true;
 
-            MapMod.LS.SetFullMap();
+            VanillaMapMod.LS.SetFullMap();
 
             ForceMapUpdate(gameMap);
         }
@@ -170,7 +170,7 @@ namespace MapMod.Map
                 }
                 catch (Exception e)
                 {
-                    MapMod.Instance.LogError(e);
+                    VanillaMapMod.Instance.LogError(e);
                 }
             }
         }

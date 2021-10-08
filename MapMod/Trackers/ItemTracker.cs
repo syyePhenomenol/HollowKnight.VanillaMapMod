@@ -1,127 +1,309 @@
 ﻿using HutongGames.PlayMaker;
 using SFCore.Utils;
 
-namespace MapMod.Trackers
+namespace VanillaMapMod.Trackers
 {
     public static class ItemTracker
     {
         public static void Hook()
         {
-            Modding.ModHooks.AfterSavegameLoadHook += ModHooks_AfterSavegameLoadHook;
+            //Modding.ModHooks.AfterSavegameLoadHook += ModHooks_AfterSavegameLoadHook;
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
 
-        private static void ModHooks_AfterSavegameLoadHook(SaveGameData obj)
-        {
-            UpdatePlayerDataItems();
+        //private static void ModHooks_AfterSavegameLoadHook(SaveGameData obj)
+        //{
+        //    // Doesn't seem to be a way to tell apart the duplicate cases
+        //    foreach (GeoRockData grd in obj.sceneData.geoRocks)
+        //    {
+        //        if (grd.hitsLeft == 0)
+        //        {
+        //            VanillaMapMod.LS.ObtainedItems[grd.id + grd.sceneName] = true;
+        //        }
+        //    }
 
-            // Doesn't seem to be a way to tell apart the duplicate cases
-            foreach (GeoRockData grd in obj.sceneData.geoRocks)
-            {
-                if (grd.hitsLeft == 0)
-                {
-                    MapMod.LS.ObtainedItems[grd.id + grd.sceneName] = true;
-                }
-            }
+        //    foreach (PersistentBoolData pbd in obj.sceneData.persistentBoolItems)
+        //    {
+        //        if (pbd.id.Contains("Shiny Item") && pbd.activated)
+        //        {
+        //            VanillaMapMod.LS.ObtainedItems[pbd.id + pbd.sceneName] = true;
+        //        }
+        //    }
 
-            foreach (PersistentBoolData pbd in obj.sceneData.persistentBoolItems)
-            {
-                if (pbd.id.Contains("Shiny Item") && pbd.activated)
-                {
-                    MapMod.LS.ObtainedItems[pbd.id + pbd.sceneName] = true;
-                }
-            }
+        //    //foreach (PersistentIntData pid in obj.sceneData.persistentIntItems)
+        //    //{
+        //    //             MapMod.Instance.Log("- " + pid.id);
+        //    //             MapMod.Instance.Log("- " + pid.sceneName);
+        //    //             MapMod.Instance.Log("- - " + pid.value);
+        //    //         }
 
-            //foreach (PersistentIntData pid in obj.sceneData.persistentIntItems)
-            //{
-            //             MapMod.Instance.Log("- " + pid.id);
-            //             MapMod.Instance.Log("- " + pid.sceneName);
-            //             MapMod.Instance.Log("- - " + pid.value);
-            //         }
+        //    // TO DO: Mask/Vessel/Essence Boss/Chest
+        //}
 
-            // TO DO: Mask/Vessel/Essence Boss/Chest
-        }
-
-        public static void UpdatePlayerDataItems()
+        public static void UpdateObtainedItems()
         {
             if (PlayerData.instance.hasDash)
             {
-                MapMod.LS.ObtainedItems["Mothwing_Cloak" + "Fungus1_04"] = true;
+                VanillaMapMod.LS.ObtainedItems["Mothwing_Cloak" + "Fungus1_04"] = true;
             }
 
             if (PlayerData.instance.hasWalljump)
             {
-                MapMod.LS.ObtainedItems["Mantis_Claw" + "Fungus2_14"] = true;
+                VanillaMapMod.LS.ObtainedItems["Mantis_Claw" + "Fungus2_14"] = true;
             }
 
             if (PlayerData.instance.hasSuperDash)
             {
-                MapMod.LS.ObtainedItems["Crystal_Heart" + "Mines_31"] = true;
+                VanillaMapMod.LS.ObtainedItems["Crystal_Heart" + "Mines_31"] = true;
             }
 
             if (PlayerData.instance.hasDoubleJump)
             {
-                MapMod.LS.ObtainedItems["Monarch_Wings" + "Abyss_21"] = true;
+                VanillaMapMod.LS.ObtainedItems["Monarch_Wings" + "Abyss_21"] = true;
             }
 
             if (PlayerData.instance.hasShadowDash)
             {
-                MapMod.LS.ObtainedItems["Shade_Cloak" + "Abyss_10"] = true;
+                VanillaMapMod.LS.ObtainedItems["Shade_Cloak" + "Abyss_10"] = true;
             }
 
             if (PlayerData.instance.hasAcidArmour)
             {
-                MapMod.LS.ObtainedItems["Isma's_Tear" + "Waterways_13"] = true;
+                VanillaMapMod.LS.ObtainedItems["Isma's_Tear" + "Waterways_13"] = true;
             }
 
             if (PlayerData.instance.hasDreamNail)
             {
-                MapMod.LS.ObtainedItems["Dream_Nail" + "Dream_Nailcollection"] = true;
+                VanillaMapMod.LS.ObtainedItems["Dream_Nail" + "Dream_Nailcollection"] = true;
             }
 
             if (PlayerData.instance.fireballLevel != 0)
             {
-                MapMod.LS.ObtainedItems["Vengeful_Spirit" + "Crossroads_ShamanTemple"] = true;
+                VanillaMapMod.LS.ObtainedItems["Vengeful_Spirit" + "Crossroads_ShamanTemple"] = true;
             }
 
             if (PlayerData.instance.fireballLevel == 2)
             {
-                MapMod.LS.ObtainedItems["Shade_Soul" + "Ruins1_31b"] = true;
+                VanillaMapMod.LS.ObtainedItems["Shade_Soul" + "Ruins1_31b"] = true;
             }
 
             if (PlayerData.instance.quakeLevel != 0)
             {
-                MapMod.LS.ObtainedItems["Desolate_Dive" + "Ruins1_24"] = true;
+                VanillaMapMod.LS.ObtainedItems["Desolate_Dive" + "Ruins1_24"] = true;
             }
 
             if (PlayerData.instance.quakeLevel == 2)
             {
-                MapMod.LS.ObtainedItems["Descending_Dark" + "Mines_35"] = true;
+                VanillaMapMod.LS.ObtainedItems["Descending_Dark" + "Mines_35"] = true;
             }
 
             if (PlayerData.instance.screamLevel != 0)
             {
-                MapMod.LS.ObtainedItems["Howling_Wraiths" + "Room_Fungus_Shaman"] = true;
+                VanillaMapMod.LS.ObtainedItems["Howling_Wraiths" + "Room_Fungus_Shaman"] = true;
             }
 
             if (PlayerData.instance.screamLevel == 2)
             {
-                MapMod.LS.ObtainedItems["Abyss_Shriek" + "Abyss_12"] = true;
+                VanillaMapMod.LS.ObtainedItems["Abyss_Shriek" + "Abyss_12"] = true;
             }
 
             if (PlayerData.instance.hasCyclone)
             {
-                MapMod.LS.ObtainedItems["Cyclone_Slash" + "Room_nailmaster"] = true;
+                VanillaMapMod.LS.ObtainedItems["Cyclone_Slash" + "Room_nailmaster"] = true;
             }
 
             if (PlayerData.instance.hasDashSlash)
             {
-                MapMod.LS.ObtainedItems["Dash_Slash" + "Room_nailmaster_02"] = true;
+                VanillaMapMod.LS.ObtainedItems["Dash_Slash" + "Room_nailmaster_02"] = true;
             }
 
             if (PlayerData.instance.hasUpwardSlash)
             {
-                MapMod.LS.ObtainedItems["Great_Slash" + "Room_nailmaster_03"] = true;
+                VanillaMapMod.LS.ObtainedItems["Great_Slash" + "Room_nailmaster_03"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_5)
+            {
+                VanillaMapMod.LS.ObtainedItems["Baldur_Shell" + "Fungus1_28"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_6)
+            {
+                VanillaMapMod.LS.ObtainedItems["Fury_of_the_Fallen" + "Tutorial_01"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_9)
+            {
+                VanillaMapMod.LS.ObtainedItems["Lifeblood_Core" + "Abyss_08"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_10)
+            {
+                VanillaMapMod.LS.ObtainedItems["Defender's_Crest" + "Waterways_05"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_11)
+            {
+                VanillaMapMod.LS.ObtainedItems["Flukenest" + "Waterways_12"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_12)
+            {
+                VanillaMapMod.LS.ObtainedItems["Thorns_of_Agony" + "Fungus1_14"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_13)
+            {
+                VanillaMapMod.LS.ObtainedItems["Mark_of_Pride" + "Fungus2_31"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_16)
+            {
+                VanillaMapMod.LS.ObtainedItems["Sharp_Shadow" + "Deepnest_44"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_17)
+            {
+                VanillaMapMod.LS.ObtainedItems["Spore_Shroom" + "Fungus2_20"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_20)
+            {
+                VanillaMapMod.LS.ObtainedItems["Soul_Catcher" + "Crossroads_ShamanTemple"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_21)
+            {
+                VanillaMapMod.LS.ObtainedItems["Soul_Eater" + "RestingGrounds_10"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_22)
+            {
+                VanillaMapMod.LS.ObtainedItems["Glowing_Womb" + "Crossroads_22"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_26)
+            {
+                VanillaMapMod.LS.ObtainedItems["Nailmaster's_Glory" + "Room_Sly_Storeroom"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_27)
+            {
+                VanillaMapMod.LS.ObtainedItems["Joni's_Blessing" + "Cliffs_05"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_28)
+            {
+                VanillaMapMod.LS.ObtainedItems["Shape_of_Unn" + "Fungus1_Slug"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_29)
+            {
+                VanillaMapMod.LS.ObtainedItems["Hiveblood" + "Hive_05"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_30)
+            {
+                VanillaMapMod.LS.ObtainedItems["Dream_Wielder" + "RestingGrounds_07"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_31)
+            {
+                VanillaMapMod.LS.ObtainedItems["Dashmaster" + "Fungus2_23"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_32)
+            {
+                VanillaMapMod.LS.ObtainedItems["Quick_Slash" + "Deepnest_East_14b"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_33)
+            {
+                VanillaMapMod.LS.ObtainedItems["Spell_Twister" + "Ruins1_30"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_34)
+            {
+                VanillaMapMod.LS.ObtainedItems["Deep_Focus" + "Mines_36"] = true;
+            }
+
+            if (PlayerData.instance.gotQueenFragment)
+            {
+                VanillaMapMod.LS.ObtainedItems["Queen_Fragment" + "Room_Queen"] = true;
+            }
+
+            if (PlayerData.instance.gotKingFragment)
+            {
+                VanillaMapMod.LS.ObtainedItems["King_Fragment" + "White_Palace_09"] = true;
+            }
+
+            if (PlayerData.instance.royalCharmState == 4)
+            {
+                VanillaMapMod.LS.ObtainedItems["Void_Heart" + "Abyss_15"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_38)
+            {
+                VanillaMapMod.LS.ObtainedItems["Dreamshield" + "RestingGrounds_17"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_39)
+            {
+                VanillaMapMod.LS.ObtainedItems["Weaversong" + "Deepnest_45_v02"] = true;
+            }
+
+            if (PlayerData.instance.gotCharm_40)
+            {
+                VanillaMapMod.LS.ObtainedItems["Grimmchild" + "Grimm_Main_Tent"] = true;
+            }
+
+            if (PlayerData.instance.hasCityKey)
+            {
+                VanillaMapMod.LS.ObtainedItems["City_Crest" + "Crossroads_10"] = true;
+            }
+
+            if (PlayerData.instance.hasTramPass)
+            {
+                VanillaMapMod.LS.ObtainedItems["Tram_Pass" + "Deepnest_26b"] = true;
+            }
+
+            if (PlayerData.instance.gotLurkerKey)
+            {
+                VanillaMapMod.LS.ObtainedItems["Simple_Key-Lurker" + "GG_Lurker"] = true;
+            }
+
+            if (PlayerData.instance.hasSlykey)
+            {
+                VanillaMapMod.LS.ObtainedItems["Shopkeeper's_Key" + "Mines_11"] = true;
+            }
+
+            if (PlayerData.instance.hasLoveKey)
+            {
+                VanillaMapMod.LS.ObtainedItems["Love_Key" + "Fungus3_39"] = true;
+            }
+
+            if (PlayerData.instance.hasKingsBrand)
+            {
+                VanillaMapMod.LS.ObtainedItems["King's_Brand" + "Room_Wyrm"] = true;
+            }
+
+            //TODO: Add Boss essencem, mask, vessel, chest
+
+            // Doesn't seem to be a way to tell apart the duplicate cases
+            foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
+            {
+                if (grd.hitsLeft == 0)
+                {
+                    VanillaMapMod.LS.ObtainedItems[grd.id + grd.sceneName] = true;
+                }
+            }
+
+            foreach (PersistentBoolData pbd in GameManager.instance.sceneData.persistentBoolItems)
+            {
+                if (pbd.id.Contains("Shiny Item") && pbd.activated)
+                {
+                    VanillaMapMod.LS.ObtainedItems[pbd.id + pbd.sceneName] = true;
+                }
             }
         }
 
@@ -149,11 +331,11 @@ namespace MapMod.Trackers
 
             else if (goName.Contains("Shiny Item"))
             {
-                MapMod.Instance.Log(self.FsmName);
+                VanillaMapMod.Instance.Log(self.FsmName);
 
                 foreach (FsmState state in self.FsmStates)
                 {
-                    MapMod.Instance.Log("- " + state.Name);
+                    VanillaMapMod.Instance.Log("- " + state.Name);
                 }
             }
 
@@ -174,10 +356,14 @@ namespace MapMod.Trackers
                 || goName == "Ghost Mage Lord NPC"
                 || goName == "Ghost Infected Knight NPC")
             {
-                MapMod.Instance.Log(goName);
+                VanillaMapMod.Instance.Log(goName);
                 foreach (FsmState state in self.FsmStates)
                 {
-                    MapMod.Instance.Log("- " + state.Name);
+                    if (state.Name == "Get") {
+                        FsmUtil.AddAction(self, state.Name, new TrackItem(goName));
+                    }
+
+                    VanillaMapMod.Instance.Log("- " + state.Name);
                 }
             }
 
@@ -186,7 +372,7 @@ namespace MapMod.Trackers
             {
                 foreach (FsmState state in self.FsmStates)
                 {
-                    MapMod.Instance.Log("- " + state.Name);
+                    VanillaMapMod.Instance.Log("- " + state.Name);
                 }
             }
         }

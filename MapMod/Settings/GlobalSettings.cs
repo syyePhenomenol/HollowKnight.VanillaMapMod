@@ -1,4 +1,4 @@
-﻿namespace MapMod.Settings
+﻿namespace VanillaMapMod.Settings
 {
     public class GlobalSettings
     {

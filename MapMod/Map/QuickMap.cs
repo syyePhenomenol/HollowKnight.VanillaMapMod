@@ -1,4 +1,4 @@
-﻿namespace MapMod.Map
+﻿namespace VanillaMapMod.Map
 {
     public static class QuickMap
     {

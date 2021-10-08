@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using MapMod.Data;
-using MapMod.Map;
-using MapMod.Settings;
+using VanillaMapMod.Data;
+using VanillaMapMod.Map;
+using VanillaMapMod.Settings;
 using UnityEngine;
 
 // This code was heavily borrowed from RandomizerMod 3.0
-namespace MapMod.Shop
+namespace VanillaMapMod.Shop
 {
     public static class ShopChanger
     {

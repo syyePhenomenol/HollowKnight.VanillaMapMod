@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapMod.Settings
+namespace VanillaMapMod.Settings
 {
     public static class SettingsUtil
     {
@@ -36,21 +36,21 @@ namespace MapMod.Settings
 		{
 			return pool switch
 			{
-				"Skill" => MapMod.LS.HasSkillPin,
-				"Charm" => MapMod.LS.HasCharmPin,
-				"Key" => MapMod.LS.HasKeyPin,
-				"Mask" => MapMod.LS.HasMaskPin,
-				"Vessel" => MapMod.LS.HasVesselPin,
-				"Notch" => MapMod.LS.HasNotchPin,
-				"Ore" => MapMod.LS.HasOrePin,
-				"Egg" => MapMod.LS.HasEggPin,
-				"Relic" => MapMod.LS.HasRelicPin,
-				"EssenceBoss" => MapMod.LS.HasEssenceBossPin,
-				"Cocoon" => MapMod.LS.HasCocoonPin,
-				"Geo" => MapMod.LS.HasGeoPin,
-				"Rock" => MapMod.LS.HasRockPin,
-				"Totem" => MapMod.LS.HasTotemPin,
-				"Lore" => MapMod.LS.HasLorePin,
+				"Skill" => VanillaMapMod.LS.HasSkillPin,
+				"Charm" => VanillaMapMod.LS.HasCharmPin,
+				"Key" => VanillaMapMod.LS.HasKeyPin,
+				"Mask" => VanillaMapMod.LS.HasMaskPin,
+				"Vessel" => VanillaMapMod.LS.HasVesselPin,
+				"Notch" => VanillaMapMod.LS.HasNotchPin,
+				"Ore" => VanillaMapMod.LS.HasOrePin,
+				"Egg" => VanillaMapMod.LS.HasEggPin,
+				"Relic" => VanillaMapMod.LS.HasRelicPin,
+				"EssenceBoss" => VanillaMapMod.LS.HasEssenceBossPin,
+				"Cocoon" => VanillaMapMod.LS.HasCocoonPin,
+				"Geo" => VanillaMapMod.LS.HasGeoPin,
+				"Rock" => VanillaMapMod.LS.HasRockPin,
+				"Totem" => VanillaMapMod.LS.HasTotemPin,
+				"Lore" => VanillaMapMod.LS.HasLorePin,
 				_ => true,
 			};
 		}
@@ -59,21 +59,21 @@ namespace MapMod.Settings
 		{
 			return pool switch
 			{
-				"HasSkillPin" => MapMod.LS.HasSkillPin,
-				"HasCharmPin" => MapMod.LS.HasCharmPin,
-				"HasKeyPin" => MapMod.LS.HasKeyPin,
-				"HasMaskPin" => MapMod.LS.HasMaskPin,
-				"HasVesselPin" => MapMod.LS.HasVesselPin,
-				"HasNotchPin" => MapMod.LS.HasNotchPin,
-				"HasOrePin" => MapMod.LS.HasOrePin,
-				"HasEggPin" => MapMod.LS.HasEggPin,
-				"HasRelicPin" => MapMod.LS.HasRelicPin,
-				"HasEssenceBossPin" => MapMod.LS.HasEssenceBossPin,
-				"HasPinCocoon" => MapMod.LS.HasCocoonPin,
-				"HasGeoPin" => MapMod.LS.HasGeoPin,
-				"HasRockPin" => MapMod.LS.HasRockPin,
-				"HasTotemPin" => MapMod.LS.HasTotemPin,
-				"HasLorePin" => MapMod.LS.HasLorePin,
+				"HasSkillPin" => VanillaMapMod.LS.HasSkillPin,
+				"HasCharmPin" => VanillaMapMod.LS.HasCharmPin,
+				"HasKeyPin" => VanillaMapMod.LS.HasKeyPin,
+				"HasMaskPin" => VanillaMapMod.LS.HasMaskPin,
+				"HasVesselPin" => VanillaMapMod.LS.HasVesselPin,
+				"HasNotchPin" => VanillaMapMod.LS.HasNotchPin,
+				"HasOrePin" => VanillaMapMod.LS.HasOrePin,
+				"HasEggPin" => VanillaMapMod.LS.HasEggPin,
+				"HasRelicPin" => VanillaMapMod.LS.HasRelicPin,
+				"HasEssenceBossPin" => VanillaMapMod.LS.HasEssenceBossPin,
+				"HasPinCocoon" => VanillaMapMod.LS.HasCocoonPin,
+				"HasGeoPin" => VanillaMapMod.LS.HasGeoPin,
+				"HasRockPin" => VanillaMapMod.LS.HasRockPin,
+				"HasTotemPin" => VanillaMapMod.LS.HasTotemPin,
+				"HasLorePin" => VanillaMapMod.LS.HasLorePin,
 				_ => true,
 			};
 		}
@@ -106,51 +106,51 @@ namespace MapMod.Settings
 			switch (boolName)
             {
 				case "HasSkillPin":
-					MapMod.LS.HasSkillPin = value;
+					VanillaMapMod.LS.HasSkillPin = value;
 					break;
 				case "HasCharmPin":
-					MapMod.LS.HasCharmPin = value;
+					VanillaMapMod.LS.HasCharmPin = value;
 					break;
 				case "HasKeyPin":
-					MapMod.LS.HasKeyPin = value;
+					VanillaMapMod.LS.HasKeyPin = value;
 					break;
 				case "HasMaskPin":
-					MapMod.LS.HasMaskPin = value;
+					VanillaMapMod.LS.HasMaskPin = value;
 					break;
 				case "HasVesselPin":
-					MapMod.LS.HasVesselPin = value;
+					VanillaMapMod.LS.HasVesselPin = value;
 					break;
 				case "HasNotchPin":
-					MapMod.LS.HasNotchPin = value;
+					VanillaMapMod.LS.HasNotchPin = value;
 					break;
 				case "HasOrePin":
-					MapMod.LS.HasOrePin = value;
+					VanillaMapMod.LS.HasOrePin = value;
 					break;
 				case "HasEggPin":
-					MapMod.LS.HasEggPin = value;
+					VanillaMapMod.LS.HasEggPin = value;
 					break;
 				case "HasRelicPin":
-					MapMod.LS.HasRelicPin = value;
+					VanillaMapMod.LS.HasRelicPin = value;
 					break;
 				case "HasEssenceBossPin":
-					MapMod.LS.HasEssenceBossPin = value;
+					VanillaMapMod.LS.HasEssenceBossPin = value;
 					break;
 				// Overwrite vanilla behaviour of cocoon pins
 				case "hasPinCocoon":
-					MapMod.LS.HasCocoonPin = value;
+					VanillaMapMod.LS.HasCocoonPin = value;
 					PlayerData.instance.hasPinCocoon = value;
 					break;
 				case "HasGeoPin":
-					MapMod.LS.HasGeoPin = value;
+					VanillaMapMod.LS.HasGeoPin = value;
 					break;
 				case "HasRockPin":
-					MapMod.LS.HasRockPin = value;
+					VanillaMapMod.LS.HasRockPin = value;
 					break;
 				case "HasTotemPin":
-					MapMod.LS.HasTotemPin = value;
+					VanillaMapMod.LS.HasTotemPin = value;
 					break;
 				case "HasLorePin":
-					MapMod.LS.HasLorePin = value;
+					VanillaMapMod.LS.HasLorePin = value;
 					break;
 				default:
 					break;

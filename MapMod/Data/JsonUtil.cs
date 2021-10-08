@@ -8,7 +8,7 @@ using Newtonsoft.Json.Serialization;
 
 // Code taken from homothety: https://github.com/homothetyhk/RandomizerMod/
 
-namespace MapMod.Data
+namespace VanillaMapMod.Data
 {
     public static class JsonUtil
     {
@@ -55,12 +55,12 @@ namespace MapMod.Data
             _js.Converters.Add(new StringEnumConverter());
         }
 
-        private class CustomContractResolver : DefaultContractResolver
-        {
-            protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-            {
-                return base.CreateProperties(type, memberSerialization).Where(p => p.Writable).ToList();
-            }
-        }
+        //private class CustomContractResolver : DefaultContractResolver
+        //{
+        //    protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+        //    {
+        //        return base.CreateProperties(type, memberSerialization).Where(p => p.Writable).ToList();
+        //    }
+        //}
     }
 }

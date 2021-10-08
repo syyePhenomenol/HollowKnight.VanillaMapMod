@@ -1,8 +1,8 @@
-﻿using MapMod.Data;
-using MapMod.Settings;
+﻿using VanillaMapMod.Data;
+using VanillaMapMod.Settings;
 using Modding;
 
-namespace MapMod.Shop
+namespace VanillaMapMod.Shop
 {
     public static class ShopHooks
     {

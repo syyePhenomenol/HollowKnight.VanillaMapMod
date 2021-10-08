@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace MapMod.Map
+namespace VanillaMapMod.Map
 {
     public static class PinsVanilla
     {
@@ -93,6 +93,11 @@ namespace MapMod.Map
                         else if (child.name == "pin_dream_tree")
                         {
                             SetNewSprite(child.gameObject, "pinRoot");
+
+                            if (child.transform.parent.name == "Crossroads_ShamanTemple")
+                            {
+                                MoveSprite(child.gameObject, new Vector3(0.15f, -0.3f));
+                            }
                         }
                         else if (child.name == "Map Markers"
                             || child.name == "pin_blue_health")
@@ -103,7 +108,7 @@ namespace MapMod.Map
                     }
                     catch (Exception e)
                     {
-                        MapMod.Instance.LogError(e);
+                        VanillaMapMod.Instance.LogError(e);
                     }
                 }
 
@@ -132,6 +137,11 @@ namespace MapMod.Map
                     else
                     {
                         SetNewSprite(child.gameObject, "pinBench");
+
+                        if (child.transform.parent.name == "Crossroads_06")
+                        {
+                            MoveSprite(child.gameObject, new Vector3(-0.15f, -0.3f));
+                        }
                     }
 
                     //MapMod.Instance.Log(child.transform.parent.name);
@@ -152,7 +162,12 @@ namespace MapMod.Map
         {
             go.GetComponent<SpriteRenderer>().sprite = SpriteManager.GetSprite(spriteName);
 
-            go.transform.localScale = new Vector2(MapMod.GS.PinScaleSize, MapMod.GS.PinScaleSize);
+            go.transform.localScale = new Vector2(VanillaMapMod.GS.PinScaleSize, VanillaMapMod.GS.PinScaleSize);
+        }
+
+        private static void MoveSprite(GameObject go, Vector3 offset)
+        {
+            go.transform.localPosition = offset;
         }
     }
 }
