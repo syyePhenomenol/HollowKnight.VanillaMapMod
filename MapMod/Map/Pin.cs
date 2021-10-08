@@ -112,6 +112,7 @@ namespace VanillaMapMod.Map
                 return;
             }
 
+            // Don't hide pin if something isn't in the obtained items dictionary
             foreach (string oName in PinData.objectName)
             {
                 if (!VanillaMapMod.LS.ObtainedItems.ContainsKey(oName + PinData.sceneName))

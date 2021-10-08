@@ -115,7 +115,7 @@ namespace VanillaMapMod.Map
         {
             ItemTracker.UpdateObtainedItems();
 
-            PinsVanilla.SetBenchSpritesRecursive(gameMap.gameObject);
+            PinsVanilla.SetVanillaSpritesPersistent(gameMap.gameObject);
 
             if (goCustomPins != null)
             {
@@ -132,6 +132,31 @@ namespace VanillaMapMod.Map
                 PlayerData.instance.SetBool(field.Name, true);
             }
 
+            foreach (FieldInfo field in typeof(PlayerData).GetFields().Where(field => field.Name.StartsWith("corn") && field.Name.EndsWith("Left")))
+            {
+                PlayerData.instance.SetBool(field.Name, true);
+            }
+
+            // NPC events
+            PlayerData.instance.metBanker = true;
+            PlayerData.instance.metCharmSlug = true;
+            PlayerData.instance.metHunter = true;
+            PlayerData.instance.metCornifer = true;
+            PlayerData.instance.corniferIntroduced = true;
+            PlayerData.instance.corniferAtHome = true;
+            PlayerData.instance.jijiMet = true;
+            PlayerData.instance.metJinn = true;
+            PlayerData.instance.metLegEater = true;
+            PlayerData.instance.metElderbug = true;
+            PlayerData.instance.openedMapperShop = true;
+            PlayerData.instance.metIselda = true;
+            PlayerData.instance.metMoth = true;
+            PlayerData.instance.metNailsmith = true;
+            PlayerData.instance.metRelicDealer = true;
+            PlayerData.instance.openedSlyShop = true;
+            PlayerData.instance.metSlyShop = true;
+
+            // Unlock pins
             PlayerData.instance.hasPin = true;
             PlayerData.instance.hasPinBench = true;
             PlayerData.instance.hasPinBlackEgg = true;

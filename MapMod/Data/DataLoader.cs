@@ -59,6 +59,17 @@ namespace VanillaMapMod.Data
             _shop = JsonUtil.Deserialize<Dictionary<string, ShopDef>>("VanillaMapMod.Resources.shop.json");
             _languageStrings = JsonUtil.Deserialize<Dictionary<string, Dictionary<string, string>>>("VanillaMapMod.Resources.language.json");
 
+            foreach (KeyValuePair<string, PinDef> entry in _pins)
+            {
+                if (entry.Value.objectName == null
+                    && entry.Value.pool != "Cocoon"
+                    && entry.Value.pool != "Totem"
+                    && entry.Value.pool != "Lore")
+                {
+                    VanillaMapMod.Instance.LogWarn($"There is a pin with no objectName that should have one: {entry.Key}");
+                }
+            }
+
             //foreach (KeyValuePair<string, Dictionary<string, string>> entry in _languageStrings)
             //{
             //    MapMod.Instance.Log(entry.Key);

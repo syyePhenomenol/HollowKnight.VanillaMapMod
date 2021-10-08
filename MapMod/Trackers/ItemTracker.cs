@@ -287,9 +287,32 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["King's_Brand" + "Room_Wyrm"] = true;
             }
 
-            //TODO: Add Boss essencem, mask, vessel, chest
+            if (PlayerData.instance.falseKnightOrbsCollected)
+            {
+                VanillaMapMod.LS.ObtainedItems["Boss_Essence-Failed_Champion" + "Crossroads_10"] = true;
+            }
 
-            // Doesn't seem to be a way to tell apart the duplicate cases
+            if (PlayerData.instance.mageLordOrbsCollected)
+            {
+                VanillaMapMod.LS.ObtainedItems["Boss_Essence-Soul_Tyrant" + "Ruins1_24_boss_defeated"] = true;
+            }
+
+            if (PlayerData.instance.infectedKnightOrbsCollected)
+            {
+                VanillaMapMod.LS.ObtainedItems["Boss_Essence-Lost_Kin" + "Abyss_19"] = true;
+            }
+
+            if (PlayerData.instance.whiteDefenderOrbsCollected)
+            {
+                VanillaMapMod.LS.ObtainedItems["Boss_Essence-White_Defender" + "Waterways_15"] = true;
+            }
+
+            if (PlayerData.instance.greyPrinceOrbsCollected)
+            {
+                VanillaMapMod.LS.ObtainedItems["Boss_Essence-Grey_Prince_Zote" + "Room_Bretta_Basement"] = true;
+            }
+
+            // Doesn't seem to be a way to tell apart the duplicate cases... probably no one will notice
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {
                 if (grd.hitsLeft == 0)
@@ -300,7 +323,10 @@ namespace VanillaMapMod.Trackers
 
             foreach (PersistentBoolData pbd in GameManager.instance.sceneData.persistentBoolItems)
             {
-                if (pbd.id.Contains("Shiny Item") && pbd.activated)
+                if (pbd.id.Contains("Shiny Item") && pbd.activated
+                    || pbd.id == "Heart Piece" && pbd.activated
+                    || pbd.id == "Vessel Fragment" && pbd.activated
+                    || pbd.id.Contains("Chest") && pbd.activated)
                 {
                     VanillaMapMod.LS.ObtainedItems[pbd.id + pbd.sceneName] = true;
                 }
@@ -311,32 +337,12 @@ namespace VanillaMapMod.Trackers
         {
             orig(self);
 
-            //if (self.gameObject.scene.name == "Crossroads_ShamanTemple")
-            //{
-            //    MapMod.Instance.Log(self.FsmName);
-
-            //    foreach (FsmState state in self.FsmStates)
-            //    {
-            //        MapMod.Instance.Log("- " + state.Name);
-            //    }
-            //}
-
             string goName = self.gameObject.name;
 
             // Most items: charms, charm notches, pale ore, rancid eggs, relics
             if (self.FsmName == "Shiny Control")
             {
                 FsmUtil.AddAction(self, "Finish", new TrackItem(goName));
-            }
-
-            else if (goName.Contains("Shiny Item"))
-            {
-                VanillaMapMod.Instance.Log(self.FsmName);
-
-                foreach (FsmState state in self.FsmStates)
-                {
-                    VanillaMapMod.Instance.Log("- " + state.Name);
-                }
             }
 
             // Mask/Vessel
@@ -347,33 +353,9 @@ namespace VanillaMapMod.Trackers
             }
 
             // Geo Chests
-            else if (goName == "Chest")
+            else if (goName.Contains("Chest"))
             {
                 FsmUtil.AddAction(self, "Open", new TrackItem(goName));
-            }
-
-            else if (goName == "Ghost False Knight NPC"
-                || goName == "Ghost Mage Lord NPC"
-                || goName == "Ghost Infected Knight NPC")
-            {
-                VanillaMapMod.Instance.Log(goName);
-                foreach (FsmState state in self.FsmStates)
-                {
-                    if (state.Name == "Get") {
-                        FsmUtil.AddAction(self, state.Name, new TrackItem(goName));
-                    }
-
-                    VanillaMapMod.Instance.Log("- " + state.Name);
-                }
-            }
-
-            else if (goName == "Dung Defender_Sleep"
-                || goName == "Dream Enter")
-            {
-                foreach (FsmState state in self.FsmStates)
-                {
-                    VanillaMapMod.Instance.Log("- " + state.Name);
-                }
             }
         }
     }

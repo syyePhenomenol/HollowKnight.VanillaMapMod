@@ -27,15 +27,6 @@ namespace VanillaMapMod.Map
         {
             orig(self, go_gameMap);
 
-            //GameMap gameMap = go_gameMap.GetComponent<GameMap>();
-
-            //GameObject lifebloodPin = gameMap.transform.Find("Deepnest")?.Find("Deepnest_26")?.Find("pin_blue_health")?.gameObject;
-            //if (lifebloodPin != null)
-            //{
-            //    lifebloodPin.transform.parent = null;
-            //    lifebloodPin.SetActive(false);
-            //}
-
             GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
             foreach (GameObject go in allObjects)
             {
@@ -47,10 +38,10 @@ namespace VanillaMapMod.Map
                 }
             }
 
-            SetVanillaSpritesRecursive(go_gameMap);
+            SetVanillaSprites(go_gameMap);
         }
 
-        private static void SetVanillaSpritesRecursive(GameObject obj)
+        private static void SetVanillaSprites(GameObject obj)
         {
             if (obj == null)
                 return;
@@ -62,48 +53,74 @@ namespace VanillaMapMod.Map
 
                 if (child.name.Contains("pin") && !child.name.Contains("rando"))
                 {
-                    //MapMod.Instance.Log(child.gameObject.name);
+                    VanillaMapMod.Instance.Log(child.name);
 
                     try
                     {
-                        if (child.name == "pin_tram")
+                        switch (child.name)
                         {
-                            SetNewSprite(child.gameObject, "pinTramLocation");
-                        }
-                        else if (child.name == "pin_spa")
-                        {
-                            SetNewSprite(child.gameObject, "pinSpa");
-                        }
-                        else if (child.name.Contains("pin_stag_station"))
-                        {
-                            SetNewSprite(child.gameObject, "pinStag");
-                        }
-                        else if (child.name == "pin_colosseum")
-                        {
-                            SetNewSprite(child.gameObject, "pinColosseum");
-                        }
-                        else if (child.name == "pin_grub_king")
-                        {
-                            SetNewSprite(child.gameObject, "pinGrubKing");
-                        }
-                        else if (child.name == "pin_mapper")
-                        {
-                            SetNewSprite(child.gameObject, "pinShopMapper");
-                        }
-                        else if (child.name == "pin_dream_tree")
-                        {
-                            SetNewSprite(child.gameObject, "pinRoot");
+                            case "pin_tram":
+                                SetNewSprite(child.gameObject, "pinTramLocation");
+                                break;
+                            case "pin_spa":
+                                SetNewSprite(child.gameObject, "pinSpa");
+                                break;
+                            case "pin_stag_station":
+                            case "pin_stag_station (7)":
+                                SetNewSprite(child.gameObject, "pinStag");
+                                break;
+                            case "pin_colosseum":
+                                SetNewSprite(child.gameObject, "pinColosseum");
+                                break;
+                            case "pin_charm_slug":
+                                SetNewSprite(child.gameObject, "pinCharmSlug");
+                                break;
+                            case "pin_grub_king":
+                                SetNewSprite(child.gameObject, "pinGrubKing");
+                                break;
+                            case "pin_sly":
+                            case "pin_sly (1)":
+                                SetNewSprite(child.gameObject, "pinShopSly");
+                                break;
+                            case "pin_hunter":
+                                SetNewSprite(child.gameObject, "pinShopBanker");
+                                break;
+                            case "pin_banker":
+                                SetNewSprite(child.gameObject, "pinShopBanker");
+                                break;
+                            case "pin_leg eater":
+                                SetNewSprite(child.gameObject, "pinShopLegEater");
+                                break;
+                            case "pin_jiji":
+                                SetNewSprite(child.gameObject, "pinShopJiji");
+                                break;
+                            case "pin_mapper":
+                                SetNewSprite(child.gameObject, "pinShopMapper");
+                                break;
+                            case "pin_dream moth":
+                                SetNewSprite(child.gameObject, "pinEssenceBoss");
+                                break;
+                            case "pin_nailsmith":
+                                SetNewSprite(child.gameObject, "pinShopNailsmith");
+                                break;
+                            case "pin_relic_dealer":
+                                SetNewSprite(child.gameObject, "pinShopRelicDealer");
+                                break;
+                            case "pin_dream_tree":
+                                SetNewSprite(child.gameObject, "pinRoot");
 
-                            if (child.transform.parent.name == "Crossroads_ShamanTemple")
-                            {
-                                MoveSprite(child.gameObject, new Vector3(0.15f, -0.3f));
-                            }
-                        }
-                        else if (child.name == "Map Markers"
-                            || child.name == "pin_blue_health")
-                        {
-                            child.transform.parent = null;
-                            child.gameObject.SetActive(false);
+                                // Move Ancestral Mound root pin
+                                if (child.transform.parent.name == "Crossroads_ShamanTemple")
+                                {
+                                    MoveSprite(child.gameObject, new Vector3(0.15f, -0.3f));
+                                }
+                                break;
+                            case "Map Markers":
+                                // Disable vanilla lifeblood pins so we can use our own
+                            case "pin_blue_health":
+                                child.transform.parent = null;
+                                child.gameObject.SetActive(false);
+                                break;
                         }
                     }
                     catch (Exception e)
@@ -112,11 +129,11 @@ namespace VanillaMapMod.Map
                     }
                 }
 
-                SetVanillaSpritesRecursive(child.gameObject);
+                SetVanillaSprites(child.gameObject);
             }
         }
 
-        public static void SetBenchSpritesRecursive(GameObject obj)
+        public static void SetVanillaSpritesPersistent(GameObject obj)
         {
             if (obj == null)
                 return;
@@ -138,16 +155,15 @@ namespace VanillaMapMod.Map
                     {
                         SetNewSprite(child.gameObject, "pinBench");
 
+                        // Move Ancestral Mound bench pin
                         if (child.transform.parent.name == "Crossroads_06")
                         {
                             MoveSprite(child.gameObject, new Vector3(-0.15f, -0.3f));
                         }
                     }
-
-                    //MapMod.Instance.Log(child.transform.parent.name);
                 }
 
-                SetBenchSpritesRecursive(child.gameObject);
+                SetVanillaSpritesPersistent(child.gameObject);
             }
         }
 

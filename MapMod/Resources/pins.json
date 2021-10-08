@@ -1544,7 +1544,7 @@
   //},
   "Boss_Essence-Failed_Champion": {
     "name": "Boss_Essence-Failed_Champion",
-    "objectName": [ "Ghost False Knight NPC" ],
+    "objectName": [ "Boss_Essence-Failed_Champion" ],
     "sceneName": "Crossroads_10",
     "mapArea": "Forgotten_Crossroads",
     "pool": "EssenceBoss",
@@ -1554,7 +1554,7 @@
   },
   "Boss_Essence-Soul_Tyrant": {
     "name": "Boss_Essence-Soul_Tyrant",
-    "objectName": [ "Ghost Mage Lord NPC" ],
+    "objectName": [ "Boss_Essence-Soul_Tyrant" ],
     "sceneName": "Ruins1_24_boss_defeated",
     "pinScene": "Ruins1_24",
     "mapArea": "City_of_Tears",
@@ -1565,7 +1565,7 @@
   },
   "Boss_Essence-Lost_Kin": {
     "name": "Boss_Essence-Lost_Kin",
-    "objectName": [ "Ghost Infected Knight NPC" ],
+    "objectName": [ "Boss_Essence-Lost_Kin" ],
     "sceneName": "Abyss_19",
     "mapArea": "Ancient_Basin",
     "pool": "EssenceBoss",
@@ -1574,7 +1574,7 @@
   },
   "Boss_Essence-White_Defender": {
     "name": "Boss_Essence-White_Defender",
-    "objectName": [ "Dung Defender_Sleep" ],
+    "objectName": [ "Boss_Essence-White_Defender" ],
     "sceneName": "Waterways_15",
     "mapArea": "Royal_Waterways",
     "pool": "EssenceBoss",
@@ -1583,7 +1583,7 @@
   },
   "Boss_Essence-Grey_Prince_Zote": {
     "name": "Boss_Essence-Grey_Prince_Zote",
-    "objectName": [ "Dream Enter" ],
+    "objectName": [ "Boss_Essence-Grey_Prince_Zote" ],
     "sceneName": "Room_Bretta_Basement",
     "pinScene": "Town",
     "mapArea": "Dirtmouth",
@@ -2273,6 +2273,7 @@
   },
   "Geo_Rock-Abyss_3": {
     "name": "Geo_Rock-Abyss_3",
+    "objectName": [ "Geo Rock Abyss (1)" ],
     "sceneName": "Abyss_06_Core",
     "mapArea": "Ancient_Basin",
     "pool": "Rock",
@@ -2281,6 +2282,7 @@
   },
   "Geo_Rock-Basin_Tunnel": {
     "name": "Geo_Rock-Basin_Tunnel",
+    "objectName": [ "Geo Rock Abyss" ],
     "sceneName": "Abyss_18",
     "mapArea": "Ancient_Basin",
     "pool": "Rock",
@@ -2289,6 +2291,7 @@
   },
   "Geo_Rock-Basin_Grub": {
     "name": "Geo_Rock-Basin_Grub",
+    "objectName": [ "Geo Rock Abyss" ],
     "sceneName": "Abyss_19",
     "mapArea": "Ancient_Basin",
     "pool": "Rock",
@@ -2297,6 +2300,7 @@
   },
   "Geo_Rock-Basin_Before_Broken_Vessel": {
     "name": "Geo_Rock-Basin_Before_Broken_Vessel",
+    "objectName": [ "Geo Rock Abyss (1)" ],
     "sceneName": "Abyss_19",
     "mapArea": "Ancient_Basin",
     "pool": "Rock",
@@ -2305,6 +2309,7 @@
   },
   "Geo_Rock-Cliffs_Main_1": {
     "name": "Geo_Rock-Cliffs_Main_1",
+    "objectName": [ "Geo Rock 2 (1)" ],
     "sceneName": "Cliffs_01",
     "mapArea": "Howling_Cliffs",
     "pool": "Rock",
@@ -2313,6 +2318,7 @@
   },
   "Geo_Rock-Cliffs_Main_2": {
     "name": "Geo_Rock-Cliffs_Main_2",
+    "objectName": [ "Geo Rock 2 (2)" ],
     "sceneName": "Cliffs_01",
     "mapArea": "Howling_Cliffs",
     "pool": "Rock",
@@ -2321,6 +2327,7 @@
   },
   "Geo_Rock-Cliffs_Main_3": {
     "name": "Geo_Rock-Cliffs_Main_3",
+    "objectName": [ "Geo Rock 2 (4)" ],
     "sceneName": "Cliffs_01",
     "mapArea": "Howling_Cliffs",
     "pool": "Rock",
@@ -2330,6 +2337,7 @@
   },
   "Geo_Rock-Cliffs_Main_4": {
     "name": "Geo_Rock-Cliffs_Main_4",
+    "objectName": [ "Geo Rock 2 (3)" ],
     "sceneName": "Cliffs_01",
     "mapArea": "Howling_Cliffs",
     "pool": "Rock",
@@ -2655,6 +2663,7 @@
   //},
   "Geo_Rock-Deepnest_Spike_Grub_Right": {
     "name": "Geo_Rock-Deepnest_Spike_Grub_Right",
+    "objectName": [ "Geo Rock Deepnest (2)" ],
     "sceneName": "Deepnest_03",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2678,6 +2687,7 @@
   //},
   "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_1": {
     "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_1",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_16",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2686,6 +2696,7 @@
   },
   "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_2": {
     "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_2",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_16",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2694,6 +2705,7 @@
   },
   "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_3": {
     "name": "Geo_Rock-Deepnest_By_Mantis_Lords_Requires_Claw_3",
+    "objectName": [ "Geo Rock Deepnest (3)" ],
     "sceneName": "Deepnest_16",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2702,6 +2714,7 @@
   },
   "Geo_Rock-Deepnest_Nosk_1": {
     "name": "Geo_Rock-Deepnest_Nosk_1",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_31",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2710,6 +2723,7 @@
   },
   "Geo_Rock-Deepnest_Nosk_2": {
     "name": "Geo_Rock-Deepnest_Nosk_2",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_31",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2718,6 +2732,7 @@
   },
   "Geo_Rock-Deepnest_Nosk_3": {
     "name": "Geo_Rock-Deepnest_Nosk_3",
+    "objectName": [ "Geo Rock Deepnest (2)" ],
     "sceneName": "Deepnest_31",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2726,6 +2741,7 @@
   },
   "Geo_Rock-Deepnest_Above_Galien": {
     "name": "Geo_Rock-Deepnest_Above_Galien",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_35",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2734,6 +2750,7 @@
   },
   "Geo_Rock-Deepnest_Galien_Spike": {
     "name": "Geo_Rock-Deepnest_Galien_Spike",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_35",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2742,6 +2759,7 @@
   },
   "Geo_Rock-Deepnest_Garpede_1": {
     "name": "Geo_Rock-Deepnest_Garpede_1",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_37",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2750,6 +2768,7 @@
   },
   "Geo_Rock-Deepnest_Garpede_2": {
     "name": "Geo_Rock-Deepnest_Garpede_2",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_37",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2758,6 +2777,7 @@
   },
   "Geo_Rock-Dark_Deepnest_Above_Grub_1": {
     "name": "Geo_Rock-Dark_Deepnest_Above_Grub_1",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_39",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2766,6 +2786,7 @@
   },
   "Geo_Rock-Dark_Deepnest_Above_Grub_2": {
     "name": "Geo_Rock-Dark_Deepnest_Above_Grub_2",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_39",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2774,6 +2795,7 @@
   },
   "Geo_Rock-Dark_Deepnest_Bottom_Left": {
     "name": "Geo_Rock-Dark_Deepnest_Bottom_Left",
+    "objectName": [ "Geo Rock Deepnest (2)" ],
     "sceneName": "Deepnest_39",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -2782,6 +2804,7 @@
   },
   "Geo_Rock-Above_Mask_Maker_1": {
     "name": "Geo_Rock-Above_Mask_Maker_1",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Deepnest_43",
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
@@ -2790,6 +2813,7 @@
   },
   "Geo_Rock-Above_Mask_Maker_2": {
     "name": "Geo_Rock-Above_Mask_Maker_2",
+    "objectName": [ "Geo Rock Green Path 01 (1)" ],
     "sceneName": "Deepnest_43",
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
@@ -2798,6 +2822,7 @@
   },
   "Geo_Rock-Lower_Kingdom's_Edge_1": {
     "name": "Geo_Rock-Lower_Kingdom's_Edge_1",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_East_01",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2807,6 +2832,7 @@
   },
   "Geo_Rock-Lower_Kingdom's_Edge_2": {
     "name": "Geo_Rock-Lower_Kingdom's_Edge_2",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_East_01",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2815,6 +2841,7 @@
   },
   "Geo_Rock-Lower_Kingdom's_Edge_3": {
     "name": "Geo_Rock-Lower_Kingdom's_Edge_3",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Deepnest_East_02",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2823,6 +2850,7 @@
   },
   "Geo_Rock-Lower_Kingdom's_Edge_Dive": {
     "name": "Geo_Rock-Lower_Kingdom's_Edge_Dive",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Deepnest_East_02",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2831,6 +2859,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Below_Bardoon": {
     "name": "Geo_Rock-Kingdom's_Edge_Below_Bardoon",
+    "objectName": [ "Geo Rock Outskirts" ],
     "sceneName": "Deepnest_East_04",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2839,6 +2868,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Oro_Far_Left": {
     "name": "Geo_Rock-Kingdom's_Edge_Oro_Far_Left",
+    "objectName": [ "Geo Rock Outskirts" ],
     "sceneName": "Deepnest_East_06",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2847,6 +2877,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Oro_Middle_Left": {
     "name": "Geo_Rock-Kingdom's_Edge_Oro_Middle_Left",
+    "objectName": [ "Geo Rock Outskirts (1)" ],
     "sceneName": "Deepnest_East_06",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2855,6 +2886,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Above_Root": {
     "name": "Geo_Rock-Kingdom's_Edge_Above_Root",
+    "objectName": [ "Geo Rock Outskirts" ],
     "sceneName": "Deepnest_East_07",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2863,6 +2895,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Above_Tower": {
     "name": "Geo_Rock-Kingdom's_Edge_Above_Tower",
+    "objectName": [ "Geo Rock Outskirts (1)" ],
     "sceneName": "Deepnest_East_07",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2871,6 +2904,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Below_Colosseum": {
     "name": "Geo_Rock-Kingdom's_Edge_Below_Colosseum",
+    "objectName": [ "Geo Rock Outskirts" ],
     "sceneName": "Deepnest_East_08",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -2879,6 +2913,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_Above_420_Geo_Rock": {
     "name": "Geo_Rock-Kingdom's_Edge_Above_420_Geo_Rock",
+    "objectName": [ "Geo Rock Outskirts" ],
     "sceneName": "Deepnest_East_17",
     "pinScene": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
@@ -2888,6 +2923,7 @@
   },
   "Geo_Rock-Kingdom's_Edge_420_Geo_Rock": {
     "name": "Geo_Rock-Kingdom's_Edge_420_Geo_Rock",
+    "objectName": [ "Giant Geo Egg" ],
     "sceneName": "Deepnest_East_17",
     "pinScene": "Deepnest_East_14",
     "mapArea": "Kingdoms_Edge",
@@ -2958,6 +2994,7 @@
   //},
   "Geo_Rock-Greenpath_Entrance": {
     "name": "Geo_Rock-Greenpath_Entrance",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_01",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -2966,6 +3003,7 @@
   },
   "Geo_Rock-Greenpath_Waterfall": {
     "name": "Geo_Rock-Greenpath_Waterfall",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_01b",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -2974,6 +3012,7 @@
   },
   "Geo_Rock-Greenpath_Below_Skip_Squit": {
     "name": "Geo_Rock-Greenpath_Below_Skip_Squit",
+    "objectName": [ "Geo Rock Green Path 01 (1)" ],
     "sceneName": "Fungus1_02",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -2982,6 +3021,7 @@
   },
   "Geo_Rock-Greenpath_Skip_Squit": {
     "name": "Geo_Rock-Greenpath_Skip_Squit",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_02",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3005,6 +3045,7 @@
   //},
   "Geo_Rock-Greenpath_Second_Skip_Lower": {
     "name": "Geo_Rock-Greenpath_Second_Skip_Lower",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_03",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3013,6 +3054,7 @@
   },
   "Geo_Rock-Greenpath_Below_Hornet": {
     "name": "Geo_Rock-Greenpath_Below_Hornet",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_04",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3022,6 +3064,7 @@
   },
   "Geo_Rock-Greenpath_Above_Thorns": {
     "name": "Geo_Rock-Greenpath_Above_Thorns",
+    "objectName": [ "Geo Rock 2" ],
     "sceneName": "Fungus1_05",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3030,6 +3073,7 @@
   },
   "Geo_Rock-Greenpath_Hunter's_Journal": {
     "name": "Geo_Rock-Greenpath_Hunter's_Journal",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_07",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3038,6 +3082,7 @@
   },
   "Geo_Rock-Greenpath_Acid_Bridge": {
     "name": "Geo_Rock-Greenpath_Acid_Bridge",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_10",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3046,6 +3091,7 @@
   },
   "Geo_Rock-Greenpath_After_MMC_Hidden": {
     "name": "Geo_Rock-Greenpath_After_MMC_Hidden",
+    "objectName": [ "Geo Rock Green Path 02" ],
     "sceneName": "Fungus1_12",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3069,6 +3115,7 @@
   //},
   "Geo_Rock-Greenpath_Obbles_Fool_Eater": {
     "name": "Geo_Rock-Greenpath_Obbles_Fool_Eater",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_19",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3087,6 +3134,7 @@
   },
   "Geo_Rock-Greenpath_Below_Stag": {
     "name": "Geo_Rock-Greenpath_Below_Stag",
+    "objectName": [ "Geo Rock Green Path 01 (1)" ],
     "sceneName": "Fungus1_22",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3095,6 +3143,7 @@
   },
   "Geo_Rock-Greenpath_Below_Stag_Fool_Eater": {
     "name": "Geo_Rock-Greenpath_Below_Stag_Fool_Eater",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_22",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3103,6 +3152,7 @@
   },
   "Geo_Rock-Baldur_Shell_Top_Left": {
     "name": "Geo_Rock-Baldur_Shell_Top_Left",
+    "objectName": [ "Geo Rock 2" ],
     "sceneName": "Fungus1_28",
     "mapArea": "Howling_Cliffs",
     "pool": "Rock",
@@ -3111,6 +3161,7 @@
   },
   "Geo_Rock-Baldur_Shell_Alcove": {
     "name": "Geo_Rock-Baldur_Shell_Alcove",
+    "objectName": [ "Geo Rock 1 (2)" ],
     "sceneName": "Fungus1_28",
     "mapArea": "Howling_Cliffs",
     "pool": "Rock",
@@ -3119,6 +3170,7 @@
   },
   "Geo_Rock-Greenpath_MMC": {
     "name": "Geo_Rock-Greenpath_MMC",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_29",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3127,6 +3179,7 @@
   },
   "Geo_Rock-Greenpath_Below_Toll": {
     "name": "Geo_Rock-Greenpath_Below_Toll",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus1_31",
     "mapArea": "Greenpath",
     "pool": "Rock",
@@ -3150,6 +3203,7 @@
   //},
   "Geo_Rock-Fungal_Below_Shrumal_Ogres": {
     "name": "Geo_Rock-Fungal_Below_Shrumal_Ogres",
+    "objectName": [ "Geo Rock Fung 01" ],
     "sceneName": "Fungus2_04",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3158,6 +3212,7 @@
   },
   "Geo_Rock-Fungal_Above_Cloth": {
     "name": "Geo_Rock-Fungal_Above_Cloth",
+    "objectName": [ "Geo Rock Fung 01" ],
     "sceneName": "Fungus2_08",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3166,6 +3221,7 @@
   },
   "Geo_Rock-Fungal_After_Cloth": {
     "name": "Geo_Rock-Fungal_After_Cloth",
+    "objectName": [ "Geo Rock Fung 01" ],
     "sceneName": "Fungus2_10",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3204,6 +3260,7 @@
   //},
   "Geo_Rock-Mantis_Outskirts_Alcove": {
     "name": "Geo_Rock-Mantis_Outskirts_Alcove",
+    "objectName": [ "Geo Rock Fung 01 (1)" ],
     "sceneName": "Fungus2_13",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3212,6 +3269,7 @@
   },
   "Geo_Rock-Mantis_Village_After_Lever": {
     "name": "Geo_Rock-Mantis_Village_After_Lever",
+    "objectName": [ "Geo Rock 1" ],
     "sceneName": "Fungus2_14",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3237,6 +3295,7 @@
   //},
   "Geo_Rock-Mantis_Village_Below_Lore": {
     "name": "Geo_Rock-Mantis_Village_Below_Lore",
+    "objectName": [ "Geo Rock 2 (1)" ],
     "sceneName": "Fungus2_14",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3246,6 +3305,7 @@
   },
   "Geo_Rock-Mantis_Village_Above_Lever": {
     "name": "Geo_Rock-Mantis_Village_Above_Lever",
+    "objectName": [ "Geo Rock 2" ],
     "sceneName": "Fungus2_14",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3255,6 +3315,7 @@
   },
   "Geo_Rock-Above_Mantis_Lords_1": {
     "name": "Geo_Rock-Above_Mantis_Lords_1",
+    "objectName": [ "Geo Rock 1" ],
     "sceneName": "Fungus2_15",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3263,6 +3324,7 @@
   },
   "Geo_Rock-Above_Mantis_Lords_2": {
     "name": "Geo_Rock-Above_Mantis_Lords_2",
+    "objectName": [ "Geo Rock 1 (1)" ],
     "sceneName": "Fungus2_15",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3286,6 +3348,7 @@
   //},
   "Geo_Rock-Fungal_Bouncy_Grub_Lever": {
     "name": "Geo_Rock-Fungal_Bouncy_Grub_Lever",
+    "objectName": [ "Geo Rock Fung 02 (1)" ],
     "sceneName": "Fungus2_18",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3294,6 +3357,7 @@
   },
   "Geo_Rock-Fungal_After_Cornifer": {
     "name": "Geo_Rock-Fungal_After_Cornifer",
+    "objectName": [ "Geo Rock Fung 01 (1)" ],
     "sceneName": "Fungus2_18",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3302,6 +3366,7 @@
   },
   "Geo_Rock-Fungal_Above_City_Entrance": {
     "name": "Geo_Rock-Fungal_Above_City_Entrance",
+    "objectName": [ "Geo Rock 1" ],
     "sceneName": "Fungus2_21",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3310,6 +3375,7 @@
   },
   "Geo_Rock-Deepnest_By_Mantis_Lords_1": {
     "name": "Geo_Rock-Deepnest_By_Mantis_Lords_1",
+    "objectName": [ "Geo Rock Deepnest (2)" ],
     "sceneName": "Fungus2_25",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -3318,6 +3384,7 @@
   },
   "Geo_Rock-Deepnest_By_Mantis_Lords_2": {
     "name": "Geo_Rock-Deepnest_By_Mantis_Lords_2",
+    "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Fungus2_25",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -3326,6 +3393,7 @@
   },
   "Geo_Rock-Depenest_Lower_Cornifer": {
     "name": "Geo_Rock-Depenest_Lower_Cornifer",
+    "objectName": [ "Geo Rock Deepnest (1)" ],
     "sceneName": "Fungus2_25",
     "mapArea": "Deepnest",
     "pool": "Rock",
@@ -3334,6 +3402,7 @@
   },
   "Geo_Rock-Fungal_Core_Entrance": {
     "name": "Geo_Rock-Fungal_Core_Entrance",
+    "objectName": [ "Geo Rock Fung 01" ],
     "sceneName": "Fungus2_29",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3342,6 +3411,7 @@
   },
   "Geo_Rock-Fungal_Core_Hidden": {
     "name": "Geo_Rock-Fungal_Core_Hidden",
+    "objectName": [ "Geo Rock Fung 01" ],
     "sceneName": "Fungus2_30",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3351,6 +3421,7 @@
   },
   "Geo_Rock-Fungal_Core_Above_Elder": {
     "name": "Geo_Rock-Fungal_Core_Above_Elder",
+    "objectName": [ "Geo Rock Fung 01 (1)" ],
     "sceneName": "Fungus2_30",
     "mapArea": "Fungal_Wastes",
     "pool": "Rock",
@@ -3359,6 +3430,7 @@
   },
   "Geo_Rock-Queen's_Gardens_Acid_Entrance": {
     "name": "Geo_Rock-Queen's_Gardens_Acid_Entrance",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus3_03",
     "mapArea": "Fog_Canyon",
     "pool": "Rock",
@@ -3367,6 +3439,7 @@
   },
   "Geo_Rock-Queen's_Gardens_Below_Stag": {
     "name": "Geo_Rock-Queen's_Gardens_Below_Stag",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus3_10",
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
@@ -3375,6 +3448,7 @@
   },
   "Geo_Rock-Fog_Canyon_East": {
     "name": "Geo_Rock-Fog_Canyon_East",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus3_26",
     "mapArea": "Fog_Canyon",
     "pool": "Rock",
@@ -3383,14 +3457,17 @@
   },
   "Geo_Rock-Love_Key": {
     "name": "Geo_Rock-Love_Key",
+    "objectName": [ "Geo Rock Green Path 01 (1)" ],
     "sceneName": "Fungus3_39",
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
     "offsetX": -0.4,
     "offsetY": 0.0
   },
+  // not a real "dupe" because it is not that close to the other one
   "Geo_Rock-Love_Key_Dupe": {
     "name": "Geo_Rock-Love_Key_Dupe",
+    "objectName": [ "Geo Rock Green Path 01" ],
     "sceneName": "Fungus3_39",
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
@@ -3399,6 +3476,7 @@
   },
   "Geo_Rock-Queen's_Gardens_Above_Marmu": {
     "name": "Geo_Rock-Queen's_Gardens_Above_Marmu",
+    "objectName": [ "Geo Rock Green Path 02" ],
     "sceneName": "Fungus3_48",
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
@@ -3407,6 +3485,7 @@
   },
   "Geo_Rock-Pale_Lurker": {
     "name": "Geo_Rock-Pale_Lurker",
+    "objectName": [ "Geo Rock Outskirts" ],
     "sceneName": "GG_Lurker",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3415,6 +3494,7 @@
   },
   "Geo_Rock-Godhome_Pipeway": {
     "name": "Geo_Rock-Godhome_Pipeway",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "GG_Pipeway",
     "mapArea": "Royal_Waterways",
     "pool": "Rock",
@@ -3423,6 +3503,7 @@
   },
   "Geo_Rock-Hive_Entrance": {
     "name": "Geo_Rock-Hive_Entrance",
+    "objectName": [ "Geo Rock Hive" ],
     "sceneName": "Hive_01",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3431,6 +3512,7 @@
   },
   "Geo_Rock-Hive_Outside_Bench": {
     "name": "Geo_Rock-Hive_Outside_Bench",
+    "objectName": [ "Geo Rock Hive" ],
     "sceneName": "Hive_02",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3439,6 +3521,7 @@
   },
   "Geo_Rock-Hive_Below_Root": {
     "name": "Geo_Rock-Hive_Below_Root",
+    "objectName": [ "Geo Rock Hive (1)" ],
     "sceneName": "Hive_02",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3447,6 +3530,7 @@
   },
   "Geo_Rock-Hive_After_Root": {
     "name": "Geo_Rock-Hive_After_Root",
+    "objectName": [ "Geo Rock Hive (2)" ],
     "sceneName": "Hive_02",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3455,6 +3539,7 @@
   },
   "Geo_Rock-Hive_Below_Stash": {
     "name": "Geo_Rock-Hive_Below_Stash",
+    "objectName": [ "Geo Rock Hive (1)" ],
     "sceneName": "Hive_03",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3478,6 +3563,7 @@
   //},
   "Geo_Rock-Hive_Below_Grub": {
     "name": "Geo_Rock-Hive_Below_Grub",
+    "objectName": [ "Geo Rock Hive (1)" ],
     "sceneName": "Hive_04",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3486,6 +3572,7 @@
   },
   "Geo_Rock-Hive_Above_Mask": {
     "name": "Geo_Rock-Hive_Above_Mask",
+    "objectName": [ "Geo Rock Hive" ],
     "sceneName": "Hive_04",
     "mapArea": "Kingdoms_Edge",
     "pool": "Rock",
@@ -3494,6 +3581,7 @@
   },
   "Geo_Rock-Crystal_Peak_Lower_Middle": {
     "name": "Geo_Rock-Crystal_Peak_Lower_Middle",
+    "objectName": [ "Geo Rock Mine (1)" ],
     "sceneName": "Mines_02",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3502,6 +3590,7 @@
   },
   "Geo_Rock-Crystal_Peak_Lower_Conveyer_1": {
     "name": "Geo_Rock-Crystal_Peak_Lower_Conveyer_1",
+    "objectName": [ "Geo Rock Mine" ],
     "sceneName": "Mines_02",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3510,6 +3599,7 @@
   },
   "Geo_Rock-Crystal_Peak_Lower_Conveyer_2": {
     "name": "Geo_Rock-Crystal_Peak_Lower_Conveyer_2",
+    "objectName": [ "Geo Rock 1" ],
     "sceneName": "Mines_02",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3534,6 +3624,7 @@
   //},
   "Geo_Rock-Crystal_Peak_Above_Spike_Grub": {
     "name": "Geo_Rock-Crystal_Peak_Above_Spike_Grub",
+    "objectName": [ "Geo Rock Mine" ],
     "sceneName": "Mines_05",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3542,6 +3633,7 @@
   },
   "Geo_Rock-Crystal_Peak_Mimic_Grub": {
     "name": "Geo_Rock-Crystal_Peak_Mimic_Grub",
+    "objectName": [ "Geo Rock Mine" ],
     "sceneName": "Mines_16",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3566,6 +3658,7 @@
   //},
   "Geo_Rock-Crystal_Peak_Conga_Line": {
     "name": "Geo_Rock-Crystal_Peak_Conga_Line",
+    "objectName": [ "Geo Rock Mine (4)" ],
     "sceneName": "Mines_20",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3610,6 +3703,7 @@
   //},
   "Geo_Rock-Crystal_Peak_Before_Crystal_Heart": {
     "name": "Geo_Rock-Crystal_Peak_Before_Crystal_Heart",
+    "objectName": [ "Geo Rock Mine" ],
     "sceneName": "Mines_31",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3639,6 +3733,7 @@
   //},
   "Geo_Rock-Crystal_Peak_Above_Crushers_Lower": {
     "name": "Geo_Rock-Crystal_Peak_Above_Crushers_Lower",
+    "objectName": [ "Geo Rock Mine" ],
     "sceneName": "Mines_37",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3647,6 +3742,7 @@
   },
   "Geo_Rock-Crystal_Peak_Above_Crushers_Higher": {
     "name": "Geo_Rock-Crystal_Peak_Above_Crushers_Higher",
+    "objectName": [ "Geo Rock Mine (1)" ],
     "sceneName": "Mines_37",
     "mapArea": "Crystal_Peak",
     "pool": "Rock",
@@ -3655,6 +3751,7 @@
   },
   "Geo_Rock-Resting_Grounds_Catacombs_Grub": {
     "name": "Geo_Rock-Resting_Grounds_Catacombs_Grub",
+    "objectName": [ "Geo Rock Grave 02" ],
     "sceneName": "RestingGrounds_10",
     "mapArea": "Resting_Grounds",
     "pool": "Rock",
@@ -3678,6 +3775,7 @@
   },
   "Geo_Rock-Overgrown_Mound": {
     "name": "Geo_Rock-Overgrown_Mound",
+    "objectName": [ "Geo Rock Green Path 02" ],
     "sceneName": "Room_Fungus_Shaman",
     "pinScene": "Fungus3_44",
     "mapArea": "Fog_Canyon",
@@ -3704,6 +3802,7 @@
   },
   "Geo_Rock-Pleasure_House": {
     "name": "Geo_Rock-Pleasure_House",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins_Elevator",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3712,6 +3811,7 @@
   },
   "Geo_Rock-City_of_Tears_Quirrel": {
     "name": "Geo_Rock-City_of_Tears_Quirrel",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins1_03",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3720,6 +3820,7 @@
   },
   "Geo_Rock-City_of_Tears_Lemm": {
     "name": "Geo_Rock-City_of_Tears_Lemm",
+    "objectName": [ "Geo Rock City 1 (1)" ],
     "sceneName": "Ruins1_05b",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3728,6 +3829,7 @@
   },
   "Geo_Rock-City_of_Tears_Above_Lemm": {
     "name": "Geo_Rock-City_of_Tears_Above_Lemm",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins1_05c",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3736,6 +3838,7 @@
   },
   "Geo_Rock-Soul_Sanctum": {
     "name": "Geo_Rock-Soul_Sanctum",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins1_32",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3744,6 +3847,7 @@
   },
   "Geo_Rock-Watcher's_Spire": {
     "name": "Geo_Rock-Watcher's_Spire",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins2_01",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3752,6 +3856,7 @@
   },
   "Geo_Rock-Above_King's_Station": {
     "name": "Geo_Rock-Above_King's_Station",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins2_05",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3760,6 +3865,7 @@
   },
   "Geo_Rock-King's_Station": {
     "name": "Geo_Rock-King's_Station",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Ruins2_06",
     "mapArea": "City_of_Tears",
     "pool": "Rock",
@@ -3816,6 +3922,7 @@
   },
   "Geo_Rock-Waterways_Tuk": {
     "name": "Geo_Rock-Waterways_Tuk",
+    "objectName": [ "Geo Rock City 1 (1)" ],
     "sceneName": "Waterways_01",
     "mapArea": "Royal_Waterways",
     "pool": "Rock",
@@ -3824,6 +3931,7 @@
   },
   "Geo_Rock-Waterways_Tuk_Alcove": {
     "name": "Geo_Rock-Waterways_Tuk_Alcove",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Waterways_01",
     "mapArea": "Royal_Waterways",
     "pool": "Rock",
@@ -3832,6 +3940,7 @@
   },
   "Geo_Rock-Waterways_Left": {
     "name": "Geo_Rock-Waterways_Left",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Waterways_04b",
     "mapArea": "Royal_Waterways",
     "pool": "Rock",
@@ -3840,6 +3949,7 @@
   },
   "Geo_Rock-Waterways_East": {
     "name": "Geo_Rock-Waterways_East",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Waterways_07",
     "mapArea": "Royal_Waterways",
     "pool": "Rock",
@@ -3848,6 +3958,7 @@
   },
   "Geo_Rock-Waterways_Flukemarm": {
     "name": "Geo_Rock-Waterways_Flukemarm",
+    "objectName": [ "Geo Rock City 1" ],
     "sceneName": "Waterways_08",
     "mapArea": "Royal_Waterways",
     "pool": "Rock",
