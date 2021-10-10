@@ -27,16 +27,16 @@ namespace VanillaMapMod.Map
         {
             orig(self, go_gameMap);
 
-            GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-            foreach (GameObject go in allObjects)
-            {
-                if (go.name == "Map Markers"
-                    || go.name == "Map Key")
-                {
-                    go.transform.parent = null;
-                    go.gameObject.SetActive(false);
-                }
-            }
+            //GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+            //foreach (GameObject go in allObjects)
+            //{
+            //    if (go.name == "Map Markers"
+            //        || go.name == "Map Key")
+            //    {
+            //        //go.transform.parent = null;
+            //        go.gameObject.SetActive(false);
+            //    }
+            //}
 
             SetVanillaSprites(go_gameMap);
         }
@@ -50,6 +50,11 @@ namespace VanillaMapMod.Map
             {
                 if (child == null)
                     continue;
+
+                if (child.name.Contains ("pin_"))
+                {
+                    VanillaMapMod.Instance.Log(child.name);
+                }
 
                 try
                 {
@@ -75,11 +80,13 @@ namespace VanillaMapMod.Map
                             SetNewSprite(child.gameObject, "pinGrubKing");
                             break;
                         case "pin_sly":
-                        case "pin_sly (1)":
                             SetNewSprite(child.gameObject, "pinShopSly");
                             break;
+                        case "pin_sly (1)":
+                            SetNewSprite(child.gameObject, "pinGodSeeker");
+                            break;
                         case "pin_hunter":
-                            SetNewSprite(child.gameObject, "pinShopBanker");
+                            SetNewSprite(child.gameObject, "pinShopHunter");
                             break;
                         case "pin_banker":
                             SetNewSprite(child.gameObject, "pinShopBanker");
@@ -122,11 +129,12 @@ namespace VanillaMapMod.Map
                             SetNewSprite(child.gameObject, "pinBackerGhost");
                         break;
                         case "Map Markers":
-                        // Delete vanilla cocoon pins, make our own
-                        case "pin_blue_health":
-                            child.transform.parent = null;
                             child.gameObject.SetActive(false);
                             break;
+                        //    // Delete vanilla cocoon pins, make our own
+                        //case "pin_blue_health":
+                        //    child.gameObject.SetActive(false);
+                        //    break;
                     }
                 }
                 catch (Exception e)
@@ -166,6 +174,11 @@ namespace VanillaMapMod.Map
                             MoveSprite(child.gameObject, new Vector3(-0.15f, -0.3f));
                         }
                     }
+                }
+                // Disable vanilla cocoon pins, make our own
+                else if (child.gameObject.name == "pin_blue_health")
+                {
+                    child.gameObject.SetActive(false);
                 }
 
                 SetVanillaSpritesPersistent(child.gameObject);

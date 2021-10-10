@@ -41,49 +41,6 @@ namespace VanillaMapMod.Map
             }
         }
 
-        //private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
-        //{
-        //    orig(self, go_gameMap);
-        //}
-
-        //private static void GetChildRecursive(GameObject obj)
-        //{
-        //    if (obj == null)
-        //        return;
-
-        //    foreach (Transform child in obj.transform)
-        //    {
-        //        if (child == null)
-        //            continue;
-
-        //        if (child.name.Contains("pin") || child.name.Contains("Grub"))
-        //        {
-        //            MapMod.Instance.Log(child.gameObject.name);
-
-        //            try
-        //            {
-        //                PlayMakerFSM[] FSMs = child.gameObject.GetComponents<PlayMakerFSM>();
-
-        //                foreach (PlayMakerFSM FSM in FSMs)
-        //                {
-        //                    MapMod.Instance.Log("-" + FSM.FsmName);
-
-        //                    foreach (FsmState state in FSM.FsmStates)
-        //                    {
-        //                        MapMod.Instance.Log("- -" + state.Name);
-        //                    }
-        //                }
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                MapMod.Instance.LogError(e);
-        //            }
-        //        }
-
-        //        GetChildRecursive(child.gameObject);
-        //    }
-        //}
-
         private static void GameMap_WorldMap(On.GameMap.orig_WorldMap orig, GameMap self)
         {
             orig(self);
@@ -120,16 +77,6 @@ namespace VanillaMapMod.Map
             if (goCustomPins != null)
             {
                 CustomPins.UpdatePins(mapArea);
-            }
-
-            foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlant)
-            {
-                VanillaMapMod.Instance.Log(rootScene);
-            }
-
-            foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlantC)
-            {
-                VanillaMapMod.Instance.Log(rootScene);
             }
         }
 

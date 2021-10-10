@@ -1,6 +1,7 @@
 ﻿using System;
 using VanillaMapMod.Data;
 using VanillaMapMod.Map;
+using VanillaMapMod.PauseMenu;
 using VanillaMapMod.Settings;
 using VanillaMapMod.Shop;
 using VanillaMapMod.Trackers;
@@ -75,6 +76,9 @@ namespace VanillaMapMod
             // Adds new Pins to the Shop
             ShopHooks.Hook();
             ShopChanger.Hook();
+
+            GUIController.Setup();
+            GUIController.Instance.BuildMenus();
 
             Log("Initialization complete.");
         }

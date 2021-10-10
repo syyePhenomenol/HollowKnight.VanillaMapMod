@@ -7,38 +7,8 @@ namespace VanillaMapMod.Trackers
     {
         public static void Hook()
         {
-            //Modding.ModHooks.AfterSavegameLoadHook += ModHooks_AfterSavegameLoadHook;
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
-
-        //private static void ModHooks_AfterSavegameLoadHook(SaveGameData obj)
-        //{
-        //    // Doesn't seem to be a way to tell apart the duplicate cases
-        //    foreach (GeoRockData grd in obj.sceneData.geoRocks)
-        //    {
-        //        if (grd.hitsLeft == 0)
-        //        {
-        //            VanillaMapMod.LS.ObtainedItems[grd.id + grd.sceneName] = true;
-        //        }
-        //    }
-
-        //    foreach (PersistentBoolData pbd in obj.sceneData.persistentBoolItems)
-        //    {
-        //        if (pbd.id.Contains("Shiny Item") && pbd.activated)
-        //        {
-        //            VanillaMapMod.LS.ObtainedItems[pbd.id + pbd.sceneName] = true;
-        //        }
-        //    }
-
-        //    //foreach (PersistentIntData pid in obj.sceneData.persistentIntItems)
-        //    //{
-        //    //             MapMod.Instance.Log("- " + pid.id);
-        //    //             MapMod.Instance.Log("- " + pid.sceneName);
-        //    //             MapMod.Instance.Log("- - " + pid.value);
-        //    //         }
-
-        //    // TO DO: Mask/Vessel/Essence Boss/Chest
-        //}
 
         public static void UpdateObtainedItems()
         {
@@ -112,7 +82,7 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Cyclone_Slash" + "Room_nailmaster"] = true;
             }
 
-            // PlayerData has these two the wrong way around?
+            // PlayerData has these two the wrong way around
             if (PlayerData.instance.hasUpwardSlash)
             {
                 VanillaMapMod.LS.ObtainedItems["Dash_Slash" + "Room_nailmaster_03"] = true;
@@ -258,7 +228,7 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Grimmchild" + "Grimm_Main_Tent"] = true;
             }
 
-            if (PlayerData.instance.hasCityKey)
+            if (PlayerData.instance.hasCityKey || PlayerData.instance.openedCityGate)
             {
                 VanillaMapMod.LS.ObtainedItems["City_Crest" + "Crossroads_10"] = true;
             }
@@ -273,12 +243,12 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Simple_Key-Lurker" + "GG_Lurker"] = true;
             }
 
-            if (PlayerData.instance.hasSlykey)
+            if (PlayerData.instance.hasSlykey || PlayerData.instance.gaveSlykey)
             {
                 VanillaMapMod.LS.ObtainedItems["Shopkeeper's_Key" + "Mines_11"] = true;
             }
 
-            if (PlayerData.instance.hasLoveKey)
+            if (PlayerData.instance.hasLoveKey || PlayerData.instance.openedLoveDoor)
             {
                 VanillaMapMod.LS.ObtainedItems["Love_Key" + "Fungus3_39"] = true;
             }
@@ -313,12 +283,32 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Boss_Essence-Grey_Prince_Zote" + "Room_Bretta_Basement"] = true;
             }
 
+            // Team Cherry, why...?
+            if (PlayerData.instance.vesselFragStagNest)
+            {
+                VanillaMapMod.LS.ObtainedItems["Vessel Fragment Stagnest (1)" + "Cliffs_03"] = true;
+            }
+
+            if (PlayerData.instance.notchFogCanyon)
+            {
+                VanillaMapMod.LS.ObtainedItems["Charm Notch" + "Fungus3_28"] = true;
+            }
+
             // Doesn't seem to be a way to tell apart the duplicate cases... probably no one will notice
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {
                 if (grd.hitsLeft == 0)
                 {
                     VanillaMapMod.LS.ObtainedItems[grd.id + grd.sceneName] = true;
+
+                    if (grd.sceneName == "Crossroads_ShamanTemple" && grd.id == "Geo Rock 2")
+                    {
+                        VanillaMapMod.LS.ObtainedItems["Geo Rock 1 (1)" + grd.sceneName] = true;
+                    }
+                    else if (grd.sceneName == "Abyss_06_Core" && grd.id == "Geo Rock Abyss")
+                    {
+                        VanillaMapMod.LS.ObtainedItems["Geo Rock Abyss (2)" + grd.sceneName] = true;
+                    }
                 }
             }
 
@@ -358,6 +348,16 @@ namespace VanillaMapMod.Trackers
             {
                 FsmUtil.AddAction(self, "Open", new TrackItem(goName));
             }
+
+            //else if (self.gameObject.scene.name == "Cliffs_03")
+            //{
+            //    VanillaMapMod.Instance.Log(goName);
+            //    VanillaMapMod.Instance.Log(goName);
+            //    foreach (FsmState state in self.FsmStates)
+            //    {
+            //        VanillaMapMod.Instance.Log("-" + state.Name);
+            //    }
+            //}
         }
     }
 }

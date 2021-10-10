@@ -710,7 +710,7 @@
   },
   "Vessel_Fragment-Stag_Nest": {
     "name": "Vessel_Fragment-Stag_Nest",
-    "objectName": [ "Vessel Fragment" ],
+    "objectName": [ "Vessel Fragment Stagnest (1)" ],
     "sceneName": "Cliffs_03",
     "pinScene": "Cliffs_02",
     "mapArea": "Howling_Cliffs",
@@ -729,7 +729,7 @@
   },
   "Charm_Notch-Fog_Canyon": {
     "name": "Charm_Notch-Fog_Canyon",
-    "objectName": [ "Shiny Item" ],
+    "objectName": [ "Charm Notch" ],
     "sceneName": "Fungus3_28",
     "mapArea": "Fog_Canyon",
     "pool": "Notch",
@@ -877,8 +877,8 @@
     "sceneName": "GG_Waterways",
     "mapArea": "Royal_Waterways",
     "pool": "Geo",
-    "offsetX": -1.3,
-    "offsetY": -0.6,
+    "offsetX": -1.7,
+    "offsetY": -0.62,
     "offsetZ": 0.001
   },
   "Rancid_Egg-Sheo": {
@@ -3472,7 +3472,7 @@
     "mapArea": "Queens_Gardens",
     "pool": "Rock",
     "offsetX": -1.1,
-    "offsetY": 0.4
+    "offsetY": -0.4
   },
   "Geo_Rock-Queen's_Gardens_Above_Marmu": {
     "name": "Geo_Rock-Queen's_Gardens_Above_Marmu",
@@ -4768,33 +4768,33 @@
     "offsetX": 1.2,
     "offsetY": -0.5
   },
-  "Lore_Tablet-Palace_Workshop": {
-    "name": "Lore_Tablet-Palace_Workshop",
-    "sceneName": "White_Palace_08",
-    "pinScene": "Abyss_05",
-    "mapArea": "Ancient_Basin",
-    "pool": "Lore",
-    "offsetX": 0.2,
-    "offsetY": 0.2
-  },
-  "Lore_Tablet-Palace_Throne": {
-    "name": "Lore_Tablet-Palace_Throne",
-    "sceneName": "White_Palace_09",
-    "pinScene": "Abyss_05",
-    "mapArea": "White_Palace",
-    "pool": "Lore",
-    "offsetX": 0.6,
-    "offsetY": 0.2
-  },
-  "Lore_Tablet-Path_of_Pain_Entrance": {
-    "name": "Lore_Tablet-Path_of_Pain_Entrance",
-    "sceneName": "White_Palace_18",
-    "pinScene": "Abyss_05",
-    "mapArea": "White_Palace",
-    "pool": "Lore",
-    "offsetX": 1.0,
-    "offsetY": 0.2
-  },
+  //"Lore_Tablet-Palace_Workshop": {
+  //  "name": "Lore_Tablet-Palace_Workshop",
+  //  "sceneName": "White_Palace_08",
+  //  "pinScene": "Abyss_05",
+  //  "mapArea": "Ancient_Basin",
+  //  "pool": "Lore",
+  //  "offsetX": 0.2,
+  //  "offsetY": 0.2
+  //},
+  //"Lore_Tablet-Palace_Throne": {
+  //  "name": "Lore_Tablet-Palace_Throne",
+  //  "sceneName": "White_Palace_09",
+  //  "pinScene": "Abyss_05",
+  //  "mapArea": "White_Palace",
+  //  "pool": "Lore",
+  //  "offsetX": 0.6,
+  //  "offsetY": 0.2
+  //},
+  //"Lore_Tablet-Path_of_Pain_Entrance": {
+  //  "name": "Lore_Tablet-Path_of_Pain_Entrance",
+  //  "sceneName": "White_Palace_18",
+  //  "pinScene": "Abyss_05",
+  //  "mapArea": "White_Palace",
+  //  "pool": "Lore",
+  //  "offsetX": 1.0,
+  //  "offsetY": 0.2
+  //},
   "Journal_Entry-Void_Tendrils": {
     "name": "Journal_Entry-Void_Tendrils",
     "sceneName": "Abyss_09",

@@ -14,6 +14,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Unused\**" />
+    <EmbeddedResource Remove="Unused\**" />
+    <None Remove="Unused\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Compatibility.cs" />
   </ItemGroup>
 
@@ -188,6 +194,9 @@
       <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>false</Private>
       <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UIModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 

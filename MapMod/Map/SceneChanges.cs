@@ -13,8 +13,15 @@ namespace VanillaMapMod.Map
         {
             if (GameManager.instance.sceneName == to.name && PlayerData.instance.hasQuill)
             {
-                PlayerData.instance.scenesVisited.Add(to.name);
-                PlayerData.instance.scenesMapped.Add(to.name);
+                if (!PlayerData.instance.scenesVisited.Contains(to.name))
+                {
+                    PlayerData.instance.scenesVisited.Add(to.name);
+                }
+
+                if (!PlayerData.instance.scenesMapped.Contains(to.name))
+                {
+                    PlayerData.instance.scenesMapped.Add(to.name);
+                }
             }
         }
     }
