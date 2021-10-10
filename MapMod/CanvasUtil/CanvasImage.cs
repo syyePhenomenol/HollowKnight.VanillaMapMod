@@ -33,7 +33,7 @@ namespace VanillaMapMod.CanvasUtil
 
 			_imageObj.transform.SetParent(parent.transform, false);
 
-			Vector2 position = new Vector2((pos.x + ((size.x / subSprite.width) * subSprite.width) / 2f) / 1920f, (1080f - (pos.y + ((size.y / subSprite.height) * subSprite.height) / 2f)) / 1080f);
+            Vector2 position = new((pos.x + (size.x / subSprite.width * subSprite.width / 2f)) / 1920f, (1080f - (pos.y + size.y / subSprite.height * subSprite.height / 2f)) / 1080f);
 			imageTransform.anchorMin = position;
 			imageTransform.anchorMax = position;
 			imageTransform.SetScaleX(size.x / subSprite.width);
@@ -71,7 +71,7 @@ namespace VanillaMapMod.CanvasUtil
 		{
 			if (_imageObj != null)
 			{
-				Vector2 position = new Vector2((pos.x + ((_sz.x / _sub.width) * _sub.width) / 2f) / 1920f, (1080f - (pos.y + ((_sz.y / _sub.height) * _sub.height) / 2f)) / 1080f);
+				Vector2 position = new((pos.x + (_sz.x / _sub.width * _sub.width / 2f)) / 1920f, (1080f - (pos.y + ((_sz.y / _sub.height) * _sub.height) / 2f)) / 1080f);
 				_imageObj.GetComponent<RectTransform>().anchorMin = position;
 				_imageObj.GetComponent<RectTransform>().anchorMax = position;
 			}

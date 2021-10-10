@@ -13,11 +13,10 @@ namespace VanillaMapMod.PauseMenu
 	// All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
 	public class GUIController : MonoBehaviour
 	{
-		public Dictionary<string, Texture2D> Images = new Dictionary<string, Texture2D>();
+		public Dictionary<string, Texture2D> Images = new();
 
 		private static GUIController _instance;
 
-		private GameObject _mapCanvas;
 		private GameObject _pauseCanvas;
 
 		public static GUIController Instance
@@ -32,7 +31,7 @@ namespace VanillaMapMod.PauseMenu
 
 				VanillaMapMod.Instance.LogWarn("Couldn't find GUIController");
 
-				GameObject GUIObj = new GameObject();
+				GameObject GUIObj = new();
 				_instance = GUIObj.AddComponent<GUIController>();
 				DontDestroyOnLoad(GUIObj);
 
@@ -44,11 +43,11 @@ namespace VanillaMapMod.PauseMenu
 
 		public Font TrajanNormal { get; private set; }
 
-		private Font _Arial { get; set; }
+		private Font Arial { get; set; }
 
 		public static void Setup()
 		{
-			GameObject GUIObj = new GameObject("VanillaMapMod GUI");
+			GameObject GUIObj = new("VanillaMapMod GUI");
 			_instance = GUIObj.AddComponent<GUIController>();
 			DontDestroyOnLoad(GUIObj);
 		}
@@ -65,7 +64,7 @@ namespace VanillaMapMod.PauseMenu
 
 		public void BuildMenus()
 		{
-			_LoadResources();
+			LoadResources();
 
 			_pauseCanvas = new GameObject();
 			_pauseCanvas.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
@@ -91,14 +90,14 @@ namespace VanillaMapMod.PauseMenu
 			}
 		}
 
-		private void _LoadResources()
+		private void LoadResources()
 		{
 			TrajanBold = Modding.CanvasUtil.TrajanBold;
 			TrajanNormal = Modding.CanvasUtil.TrajanNormal;
 
 			try
 			{
-				_Arial = Font.CreateDynamicFontFromOSFont
+				Arial = Font.CreateDynamicFontFromOSFont
 				(
 					Font.GetOSInstalledFontNames().First(x => x.ToLower().Contains("arial")),
 					13
@@ -107,10 +106,10 @@ namespace VanillaMapMod.PauseMenu
 			catch
 			{
 				VanillaMapMod.Instance.LogWarn("Unable to find Arial! Using Perpetua.");
-				_Arial = Modding.CanvasUtil.GetFont("Perpetua");
+				Arial = Modding.CanvasUtil.GetFont("Perpetua");
 			}
 
-			if (TrajanBold == null || TrajanNormal == null || _Arial == null)
+			if (TrajanBold == null || TrajanNormal == null || Arial == null)
 			{
 				VanillaMapMod.Instance.LogError("Could not find game fonts");
 			}
@@ -123,20 +122,18 @@ namespace VanillaMapMod.PauseMenu
 
 				try
 				{
-					using (Stream imageStream = asm.GetManifestResourceStream(res))
-					{
-						byte[] buffer = new byte[imageStream.Length];
-						imageStream.Read(buffer, 0, buffer.Length);
+                    using Stream imageStream = asm.GetManifestResourceStream(res);
+                    byte[] buffer = new byte[imageStream.Length];
+                    imageStream.Read(buffer, 0, buffer.Length);
 
-						Texture2D tex = new Texture2D(1, 1);
-						tex.LoadImage(buffer.ToArray());
+                    Texture2D tex = new(1, 1);
+                    tex.LoadImage(buffer.ToArray());
 
-						string[] split = res.Split('.');
-						string internalName = split[split.Length - 2];
+                    string[] split = res.Split('.');
+                    string internalName = split[split.Length - 2];
 
-						Images.Add(internalName, tex);
-					}
-				}
+                    Images.Add(internalName, tex);
+                }
 				catch (Exception e)
 				{
 					VanillaMapMod.Instance.LogError("Failed to load image: " + res + "\n" + e);

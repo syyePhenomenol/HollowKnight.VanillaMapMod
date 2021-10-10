@@ -50,11 +50,11 @@ namespace VanillaMapMod.CanvasUtil
 			buttonTransform.SetScaleX(size.x / bgSubSection.width);
 			buttonTransform.SetScaleY(size.y / bgSubSection.height);
 
-			Vector2 position = new Vector2
+			Vector2 position = new
 			(
 				(pos.x + size.x / bgSubSection.width * bgSubSection.width / 2f) / 1920f,
 				(1080f - (pos.y + size.y / bgSubSection.height * bgSubSection.height / 2f)) / 1080f
-			);
+            );
 
 			buttonTransform.anchorMin = buttonTransform.anchorMax = position;
 
@@ -149,9 +149,9 @@ namespace VanillaMapMod.CanvasUtil
 			if (_buttonObj != null)
 			{
 				Vector2 sz = _buttonObj.GetComponent<RectTransform>().sizeDelta;
-				Vector2 position = new Vector2((pos.x + sz.x / 2f) / 1920f, (1080f - (pos.y + sz.y / 2f)) / 1080f);
+				Vector2 position = new((pos.x + (sz.x / 2f)) / 1920f, (1080f - (pos.y + (sz.y / 2f))) / 1080f);
 				_buttonObj.GetComponent<RectTransform>().anchorMin = position;
-				_buttonObj.GetComponent<RectTransform>().anchorMax = position;
+                _buttonObj.GetComponent<RectTransform>().anchorMax = position;
 			}
 		}
 

@@ -40,7 +40,7 @@ namespace VanillaMapMod.CanvasUtil
 
 			_textObj.transform.SetParent(parent.transform, false);
 
-			Vector2 position = new Vector2((pos.x + _size.x / 2f) / 1920f, (1080f - (pos.y + _size.y / 2f)) / 1080f);
+			Vector2 position = new((pos.x + _size.x / 2f) / 1920f, (1080f - (pos.y + _size.y / 2f)) / 1080f);
 			textTransform.anchorMin = position;
 			textTransform.anchorMax = position;
 
@@ -90,7 +90,7 @@ namespace VanillaMapMod.CanvasUtil
 			{
 				RectTransform textTransform = _textObj.GetComponent<RectTransform>();
 
-				Vector2 position = new Vector2((pos.x + _size.x / 2f) / 1920f, (1080f - (pos.y + _size.y / 2f)) / 1080f);
+				Vector2 position = new((pos.x + _size.x / 2f) / 1920f, (1080f - (pos.y + _size.y / 2f)) / 1080f);
 				textTransform.anchorMin = position;
 				textTransform.anchorMax = position;
 			}

@@ -53,7 +53,12 @@ namespace VanillaMapMod.Shop
 
                 foreach (ShopDef shopItem in _shopItems)
                 {
-                    if (SettingsUtil.GetMapModSettingFromPool(shopItem.pool))
+                    //if (SettingsUtil.GetMapModSettingFromPool(shopItem.pool))
+                    //{
+                    //    continue;
+                    //}
+
+                    if (VanillaMapMod.LS.GetHasFromGroup(shopItem.pool))
                     {
                         continue;
                     }

@@ -51,11 +51,6 @@ namespace VanillaMapMod.Map
                 if (child == null)
                     continue;
 
-                if (child.name.Contains ("pin_"))
-                {
-                    VanillaMapMod.Instance.Log(child.name);
-                }
-
                 try
                 {
                     switch (child.name)

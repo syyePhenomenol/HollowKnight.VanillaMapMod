@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using VanillaMapMod.PauseMenu;
 using VanillaMapMod.Trackers;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ namespace VanillaMapMod.Map
         {
             orig(self);
 
-            GiveFullMap(self);
+            //GiveFullMap(self);
 
             if (goCustomPins == null)
             {
@@ -39,6 +40,9 @@ namespace VanillaMapMod.Map
             {
                 goCustomPins.transform.SetParent(self.transform);
             }
+
+            GUIController.Setup();
+            GUIController.Instance.BuildMenus();
         }
 
         private static void GameMap_WorldMap(On.GameMap.orig_WorldMap orig, GameMap self)
@@ -77,10 +81,11 @@ namespace VanillaMapMod.Map
             if (goCustomPins != null)
             {
                 CustomPins.UpdatePins(mapArea);
+                CustomPins.SetGroups();
             }
         }
 
-        public static void GiveFullMap(GameMap gameMap)
+        public static void GiveFullMap()
         {
             PlayerData.instance.hasMap = true;
 
@@ -137,19 +142,13 @@ namespace VanillaMapMod.Map
                 }
             }
 
-            //foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlant)
-            //{
-            //    VanillaMapMod.Instance.Log(rootScene);
-            //}
-
-            //foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlantC)
-            //{
-            //    VanillaMapMod.Instance.Log(rootScene);
-            //}
-
             VanillaMapMod.LS.SetFullMap();
 
-            ForceMapUpdate(gameMap);
+            GameMap gameMap = GameObject.Find("Game_Map(Clone)").GetComponent<GameMap>();
+
+            gameMap.SetupMap();
+
+            PauseGUI.SetGUI();
         }
 
         private static readonly string[] _rootScenes =
@@ -171,28 +170,28 @@ namespace VanillaMapMod.Map
             "Hive_02"
         };
 
-        private static void ForceMapUpdate(GameMap gameMap)
-        {
-            PlayerData pd = PlayerData.instance;
+        //private static void ForceMapUpdate(GameMap gameMap)
+        //{
+        //    PlayerData pd = PlayerData.instance;
 
-            if (!pd.hasQuill)
-            {
-                try
-                {
-                    // Give Quill, because it's required to...
-                    pd.SetBool(nameof(pd.hasQuill), true);
+        //    if (!pd.hasQuill)
+        //    {
+        //        try
+        //        {
+        //            // Give Quill, because it's required to...
+        //            pd.SetBool(nameof(pd.hasQuill), true);
 
-                    // ... uncover the full map
-                    gameMap.SetupMap();
+        //            // ... uncover the full map
+        //            gameMap.SetupMap();
 
-                    // Remove Quill
-                    pd.SetBool(nameof(pd.hasQuill), false);
-                }
-                catch (Exception e)
-                {
-                    VanillaMapMod.Instance.LogError(e);
-                }
-            }
-        }
+        //            // Remove Quill
+        //            pd.SetBool(nameof(pd.hasQuill), false);
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            VanillaMapMod.Instance.LogError(e);
+        //        }
+        //    }
+        //}
     }
 }

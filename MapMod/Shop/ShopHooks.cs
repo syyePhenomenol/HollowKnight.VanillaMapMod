@@ -27,7 +27,8 @@ namespace VanillaMapMod.Shop
         {
             if (SettingsUtil.IsMapModSetting(boolName))
             {
-                return SettingsUtil.GetMapModSettingFromBoolName(boolName);
+                //return SettingsUtil.GetMapModSettingFromBoolName(boolName);
+                return VanillaMapMod.LS.GetHasFromGroup(boolName);
             }
 
             return orig;
@@ -35,7 +36,8 @@ namespace VanillaMapMod.Shop
 
         private static bool BoolSetOverride(string boolName, bool orig)
         {
-            SettingsUtil.SetMapModSetting(boolName, orig);
+            //SettingsUtil.SetMapModSetting(boolName, orig);
+            VanillaMapMod.LS.SetHasFromGroup(boolName, orig);
 
             return orig;
         }

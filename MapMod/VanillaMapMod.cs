@@ -77,9 +77,6 @@ namespace VanillaMapMod
             ShopHooks.Hook();
             ShopChanger.Hook();
 
-            GUIController.Setup();
-            GUIController.Instance.BuildMenus();
-
             Log("Initialization complete.");
         }
     }

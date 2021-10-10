@@ -8,11 +8,11 @@ namespace VanillaMapMod.CanvasUtil
 	public class CanvasPanel
 	{
 		public bool Active;
-		private readonly Dictionary<string, CanvasButton> _buttons = new Dictionary<string, CanvasButton>();
-		private readonly Dictionary<string, CanvasImage> _images = new Dictionary<string, CanvasImage>();
-		private readonly Dictionary<string, CanvasPanel> _panels = new Dictionary<string, CanvasPanel>();
+		private readonly Dictionary<string, CanvasButton> _buttons = new();
+		private readonly Dictionary<string, CanvasImage> _images = new();
+		private readonly Dictionary<string, CanvasPanel> _panels = new();
 		private readonly Vector2 _size;
-		private readonly Dictionary<string, CanvasText> _texts = new Dictionary<string, CanvasText>();
+		private readonly Dictionary<string, CanvasText> _texts = new();
 		private CanvasImage _background;
 		private GameObject _canvas;
 
@@ -32,7 +32,7 @@ namespace VanillaMapMod.CanvasUtil
 
 		public void AddButton(string name, Texture2D tex, Vector2 pos, Vector2 sz, UnityAction<string> func, Rect bgSubSection, Font font = null, string text = null, int fontSize = 13)
 		{
-			CanvasButton button = new CanvasButton(_canvas, name, tex, _position + pos, _size + sz, bgSubSection, font, text, fontSize);
+			CanvasButton button = new(_canvas, name, tex, _position + pos, _size + sz, bgSubSection, font, text, fontSize);
 			button.AddClickEvent(func);
 
 			_buttons.Add(name, button);
@@ -40,14 +40,14 @@ namespace VanillaMapMod.CanvasUtil
 
 		public void AddImage(string name, Texture2D tex, Vector2 pos, Vector2 size, Rect subSprite)
 		{
-			CanvasImage image = new CanvasImage(_canvas, tex, _position + pos, size, subSprite);
+			CanvasImage image = new(_canvas, tex, _position + pos, size, subSprite);
 
 			_images.Add(name, image);
 		}
 
 		public CanvasPanel AddPanel(string name, Texture2D tex, Vector2 pos, Vector2 sz, Rect bgSubSection)
 		{
-			CanvasPanel panel = new CanvasPanel(_canvas, tex, _position + pos, sz, bgSubSection);
+			CanvasPanel panel = new(_canvas, tex, _position + pos, sz, bgSubSection);
 
 			_panels.Add(name, panel);
 
@@ -56,7 +56,7 @@ namespace VanillaMapMod.CanvasUtil
 
 		public void AddText(string name, string text, Vector2 pos, Vector2 sz, Font font, int fontSize = 13, FontStyle style = FontStyle.Normal, TextAnchor alignment = TextAnchor.UpperLeft)
 		{
-			CanvasText t = new CanvasText(_canvas, _position + pos, sz, font, text, fontSize, style, alignment);
+			CanvasText t = new(_canvas, _position + pos, sz, font, text, fontSize, style, alignment);
 
 			_texts.Add(name, t);
 		}
@@ -254,7 +254,7 @@ namespace VanillaMapMod.CanvasUtil
 			_background.UpdateImage(tex, subSection);
 		}
 
-		private Vector2 _GetPosition()
+		private Vector2 GetPosition()
 		{
 			return _position;
 		}

@@ -1,4 +1,5 @@
 ﻿using UnityEngine.SceneManagement;
+using VanillaMapMod.PauseMenu;
 
 namespace VanillaMapMod.Map
 {
@@ -22,6 +23,11 @@ namespace VanillaMapMod.Map
                 {
                     PlayerData.instance.scenesMapped.Add(to.name);
                 }
+            }
+
+            if (to.name == "Quit_to_Menu")
+            {
+                GUIController.Unload();
             }
         }
     }

@@ -93,7 +93,11 @@ namespace VanillaMapMod.Map
 
         private void HideIfNotBought()
         {
-            if (!SettingsUtil.GetMapModSettingFromPool(PinData.pool))
+            //if (!SettingsUtil.GetMapModSettingFromPool(PinData.pool))
+            //{
+            //    gameObject.SetActive(false);
+            //}
+            if (!VanillaMapMod.LS.GetHasFromGroup(PinData.pool))
             {
                 gameObject.SetActive(false);
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VanillaMapMod.Data;
+using VanillaMapMod.PauseMenu;
 using UnityEngine;
 
 namespace VanillaMapMod.Map
@@ -35,6 +36,21 @@ namespace VanillaMapMod.Map
             {
                 pin.UpdatePin(mapName);
             }
+        }
+
+        public void SetGroups()
+        {
+            foreach (string group in _Groups.Keys)
+            {
+                _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
+            }
+        }
+
+        public void ToggleGroup(string group)
+        {
+            VanillaMapMod.LS.SetOnFromGroup(group, !VanillaMapMod.LS.GetOnFromGroup(group));
+            _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
+            PauseGUI.SetGUI();
         }
 
         public void DestroyPins()
