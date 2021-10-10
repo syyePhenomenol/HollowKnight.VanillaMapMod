@@ -9,14 +9,6 @@ namespace VanillaMapMod.Map
 {
     internal static class SpriteManager
     {
-        public enum PinStyles
-        {
-            Normal,
-            Q_Marks_1,
-            Q_Marks_2,
-            Q_Marks_3,
-        }
-
         private static Dictionary<string, Sprite> _sprites;
 
         public static void LoadEmbeddedPngs(string prefix)

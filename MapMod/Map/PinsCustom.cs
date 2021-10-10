@@ -56,7 +56,7 @@ namespace VanillaMapMod.Map
             }
 
             // Create new pin GameObject
-            GameObject goPin = new($"pin_rando_{pinData.name}")
+            GameObject goPin = new($"pin_mapmod_{pinData.name}")
             {
                 layer = 30
             };
@@ -134,29 +134,5 @@ namespace VanillaMapMod.Map
         {
             gameObject.SetActive(false);
         }
-
-        //public void RefreshPins(GameMap gameMap)
-        //{
-        //    foreach (KeyValuePair<string, PinDef> entry in ResourceLoader.PinDataDictionary)
-        //    {
-        //        if (GameObject.Find($"pin_rando_{entry.Key}"))
-        //        {
-        //            Pin pin = GameObject.Find($"pin_rando_{entry.Key}").GetComponent<Pin>();
-        //            try
-        //            {
-        //                string roomName = pin.PinData.PinScene ?? pin.PinData.SceneName;
-        //                Vector3 vec = _GetRoomPos(roomName, gameMap);
-        //                vec.Scale(new Vector3(1.46f, 1.46f, 1));
-        //                vec += entry.Value.Offset;
-
-        //                pin.transform.localPosition = new Vector3(vec.x, vec.y, vec.z - 5f);
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                MapModS.Instance.LogError($"Error: RefeshPins {e}");
-        //            }
-        //        }
-        //    }
-        //}
     }
 }

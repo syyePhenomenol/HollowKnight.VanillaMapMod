@@ -112,14 +112,15 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Cyclone_Slash" + "Room_nailmaster"] = true;
             }
 
-            if (PlayerData.instance.hasDashSlash)
-            {
-                VanillaMapMod.LS.ObtainedItems["Dash_Slash" + "Room_nailmaster_02"] = true;
-            }
-
+            // PlayerData has these two the wrong way around?
             if (PlayerData.instance.hasUpwardSlash)
             {
-                VanillaMapMod.LS.ObtainedItems["Great_Slash" + "Room_nailmaster_03"] = true;
+                VanillaMapMod.LS.ObtainedItems["Dash_Slash" + "Room_nailmaster_03"] = true;
+            }
+
+            if (PlayerData.instance.hasDashSlash)
+            {
+                VanillaMapMod.LS.ObtainedItems["Great_Slash" + "Room_nailmaster_02"] = true;
             }
 
             if (PlayerData.instance.gotCharm_5)

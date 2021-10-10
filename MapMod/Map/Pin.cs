@@ -52,15 +52,9 @@ namespace VanillaMapMod.Map
                     return;
                 }
 
-                // Have these pins always on
-                if (PinData.pool == "Skill")
-                {
-                    gameObject.SetActive(true);
-                    return;
-                }
-
                 //Show these pins if the corresponding map item has been picked up
-                if (PinData.pool == "Charm"
+                if (PinData.pool == "Skill"
+                    || PinData.pool == "Charm"
                     || PinData.pool == "Key"
                     || PinData.pool == "Notch"
                     || PinData.pool == "Mask"

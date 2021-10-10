@@ -121,6 +121,16 @@ namespace VanillaMapMod.Map
             {
                 CustomPins.UpdatePins(mapArea);
             }
+
+            foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlant)
+            {
+                VanillaMapMod.Instance.Log(rootScene);
+            }
+
+            foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlantC)
+            {
+                VanillaMapMod.Instance.Log(rootScene);
+            }
         }
 
         public static void GiveFullMap(GameMap gameMap)
@@ -157,6 +167,7 @@ namespace VanillaMapMod.Map
             PlayerData.instance.metSlyShop = true;
 
             // Unlock pins
+            PlayerData.instance.hasQuill = true;
             PlayerData.instance.hasPin = true;
             PlayerData.instance.hasPinBench = true;
             PlayerData.instance.hasPinBlackEgg = true;
@@ -169,12 +180,49 @@ namespace VanillaMapMod.Map
             PlayerData.instance.hasPinSpa = true;
             PlayerData.instance.hasPinStag = true;
             PlayerData.instance.hasPinTram = true;
-            PlayerData.instance.collectorDefeated = true;
+
+            // Reveal root and warrior pins
+            foreach (string rootScene in _rootScenes)
+            {
+                if (!PlayerData.instance.scenesEncounteredDreamPlant.Contains(rootScene))
+                {
+                    PlayerData.instance.scenesEncounteredDreamPlant.Add(rootScene);
+                }
+            }
+
+            //foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlant)
+            //{
+            //    VanillaMapMod.Instance.Log(rootScene);
+            //}
+
+            //foreach (string rootScene in PlayerData.instance.scenesEncounteredDreamPlantC)
+            //{
+            //    VanillaMapMod.Instance.Log(rootScene);
+            //}
 
             VanillaMapMod.LS.SetFullMap();
 
             ForceMapUpdate(gameMap);
         }
+
+        private static readonly string[] _rootScenes =
+        {
+            "Crossroads_07",
+            "Fungus1_13",
+            "Fungus2_33",
+            "Fungus2_17",
+            "Deepnest_39",
+            "Fungus3_11",
+            "Deepnest_East_07",
+            "Abyss_01",
+            "Ruins1_17",
+            "RestingGrounds_05",
+            "RestingGrounds_08",
+            "Mines_23",
+            "Cliffs_01",
+            "Crossroads_ShamanTemple",
+            "Hive_02"
+        };
 
         private static void ForceMapUpdate(GameMap gameMap)
         {

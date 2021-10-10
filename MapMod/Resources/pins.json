@@ -594,8 +594,8 @@
     "pinScene": "Fungus1_34",
     "mapArea": "Greenpath",
     "pool": "Mask",
-    "offsetX": 1.0,
-    "offsetY": -0.1,
+    "offsetX": 1.65,
+    "offsetY": -0.05,
     "offsetZ": 0.001
   },
   "Mask_Shard-Queen's_Station": {
@@ -1142,7 +1142,7 @@
     "name": "Wanderer's_Journal-Ancient_Basin",
     "objectName": [ "Shiny Item" ],
     "sceneName": "Abyss_02",
-    "mapArea": "Ancient_Basin",
+    "mapArea": "Royal_Waterways",
     "pool": "Relic",
     "offsetX": 1.8,
     "offsetY": -0.2
@@ -1153,8 +1153,8 @@
     "sceneName": "Deepnest_East_07",
     "mapArea": "Kingdoms_Edge",
     "pool": "Relic",
-    "offsetX": -2.6,
-    "offsetY": -0.8
+    "offsetX": -0.8,
+    "offsetY": -2.6
   },
   "Wanderer's_Journal-Kingdom's_Edge_Camp": {
     "name": "Wanderer's_Journal-Kingdom's_Edge_Camp",
@@ -2230,7 +2230,7 @@
     "name": "Geo_Rock-Broken_Bridge_Upper",
     "objectName": [ "Geo Rock Deepnest" ],
     "sceneName": "Abyss_02",
-    "mapArea": "Ancient_Basin",
+    "mapArea": "Royal_Waterways",
     "pool": "Rock",
     "offsetX": -0.3,
     "offsetY": 0.3
@@ -2239,7 +2239,7 @@
     "name": "Geo_Rock-Broken_Bridge_Lower",
     "objectName": [ "Geo Rock Deepnest (1)", "Geo Rock Deepnest (2)" ],
     "sceneName": "Abyss_02",
-    "mapArea": "Ancient_Basin",
+    "mapArea": "Royal_Waterways",
     "pool": "Rock",
     "offsetX": -1.0,
     "offsetY": -0.3,
@@ -2385,8 +2385,8 @@
     "sceneName": "Crossroads_07",
     "mapArea": "Forgotten_Crossroads",
     "pool": "Rock",
-    "offsetX": -0.2,
-    "offsetY": 1.1
+    "offsetX": 0.25,
+    "offsetY": 1.35
   },
   //"Geo_Rock-Crossroads_Root_Dupe_1": {
   //  "name": "Geo_Rock-Crossroads_Root_Dupe_1",
@@ -3712,11 +3712,11 @@
   },
   "Geo_Rock-Crystal_Peak_Entrance": {
     "name": "Geo_Rock-Crystal_Peak_Entrance",
-    "objectName": [ "Geo Rock 2", "Geo Rock 2 (1)", "Geo Rock 2 (2)" ],
+    "objectName": [ "Geo Rock 2", "Geo Rock 2 (1)" ],
     "sceneName": "Mines_33",
     "mapArea": "Forgotten_Crossroads",
     "pool": "Rock",
-    "offsetX": 0.0,
+    "offsetX": -0.2,
     "offsetY": 0.0
   },
   //"Geo_Rock-Crystal_Peak_Entrance_Dupe_1": {
@@ -3725,12 +3725,16 @@
   //  "mapArea": "Forgotten_Crossroads",
   //  "pool": "Rock"
   //},
-  //"Geo_Rock-Crystal_Peak_Entrance_Dupe_2": {
-  //  "name": "Geo_Rock-Crystal_Peak_Entrance_Dupe_2",
-  //  "sceneName": "Mines_33",
-  //  "mapArea": "Forgotten_Crossroads",
-  //  "pool": "Rock"
-  //},
+  // Not a real dupe
+  "Geo_Rock-Crystal_Peak_Entrance_Dupe_2": {
+    "name": "Geo_Rock-Crystal_Peak_Entrance_Dupe_2",
+    "objectName": [ "Geo Rock 2 (2)" ],
+    "sceneName": "Mines_33",
+    "mapArea": "Forgotten_Crossroads",
+    "pool": "Rock",
+    "offsetX": 0.2,
+    "offsetY": 0.0
+  },
   "Geo_Rock-Crystal_Peak_Above_Crushers_Lower": {
     "name": "Geo_Rock-Crystal_Peak_Above_Crushers_Lower",
     "objectName": [ "Geo Rock Mine" ],
@@ -4496,7 +4500,7 @@
     "name": "Soul_Totem-Pale_Lurker",
     "sceneName": "GG_Lurker",
     "mapArea": "Kingdoms_Edge",
-    "pool": "Lore",
+    "pool": "Totem",
     "offsetX": -1.1,
     "offsetY": -0.1
   },
