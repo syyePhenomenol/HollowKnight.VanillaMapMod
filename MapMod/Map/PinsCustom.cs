@@ -17,7 +17,7 @@ namespace VanillaMapMod.Map
         {
             DestroyPins();
 
-            foreach (PinDef pinData in Data.DataLoader.GetPinArray())
+            foreach (PinDef pinData in DataLoader.GetPinArray())
             {
                 try
                 {
@@ -38,19 +38,19 @@ namespace VanillaMapMod.Map
             }
         }
 
-        public void SetGroups()
+        public void RefreshGroups()
         {
             foreach (string group in _Groups.Keys)
             {
-                _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
+                RefreshGroup(group);
             }
         }
 
-        public void ToggleGroup(string group)
+        public void RefreshGroup(string group)
         {
-            VanillaMapMod.LS.SetOnFromGroup(group, !VanillaMapMod.LS.GetOnFromGroup(group));
+            //VanillaMapMod.LS.SetOnFromGroup(group, !VanillaMapMod.LS.GetOnFromGroup(group));
             _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
-            PauseGUI.SetGUI();
+            //PauseGUI.SetGUI();
         }
 
         public void DestroyPins()

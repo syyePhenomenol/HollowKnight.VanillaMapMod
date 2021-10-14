@@ -73,7 +73,7 @@
         {
             orig(self);
 
-            PinsVanilla.SetVanillaSpritesPersistent(self.gameObject);
+            PinsVanilla.SetPinsPersistent(self.gameObject);
 
             WorldMap.UpdateMap(self, "Fog_Canyon");
         }

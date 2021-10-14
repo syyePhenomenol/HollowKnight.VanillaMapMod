@@ -29,30 +29,45 @@ namespace VanillaMapMod.Settings
 				"Royal_Waterways" => PlayerData.instance.mapWaterways,
 				_ => false,
 			};
-		}
-
-		public static bool IsMapModSetting(string boolName)
-		{
-            return boolName switch
-            {
-                "HasSkillPin"
-				or "HasCharmPin"
-				or "HasKeyPin"
-				or "HasMaskPin"
-				or "HasVesselPin"
-				or "HasNotchPin"
-				or "HasOrePin"
-				or "HasEggPin"
-				or "HasRelicPin"
-				or "HasEssenceBossPin"
-				or "HasCocoonPin"
-				or "HasGeoPin"
-				or "HasRockPin"
-				or "HasTotemPin"
-				or "HasLorePin" => true,
-                _ => false,
-            };
         }
 
-	}
+        //public static bool IsVanillaPinGroup(string group)
+        //      {
+        //	return group switch
+        //	{
+        //		"Bench"
+        //		or "Vendor"
+        //		or "Stag"
+        //		or "Spa"
+        //		or "Root"
+        //		or "Grave"
+        //		or "Tram"
+        //		or "Grub" => true,
+        //		_ => false,
+        //	};
+        //      }
+
+        //public static bool IsCustomPinGroup(string group)
+        //{
+        //	return group switch
+        //	{
+        //		"Cocoon"
+        //		or "Skill"
+        //		or "Charm"
+        //		or "Key"
+        //		or "Mask"
+        //		or "Vessel"
+        //		or "Notch"
+        //		or "Ore"
+        //		or "Egg"
+        //		or "Relic"
+        //		or "EssenceBoss"
+        //		or "Geo"
+        //		or "Rock"
+        //		or "Totem"
+        //		or "Lore" => true,
+        //		_ => false,
+        //	};
+        //}
+    }
 }

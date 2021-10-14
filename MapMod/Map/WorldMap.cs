@@ -26,23 +26,28 @@ namespace VanillaMapMod.Map
 
             //GiveFullMap(self);
 
-            if (goCustomPins == null)
-            {
-                VanillaMapMod.Instance.Log("Adding Pin Group and Populating...");
-                goCustomPins = new GameObject($"Map Mod Pin Group");
-                goCustomPins.AddComponent<PinsCustom>();
-                goCustomPins.transform.SetParent(self.transform);
+            SyncPlayerDataSettings();
 
-                CustomPins.MakePins(self);
-                VanillaMapMod.Instance.Log("Adding Pins done.");
-            }
-            else
+            if (self != null)
             {
-                goCustomPins.transform.SetParent(self.transform);
-            }
+                if (goCustomPins == null)
+                {
+                    VanillaMapMod.Instance.Log("Adding Pin Group and Populating...");
+                    goCustomPins = new GameObject($"Map Mod Pin Group");
+                    goCustomPins.AddComponent<PinsCustom>();
+                    goCustomPins.transform.SetParent(self.transform);
 
-            GUIController.Setup();
-            GUIController.Instance.BuildMenus();
+                    CustomPins.MakePins(self);
+                    VanillaMapMod.Instance.Log("Adding Pins done.");
+                }
+                else
+                {
+                    goCustomPins.transform.SetParent(self.transform);
+                }
+
+                GUIController.Setup();
+                GUIController.Instance.BuildMenus();
+            }
         }
 
         private static void GameMap_WorldMap(On.GameMap.orig_WorldMap orig, GameMap self)
@@ -76,13 +81,58 @@ namespace VanillaMapMod.Map
         {
             ItemTracker.UpdateObtainedItems();
 
-            PinsVanilla.SetVanillaSpritesPersistent(gameMap.gameObject);
+            foreach (string scene in PlayerData.instance.scenesVisited)
+            {
+                if (!PlayerData.instance.scenesMapped.Contains(scene))
+                {
+                    PlayerData.instance.scenesMapped.Add(scene);
+                }
+            }
+
+            gameMap.SetupMap();
+
+            PinsVanilla.SetPinsPersistent(gameMap.gameObject);
+            PinsVanilla.RefreshGroups();
 
             if (goCustomPins != null)
             {
                 CustomPins.UpdatePins(mapArea);
-                CustomPins.SetGroups();
+                CustomPins.RefreshGroups();
             }
+        }
+
+        // If the mod is installed for an existing game
+        public static void SyncPlayerDataSettings()
+        {
+            //foreach (string group in PinsVanilla.GetGroups())
+            //{
+            //    if (!VanillaMapMod.LS.GroupSettings.ContainsKey(group))
+            //    {
+            //        VanillaMapMod.LS.GroupSettings[group] = new();
+            //    }
+            //}
+
+            foreach (string scene in PlayerData.instance.scenesVisited)
+            {
+                if (!PlayerData.instance.scenesMapped.Contains(scene))
+                {
+                    PlayerData.instance.scenesMapped.Add(scene);
+                }
+            }
+
+            GameMap gameMap = GameObject.Find("Game_Map(Clone)").GetComponent<GameMap>();
+
+            gameMap.SetupMap();
+
+            VanillaMapMod.LS.GroupSettings["Bench"].Has = PlayerData.instance.hasPinBench;
+            VanillaMapMod.LS.GroupSettings["Vendor"].Has = PlayerData.instance.hasPinShop;
+            VanillaMapMod.LS.GroupSettings["Stag"].Has = PlayerData.instance.hasPinStag;
+            VanillaMapMod.LS.GroupSettings["Spa"].Has = PlayerData.instance.hasPinSpa;
+            VanillaMapMod.LS.GroupSettings["Root"].Has = PlayerData.instance.hasPinDreamPlant;
+            VanillaMapMod.LS.GroupSettings["Grave"].Has = PlayerData.instance.hasPinGhost;
+            VanillaMapMod.LS.GroupSettings["Tram"].Has = PlayerData.instance.hasPinTram;
+            VanillaMapMod.LS.GroupSettings["Grub"].Has = PlayerData.instance.hasPinGrub;
+            VanillaMapMod.LS.GroupSettings["Cocoon"].Has = PlayerData.instance.hasPinCocoon;
         }
 
         public static void GiveFullMap()
@@ -141,6 +191,14 @@ namespace VanillaMapMod.Map
                     PlayerData.instance.scenesEncounteredDreamPlant.Add(rootScene);
                 }
             }
+
+            PlayerData.instance.aladarPinned = true;
+            PlayerData.instance.galienPinned = true;
+            PlayerData.instance.huPinned = true;
+            PlayerData.instance.markothPinned = true;
+            PlayerData.instance.mumCaterpillarPinned = true;
+            PlayerData.instance.noEyesPinned = true;
+            PlayerData.instance.xeroPinned = true;
 
             VanillaMapMod.LS.SetFullMap();
 

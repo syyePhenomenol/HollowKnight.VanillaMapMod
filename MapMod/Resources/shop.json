@@ -1,6 +1,6 @@
 {
   "Skill Pin": {
-    "playerDataBoolName": "HasSkillPin",
+    "playerDataBoolName": "Skill",
     "nameConvo": "MAP_MOD_SKILL_PIN_NAME",
     "descConvo": "MAP_MOD_SKILL_PIN_DESC",
     "pool": "Skill",
@@ -8,7 +8,7 @@
     "spriteName": "pinSkill"
   },
   "Charm Pin": {
-    "playerDataBoolName": "HasCharmPin",
+    "playerDataBoolName": "Charm",
     "nameConvo": "MAP_MOD_CHARM_PIN_NAME",
     "descConvo": "MAP_MOD_CHARM_PIN_DESC",
     "pool": "Charm",
@@ -16,7 +16,7 @@
     "spriteName": "pinCharm"
   },
   "Key Pin": {
-    "playerDataBoolName": "HasKeyPin",
+    "playerDataBoolName": "Key",
     "nameConvo": "MAP_MOD_KEY_PIN_NAME",
     "descConvo": "MAP_MOD_KEY_PIN_DESC",
     "pool": "Key",
@@ -24,7 +24,7 @@
     "spriteName": "pinKey"
   },
   "Mask Shard Pin": {
-    "playerDataBoolName": "HasMaskPin",
+    "playerDataBoolName": "Mask",
     "nameConvo": "MAP_MOD_MASK_PIN_NAME",
     "descConvo": "MAP_MOD_MASK_PIN_DESC",
     "pool": "Mask",
@@ -32,7 +32,7 @@
     "spriteName": "pinMask"
   },
   "Vessel Fragment Pin": {
-    "playerDataBoolName": "HasVesselPin",
+    "playerDataBoolName": "Vessel",
     "nameConvo": "MAP_MOD_VESSEL_PIN_NAME",
     "descConvo": "MAP_MOD_VESSEL_PIN_DESC",
     "pool": "Vessel",
@@ -40,7 +40,7 @@
     "spriteName": "pinVessel"
   },
   "Charm Notch Pin": {
-    "playerDataBoolName": "HasNotchPin",
+    "playerDataBoolName": "Notch",
     "nameConvo": "MAP_MOD_NOTCH_PIN_NAME",
     "descConvo": "MAP_MOD_NOTCH_PIN_DESC",
     "pool": "Notch",
@@ -48,7 +48,7 @@
     "spriteName": "pinNotch"
   },
   "Pale Ore Pin": {
-    "playerDataBoolName": "HasOrePin",
+    "playerDataBoolName": "Ore",
     "nameConvo": "MAP_MOD_ORE_PIN_NAME",
     "descConvo": "MAP_MOD_ORE_PIN_DESC",
     "pool": "Ore",
@@ -64,7 +64,7 @@
     "spriteName": "pinEgg"
   },
   "Relic Pin": {
-    "playerDataBoolName": "HasRelicPin",
+    "playerDataBoolName": "Relic",
     "nameConvo": "MAP_MOD_RELIC_PIN_NAME",
     "descConvo": "MAP_MOD_RELIC_PIN_DESC",
     "pool": "Relic",
@@ -72,7 +72,7 @@
     "spriteName": "pinRelic"
   },
   "Essence Boss Pin": {
-    "playerDataBoolName": "HasEssenceBossPin",
+    "playerDataBoolName": "EssenceBoss",
     "nameConvo": "MAP_MOD_ESSENCEBOSS_PIN_NAME",
     "descConvo": "MAP_MOD_ESSENCEBOSS_PIN_DESC",
     "pool": "EssenceBoss",
@@ -80,7 +80,7 @@
     "spriteName": "pinEssenceBoss"
   },
   "Geo Chest Pin": {
-    "playerDataBoolName": "HasGeoPin",
+    "playerDataBoolName": "Geo",
     "nameConvo": "MAP_MOD_GEO_PIN_NAME",
     "descConvo": "MAP_MOD_GEO_PIN_DESC",
     "pool": "Geo",
@@ -88,7 +88,7 @@
     "spriteName": "pinGeo"
   },
   "Geo Rock Pin": {
-    "playerDataBoolName": "HasRockPin",
+    "playerDataBoolName": "Rock",
     "nameConvo": "MAP_MOD_ROCK_PIN_NAME",
     "descConvo": "MAP_MOD_ROCK_PIN_DESC",
     "pool": "Rock",
@@ -96,7 +96,7 @@
     "spriteName": "pinRock"
   },
   "Soul Totem Pin": {
-    "playerDataBoolName": "HasTotemPin",
+    "playerDataBoolName": "Totem",
     "nameConvo": "MAP_MOD_TOTEM_PIN_NAME",
     "descConvo": "MAP_MOD_TOTEM_PIN_DESC",
     "pool": "Totem",
@@ -104,7 +104,7 @@
     "spriteName": "pinTotem"
   },
   "Lore Tablet Pin": {
-    "playerDataBoolName": "HasLorePin",
+    "playerDataBoolName": "Lore",
     "nameConvo": "MAP_MOD_LORE_PIN_NAME",
     "descConvo": "MAP_MOD_LORE_PIN_DESC",
     "pool": "Lore",

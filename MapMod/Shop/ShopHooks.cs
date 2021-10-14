@@ -25,18 +25,27 @@ namespace VanillaMapMod.Shop
 
         public static bool BoolGetOverride(string boolName, bool orig)
         {
-            if (SettingsUtil.IsMapModSetting(boolName))
+            if (VanillaMapMod.LS.IsGroup(boolName))
             {
-                //return SettingsUtil.GetMapModSettingFromBoolName(boolName);
                 return VanillaMapMod.LS.GetHasFromGroup(boolName);
             }
+
+            //if (boolName == "hasQuill" && orig == true)
+            //{
+                //foreach (string scene in PlayerData.instance.scenesVisited)
+                //{
+                //    if (!PlayerData.instance.scenesMapped.Contains(scene))
+                //    {
+                //        PlayerData.instance.scenesMapped.Add(scene);
+                //    }
+                //}
+            //}
 
             return orig;
         }
 
         private static bool BoolSetOverride(string boolName, bool orig)
         {
-            //SettingsUtil.SetMapModSetting(boolName, orig);
             VanillaMapMod.LS.SetHasFromGroup(boolName, orig);
 
             return orig;

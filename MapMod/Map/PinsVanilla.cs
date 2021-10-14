@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using VanillaMapMod.PauseMenu;
 
 namespace VanillaMapMod.Map
 {
@@ -9,6 +11,7 @@ namespace VanillaMapMod.Map
         {
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
             On.GameManager.SetGameMap += GameManager_SetGameMap;
+            On.GrubPin.Start += On_GrubPin_Start;
             On.GrubPin.OnEnable += On_GrubPin_OnEnable;
         }
 
@@ -27,21 +30,37 @@ namespace VanillaMapMod.Map
         {
             orig(self, go_gameMap);
 
-            //GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-            //foreach (GameObject go in allObjects)
-            //{
-            //    if (go.name == "Map Markers"
-            //        || go.name == "Map Key")
-            //    {
-            //        //go.transform.parent = null;
-            //        go.gameObject.SetActive(false);
-            //    }
-            //}
+            GameObject mapKey = GameObject.Find("Map Key");
+            mapKey.transform.parent = null;
+            mapKey.SetActive(false);
 
-            SetVanillaSprites(go_gameMap);
+            // Clear all pin references
+            foreach (string group in _Groups.Keys)
+            {
+                _Groups[group].Clear();
+            }
+
+            SetupPins(go_gameMap);
         }
 
-        private static void SetVanillaSprites(GameObject obj)
+        private static readonly Dictionary<string, List<GameObject>> _Groups = new()
+        {
+            { "Bench", new() },
+            { "Vendor", new() },
+            { "Stag", new() },
+            { "Spa", new() },
+            { "Root", new() },
+            { "Grave", new() },
+            { "Tram", new() },
+            { "Grub", new() },
+        };
+
+        public static List<string> GetGroups()
+        {
+            return new List<string>(_Groups.Keys);
+        }
+
+        private static void SetupPins(GameObject obj)
         {
             if (obj == null)
                 return;
@@ -51,61 +70,84 @@ namespace VanillaMapMod.Map
                 if (child == null)
                     continue;
 
+                //VanillaMapMod.Instance.Log(child.name);
+
                 try
                 {
                     switch (child.name)
                     {
+                        case "pin_bench":
+                            // Sprite is set persistently in other function
+                            _Groups["Bench"].Add(child.gameObject);
+                            break;
                         case "pin_tram":
                             SetNewSprite(child.gameObject, "pinTramLocation");
+                            _Groups["Tram"].Add(child.gameObject);
                             break;
                         case "pin_spa":
                             SetNewSprite(child.gameObject, "pinSpa");
+                            _Groups["Spa"].Add(child.gameObject);
                             break;
                         case "pin_stag_station":
                         case "pin_stag_station (7)":
                             SetNewSprite(child.gameObject, "pinStag");
+                            _Groups["Stag"].Add(child.gameObject);
                             break;
                         case "pin_colosseum":
                             SetNewSprite(child.gameObject, "pinColosseum");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_charm_slug":
                             SetNewSprite(child.gameObject, "pinCharmSlug");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_grub_king":
                             SetNewSprite(child.gameObject, "pinGrubKing");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_sly":
                             SetNewSprite(child.gameObject, "pinShopSly");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_sly (1)":
                             SetNewSprite(child.gameObject, "pinGodSeeker");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_hunter":
                             SetNewSprite(child.gameObject, "pinShopHunter");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_banker":
                             SetNewSprite(child.gameObject, "pinShopBanker");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_leg eater":
                             SetNewSprite(child.gameObject, "pinShopLegEater");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_jiji":
                             SetNewSprite(child.gameObject, "pinShopJiji");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_mapper":
                             SetNewSprite(child.gameObject, "pinShopMapper");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_dream moth":
                             SetNewSprite(child.gameObject, "pinEssenceBoss");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_nailsmith":
                             SetNewSprite(child.gameObject, "pinShopNailsmith");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_relic_dealer":
                             SetNewSprite(child.gameObject, "pinShopRelicDealer");
+                            _Groups["Vendor"].Add(child.gameObject);
                             break;
                         case "pin_dream_tree":
                             SetNewSprite(child.gameObject, "pinRoot");
+                            _Groups["Root"].Add(child.gameObject);
 
                             // Move Ancestral Mound root pin
                             if (child.transform.parent.name == "Crossroads_ShamanTemple")
@@ -122,14 +164,19 @@ namespace VanillaMapMod.Map
                             break;
                         case "Pin_Backer Ghost":
                             SetNewSprite(child.gameObject, "pinBackerGhost");
-                        break;
+                            _Groups["Grave"].Add(child.gameObject);
+                            break;
                         case "Map Markers":
                             child.gameObject.SetActive(false);
                             break;
-                        //    // Delete vanilla cocoon pins, make our own
-                        //case "pin_blue_health":
-                        //    child.gameObject.SetActive(false);
-                        //    break;
+                        case "Map Key":
+                            child.transform.parent = null;
+                            child.gameObject.SetActive(false);
+                            break;
+                            //    // Delete vanilla cocoon pins, make our own
+                            //case "pin_blue_health":
+                            //    child.gameObject.SetActive(false);
+                            //    break;
                     }
                 }
                 catch (Exception e)
@@ -137,11 +184,32 @@ namespace VanillaMapMod.Map
                     VanillaMapMod.Instance.LogError(e);
                 }
 
-                SetVanillaSprites(child.gameObject);
+                SetupPins(child.gameObject);
             }
         }
 
-        public static void SetVanillaSpritesPersistent(GameObject obj)
+        private static void On_GrubPin_Start(On.GrubPin.orig_Start orig, GrubPin self)
+        {
+            orig(self);
+
+            SetNewSprite(self.gameObject, "pinGrub");
+            _Groups["Grub"].Add(self.gameObject);
+        }
+
+        private static void On_GrubPin_OnEnable(On.GrubPin.orig_OnEnable orig, GrubPin self)
+        {
+            orig(self);
+
+            //SetNewSprite(self.gameObject, "pinGrub");
+            //_Groups["Grub"].Add(self.gameObject);
+
+            if (!VanillaMapMod.LS.GetOnFromGroup("Grub"))
+            {
+                self.gameObject.SetActive(false);
+            }
+        }
+
+        public static void SetPinsPersistent(GameObject obj)
         {
             if (obj == null)
                 return;
@@ -176,15 +244,32 @@ namespace VanillaMapMod.Map
                     child.gameObject.SetActive(false);
                 }
 
-                SetVanillaSpritesPersistent(child.gameObject);
+                SetPinsPersistent(child.gameObject);
             }
         }
 
-        private static void On_GrubPin_OnEnable(On.GrubPin.orig_OnEnable orig, GrubPin self)
+        public static void RefreshGroups()
         {
-            orig(self);
-
-            SetNewSprite(self.gameObject, "pinGrub");
+            foreach (string group in _Groups.Keys)
+            {
+                if (VanillaMapMod.LS.GetHasFromGroup(group))
+                {
+                    if (VanillaMapMod.LS.GetOnFromGroup(group))
+                    {
+                        foreach (GameObject pinObject in _Groups[group])
+                        {
+                            pinObject.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        foreach (GameObject pinObject in _Groups[group])
+                        {
+                            pinObject.SetActive(false);
+                        }
+                    }
+                }
+            }
         }
 
         private static void SetNewSprite(GameObject go, string spriteName)

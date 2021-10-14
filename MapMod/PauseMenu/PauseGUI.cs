@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using VanillaMapMod.Map;
+using VanillaMapMod.Settings;
 
 namespace VanillaMapMod.PauseMenu
 {
@@ -12,27 +13,30 @@ namespace VanillaMapMod.PauseMenu
 	{
 		public static GameObject Canvas;
 
-		//private static readonly Dictionary<string, (UnityAction<string>, Vector2)> _buttons = new Dictionary<string, (UnityAction<string>, Vector2)>
-		//{
-		//	//["Spoilers"] = (_SpoilersClicked, new Vector2(0f, 0f)),
-		//	//["Style"] = (_StyleClicked, new Vector2(100f, 0f)),
-		//	//["Randomized"] = (_RandomizedClicked, new Vector2(200f, 0f)),
-		//	//["Others"] = (_OthersClicked, new Vector2(300f, 0f)),
-		//};
-
 		private static readonly Dictionary<string, (string, Vector2)> _groupButtons = new()
 		{
-			["Skill"] = ("Skills", new Vector2(0f, 30f)),
-			["Charm"] = ("Charms", new Vector2(100f, 30f)),
-			["Key"] = ("Keys", new Vector2(200f, 30f)),
-			["Mask"] = ("Mask\nShards", new Vector2(300f, 30f)),
-			["Vessel"] = ("Vessel\nFragments", new Vector2(400f, 30f)),
-			["Notch"] = ("Charm\nNotches", new Vector2(500f, 30f)),
-			["Ore"] = ("Pale Ore", new Vector2(600f, 30f)),
+            ["Bench"] = ("Benches", new Vector2(0f, 0f)),
+            ["Vendor"] = ("Vendors", new Vector2(100f, 0f)),
+            ["Stag"] = ("Stag\nStations", new Vector2(200f, 0f)),
+            ["Spa"] = ("Hot\nSprings", new Vector2(300f, 0f)),
+            ["Root"] = ("Whispering\nRoots", new Vector2(400f, 0f)),
+            ["Grave"] = ("Warrior's\nGraves", new Vector2(500f, 0f)),
+            ["Tram"] = ("Trams", new Vector2(600f, 0f)),
+            ["Grub"] = ("Grubs", new Vector2(700f, 0f)),
+
+            ["Cocoon"] = ("Lifeblood\nCocoons", new Vector2(0f, 30f)),
+
+            ["Skill"] = ("Skills", new Vector2(100f, 30f)),
+			["Charm"] = ("Charms", new Vector2(200f, 30f)),
+			["Key"] = ("Keys", new Vector2(300f, 30f)),
+			["Mask"] = ("Mask\nShards", new Vector2(400f, 30f)),
+			["Vessel"] = ("Vessel\nFragments", new Vector2(500f, 30f)),
+			["Notch"] = ("Charm\nNotches", new Vector2(600f, 30f)),
+			["Ore"] = ("Pale Ore", new Vector2(700f, 30f)),
 			["Egg"] = ("Rancid\nEggs", new Vector2(0f, 60f)),
 			["Relic"] = ("Relics", new Vector2(100f, 60f)),
 			["EssenceBoss"] = ("Hidden\nBosses", new Vector2(200f, 60f)),
-			["Rock"] = ("Geo Rocks", new Vector2(300f, 60f)),
+            ["Rock"] = ("Geo Rocks", new Vector2(300f, 60f)),
 			["Geo"] = ("Geo Chests", new Vector2(400f, 60f)),
 			["Totem"] = ("Soul\nTotems", new Vector2(500f, 60f)),
 			["Lore"] = ("Lore\nTablets", new Vector2(600f, 60f)),
@@ -51,40 +55,19 @@ namespace VanillaMapMod.PauseMenu
 
 			Rect buttonRect = new(0, 0, GUIController.Instance.Images["ButtonRect"].width, GUIController.Instance.Images["ButtonRect"].height);
 
-            //// Main settings
-            //foreach (KeyValuePair<string, (UnityAction<string>, Vector2)> pair in _buttons)
-            //{
-            //	_mapControlPanel.AddButton
-            //	(
-            //		pair.Key,
-            //		GUIController.Instance.Images["ButtonRect"],
-            //		pair.Value.Item2,
-            //		Vector2.zero,
-            //		pair.Value.Item1,
-            //		buttonRect,
-            //		GUIController.Instance.TrajanBold,
-            //		pair.Key,
-            //		fontSize: 10
-            //	);
-            //}
-
-            // These buttons only appear if the full map hasn't been revealed yet
-            if (!VanillaMapMod.LS.GotFullMap)
-            {
-                _mapControlPanel.AddButton
+            _mapControlPanel.AddButton
                 (
-                    "Reveal\nFull Map",
+                    "AllPins",
                     GUIController.Instance.Images["ButtonRect"],
-                    new Vector2(100, 0f),
+                    new Vector2(200f, -30f),
                     Vector2.zero,
-                    RevealFullMapClicked,
+                    AllPinsClicked,
                     buttonRect,
                     GUIController.Instance.TrajanBold,
-                    "Reveal\nFull Map",
+                    "All Pins\nOn",
                     fontSize: 10
                 );
-                SetRevealFullMap();
-            }
+            SetAllPinsButton();
 
             // New panel for pool buttons
 
@@ -100,12 +83,12 @@ namespace VanillaMapMod.PauseMenu
             (
                 "PoolsToggle",
                 GUIController.Instance.Images["ButtonRect"],
-                new Vector2(0f, 0f),
+                new Vector2(300f, -30f),
                 Vector2.zero,
                 s => PoolsClicked(),
                 buttonRect,
                 GUIController.Instance.TrajanBold,
-                "Custom Pins",
+                "Customize\nPins",
                 fontSize: 10
             );
             pools.SetActive(false, true);
@@ -116,7 +99,7 @@ namespace VanillaMapMod.PauseMenu
                 pools.AddButton
                 (
                     pair.Key,
-                    GUIController.Instance.Images["ButtonRect"],
+                    GUIController.Instance.Images["ButtonRectEmpty"],
                     pair.Value.Item2,
                     Vector2.zero,
                     PoolButtonClicked,
@@ -127,8 +110,25 @@ namespace VanillaMapMod.PauseMenu
                 );
             }
 
-            SetGUI();
+            // Only appears if the full map hasn't been revealed yet
+            if (!VanillaMapMod.LS.GotFullMap)
+            {
+                _mapControlPanel.AddButton
+                (
+                    "Reveal\nFull Map",
+                    GUIController.Instance.Images["ButtonRect"],
+                    new Vector2(400, -30f),
+                    Vector2.zero,
+                    RevealFullMapClicked,
+                    buttonRect,
+                    GUIController.Instance.TrajanBold,
+                    "Reveal\nFull Map",
+                    fontSize: 10
+                );
+                SetRevealFullMap();
+            }
 
+            SetGUI();
 
 			_mapControlPanel.SetActive(false, true); // collapse all subpanels
 			if (GameManager.instance.IsGamePaused())
@@ -171,61 +171,61 @@ namespace VanillaMapMod.PauseMenu
             {
                 SetPoolButton(group);
             }
-		}
 
-        private static void RevealFullMapClicked(string buttonName)
-        {
-            _mapRevealCounter++;
-
-            if (_mapRevealCounter > 1)
-            {
-                WorldMap.GiveFullMap();
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetActive(false);
-            }
-
-            SetRevealFullMap();
+            SetAllPinsButton();
         }
 
-        // This one is independent of the ShowButtons function as the button may or may not exist
-        private static void SetRevealFullMap()
+        private static void AllPinsClicked(string buttonName)
         {
-            if (_mapRevealCounter == 1)
+            VanillaMapMod.LS.ToggleGroups();
+            SetGUI();
+        }
+
+        private static void SetAllPinsButton()
+        {
+            if (!VanillaMapMod.LS.HasNoGroup())
             {
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.yellow);
-                _mapControlPanel.GetButton("Reveal\nFull Map").UpdateText("Are you sure?");
+                if (VanillaMapMod.LS.AllHasIsOn())
+                {
+                    _mapControlPanel.GetButton("AllPins").SetTextColor(Color.green);
+                    _mapControlPanel.GetButton("AllPins").UpdateText("All Pins:\non");
+                }
+                else if (VanillaMapMod.LS.AllHasIsOff())
+                {
+                    _mapControlPanel.GetButton("AllPins").SetTextColor(Color.white);
+                    _mapControlPanel.GetButton("AllPins").UpdateText("All Pins:\noff");
+                }
+                else
+                {
+                    _mapControlPanel.GetButton("AllPins").SetTextColor(Color.yellow);
+                    _mapControlPanel.GetButton("AllPins").UpdateText("All Pins:\ncustom");
+                }
             }
             else
             {
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.white);
+                _mapControlPanel.GetButton("AllPins").SetTextColor(Color.red);
+                _mapControlPanel.GetButton("AllPins").UpdateText("No Pins\n Unlocked");
             }
         }
 
-        //private static void _ShowPinsClicked(string buttonName)
-        //{
-        //	VanillaMapMod.Instance.Settings.ShowAllPins = !VanillaMapMod.Instance.Settings.ShowAllPins;
-        //	_SetShowPins();
-        //}
-
-        //// This one is independent of the ShowButtons function as the button may or may not exist
-        //private static void _SetShowPins()
-        //{
-        //	if (VanillaMapMod.Instance.Settings.ShowAllPins)
-        //	{
-        //		_mapControlPanel.GetButton("Show Pins").UpdateText("Show Pins:\neverywhere");
-        //	}
-        //	else
-        //	{
-        //		_mapControlPanel.GetButton("Show Pins").UpdateText("Show Pins:\nover map");
-        //	}
-        //}
-
-        
+        private static void PoolsClicked()
+        {
+            _mapControlPanel.TogglePanel("PoolsPanel");
+        }
 
         private static void PoolButtonClicked(string buttonName)
         {
             if (VanillaMapMod.LS.GetHasFromGroup(buttonName))
             {
-                WorldMap.CustomPins.ToggleGroup(buttonName);
+                VanillaMapMod.LS.SetOnFromGroup(buttonName, !VanillaMapMod.LS.GetOnFromGroup(buttonName));
+                SetGUI();
+
+                // Toggling not needed here if we don't control while the map is open
+
+                //if (SettingsUtil.IsCustomPinGroup(buttonName))
+                //{
+                //    WorldMap.CustomPins.SetGroup(buttonName);
+                //}
             }
         }
 
@@ -245,14 +245,30 @@ namespace VanillaMapMod.PauseMenu
                 );
         }
 
-        private static void PoolsClicked()
+        private static void RevealFullMapClicked(string buttonName)
         {
-            _mapControlPanel.TogglePanel("PoolsPanel");
-            //_mapControlPanel.GetButton("PoolsToggle").UpdateText
-            //    (
-            //        _mapControlPanel.GetPanel("PoolsPanel").Active ? "Hide\nCustom Pins" : "Show\nCustom Pins"
-            //    );
+            _mapRevealCounter++;
+
+            if (_mapRevealCounter > 1)
+            {
+                WorldMap.GiveFullMap();
+                _mapControlPanel.GetButton("Reveal\nFull Map").SetActive(false);
+            }
+
+            SetRevealFullMap();
         }
 
+        private static void SetRevealFullMap()
+        {
+            if (_mapRevealCounter == 1)
+            {
+                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.yellow);
+                _mapControlPanel.GetButton("Reveal\nFull Map").UpdateText("Are you sure?");
+            }
+            else
+            {
+                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.white);
+            }
+        }
     }
 }

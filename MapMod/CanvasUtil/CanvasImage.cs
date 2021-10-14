@@ -7,7 +7,7 @@ namespace VanillaMapMod.CanvasUtil
 	public class CanvasImage
 	{
 		public bool Active;
-		private GameObject _imageObj;
+		private readonly GameObject _imageObj;
 		private Rect _sub;
 		private Vector2 _sz;
 

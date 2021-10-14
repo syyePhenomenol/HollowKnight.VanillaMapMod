@@ -52,38 +52,38 @@ namespace VanillaMapMod.Map
                     return;
                 }
 
-                //Show these pins if the corresponding map item has been picked up
-                if (PinData.pool == "Skill"
-                    || PinData.pool == "Charm"
-                    || PinData.pool == "Key"
-                    || PinData.pool == "Notch"
-                    || PinData.pool == "Mask"
-                    || PinData.pool == "Vessel"
-                    || PinData.pool == "Ore"
-                    || PinData.pool == "EssenceBoss")
+                if (SettingsUtil.GetPlayerDataMapSetting(PinData.mapArea))
                 {
-                    if (SettingsUtil.GetPlayerDataMapSetting(PinData.mapArea))
+                    //Show these pins if the corresponding map item has been picked up
+                    if (PinData.pool == "Skill"
+                        || PinData.pool == "Charm"
+                        || PinData.pool == "Key"
+                        || PinData.pool == "Notch"
+                        || PinData.pool == "Mask"
+                        || PinData.pool == "Vessel"
+                        || PinData.pool == "Ore"
+                        || PinData.pool == "EssenceBoss")
                     {
                         gameObject.SetActive(true);
                         return;
                     }
-                }
 
-                // For the rest, show pin if the corresponding area has been mapped
-                if (PinData.pinScene != null)
-                {
-                    if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
+                    // For the rest, show pin if the corresponding area has been mapped
+                    if (PinData.pinScene != null)
                     {
-                        gameObject.SetActive(true);
-                        return;
+                        if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
                     }
-                }
-                else
-                {
-                    if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
+                    else
                     {
-                        gameObject.SetActive(true);
-                        return;
+                        if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
                     }
                 }
             }

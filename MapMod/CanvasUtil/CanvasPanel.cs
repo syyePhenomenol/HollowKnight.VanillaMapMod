@@ -13,8 +13,8 @@ namespace VanillaMapMod.CanvasUtil
 		private readonly Dictionary<string, CanvasPanel> _panels = new();
 		private readonly Vector2 _size;
 		private readonly Dictionary<string, CanvasText> _texts = new();
-		private CanvasImage _background;
-		private GameObject _canvas;
+		private readonly CanvasImage _background;
+		private readonly GameObject _canvas;
 
 		private Vector2 _position;
 
