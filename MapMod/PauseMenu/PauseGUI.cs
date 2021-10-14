@@ -64,7 +64,7 @@ namespace VanillaMapMod.PauseMenu
                     AllPinsClicked,
                     buttonRect,
                     GUIController.Instance.TrajanBold,
-                    "All Pins\nOn",
+                    "Show Pins:\nall",
                     fontSize: 10
                 );
             SetAllPinsButton();
@@ -188,17 +188,17 @@ namespace VanillaMapMod.PauseMenu
                 if (VanillaMapMod.LS.AllHasIsOn())
                 {
                     _mapControlPanel.GetButton("AllPins").SetTextColor(Color.green);
-                    _mapControlPanel.GetButton("AllPins").UpdateText("All Pins:\non");
+                    _mapControlPanel.GetButton("AllPins").UpdateText("Show Pins:\nall");
                 }
                 else if (VanillaMapMod.LS.AllHasIsOff())
                 {
                     _mapControlPanel.GetButton("AllPins").SetTextColor(Color.white);
-                    _mapControlPanel.GetButton("AllPins").UpdateText("All Pins:\noff");
+                    _mapControlPanel.GetButton("AllPins").UpdateText("Show Pins:\nnone");
                 }
                 else
                 {
                     _mapControlPanel.GetButton("AllPins").SetTextColor(Color.yellow);
-                    _mapControlPanel.GetButton("AllPins").UpdateText("All Pins:\ncustom");
+                    _mapControlPanel.GetButton("AllPins").UpdateText("Show Pins:\ncustom");
                 }
             }
             else
