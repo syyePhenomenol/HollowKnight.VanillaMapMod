@@ -1,4 +1,4 @@
-﻿using SFCore.Utils;
+﻿using Vasi;
 using HutongGames.PlayMaker;
 using Modding;
 
@@ -34,7 +34,7 @@ namespace VanillaMapMod.Trackers
                 }
             }
 
-            FsmUtil.AddAction(geoRockFSM, "Destroy", new TrackGeoRock(self.gameObject));
+            FsmUtil.AddAction(FsmUtil.GetState(geoRockFSM, "Destroy"), new TrackGeoRock(self.gameObject));
         }
     }
 }

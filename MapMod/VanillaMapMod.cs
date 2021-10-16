@@ -13,7 +13,7 @@ namespace VanillaMapMod
     {
         public static VanillaMapMod Instance;
 
-        private readonly string _version = "PRERELEASE";
+        private readonly string _version = "PRERELEASE 0.0.1";
 
         public override string GetVersion() => _version;
 

@@ -1,5 +1,5 @@
 ﻿using HutongGames.PlayMaker;
-using SFCore.Utils;
+using Vasi;
 
 namespace VanillaMapMod.Trackers
 {
@@ -323,20 +323,21 @@ namespace VanillaMapMod.Trackers
             // Most items: charms, charm notches, pale ore, rancid eggs, relics
             if (self.FsmName == "Shiny Control")
             {
-                FsmUtil.AddAction(self, "Finish", new TrackItem(goName));
+                
+                FsmUtil.AddAction(FsmUtil.GetState(self, "Finish"), new TrackItem(goName));
             }
 
             // Mask/Vessel
             else if (goName == "Heart Piece"
                 || goName == "Vessel Fragment")
             {
-                FsmUtil.AddAction(self, "Get", new TrackItem(goName));
+                FsmUtil.AddAction(FsmUtil.GetState(self, "Get"), new TrackItem(goName));
             }
 
             // Geo Chests
             else if (goName.Contains("Chest"))
             {
-                FsmUtil.AddAction(self, "Open", new TrackItem(goName));
+                FsmUtil.AddAction(FsmUtil.GetState(self, "Open"), new TrackItem(goName));
             }
         }
     }
