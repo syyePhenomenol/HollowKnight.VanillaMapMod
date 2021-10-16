@@ -6,12 +6,11 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
-using VanillaMapMod.CanvasUtil;
 
 namespace VanillaMapMod.PauseMenu
 {
-	// All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
-	public class GUIController : MonoBehaviour
+    // All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
+    public class GUIController : MonoBehaviour
 	{
 		public Dictionary<string, Texture2D> Images = new();
 

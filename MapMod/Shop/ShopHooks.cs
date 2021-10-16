@@ -1,6 +1,5 @@
-﻿using VanillaMapMod.Data;
-using VanillaMapMod.Settings;
-using Modding;
+﻿using Modding;
+using VanillaMapMod.Data;
 
 namespace VanillaMapMod.Shop
 {

@@ -1,11 +1,10 @@
 ﻿using System;
+using Modding;
 using VanillaMapMod.Data;
 using VanillaMapMod.Map;
-using VanillaMapMod.PauseMenu;
 using VanillaMapMod.Settings;
 using VanillaMapMod.Shop;
 using VanillaMapMod.Trackers;
-using Modding;
 
 namespace VanillaMapMod
 {
@@ -13,7 +12,7 @@ namespace VanillaMapMod
     {
         public static VanillaMapMod Instance;
 
-        private readonly string _version = "PRERELEASE 0.0.1";
+        private readonly string _version = "PRERELEASE 0.0.2";
 
         public override string GetVersion() => _version;
 

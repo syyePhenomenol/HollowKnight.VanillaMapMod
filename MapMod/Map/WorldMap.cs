@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
+using UnityEngine;
 using VanillaMapMod.PauseMenu;
 using VanillaMapMod.Trackers;
-using UnityEngine;
 
 namespace VanillaMapMod.Map
 {

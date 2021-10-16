@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 using VanillaMapMod.Data;
 using VanillaMapMod.Map;
-using VanillaMapMod.Settings;
-using UnityEngine;
 
 // This code was heavily borrowed from RandomizerMod 3.0
 namespace VanillaMapMod.Shop

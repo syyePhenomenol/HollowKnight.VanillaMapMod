@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VanillaMapMod.Data;
-using VanillaMapMod.PauseMenu;
 using UnityEngine;
+using VanillaMapMod.Data;
 
 namespace VanillaMapMod.Map
 {

@@ -1,15 +1,12 @@
-﻿using VanillaMapMod.CanvasUtil;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using VanillaMapMod.CanvasUtil;
 using VanillaMapMod.Map;
-using VanillaMapMod.Settings;
 
 namespace VanillaMapMod.PauseMenu
 {
-	// All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
-	internal class PauseGUI
+    // All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
+    internal class PauseGUI
 	{
 		public static GameObject Canvas;
 
