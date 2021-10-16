@@ -51,6 +51,7 @@ namespace VanillaMapMod.Map
                 "Rock" => "pinRock",
                 "Totem" => "pinTotem",
                 "Lore" => "pinLore",
+                "Flame" => "pinFlame",
                 _ => "pinUnknown",
             };
 

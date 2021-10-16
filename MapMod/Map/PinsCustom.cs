@@ -84,7 +84,17 @@ namespace VanillaMapMod.Map
 
             // Attach sprite renderer to the GameObject
             SpriteRenderer sr = goPin.AddComponent<SpriteRenderer>();
-            Sprite pinSprite = SpriteManager.GetSpriteFromPool(pinData.pool);
+            Sprite pinSprite;
+
+            if (pinData.name == "Grimm Troupe Lantern")
+            {
+                pinSprite = SpriteManager.GetSpriteFromPool("Flame");
+            }
+            else
+            {
+                pinSprite = SpriteManager.GetSpriteFromPool(pinData.pool);
+            }
+            
             sr.sprite = pinSprite;
             sr.sortingLayerName = "HUD";
             sr.size = new Vector2(1f, 1f);

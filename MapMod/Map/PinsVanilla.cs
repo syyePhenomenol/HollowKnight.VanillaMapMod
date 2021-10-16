@@ -55,11 +55,6 @@ namespace VanillaMapMod.Map
             { "Grub", new() },
         };
 
-        public static List<string> GetGroups()
-        {
-            return new List<string>(_Groups.Keys);
-        }
-
         private static void SetupPins(GameObject obj)
         {
             if (obj == null)

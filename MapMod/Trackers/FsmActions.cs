@@ -16,38 +16,11 @@ namespace VanillaMapMod.Trackers
 
         public override void OnEnter()
         {
-            if (_grd.sceneName == "Crossroads_ShamanTemple" && _grd.id == "Geo Rock 2")
-            {
-                // Resolve duplicate ids by position
-                if (_go.transform.localPosition.y > 50.0f)
-                {
-                    VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
-                }
-                else
-                {
-                    VanillaMapMod.LS.ObtainedItems["Geo Rock 1 (1)" + _grd.sceneName] = true;
-                }
-            }
-            else if (_grd.sceneName == "Abyss_06_Core" && _grd.id == "Geo Rock Abyss")
-            {
-                // Resolve duplicate ids by position
-                if (_go.transform.localPosition.y > 180.0f)
-                {
-                    VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
-                }
-                else
-                {
-                    VanillaMapMod.LS.ObtainedItems["Geo Rock Abyss (2)" + _grd.sceneName] = true;
-                }
-            }
-            else
-            {
-                VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
-            }
+            VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
 
-            //VanillaMapMod.Instance.Log("Geo Rock broken");
-            //VanillaMapMod.Instance.Log(" ID: " + _grd.id);
-            //VanillaMapMod.Instance.Log(" Scene: " + _grd.sceneName);
+            VanillaMapMod.Instance.Log("Geo Rock broken");
+            VanillaMapMod.Instance.Log(" ID: " + _grd.id);
+            VanillaMapMod.Instance.Log(" Scene: " + _grd.sceneName);
 
             Finish();
         }

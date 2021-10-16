@@ -75,6 +75,15 @@
   //  "offsetY": -0.2,
   //  "offsetZ": 0.1
   //},
+  "Grimm Troupe Lantern": {
+    "name": "Grimm Troupe Lantern",
+    "objectName": [ "Grimm Troupe Lantern" ],
+    "sceneName": "Cliffs_06",
+    "mapArea": "Howling_Cliffs",
+    "pool": "Vendor",
+    "offsetX": 0.1,
+    "offsetY": -0.1
+  },
   "Mothwing_Cloak": {
     "name": "Mothwing_Cloak",
     "objectName": [ "Mothwing_Cloak" ],
@@ -1053,7 +1062,7 @@
     "sceneName": "Cliffs_01",
     "mapArea": "Howling_Cliffs",
     "pool": "Relic",
-    "offsetX": 1.3,
+    "offsetX": 1.45,
     "offsetY": -1.5
   },
   "Wanderer's_Journal-Greenpath_Stag": {
@@ -1383,8 +1392,8 @@
     "sceneName": "Abyss_08",
     "mapArea": "Ancient_Basin",
     "pool": "Relic",
-    "offsetX": -1.3,
-    "offsetY": -1.1
+    "offsetX": 0.4,
+    "offsetY": -1.15
   },
   "Arcane_Egg-Shade_Cloak": {
     "name": "Arcane_Egg-Shade_Cloak",
@@ -2254,17 +2263,16 @@
   // The following two have conflicting objectNames
   "Geo_Rock-Abyss_1": {
     "name": "Geo_Rock-Abyss_1",
-    "objectName": [ "Geo Rock Abyss" ],
+    "objectName": [ "_Props/Geo Rock Abyss" ],
     "sceneName": "Abyss_06_Core",
     "mapArea": "Ancient_Basin",
     "pool": "Rock",
     "offsetX": 0.6,
     "offsetY": 1.3
   },
-  // Custom name
   "Geo_Rock-Abyss_2": {
     "name": "Geo_Rock-Abyss_2",
-    "objectName": [ "Geo Rock Abyss (2)" ],
+    "objectName": [ "Geo Rock Abyss" ],
     "sceneName": "Abyss_06_Core",
     "mapArea": "Ancient_Basin",
     "pool": "Rock",
@@ -2589,7 +2597,7 @@
   // Turned 4 checks into 1 pin. Mound Dupe is Geo Rock 1 (1), Mound Tree is Geo Rock 2
   "Geo_Rock-Ancestral_Mound": {
     "name": "Geo_Rock-Ancestral_Mound",
-    "objectName": [ "Geo Rock 1", "Geo Rock 1 (1)", "Geo Rock 2", "Geo Rock 2 (1)" ],
+    "objectName": [ "Geo Rock 1", "Geo Rock 2 (1)", "Geo Rock 2", "_Items/Geo Rock 2" ],
     "sceneName": "Crossroads_ShamanTemple",
     "pinScene": "Crossroads_06",
     "mapArea": "Forgotten_Crossroads",
@@ -4059,8 +4067,8 @@
     "sceneName": "Cliffs_02",
     "mapArea": "Howling_Cliffs",
     "pool": "Totem",
-    "offsetX": -1.4,
-    "offsetY": 1.6
+    "offsetX": -2.3,
+    "offsetY": 0.2
   },
   "Soul_Totem-Cliffs_Joni's": {
     "name": "Soul_Totem-Cliffs_Joni's",

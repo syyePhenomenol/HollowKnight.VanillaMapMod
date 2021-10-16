@@ -1,4 +1,6 @@
 ﻿using SFCore.Utils;
+using HutongGames.PlayMaker;
+using Modding;
 
 namespace VanillaMapMod.Trackers
 {
@@ -14,6 +16,23 @@ namespace VanillaMapMod.Trackers
             orig(self);
 
             PlayMakerFSM geoRockFSM = self.gameObject.LocateMyFSM("Geo Rock");
+
+            // Rename duplicate GameObjects (GeoRockData gets created later and its id is also the GameObject name)
+            if (self.gameObject.scene.name == "Crossroads_ShamanTemple" && self.gameObject.name == "Geo Rock 2")
+            {
+                if (self.transform.parent != null)
+                {
+                    self.gameObject.name = "_Items/Geo Rock 2";
+                }
+            }
+
+            if (self.gameObject.scene.name == "Abyss_06_Core" && self.gameObject.name == "Geo Rock Abyss")
+            {
+                if (self.transform.parent != null)
+                {
+                    self.gameObject.name = "_Props/Geo Rock Abyss";
+                }
+            }
 
             FsmUtil.AddAction(geoRockFSM, "Destroy", new TrackGeoRock(self.gameObject));
         }

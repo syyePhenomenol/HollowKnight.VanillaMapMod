@@ -294,21 +294,11 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Charm Notch" + "Fungus3_28"] = true;
             }
 
-            // Doesn't seem to be a way to tell apart the duplicate cases... probably no one will notice
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {
                 if (grd.hitsLeft == 0)
                 {
                     VanillaMapMod.LS.ObtainedItems[grd.id + grd.sceneName] = true;
-
-                    if (grd.sceneName == "Crossroads_ShamanTemple" && grd.id == "Geo Rock 2")
-                    {
-                        VanillaMapMod.LS.ObtainedItems["Geo Rock 1 (1)" + grd.sceneName] = true;
-                    }
-                    else if (grd.sceneName == "Abyss_06_Core" && grd.id == "Geo Rock Abyss")
-                    {
-                        VanillaMapMod.LS.ObtainedItems["Geo Rock Abyss (2)" + grd.sceneName] = true;
-                    }
                 }
             }
 
@@ -348,16 +338,6 @@ namespace VanillaMapMod.Trackers
             {
                 FsmUtil.AddAction(self, "Open", new TrackItem(goName));
             }
-
-            //else if (self.gameObject.scene.name == "Cliffs_03")
-            //{
-            //    VanillaMapMod.Instance.Log(goName);
-            //    VanillaMapMod.Instance.Log(goName);
-            //    foreach (FsmState state in self.FsmStates)
-            //    {
-            //        VanillaMapMod.Instance.Log("-" + state.Name);
-            //    }
-            //}
         }
     }
 }
