@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
 using VanillaMapMod.Settings;
 using Vasi;

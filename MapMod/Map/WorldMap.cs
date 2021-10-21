@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
+using HutongGames.PlayMaker;
+using HutongGames.PlayMaker.Actions;
 using Modding;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using UnityEngine;
 using VanillaMapMod.PauseMenu;
-using VanillaMapMod.Trackers;
 using VanillaMapMod.Settings;
-using HutongGames.PlayMaker;
-using HutongGames.PlayMaker.Actions;
-using System.Reflection;
+using VanillaMapMod.Trackers;
 using Vasi;
-using System.Linq;
 
 namespace VanillaMapMod.Map
 {

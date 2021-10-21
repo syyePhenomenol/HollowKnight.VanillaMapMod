@@ -29,17 +29,6 @@ namespace VanillaMapMod.Shop
                 return VanillaMapMod.LS.GetHasFromGroup(boolName);
             }
 
-            //if (boolName == "hasQuill" && orig == true)
-            //{
-                //foreach (string scene in PlayerData.instance.scenesVisited)
-                //{
-                //    if (!PlayerData.instance.scenesMapped.Contains(scene))
-                //    {
-                //        PlayerData.instance.scenesMapped.Add(scene);
-                //    }
-                //}
-            //}
-
             return orig;
         }
 
