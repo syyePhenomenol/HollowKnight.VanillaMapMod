@@ -47,9 +47,7 @@ namespace VanillaMapMod.Map
 
         public void RefreshGroup(string group)
         {
-            //VanillaMapMod.LS.SetOnFromGroup(group, !VanillaMapMod.LS.GetOnFromGroup(group));
             _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
-            //PauseGUI.SetGUI();
         }
 
         public void DestroyPins()
@@ -85,6 +83,7 @@ namespace VanillaMapMod.Map
             SpriteRenderer sr = goPin.AddComponent<SpriteRenderer>();
             Sprite pinSprite;
 
+            // Give the Grimm Troupe Lantern its unique sprite
             if (pinData.name == "Grimm Troupe Lantern")
             {
                 pinSprite = SpriteManager.GetSpriteFromPool("Flame");
@@ -119,7 +118,7 @@ namespace VanillaMapMod.Map
                 _Groups[pinData.pool] = new GameObject("PinGroup " + pinData.pool);
                 _Groups[pinData.pool].transform.SetParent(transform);
 
-                // Set all true for now
+                // Set all true for now (doesn't really affect any behaviour)
                 _Groups[pinData.pool].SetActive(true);
             }
 

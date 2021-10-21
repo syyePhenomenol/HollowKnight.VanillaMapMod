@@ -40,7 +40,6 @@ namespace VanillaMapMod.PauseMenu
 		};
 
 		private static CanvasPanel _mapControlPanel;
-        private static int _mapRevealCounter = 0;
 
         public static void BuildMenu(GameObject _canvas)
 		{
@@ -67,7 +66,6 @@ namespace VanillaMapMod.PauseMenu
             SetAllPinsButton();
 
             // New panel for pool buttons
-
            CanvasPanel pools = _mapControlPanel.AddPanel
            (
                "PoolsPanel",
@@ -107,10 +105,7 @@ namespace VanillaMapMod.PauseMenu
                 );
             }
 
-            // Only appears if the full map hasn't been revealed yet
-            if (!VanillaMapMod.LS.GotFullMap)
-            {
-                _mapControlPanel.AddButton
+            _mapControlPanel.AddButton
                 (
                     "Reveal\nFull Map",
                     GUIController.Instance.Images["ButtonRect"],
@@ -122,8 +117,6 @@ namespace VanillaMapMod.PauseMenu
                     "Reveal\nFull Map",
                     fontSize: 10
                 );
-                SetRevealFullMap();
-            }
 
             SetGUI();
 
@@ -150,7 +143,6 @@ namespace VanillaMapMod.PauseMenu
 			if (HeroController.instance == null || !GameManager.instance.IsGameplayScene() || !GameManager.instance.IsGamePaused())
 			{
 				if (_mapControlPanel.Active) _mapControlPanel.SetActive(false, true);
-				_mapRevealCounter = 0;
 				return;
 			}
 			else
@@ -170,6 +162,7 @@ namespace VanillaMapMod.PauseMenu
             }
 
             SetAllPinsButton();
+            SetRevealFullMap();
         }
 
         private static void AllPinsClicked(string buttonName)
@@ -212,23 +205,16 @@ namespace VanillaMapMod.PauseMenu
 
         private static void PoolButtonClicked(string buttonName)
         {
-            if (VanillaMapMod.LS.GetHasFromGroup(buttonName))
+            if (VanillaMapMod.LS.GetHasFromGroup(buttonName) || VanillaMapMod.LS.RevealFullMap)
             {
                 VanillaMapMod.LS.SetOnFromGroup(buttonName, !VanillaMapMod.LS.GetOnFromGroup(buttonName));
                 SetGUI();
-
-                // Toggling not needed here if we don't control while the map is open
-
-                //if (SettingsUtil.IsCustomPinGroup(buttonName))
-                //{
-                //    WorldMap.CustomPins.SetGroup(buttonName);
-                //}
             }
         }
 
         private static void SetPoolButton(string buttonName)
         {
-            if (!VanillaMapMod.LS.GetHasFromGroup(buttonName))
+            if (!VanillaMapMod.LS.GetHasFromGroup(buttonName) && !VanillaMapMod.LS.RevealFullMap)
             {
                 _mapControlPanel.GetPanel("PoolsPanel").GetButton(buttonName).SetTextColor(Color.red);
                 return;
@@ -244,27 +230,24 @@ namespace VanillaMapMod.PauseMenu
 
         private static void RevealFullMapClicked(string buttonName)
         {
-            _mapRevealCounter++;
+            VanillaMapMod.LS.ToggleFullMap();
 
-            if (_mapRevealCounter > 1)
+            if (!VanillaMapMod.LS.RevealFullMap)
             {
-                WorldMap.GiveFullMap();
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetActive(false);
+                WorldMap.PurgeMap();
             }
 
-            SetRevealFullMap();
+            SetGUI();
         }
-
         private static void SetRevealFullMap()
         {
-            if (_mapRevealCounter == 1)
+            if (!VanillaMapMod.LS.RevealFullMap)
             {
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.yellow);
-                _mapControlPanel.GetButton("Reveal\nFull Map").UpdateText("Are you sure?");
+                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.white);
             }
             else
             {
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.white);
+                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.green);
             }
         }
     }

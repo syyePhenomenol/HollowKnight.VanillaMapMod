@@ -70,16 +70,6 @@ namespace VanillaMapMod.Data
                 }
             }
 
-            //foreach (KeyValuePair<string, Dictionary<string, string>> entry in _languageStrings)
-            //{
-            //    MapMod.Instance.Log(entry.Key);
-            //    foreach (KeyValuePair<string, string> entry2 in entry.Value)
-            //    {
-            //        MapMod.Instance.Log("- " + entry2.Key);
-            //        MapMod.Instance.Log("- " + entry2.Value);
-            //    }
-            //}
-
             return;
         }
     }

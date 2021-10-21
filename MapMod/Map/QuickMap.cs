@@ -1,4 +1,10 @@
-﻿namespace VanillaMapMod.Map
+﻿using System.Collections.Generic;
+using HutongGames.PlayMaker;
+using HutongGames.PlayMaker.Actions;
+using VanillaMapMod.Settings;
+using Vasi;
+
+namespace VanillaMapMod.Map
 {
     public static class QuickMap
     {
@@ -18,6 +24,7 @@
             On.GameMap.QuickMapQueensGardens += GameMap_QuickMapQueensGardens;
             On.GameMap.QuickMapRestingGrounds += GameMap_QuickMapRestingGrounds;
             On.GameMap.QuickMapWaterways += GameMap_QuickMapWaterways;
+            On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
 
         private static void GameMap_QuickMapAncientBasin(On.GameMap.orig_QuickMapAncientBasin orig, GameMap self)
@@ -118,6 +125,22 @@
             orig(self);
 
             WorldMap.UpdateMap(self, "Royal_Waterways");
+        }
+
+        private static void PlayMakerFSM_OnEnable(On.PlayMakerFSM.orig_OnEnable orig, PlayMakerFSM self)
+        {
+            orig(self);
+
+            if (self.FsmName == "Quick Map")
+            {
+                foreach (FsmState state in self.FsmStates)
+                {
+                    if (SettingsUtil.IsFSMMapState(state.Name)) {
+                        string boolString = FsmUtil.GetAction<PlayerDataBoolTest>(state, 0).boolName.ToString();
+                        FsmUtil.GetAction<PlayerDataBoolTest>(state, 0).boolName = "VMM_" + boolString;
+                    }
+                }
+            }
         }
 
         //private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject goGameMap)

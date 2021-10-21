@@ -7,20 +7,12 @@ namespace VanillaMapMod.Map
 {
     internal class Pin : MonoBehaviour
     {
-        //private Vector3 _origScale;
         public PinDef PinData { get; private set; } = null;
-
-        //private SpriteRenderer SR => gameObject.GetComponent<SpriteRenderer>();
 
         public void SetPinData(PinDef pd)
         {
             PinData = pd;
         }
-
-        //public void SetPinSprite()
-        //{
-        //    SR.sprite = GetSprite(PinData.pool);
-        //}
 
         public void UpdatePin(string mapAreaName)
         {
@@ -44,46 +36,45 @@ namespace VanillaMapMod.Map
         // This method hides or shows the pin depending on the state of the map
         private void ShowBasedOnMap(string mapAreaName)
         {
-            if (mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
+            if ((mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
+                && SettingsUtil.GetVMMMapSetting(PinData.mapArea))
             {
-                if (VanillaMapMod.LS.GotFullMap)
+                // Show everything if full map was revealed
+                if (VanillaMapMod.LS.RevealFullMap)
                 {
                     gameObject.SetActive(true);
                     return;
                 }
 
-                if (SettingsUtil.GetPlayerDataMapSetting(PinData.mapArea))
+                // Show these pins if the corresponding map item has been picked up
+                if (PinData.pool == "Skill"
+                    || PinData.pool == "Charm"
+                    || PinData.pool == "Key"
+                    || PinData.pool == "Notch"
+                    || PinData.pool == "Mask"
+                    || PinData.pool == "Vessel"
+                    || PinData.pool == "Ore"
+                    || PinData.pool == "EssenceBoss")
                 {
-                    //Show these pins if the corresponding map item has been picked up
-                    if (PinData.pool == "Skill"
-                        || PinData.pool == "Charm"
-                        || PinData.pool == "Key"
-                        || PinData.pool == "Notch"
-                        || PinData.pool == "Mask"
-                        || PinData.pool == "Vessel"
-                        || PinData.pool == "Ore"
-                        || PinData.pool == "EssenceBoss")
+                    gameObject.SetActive(true);
+                    return;
+                }
+
+                // For the rest, show pin if the corresponding scene/room has been mapped
+                if (PinData.pinScene != null)
+                {
+                    if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
                     {
                         gameObject.SetActive(true);
                         return;
                     }
-
-                    // For the rest, show pin if the corresponding area has been mapped
-                    if (PinData.pinScene != null)
+                }
+                else
+                {
+                    if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
                     {
-                        if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
-                        {
-                            gameObject.SetActive(true);
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
-                        {
-                            gameObject.SetActive(true);
-                            return;
-                        }
+                        gameObject.SetActive(true);
+                        return;
                     }
                 }
             }
@@ -93,11 +84,7 @@ namespace VanillaMapMod.Map
 
         private void HideIfNotBought()
         {
-            //if (!SettingsUtil.GetMapModSettingFromPool(PinData.pool))
-            //{
-            //    gameObject.SetActive(false);
-            //}
-            if (!VanillaMapMod.LS.GetHasFromGroup(PinData.pool))
+            if (!VanillaMapMod.LS.GetHasFromGroup(PinData.pool) && !VanillaMapMod.LS.RevealFullMap)
             {
                 gameObject.SetActive(false);
             }

@@ -293,6 +293,11 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Charm Notch" + "Fungus3_28"] = true;
             }
 
+            if (PlayerData.instance.nightmareLanternLit)
+            {
+                VanillaMapMod.LS.ObtainedItems["Grimm Troupe Lantern" + "Cliffs_06"] = true;
+            }
+
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {
                 if (grd.hitsLeft == 0)

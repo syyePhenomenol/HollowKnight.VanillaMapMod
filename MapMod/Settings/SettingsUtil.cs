@@ -24,43 +24,52 @@
 			};
         }
 
-        //public static bool IsVanillaPinGroup(string group)
-        //      {
-        //	return group switch
-        //	{
-        //		"Bench"
-        //		or "Vendor"
-        //		or "Stag"
-        //		or "Spa"
-        //		or "Root"
-        //		or "Grave"
-        //		or "Tram"
-        //		or "Grub" => true,
-        //		_ => false,
-        //	};
-        //      }
+        public static bool GetVMMMapSetting(string mapArea)
+        {
+            return mapArea switch
+            {
+                "Ancient_Basin" => PlayerData.instance.GetBool("VMM_mapAbyss"),
+                "City_of_Tears" => PlayerData.instance.GetBool("VMM_mapCity"),
+                "Howling_Cliffs" => PlayerData.instance.GetBool("VMM_mapCliffs"),
+                "Forgotten_Crossroads" => PlayerData.instance.GetBool("VMM_mapCrossroads"),
+                "Crystal_Peak" => PlayerData.instance.GetBool("VMM_mapMines"),
+                "Deepnest" => PlayerData.instance.GetBool("VMM_mapDeepnest"),
+                "Dirtmouth" => PlayerData.instance.GetBool("VMM_mapDirtmouth"),
+                "Fog_Canyon" => PlayerData.instance.GetBool("VMM_mapFogCanyon"),
+                "Fungal_Wastes" => PlayerData.instance.GetBool("VMM_mapFungalWastes"),
+                "Greenpath" => PlayerData.instance.GetBool("VMM_mapGreenpath"),
+                "Kingdoms_Edge" => PlayerData.instance.GetBool("VMM_mapOutskirts"),
+                "Queens_Gardens" => PlayerData.instance.GetBool("VMM_mapRoyalGardens"),
+                "Resting_Grounds" => PlayerData.instance.GetBool("VMM_mapRestingGrounds"),
+                "Royal_Waterways" => PlayerData.instance.GetBool("VMM_mapWaterways"),
+                _ => false,
+            };
+        }
 
-        //public static bool IsCustomPinGroup(string group)
-        //{
-        //	return group switch
-        //	{
-        //		"Cocoon"
-        //		or "Skill"
-        //		or "Charm"
-        //		or "Key"
-        //		or "Mask"
-        //		or "Vessel"
-        //		or "Notch"
-        //		or "Ore"
-        //		or "Egg"
-        //		or "Relic"
-        //		or "EssenceBoss"
-        //		or "Geo"
-        //		or "Rock"
-        //		or "Totem"
-        //		or "Lore" => true,
-        //		_ => false,
-        //	};
-        //}
+        public static bool IsFSMMapState(string name)
+        {
+            switch (name)
+            {
+                case "Abyss":
+                case "Ancient Basin":
+                case "City":
+                case "Cliffs":
+                case "Crossroads":
+                case "Deepnest":
+                case "Fog Canyon":
+                case "Fungal Wastes":
+                case "Fungus":
+                case "Greenpath":
+                case "Hive":
+                case "Mines":
+                case "Outskirts":
+                case "Resting Grounds":
+                case "Royal Gardens":
+                case "Waterways":
+                    return true;
+                default:
+                    return false;
+            };
+        }
     }
 }

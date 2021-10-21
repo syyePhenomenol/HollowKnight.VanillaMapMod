@@ -24,45 +24,45 @@ namespace VanillaMapMod.Settings
 		{
 			// Copied settings from PlayerData
 			{ "Bench", new() },
-			{ "Vendor", new() },
-			{ "Stag", new() },
-			{ "Spa", new() },
-			{ "Root", new() },
 			{ "Grave", new() },
-			{ "Tram", new() },
 			{ "Grub", new() },
+			{ "Root", new() },
+			{ "Spa", new() },
+			{ "Stag", new() },
+			{ "Tram", new() },
+			{ "Vendor", new() },
 
 			// Also copied, but using custom pins
 			{ "Cocoon", new() },
 
 			// New settings, custom pins
-			{ "Skill", new() },
 			{ "Charm", new() },
-			{ "Key", new() },
-			{ "Mask", new() },
-			{ "Vessel", new() },
-			{ "Notch", new() },
-			{ "Ore", new() },
 			{ "Egg", new() },
-			{ "Relic", new() },
 			{ "EssenceBoss", new() },
 			{ "Geo", new() },
-			{ "Rock", new() },
-			{ "Totem", new() },
+			{ "Key", new() },
 			{ "Lore", new() },
+			{ "Mask", new() },
+			{ "Notch", new() },
+			{ "Ore", new() },
+			{ "Relic", new() },
+			{ "Rock", new() },
+			{ "Skill", new() },
+			{ "Totem", new() },
+			{ "Vessel", new() },
 		};
 
-		public bool GotFullMap = false;
+		public bool RevealFullMap = false;
 
-		public void SetFullMap()
-		{
-			GotFullMap = true;
+        public void ToggleFullMap()
+        {
+			RevealFullMap = !RevealFullMap;
 
 			foreach (KeyValuePair<string, GroupSettingPair> entry in GroupSettings)
-			{
-				entry.Value.Has = true;
-			}
-		}
+            {
+                entry.Value.On = true;
+            }
+        }
 
 		public bool IsGroup(string boolName)
 		{
@@ -91,6 +91,7 @@ namespace VanillaMapMod.Settings
 			}
 			else
 			{
+				// Set based on ORIGINAL PlayerData settings
 				switch (boolName)
 				{
 					case "hasPinBench":
@@ -129,6 +130,11 @@ namespace VanillaMapMod.Settings
 
 		public bool HasNoGroup()
 		{
+			if (RevealFullMap)
+            {
+				return false;
+            }
+
 			foreach (GroupSettingPair settingPair in GroupSettings.Values)
 			{
 				if (settingPair.Has)
@@ -158,39 +164,13 @@ namespace VanillaMapMod.Settings
 			}
 		}
 
-		//public bool AllGroupsOn()
-		//{
-		//	foreach (GroupSettingPair settingPair in GroupSettings.Values)
-		//	{
-		//		if (!settingPair.On)
-		//		{
-		//			return false;
-		//		}
-		//	}
-
-		//	return true;
-		//}
-
-		//public bool AllGroupsOff()
-		//{
-		//	foreach (GroupSettingPair settingPair in GroupSettings.Values)
-		//	{
-		//		if (settingPair.On)
-		//		{
-		//			return false;
-		//		}
-		//	}
-
-		//	return true;
-		//}
-
 		public void ToggleGroups()
 		{
 			if (AllHasIsOff())
 			{
 				foreach (GroupSettingPair settingPair in GroupSettings.Values)
 				{
-					if (settingPair.Has)
+					if (settingPair.Has || RevealFullMap)
 					{
 						settingPair.On = true;
 					}
@@ -200,7 +180,7 @@ namespace VanillaMapMod.Settings
 			{
 				foreach (GroupSettingPair settingPair in GroupSettings.Values)
 				{
-					if (settingPair.Has)
+					if (settingPair.Has || RevealFullMap)
 					{
 						settingPair.On = false;
 					}
@@ -212,7 +192,7 @@ namespace VanillaMapMod.Settings
 		{
 			foreach (GroupSettingPair settingPair in GroupSettings.Values)
 			{
-				if (settingPair.Has)
+				if (settingPair.Has || RevealFullMap)
 				{
 					if (!settingPair.On)
 					{
@@ -228,7 +208,7 @@ namespace VanillaMapMod.Settings
 		{
 			foreach (GroupSettingPair settingPair in GroupSettings.Values)
 			{
-				if (settingPair.Has)
+				if (settingPair.Has || RevealFullMap)
 				{
 					if (settingPair.On)
 					{

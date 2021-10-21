@@ -52,11 +52,6 @@ namespace VanillaMapMod.Shop
 
                 foreach (ShopDef shopItem in _shopItems)
                 {
-                    //if (SettingsUtil.GetMapModSettingFromPool(shopItem.pool))
-                    //{
-                    //    continue;
-                    //}
-
                     if (VanillaMapMod.LS.GetHasFromGroup(shopItem.pool))
                     {
                         continue;
@@ -83,9 +78,7 @@ namespace VanillaMapMod.Shop
                     stats.relicPDInt = string.Empty;
 
                     // Apply the sprite for the UI
-                    stats.transform.Find("Item Sprite").gameObject.GetComponent<SpriteRenderer>().sprite =
-                        SpriteManager.GetSprite(shopItem.spriteName);
-                    //stats.transform.Find("Item Sprite").localScale = new Vector2(1.0f, 1.0f);
+                    stats.transform.Find("Item Sprite").gameObject.GetComponent<SpriteRenderer>().sprite = SpriteManager.GetSprite(shopItem.spriteName);
                     stats.transform.Find("Item Sprite").localPosition = new Vector2(0.08f, 0.0f);
 
                     newStock.Add(newItemObj);
