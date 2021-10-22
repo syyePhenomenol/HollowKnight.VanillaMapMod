@@ -3,10 +3,10 @@ using UnityEngine;
 using VanillaMapMod.CanvasUtil;
 using VanillaMapMod.Map;
 
-namespace VanillaMapMod.PauseMenu
+namespace VanillaMapMod.UI
 {
     // All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
-    internal class PauseGUI
+    internal class PauseMenu
 	{
 		public static GameObject Canvas;
 
@@ -51,21 +51,21 @@ namespace VanillaMapMod.PauseMenu
 
 			Rect buttonRect = new(0, 0, GUIController.Instance.Images["ButtonRect"].width, GUIController.Instance.Images["ButtonRect"].height);
 
+            // Toggle pool buttons panel on and off
             _mapControlPanel.AddButton
                 (
                     "AllPins",
                     GUIController.Instance.Images["ButtonRect"],
                     new Vector2(200f, -30f),
                     Vector2.zero,
-                    AllPinsClicked,
+                    ShowPinsClicked,
                     buttonRect,
                     GUIController.Instance.TrajanBold,
                     "Show Pins:\nall",
                     fontSize: 10
                 );
-            SetAllPinsButton();
 
-            // New panel for pool buttons
+           // New panel for pool buttons
            CanvasPanel pools = _mapControlPanel.AddPanel
            (
                "PoolsPanel",
@@ -80,15 +80,17 @@ namespace VanillaMapMod.PauseMenu
                 GUIController.Instance.Images["ButtonRect"],
                 new Vector2(300f, -30f),
                 Vector2.zero,
-                s => PoolsClicked(),
+                s => PoolsPanelClicked(),
                 buttonRect,
                 GUIController.Instance.TrajanBold,
                 "Customize\nPins",
                 fontSize: 10
             );
+
+            // Collapse panel
             pools.SetActive(false, true);
 
-            //Pool buttons
+            // Pool buttons
             foreach (KeyValuePair<string, (string, Vector2)> pair in _groupButtons)
             {
                 pools.AddButton
@@ -97,7 +99,7 @@ namespace VanillaMapMod.PauseMenu
                     GUIController.Instance.Images["ButtonRectEmpty"],
                     pair.Value.Item2,
                     Vector2.zero,
-                    PoolButtonClicked,
+                    PoolClicked,
                     buttonRect,
                     GUIController.Instance.TrajanBold,
                     pair.Value.Item1,
@@ -105,6 +107,7 @@ namespace VanillaMapMod.PauseMenu
                 );
             }
 
+            // Toggle full map on and off
             _mapControlPanel.AddButton
                 (
                     "Reveal\nFull Map",
@@ -118,21 +121,17 @@ namespace VanillaMapMod.PauseMenu
                     fontSize: 10
                 );
 
-            SetGUI();
+            UpdateGUI();
 
 			_mapControlPanel.SetActive(false, true); // collapse all subpanels
+
 			if (GameManager.instance.IsGamePaused())
 			{
 				_mapControlPanel.SetActive(true, false);
 			}
 		}
 
-		public static void RebuildMenu()
-		{
-			_mapControlPanel.Destroy();
-			BuildMenu(Canvas);
-		}
-
+        // Called every frame
 		public static void Update()
 		{
 			if (_mapControlPanel == null || GameManager.instance == null)
@@ -142,36 +141,39 @@ namespace VanillaMapMod.PauseMenu
 
 			if (HeroController.instance == null || !GameManager.instance.IsGameplayScene() || !GameManager.instance.IsGamePaused())
 			{
+                // Any time we aren't at the Pause Menu / don't want to show the UI otherwise
 				if (_mapControlPanel.Active) _mapControlPanel.SetActive(false, true);
-				return;
 			}
 			else
 			{
+                // On the frame that we enter the Pause Menu
 				if (!_mapControlPanel.Active)
 				{
-					RebuildMenu();
-				}
+                    _mapControlPanel.Destroy();
+                    BuildMenu(Canvas);
+                }
 			}
 		}
 
-		public static void SetGUI()
+        // Update all the buttons (text, color)
+		public static void UpdateGUI()
 		{
             foreach (string group in _groupButtons.Keys)
             {
-                SetPoolButton(group);
+                UpdatePool(group);
             }
 
-            SetAllPinsButton();
-            SetRevealFullMap();
+            UpdateShowPins();
+            UpdateRevealFullMap();
         }
 
-        private static void AllPinsClicked(string buttonName)
+        private static void ShowPinsClicked(string buttonName)
         {
             VanillaMapMod.LS.ToggleGroups();
-            SetGUI();
+            UpdateGUI();
         }
 
-        private static void SetAllPinsButton()
+        private static void UpdateShowPins()
         {
             if (!VanillaMapMod.LS.HasNoGroup())
             {
@@ -198,21 +200,21 @@ namespace VanillaMapMod.PauseMenu
             }
         }
 
-        private static void PoolsClicked()
+        private static void PoolsPanelClicked()
         {
             _mapControlPanel.TogglePanel("PoolsPanel");
         }
 
-        private static void PoolButtonClicked(string buttonName)
+        private static void PoolClicked(string buttonName)
         {
             if (VanillaMapMod.LS.GetHasFromGroup(buttonName) || VanillaMapMod.LS.RevealFullMap)
             {
                 VanillaMapMod.LS.SetOnFromGroup(buttonName, !VanillaMapMod.LS.GetOnFromGroup(buttonName));
-                SetGUI();
+                UpdateGUI();
             }
         }
 
-        private static void SetPoolButton(string buttonName)
+        private static void UpdatePool(string buttonName)
         {
             if (!VanillaMapMod.LS.GetHasFromGroup(buttonName) && !VanillaMapMod.LS.RevealFullMap)
             {
@@ -237,9 +239,9 @@ namespace VanillaMapMod.PauseMenu
                 WorldMap.PurgeMap();
             }
 
-            SetGUI();
+            UpdateGUI();
         }
-        private static void SetRevealFullMap()
+        private static void UpdateRevealFullMap()
         {
             if (!VanillaMapMod.LS.RevealFullMap)
             {

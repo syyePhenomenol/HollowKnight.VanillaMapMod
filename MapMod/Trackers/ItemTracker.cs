@@ -9,6 +9,7 @@ namespace VanillaMapMod.Trackers
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
 
+        // Called every time the map is opened
         public static void UpdateObtainedItems()
         {
             if (PlayerData.instance.hasDash)
@@ -298,6 +299,8 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Grimm Troupe Lantern" + "Cliffs_06"] = true;
             }
 
+
+            // The following is needed in case the mod is installed halfway through an existing vanilla save
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {
                 if (grd.hitsLeft == 0)
@@ -318,6 +321,8 @@ namespace VanillaMapMod.Trackers
             }
         }
 
+        // sceneData doesn't immediately get updated when items are picked up,
+        // therefore we need to use the item FSMs to determine this
         private static void PlayMakerFSM_OnEnable(On.PlayMakerFSM.orig_OnEnable orig, PlayMakerFSM self)
         {
             orig(self);

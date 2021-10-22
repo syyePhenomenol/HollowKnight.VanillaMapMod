@@ -15,6 +15,8 @@ namespace VanillaMapMod.Map
             On.GrubPin.OnEnable += On_GrubPin_OnEnable;
         }
 
+        // Replace all PlayerData boolNames with our own so we can force enable all pins,
+        // without changing the existing PlayerData settings
         private static void PlayMakerFSM_OnEnable(On.PlayMakerFSM.orig_OnEnable orig, PlayMakerFSM self)
         {
             orig(self);
@@ -83,6 +85,7 @@ namespace VanillaMapMod.Map
         {
             orig(self, go_gameMap);
 
+            // Disable map key since the UI is too busy otherwise
             GameObject mapKey = GameObject.Find("Map Key");
             mapKey.transform.parent = null;
             mapKey.SetActive(false);
@@ -108,6 +111,8 @@ namespace VanillaMapMod.Map
             { "Vendor", new() },
         };
 
+        // Add pins to their respective groups for easier reference later.
+        // This is recursive and is done once per save load
         private static void SetupPins(GameObject obj)
         {
             if (obj == null)
@@ -208,10 +213,12 @@ namespace VanillaMapMod.Map
                             SetNewSprite(child.gameObject, "pinShopSly");
                             _Groups["Vendor"].Add(child.gameObject);
                             break;
+                        // This is actually Godtuner
                         case "pin_sly (1)":
                             SetNewSprite(child.gameObject, "pinGodSeeker");
                             _Groups["Vendor"].Add(child.gameObject);
                             break;
+                        // These are super buggy in vanilla!
                         case "Map Markers":
                             child.gameObject.SetActive(false);
                             break;
@@ -228,6 +235,7 @@ namespace VanillaMapMod.Map
             }
         }
 
+        // Grub pins are handled separately, since it's convenient to use the existing hook
         private static void On_GrubPin_Start(On.GrubPin.orig_Start orig, GrubPin self)
         {
             orig(self);
@@ -236,6 +244,7 @@ namespace VanillaMapMod.Map
             _Groups["Grub"].Add(self.gameObject);
         }
 
+        // Needed to properly disable Grub pins when turned off
         private static void On_GrubPin_OnEnable(On.GrubPin.orig_OnEnable orig, GrubPin self)
         {
             orig(self);
@@ -246,6 +255,7 @@ namespace VanillaMapMod.Map
             }
         }
 
+        // Recursive function that sets/adjusts pins every time the map is opened
         public static void SetPinsPersistent(GameObject obj)
         {
             if (obj == null)
@@ -318,6 +328,7 @@ namespace VanillaMapMod.Map
             }
         }
 
+        // Only used for adjusting pin size
         private static void SetNewSprite(GameObject go, string spriteName)
         {
             go.GetComponent<SpriteRenderer>().sprite = SpriteManager.GetSprite(spriteName);

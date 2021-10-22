@@ -5,7 +5,6 @@ using Modding;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using UnityEngine;
-using VanillaMapMod.PauseMenu;
 using VanillaMapMod.Settings;
 using VanillaMapMod.Trackers;
 using Vasi;
@@ -16,8 +15,6 @@ namespace VanillaMapMod.Map
     {
         public static GameObject goCustomPins = null;
         public static PinsCustom CustomPins => goCustomPins?.GetComponent<PinsCustom>();
-
-        public static RoughMapRoom templateRMR = new();
 
         public static void Hook()
         {
@@ -34,6 +31,7 @@ namespace VanillaMapMod.Map
             ModHooks.GetPlayerVariableHook += VariableGetOverride;
         }
 
+        // The function that is called every time a new GameMap is created (once per save load)
         private static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
         {
             orig(self);
@@ -48,30 +46,34 @@ namespace VanillaMapMod.Map
             //    }
             //}
 
-            SyncMap(self);
-
             if (self != null)
             {
+                // Necessary if player goes straight to Pause Menu
+                SyncMap(self);
+
                 if (goCustomPins == null)
                 {
-                    VanillaMapMod.Instance.Log("Adding Pin Group and Populating...");
-                    goCustomPins = new GameObject($"Map Mod Pin Group");
+                    VanillaMapMod.Instance.Log("Adding Custom Pins...");
+
+                    goCustomPins = new GameObject($"VMM Custom Pin Group");
                     goCustomPins.AddComponent<PinsCustom>();
+
+                    // Setting parent here is only for controlling local position,
+                    // not active/not active (need separate mechanism)
                     goCustomPins.transform.SetParent(self.transform);
 
                     CustomPins.MakePins(self);
-                    VanillaMapMod.Instance.Log("Adding Pins done.");
+
+                    VanillaMapMod.Instance.Log("Adding Custom Pins done.");
                 }
                 else
                 {
                     goCustomPins.transform.SetParent(self.transform);
                 }
-
-                GUIController.Setup();
-                GUIController.Instance.BuildMenus();
             }
         }
 
+        // Called every time we open the World Map
         private static void GameMap_WorldMap(On.GameMap.orig_WorldMap orig, GameMap self)
         {
             orig(self);
@@ -79,13 +81,14 @@ namespace VanillaMapMod.Map
             UpdateMap(self, "WorldMap");
         }
 
+        // Following two behaviours necessary since GameMap is actually persistently active
         private static void GameMap_SetupMapMarkers(On.GameMap.orig_SetupMapMarkers orig, GameMap self)
         {
             orig(self);
 
             if (goCustomPins != null)
             {
-                CustomPins.Show();
+                CustomPins.gameObject.SetActive(true);
             }
         }
 
@@ -93,12 +96,13 @@ namespace VanillaMapMod.Map
         {
             if (goCustomPins != null)
             {
-                CustomPins.Hide();
+                CustomPins.gameObject.SetActive(false);
             }
 
             orig(self);
         }
 
+        // The main method for updating map objects and pins when opening either World Map or Quick Map
         public static void UpdateMap(GameMap gameMap, string mapArea)
         {
             ItemTracker.UpdateObtainedItems();
@@ -116,20 +120,12 @@ namespace VanillaMapMod.Map
             }
         }
 
-        // If the mod is installed for an existing game
         public static void SyncMap(GameMap gameMap)
         {
-            // The Has settings should be equivalent to the ORIGINAL PlayerData settings
-            VanillaMapMod.LS.GroupSettings["Bench"].Has = PlayerData.instance.GetBool("hasPinBench");
-            VanillaMapMod.LS.GroupSettings["Cocoon"].Has = PlayerData.instance.GetBool("hasPinCocoon");
-            VanillaMapMod.LS.GroupSettings["Grave"].Has = PlayerData.instance.GetBool("hasPinGhost");
-            VanillaMapMod.LS.GroupSettings["Grub"].Has = PlayerData.instance.GetBool("hasPinGrub");
-            VanillaMapMod.LS.GroupSettings["Root"].Has = PlayerData.instance.GetBool("hasPinDreamPlant");
-            VanillaMapMod.LS.GroupSettings["Spa"].Has = PlayerData.instance.GetBool("hasPinSpa");
-            VanillaMapMod.LS.GroupSettings["Stag"].Has = PlayerData.instance.GetBool("hasPinStag");
-            VanillaMapMod.LS.GroupSettings["Tram"].Has = PlayerData.instance.GetBool("hasPinTram");
-            VanillaMapMod.LS.GroupSettings["Vendor"].Has = PlayerData.instance.GetBool("hasPinShop");
+            // If the mod is installed for an existing game
+            SettingsUtil.SyncPlayerDataSettings();
 
+            // Refresh map
             gameMap.SetupMap();
         }
 
@@ -268,6 +264,7 @@ namespace VanillaMapMod.Map
             }
         }
 
+        // Adds the prefix "VMM_" to each boolName occurrence directly in the original code
         private static void ModifyMapBools(ILContext il)
         {
             ILCursor cursor = new(il);
@@ -305,11 +302,12 @@ namespace VanillaMapMod.Map
             public Sprite roughMap;
         }
 
+        // Normally the game has no reason to "un-quill" the map, so the following allows us to do this
+        // We keep a copy of the "rough map" sprite, and force that sprite every time before OnEnable() does its check
         private static void RoughMapRoom_OnEnable(On.RoughMapRoom.orig_OnEnable orig, RoughMapRoom self)
         {
             SpriteCopy spriteCopy = self.gameObject.GetComponent<SpriteCopy>();
             SpriteRenderer sr = self.gameObject.GetComponent<SpriteRenderer>();
-
 
             if (spriteCopy == null)
             {
@@ -376,11 +374,13 @@ namespace VanillaMapMod.Map
                             case "Ab Right":
                                 ReplaceNumberOfBools(self, state.Name, 1);
                                 break;
+
                             case "QG Up":
                             case "Out Down":
                             case "Wat Down":
                                 ReplaceNumberOfBools(self, state.Name, 2);
                                 break;
+
                             case "FG Up":
                             case "C Up":
                             case "Out Up":
@@ -388,12 +388,14 @@ namespace VanillaMapMod.Map
                             case "FW Down":
                                 ReplaceNumberOfBools(self, state.Name, 3);
                                 break;
+
                             case "QG Down":
                             case "C Down":
                             case "FW Left":
                             case "Wat Up":
                                 ReplaceNumberOfBools(self, state.Name, 4);
                                 break;
+
                             case "T Left":
                             case "T Right":
                             case "CR Right":
@@ -404,6 +406,7 @@ namespace VanillaMapMod.Map
                             case "Ab Left":
                                 ReplaceNumberOfBools(self, state.Name, 5);
                                 break;
+
                             case "CR Left":
                             case "RG Down":
                             case "FG Right":
@@ -412,9 +415,11 @@ namespace VanillaMapMod.Map
                             case "Ab Up":
                                 ReplaceNumberOfBools(self, state.Name, 6);
                                 break;
+
                             case "CR Down":
                                 ReplaceNumberOfBools(self, state.Name, 7);
                                 break;
+
                             case "Mi Down":
                             case "GP Down":
                             case "QG Right":
@@ -423,12 +428,15 @@ namespace VanillaMapMod.Map
                             case "Pos Check":
                                 ReplaceNumberOfBools(self, state.Name, 8);
                                 break;
+
                             case "Cl Down":
                                 ReplaceNumberOfBools(self, state.Name, 9);
                                 break;
+
                             case "T Down":
                                 ReplaceNumberOfBools(self, state.Name, 10);
                                 break;
+
                             case "Activate":
                                 FsmString[] boolStrings = { "VMM_visitedHive", "VMM_mapOutskirts" };
                                 FsmUtil.GetAction<PlayerDataBoolAllTrue>(self, state.Name, 8).stringVariables = boolStrings;
@@ -437,6 +445,7 @@ namespace VanillaMapMod.Map
                     }
                 }
             }
+
             // These are the map zone objects when zoomed out
             else if (SettingsUtil.IsFSMMapState(self.gameObject.name) && self.FsmName == "deactivate")
             {
@@ -480,6 +489,7 @@ namespace VanillaMapMod.Map
             "Hive_02"
         };
 
+        // If RevealFullMap, we pass the complete list for root scenes
         public static object VariableGetOverride(System.Type type, string name, object value)
         {
             if (name.StartsWith("VMM_"))

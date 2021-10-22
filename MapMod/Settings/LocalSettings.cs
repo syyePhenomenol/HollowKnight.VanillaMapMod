@@ -14,8 +14,8 @@ namespace VanillaMapMod.Settings
 				On = true;
 			}
 
-			public bool Has;
-			public bool On;
+			public bool Has; // The corresponding pin has been bought
+			public bool On; // The corresponding pin will be shown on the map (if Has)
 		};
 
 		public Dictionary<string, bool> ObtainedItems = new();
@@ -58,6 +58,7 @@ namespace VanillaMapMod.Settings
         {
 			RevealFullMap = !RevealFullMap;
 
+			// Force all pins to show again
 			foreach (KeyValuePair<string, GroupSettingPair> entry in GroupSettings)
             {
                 entry.Value.On = true;
@@ -83,16 +84,16 @@ namespace VanillaMapMod.Settings
 			return false;
 		}
 
-		public void SetHasFromGroup(string boolName, bool value)
+		public void SetHasFromGroup(string group, bool value)
 		{
-			if (GroupSettings.ContainsKey(boolName))
+			if (GroupSettings.ContainsKey(group))
 			{
-				GroupSettings[boolName].Has = value;
+				GroupSettings[group].Has = value;
 			}
 			else
 			{
 				// Set based on ORIGINAL PlayerData settings
-				switch (boolName)
+				switch (group)
 				{
 					case "hasPinBench":
 						GroupSettings["Bench"].Has = value;

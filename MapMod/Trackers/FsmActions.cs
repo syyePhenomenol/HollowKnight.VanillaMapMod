@@ -41,9 +41,6 @@ namespace VanillaMapMod.Trackers
 
             VanillaMapMod.LS.ObtainedItems[_oName + scene] = true;
 
-            VanillaMapMod.Instance.Log(_oName);
-            VanillaMapMod.Instance.Log(scene);
-
             //VanillaMapMod.Instance.Log("Item picked up");
             //VanillaMapMod.Instance.Log(" Name: " + _oName);
             //VanillaMapMod.Instance.Log(" Scene: " + scene);

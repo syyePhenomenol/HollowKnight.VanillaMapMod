@@ -2,27 +2,27 @@
 {
     public static class SettingsUtil
     {
-		public static bool GetPlayerDataMapSetting(string mapArea)
-		{
-			return mapArea switch
-			{
-				"Ancient_Basin" => PlayerData.instance.mapAbyss,
-				"City_of_Tears" => PlayerData.instance.mapCity,
-				"Howling_Cliffs" => PlayerData.instance.mapCliffs,
-				"Forgotten_Crossroads" => PlayerData.instance.mapCrossroads,
-				"Crystal_Peak" => PlayerData.instance.mapMines,
-				"Deepnest" => PlayerData.instance.mapDeepnest,
-				"Dirtmouth" => PlayerData.instance.mapDirtmouth,
-				"Fog_Canyon" => PlayerData.instance.mapFogCanyon,
-				"Fungal_Wastes" => PlayerData.instance.mapFungalWastes,
-				"Greenpath" => PlayerData.instance.mapGreenpath,
-				"Kingdoms_Edge" => PlayerData.instance.mapOutskirts,
-				"Queens_Gardens" => PlayerData.instance.mapRoyalGardens,
-				"Resting_Grounds" => PlayerData.instance.mapRestingGrounds,
-				"Royal_Waterways" => PlayerData.instance.mapWaterways,
-				_ => false,
-			};
-        }
+		//public static bool GetPlayerDataMapSetting(string mapArea)
+		//{
+		//	return mapArea switch
+		//	{
+		//		"Ancient_Basin" => PlayerData.instance.mapAbyss,
+		//		"City_of_Tears" => PlayerData.instance.mapCity,
+		//		"Howling_Cliffs" => PlayerData.instance.mapCliffs,
+		//		"Forgotten_Crossroads" => PlayerData.instance.mapCrossroads,
+		//		"Crystal_Peak" => PlayerData.instance.mapMines,
+		//		"Deepnest" => PlayerData.instance.mapDeepnest,
+		//		"Dirtmouth" => PlayerData.instance.mapDirtmouth,
+		//		"Fog_Canyon" => PlayerData.instance.mapFogCanyon,
+		//		"Fungal_Wastes" => PlayerData.instance.mapFungalWastes,
+		//		"Greenpath" => PlayerData.instance.mapGreenpath,
+		//		"Kingdoms_Edge" => PlayerData.instance.mapOutskirts,
+		//		"Queens_Gardens" => PlayerData.instance.mapRoyalGardens,
+		//		"Resting_Grounds" => PlayerData.instance.mapRestingGrounds,
+		//		"Royal_Waterways" => PlayerData.instance.mapWaterways,
+		//		_ => false,
+		//	};
+  //      }
 
         public static bool GetVMMMapSetting(string mapArea)
         {
@@ -46,30 +46,43 @@
             };
         }
 
+        public static void SyncPlayerDataSettings()
+        {
+            // The Has settings should be equivalent to the ORIGINAL PlayerData settings
+            VanillaMapMod.LS.GroupSettings["Bench"].Has = PlayerData.instance.GetBool("hasPinBench");
+            VanillaMapMod.LS.GroupSettings["Cocoon"].Has = PlayerData.instance.GetBool("hasPinCocoon");
+            VanillaMapMod.LS.GroupSettings["Grave"].Has = PlayerData.instance.GetBool("hasPinGhost");
+            VanillaMapMod.LS.GroupSettings["Grub"].Has = PlayerData.instance.GetBool("hasPinGrub");
+            VanillaMapMod.LS.GroupSettings["Root"].Has = PlayerData.instance.GetBool("hasPinDreamPlant");
+            VanillaMapMod.LS.GroupSettings["Spa"].Has = PlayerData.instance.GetBool("hasPinSpa");
+            VanillaMapMod.LS.GroupSettings["Stag"].Has = PlayerData.instance.GetBool("hasPinStag");
+            VanillaMapMod.LS.GroupSettings["Tram"].Has = PlayerData.instance.GetBool("hasPinTram");
+            VanillaMapMod.LS.GroupSettings["Vendor"].Has = PlayerData.instance.GetBool("hasPinShop");
+        }
+
         public static bool IsFSMMapState(string name)
         {
-            switch (name)
+            return name switch
             {
-                case "Abyss":
-                case "Ancient Basin":
-                case "City":
-                case "Cliffs":
-                case "Crossroads":
-                case "Deepnest":
-                case "Fog Canyon":
-                case "Fungal Wastes":
-                case "Fungus":
-                case "Greenpath":
-                case "Hive":
-                case "Mines":
-                case "Outskirts":
-                case "Resting Grounds":
-                case "Royal Gardens":
-                case "Waterways":
-                    return true;
-                default:
-                    return false;
+                "Abyss"
+                or "Ancient Basin"
+                or "City"
+                or "Cliffs"
+                or "Crossroads"
+                or "Deepnest"
+                or "Fog Canyon"
+                or "Fungal Wastes"
+                or "Fungus"
+                or "Greenpath"
+                or "Hive"
+                or "Mines"
+                or "Outskirts"
+                or "Resting Grounds"
+                or "Royal Gardens"
+                or "Waterways" => true,
+                _ => false,
             };
+            ;
         }
     }
 }

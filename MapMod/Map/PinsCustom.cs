@@ -41,13 +41,8 @@ namespace VanillaMapMod.Map
         {
             foreach (string group in _Groups.Keys)
             {
-                RefreshGroup(group);
+                _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
             }
-        }
-
-        public void RefreshGroup(string group)
-        {
-            _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
         }
 
         public void DestroyPins()
@@ -100,7 +95,7 @@ namespace VanillaMapMod.Map
             // Set pin transform (by pool)
             AssignGroup(goPin, pinData);
 
-            // Position the pin - if pinScene exists we need to set a custom base offset
+            // Position the pin - if pinScene exists we set a different base offset
             string roomName = pinData.pinScene ?? pinData.sceneName;
             Vector3 vec = GetRoomPos(roomName, gameMap);
             vec.Scale(new Vector3(1.46f, 1.46f, 1));
@@ -145,16 +140,6 @@ namespace VanillaMapMod.Map
         }
 
         protected void Start()
-        {
-            Hide();
-        }
-
-        public void Show()
-        {
-            gameObject.SetActive(true);
-        }
-
-        public void Hide()
         {
             gameObject.SetActive(false);
         }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine.SceneManagement;
-using VanillaMapMod.PauseMenu;
 
 namespace VanillaMapMod.Map
 {
@@ -10,6 +9,7 @@ namespace VanillaMapMod.Map
             UnityEngine.SceneManagement.SceneManager.activeSceneChanged += HandleSceneChanges;
         }
 
+        // Force map to update every time we enter a new scene
         private static void HandleSceneChanges(Scene from, Scene to)
         {
             if (GameManager.instance.sceneName == to.name && PlayerData.instance.hasQuill)
@@ -23,11 +23,6 @@ namespace VanillaMapMod.Map
                 {
                     PlayerData.instance.scenesMapped.Add(to.name);
                 }
-            }
-
-            if (to.name == "Quit_to_Menu")
-            {
-                GUIController.Unload();
             }
         }
     }

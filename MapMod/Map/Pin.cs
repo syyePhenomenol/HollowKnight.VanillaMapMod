@@ -33,7 +33,7 @@ namespace VanillaMapMod.Map
             }
         }
 
-        // This method hides or shows the pin depending on the state of the map
+        // Hides or shows the pin depending on the state of the map
         private void ShowBasedOnMap(string mapAreaName)
         {
             if ((mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")

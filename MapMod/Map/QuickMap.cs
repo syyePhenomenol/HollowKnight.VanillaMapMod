@@ -26,6 +26,7 @@ namespace VanillaMapMod.Map
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
 
+        // These are called every time we open the respective Quick Map
         private static void GameMap_QuickMapAncientBasin(On.GameMap.orig_QuickMapAncientBasin orig, GameMap self)
         {
             orig(self);
@@ -126,6 +127,8 @@ namespace VanillaMapMod.Map
             WorldMap.UpdateMap(self, "Royal_Waterways");
         }
 
+        // Replace all PlayerData boolNames with our own so we can show all Quick Maps,
+        // without changing the existing PlayerData settings
         private static void PlayMakerFSM_OnEnable(On.PlayMakerFSM.orig_OnEnable orig, PlayMakerFSM self)
         {
             orig(self);

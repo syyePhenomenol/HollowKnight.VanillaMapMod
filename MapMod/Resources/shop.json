@@ -3,7 +3,6 @@
     "playerDataBoolName": "Skill",
     "nameConvo": "MAP_MOD_SKILL_PIN_NAME",
     "descConvo": "MAP_MOD_SKILL_PIN_DESC",
-    "pool": "Skill",
     "cost": 200,
     "spriteName": "pinSkill"
   },
@@ -11,7 +10,6 @@
     "playerDataBoolName": "Charm",
     "nameConvo": "MAP_MOD_CHARM_PIN_NAME",
     "descConvo": "MAP_MOD_CHARM_PIN_DESC",
-    "pool": "Charm",
     "cost": 200,
     "spriteName": "pinCharm"
   },
@@ -19,7 +17,6 @@
     "playerDataBoolName": "Key",
     "nameConvo": "MAP_MOD_KEY_PIN_NAME",
     "descConvo": "MAP_MOD_KEY_PIN_DESC",
-    "pool": "Key",
     "cost": 100,
     "spriteName": "pinKey"
   },
@@ -27,7 +24,6 @@
     "playerDataBoolName": "Mask",
     "nameConvo": "MAP_MOD_MASK_PIN_NAME",
     "descConvo": "MAP_MOD_MASK_PIN_DESC",
-    "pool": "Mask",
     "cost": 200,
     "spriteName": "pinMask"
   },
@@ -35,7 +31,6 @@
     "playerDataBoolName": "Vessel",
     "nameConvo": "MAP_MOD_VESSEL_PIN_NAME",
     "descConvo": "MAP_MOD_VESSEL_PIN_DESC",
-    "pool": "Vessel",
     "cost": 200,
     "spriteName": "pinVessel"
   },
@@ -43,7 +38,6 @@
     "playerDataBoolName": "Notch",
     "nameConvo": "MAP_MOD_NOTCH_PIN_NAME",
     "descConvo": "MAP_MOD_NOTCH_PIN_DESC",
-    "pool": "Notch",
     "cost": 200,
     "spriteName": "pinNotch"
   },
@@ -51,15 +45,13 @@
     "playerDataBoolName": "Ore",
     "nameConvo": "MAP_MOD_ORE_PIN_NAME",
     "descConvo": "MAP_MOD_ORE_PIN_DESC",
-    "pool": "Ore",
     "cost": 200,
     "spriteName": "pinOre"
   },
   "Rancid Egg Pin": {
-    "playerDataBoolName": "HasEggPin",
+    "playerDataBoolName": "Egg",
     "nameConvo": "MAP_MOD_EGG_PIN_NAME",
     "descConvo": "MAP_MOD_EGG_PIN_DESC",
-    "pool": "Egg",
     "cost": 50,
     "spriteName": "pinEgg"
   },
@@ -67,7 +59,6 @@
     "playerDataBoolName": "Relic",
     "nameConvo": "MAP_MOD_RELIC_PIN_NAME",
     "descConvo": "MAP_MOD_RELIC_PIN_DESC",
-    "pool": "Relic",
     "cost": 100,
     "spriteName": "pinRelic"
   },
@@ -75,7 +66,6 @@
     "playerDataBoolName": "EssenceBoss",
     "nameConvo": "MAP_MOD_ESSENCEBOSS_PIN_NAME",
     "descConvo": "MAP_MOD_ESSENCEBOSS_PIN_DESC",
-    "pool": "EssenceBoss",
     "cost": 50,
     "spriteName": "pinEssenceBoss"
   },
@@ -83,7 +73,6 @@
     "playerDataBoolName": "Geo",
     "nameConvo": "MAP_MOD_GEO_PIN_NAME",
     "descConvo": "MAP_MOD_GEO_PIN_DESC",
-    "pool": "Geo",
     "cost": 100,
     "spriteName": "pinGeo"
   },
@@ -91,7 +80,6 @@
     "playerDataBoolName": "Rock",
     "nameConvo": "MAP_MOD_ROCK_PIN_NAME",
     "descConvo": "MAP_MOD_ROCK_PIN_DESC",
-    "pool": "Rock",
     "cost": 100,
     "spriteName": "pinRock"
   },
@@ -99,7 +87,6 @@
     "playerDataBoolName": "Totem",
     "nameConvo": "MAP_MOD_TOTEM_PIN_NAME",
     "descConvo": "MAP_MOD_TOTEM_PIN_DESC",
-    "pool": "Totem",
     "cost": 50,
     "spriteName": "pinTotem"
   },
@@ -107,7 +94,6 @@
     "playerDataBoolName": "Lore",
     "nameConvo": "MAP_MOD_LORE_PIN_NAME",
     "descConvo": "MAP_MOD_LORE_PIN_DESC",
-    "pool": "Lore",
     "cost": 50,
     "spriteName": "pinLore"
   }

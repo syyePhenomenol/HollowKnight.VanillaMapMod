@@ -7,7 +7,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace VanillaMapMod.PauseMenu
+namespace VanillaMapMod.UI
 {
     // All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
     public class GUIController : MonoBehaviour
@@ -71,7 +71,7 @@ namespace VanillaMapMod.PauseMenu
 			pauseScaler.referenceResolution = new Vector2(1920f, 1080f);
 			_pauseCanvas.AddComponent<GraphicRaycaster>();
 
-			PauseGUI.BuildMenu(_pauseCanvas);
+			PauseMenu.BuildMenu(_pauseCanvas);
 
 			DontDestroyOnLoad(_pauseCanvas);
 		}
@@ -80,7 +80,7 @@ namespace VanillaMapMod.PauseMenu
 		{
 			try
 			{
-				PauseGUI.Update();
+				PauseMenu.Update();
 			}
 			catch (Exception e)
 			{

@@ -5,6 +5,7 @@ using VanillaMapMod.Map;
 using VanillaMapMod.Settings;
 using VanillaMapMod.Shop;
 using VanillaMapMod.Trackers;
+using VanillaMapMod.UI;
 
 namespace VanillaMapMod
 {
@@ -12,7 +13,7 @@ namespace VanillaMapMod
     {
         public static VanillaMapMod Instance;
 
-        private readonly string _version = "PRERELEASE 0.0.3";
+        private readonly string _version = "PRE-RELEASE 0.0.4";
 
         public override string GetVersion() => _version;
 
@@ -56,25 +57,22 @@ namespace VanillaMapMod
                 throw;
             }
 
-            // Handles adding Custom Pins to World Map and Show/Hide behaviour when opening the Map
-            WorldMap.Hook();
-
-            // Handles Show/Hide behaviour when Quick Map is opened
-            QuickMap.Hook();
-
-            // Modifies existing Vanilla Pins to match Custom Pins behaviour
-            PinsVanilla.Hook();
-
-            // Updates scenes mapped per scene change
-            SceneChanges.Hook();
-
-            // The following updates obtained items based on certain triggers
-            GeoRockTracker.Hook();
+            // Track when items are picked up/Geo Rocks are broken
             ItemTracker.Hook();
+            GeoRockTracker.Hook();
 
-            // Adds new Pins to the Shop
+            // Add new Pins to the Shop
             ShopHooks.Hook();
             ShopChanger.Hook();
+
+            // Modify overall Map behaviour
+            WorldMap.Hook();
+            QuickMap.Hook();
+            PinsVanilla.Hook();
+            SceneChanges.Hook();
+
+            // Add a Pause Menu GUI
+            GUI.Hook();
 
             Log("Initialization complete.");
         }

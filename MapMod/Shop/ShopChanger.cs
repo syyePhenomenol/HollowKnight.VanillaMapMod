@@ -43,6 +43,7 @@ namespace VanillaMapMod.Shop
 
                 foreach (GameObject item in shop.stock)
                 {// (specialType: 0 = lantern, elegant key, quill; 1 = mask, 2 = charm, 3 = vessel, 4-7 = relics, 8 = notch, 9 = map, 10 = simple key, 11 = egg, 12-14 = repair fragile, 15 = salubra blessing, 16 = map pin, 17 = map marker)
+                    
                     // Remove Map Markers from the game
                     if (item.GetComponent<ShopItemStats>().specialType != 17)
                     {
@@ -52,7 +53,7 @@ namespace VanillaMapMod.Shop
 
                 foreach (ShopDef shopItem in _shopItems)
                 {
-                    if (VanillaMapMod.LS.GetHasFromGroup(shopItem.pool))
+                    if (VanillaMapMod.LS.GetHasFromGroup(shopItem.playerDataBoolName))
                     {
                         continue;
                     }
