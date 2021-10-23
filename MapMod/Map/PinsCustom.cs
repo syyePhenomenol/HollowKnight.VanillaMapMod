@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VanillaMapMod.Data;
+using VanillaMapMod.Settings;
 
 namespace VanillaMapMod.Map
 {
@@ -37,6 +38,7 @@ namespace VanillaMapMod.Map
             }
         }
 
+        // Called every time the map is opened
         public void RefreshGroups()
         {
             foreach (string group in _Groups.Keys)
@@ -45,6 +47,25 @@ namespace VanillaMapMod.Map
             }
         }
 
+        public void ResizePins()
+        {
+            foreach (Pin pin in _pins)
+            {
+                ResizePin(pin.gameObject);
+            }
+        }
+        public static void ResizePin(GameObject go)
+        {
+            float scale = VanillaMapMod.GS.PinSizeSetting switch
+            {
+                GlobalSettings.PinSize.small => 0.31f,
+                GlobalSettings.PinSize.medium => 0.37f,
+                GlobalSettings.PinSize.large => 0.42f,
+                _ => throw new NotImplementedException()
+            };
+
+            go.transform.localScale = 1.45f * scale * new Vector2(1.0f, 1.0f);
+        }
         public void DestroyPins()
         {
             foreach (Pin pin in _pins)
@@ -102,8 +123,8 @@ namespace VanillaMapMod.Map
             vec += new Vector3(pinData.offsetX, pinData.offsetY, pinData.offsetZ);
             goPin.transform.localPosition = new Vector3(vec.x, vec.y, vec.z - 0.01f);
 
-            // Scale the pin
-            goPin.transform.localScale = 1.46f * new Vector2(VanillaMapMod.GS.PinScaleSize, VanillaMapMod.GS.PinScaleSize);
+            //// Scale the pin
+            //goPin.transform.localScale = 1.46f * new Vector2(VanillaMapMod.GS.PinScaleSize, VanillaMapMod.GS.PinScaleSize);
         }
 
         private void AssignGroup(GameObject newPin, PinDef pinData)

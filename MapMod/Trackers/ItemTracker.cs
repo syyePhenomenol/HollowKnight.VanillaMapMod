@@ -9,7 +9,7 @@ namespace VanillaMapMod.Trackers
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
 
-        // Called every time the map is opened
+        // Called after save load and every time the map is opened
         public static void UpdateObtainedItems()
         {
             if (PlayerData.instance.hasDash)
@@ -299,7 +299,6 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Grimm Troupe Lantern" + "Cliffs_06"] = true;
             }
 
-
             // The following is needed in case the mod is installed halfway through an existing vanilla save
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {
@@ -332,7 +331,6 @@ namespace VanillaMapMod.Trackers
             // Most items: charms, charm notches, pale ore, rancid eggs, relics
             if (self.FsmName == "Shiny Control")
             {
-                
                 FsmUtil.AddAction(FsmUtil.GetState(self, "Finish"), new TrackItem(goName));
             }
 

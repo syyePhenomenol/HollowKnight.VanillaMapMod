@@ -53,7 +53,7 @@ namespace VanillaMapMod.Map
 
                 if (goCustomPins == null)
                 {
-                    VanillaMapMod.Instance.Log("Adding Custom Pins...");
+                    VanillaMapMod.Instance.LogDebug("Adding Custom Pins...");
 
                     goCustomPins = new GameObject($"VMM Custom Pin Group");
                     goCustomPins.AddComponent<PinsCustom>();
@@ -64,7 +64,7 @@ namespace VanillaMapMod.Map
 
                     CustomPins.MakePins(self);
 
-                    VanillaMapMod.Instance.Log("Adding Custom Pins done.");
+                    VanillaMapMod.Instance.LogDebug("Adding Custom Pins done.");
                 }
                 else
                 {
@@ -107,16 +107,18 @@ namespace VanillaMapMod.Map
         {
             ItemTracker.UpdateObtainedItems();
 
-            PinsVanilla.SetPinsPersistent(gameMap.gameObject);
+            PinsVanilla.UpdatePins(gameMap.gameObject);
 
             SyncMap(gameMap);
 
             PinsVanilla.RefreshGroups();
+            PinsVanilla.ResizePins();
 
             if (goCustomPins != null)
             {
                 CustomPins.UpdatePins(mapArea);
                 CustomPins.RefreshGroups();
+                CustomPins.ResizePins();
             }
         }
 
@@ -129,6 +131,7 @@ namespace VanillaMapMod.Map
             gameMap.SetupMap();
         }
 
+        // The objects that make up the minimal map state
         private static readonly List<string> _persistentMapObjects = new()
         {
             "Crossroads_01",
@@ -303,7 +306,7 @@ namespace VanillaMapMod.Map
         }
 
         // Normally the game has no reason to "un-quill" the map, so the following allows us to do this
-        // We keep a copy of the "rough map" sprite, and force that sprite every time before OnEnable() does its check
+        // We keep a copy of the "rough map" sprite, and force-set that sprite every time before OnEnable() does its check
         private static void RoughMapRoom_OnEnable(On.RoughMapRoom.orig_OnEnable orig, RoughMapRoom self)
         {
             SpriteCopy spriteCopy = self.gameObject.GetComponent<SpriteCopy>();

@@ -80,7 +80,7 @@ namespace VanillaMapMod.Map
         {
             orig(self);
 
-            PinsVanilla.SetPinsPersistent(self.gameObject);
+            PinsVanilla.UpdatePins(self.gameObject);
 
             WorldMap.UpdateMap(self, "Fog_Canyon");
         }

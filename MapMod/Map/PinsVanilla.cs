@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using VanillaMapMod.Settings;
 
 namespace VanillaMapMod.Map
 {
@@ -256,7 +257,7 @@ namespace VanillaMapMod.Map
         }
 
         // Recursive function that sets/adjusts pins every time the map is opened
-        public static void SetPinsPersistent(GameObject obj)
+        public static void UpdatePins(GameObject obj)
         {
             if (obj == null)
                 return;
@@ -300,10 +301,11 @@ namespace VanillaMapMod.Map
                     child.gameObject.SetActive(false);
                 }
 
-                SetPinsPersistent(child.gameObject);
+                UpdatePins(child.gameObject);
             }
         }
 
+        // Called every time the map is opened
         public static void RefreshGroups()
         {
             foreach (string group in _Groups.Keys)
@@ -328,12 +330,36 @@ namespace VanillaMapMod.Map
             }
         }
 
+        public static void ResizePins()
+        {
+            foreach (string group in _Groups.Keys)
+            {
+                foreach (GameObject pinObject in _Groups[group])
+                {
+                    ResizePin(pinObject);
+                }
+            }
+        }
+
         // Only used for adjusting pin size
         private static void SetNewSprite(GameObject go, string spriteName)
         {
             go.GetComponent<SpriteRenderer>().sprite = SpriteManager.GetSprite(spriteName);
 
-            go.transform.localScale = new Vector2(VanillaMapMod.GS.PinScaleSize, VanillaMapMod.GS.PinScaleSize);
+            ResizePin(go);
+        }
+
+        public static void ResizePin(GameObject go)
+        {
+            float scale = VanillaMapMod.GS.PinSizeSetting switch
+            {
+                GlobalSettings.PinSize.small => 0.31f,
+                GlobalSettings.PinSize.medium => 0.37f,
+                GlobalSettings.PinSize.large => 0.42f,
+                _ => throw new NotImplementedException()
+            };
+
+            go.transform.localScale = scale * new Vector2(1.0f, 1.0f);
         }
 
         private static void MoveSprite(GameObject go, Vector3 offset)

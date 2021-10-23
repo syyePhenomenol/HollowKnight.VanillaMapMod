@@ -7,11 +7,11 @@ namespace VanillaMapMod.UI
 {
     // All the following was modified from the GUI implementation of BenchwarpMod by homothetyhk
     internal class PauseMenu
-	{
-		public static GameObject Canvas;
+    {
+        public static GameObject Canvas;
 
-		private static readonly Dictionary<string, (string, Vector2)> _groupButtons = new()
-		{
+        private static readonly Dictionary<string, (string, Vector2)> _groupButtons = new()
+        {
             ["Bench"] = ("Benches", new Vector2(0f, 0f)),
             ["Vendor"] = ("Vendors", new Vector2(100f, 0f)),
             ["Stag"] = ("Stag\nStations", new Vector2(200f, 0f)),
@@ -24,32 +24,32 @@ namespace VanillaMapMod.UI
             ["Cocoon"] = ("Lifeblood\nCocoons", new Vector2(0f, 30f)),
 
             ["Skill"] = ("Skills", new Vector2(100f, 30f)),
-			["Charm"] = ("Charms", new Vector2(200f, 30f)),
-			["Key"] = ("Keys", new Vector2(300f, 30f)),
-			["Mask"] = ("Mask\nShards", new Vector2(400f, 30f)),
-			["Vessel"] = ("Vessel\nFragments", new Vector2(500f, 30f)),
-			["Notch"] = ("Charm\nNotches", new Vector2(600f, 30f)),
-			["Ore"] = ("Pale Ore", new Vector2(700f, 30f)),
-			["Egg"] = ("Rancid\nEggs", new Vector2(0f, 60f)),
-			["Relic"] = ("Relics", new Vector2(100f, 60f)),
-			["EssenceBoss"] = ("Hidden\nBosses", new Vector2(200f, 60f)),
+            ["Charm"] = ("Charms", new Vector2(200f, 30f)),
+            ["Key"] = ("Keys", new Vector2(300f, 30f)),
+            ["Mask"] = ("Mask\nShards", new Vector2(400f, 30f)),
+            ["Vessel"] = ("Vessel\nFragments", new Vector2(500f, 30f)),
+            ["Notch"] = ("Charm\nNotches", new Vector2(600f, 30f)),
+            ["Ore"] = ("Pale Ore", new Vector2(700f, 30f)),
+            ["Egg"] = ("Rancid\nEggs", new Vector2(0f, 60f)),
+            ["Relic"] = ("Relics", new Vector2(100f, 60f)),
+            ["EssenceBoss"] = ("Hidden\nBosses", new Vector2(200f, 60f)),
             ["Rock"] = ("Geo Rocks", new Vector2(300f, 60f)),
-			["Geo"] = ("Geo Chests", new Vector2(400f, 60f)),
-			["Totem"] = ("Soul\nTotems", new Vector2(500f, 60f)),
-			["Lore"] = ("Lore\nTablets", new Vector2(600f, 60f)),
-		};
+            ["Geo"] = ("Geo Chests", new Vector2(400f, 60f)),
+            ["Totem"] = ("Soul\nTotems", new Vector2(500f, 60f)),
+            ["Lore"] = ("Lore\nTablets", new Vector2(600f, 60f)),
+        };
 
-		private static CanvasPanel _mapControlPanel;
+        private static CanvasPanel _mapControlPanel;
 
         public static void BuildMenu(GameObject _canvas)
-		{
-			Canvas = _canvas;
+        {
+            Canvas = _canvas;
 
-			_mapControlPanel = new CanvasPanel
-				(_canvas, GUIController.Instance.Images["ButtonsMenuBG"], new Vector2(10f, 870f), new Vector2(1346f, 0f), new Rect(0f, 0f, 0f, 0f));
-			_mapControlPanel.AddText("MapModLabel", "Vanilla Map Mod", new Vector2(0f, -25f), Vector2.zero, GUIController.Instance.TrajanNormal, 18);
+            _mapControlPanel = new CanvasPanel
+                (_canvas, GUIController.Instance.Images["ButtonsMenuBG"], new Vector2(10f, 870f), new Vector2(1346f, 0f), new Rect(0f, 0f, 0f, 0f));
+            _mapControlPanel.AddText("MapModLabel", "Vanilla Map Mod", new Vector2(0f, -25f), Vector2.zero, GUIController.Instance.TrajanNormal, 18);
 
-			Rect buttonRect = new(0, 0, GUIController.Instance.Images["ButtonRect"].width, GUIController.Instance.Images["ButtonRect"].height);
+            Rect buttonRect = new(0, 0, GUIController.Instance.Images["ButtonRect"].width, GUIController.Instance.Images["ButtonRect"].height);
 
             // Toggle pool buttons panel on and off
             _mapControlPanel.AddButton
@@ -65,15 +65,15 @@ namespace VanillaMapMod.UI
                     fontSize: 10
                 );
 
-           // New panel for pool buttons
-           CanvasPanel pools = _mapControlPanel.AddPanel
-           (
-               "PoolsPanel",
-               GUIController.Instance.Images["ButtonRectEmpty"],
-               new Vector2(0f, 0f),
-               Vector2.zero,
-               new Rect(0f, 0f, GUIController.Instance.Images["DropdownBG"].width, 270f)
-           );
+            // New panel for pool buttons
+            CanvasPanel pools = _mapControlPanel.AddPanel
+            (
+                "PoolsPanel",
+                GUIController.Instance.Images["ButtonRectEmpty"],
+                new Vector2(0f, 0f),
+                Vector2.zero,
+                new Rect(0f, 0f, GUIController.Instance.Images["DropdownBG"].width, 270f)
+            );
             _mapControlPanel.AddButton
             (
                 "PoolsToggle",
@@ -107,12 +107,26 @@ namespace VanillaMapMod.UI
                 );
             }
 
+            // Adjust pin size
+            _mapControlPanel.AddButton
+                (
+                    "Pin Size",
+                    GUIController.Instance.Images["ButtonRect"],
+                    new Vector2(400, -30f),
+                    Vector2.zero,
+                    PinSizeClicked,
+                    buttonRect,
+                    GUIController.Instance.TrajanBold,
+                    "Pin Size\nsmall",
+                    fontSize: 10
+                );
+
             // Toggle full map on and off
             _mapControlPanel.AddButton
                 (
                     "Reveal\nFull Map",
                     GUIController.Instance.Images["ButtonRect"],
-                    new Vector2(400, -30f),
+                    new Vector2(500, -30f),
                     Vector2.zero,
                     RevealFullMapClicked,
                     buttonRect,
@@ -121,43 +135,45 @@ namespace VanillaMapMod.UI
                     fontSize: 10
                 );
 
+            
+
             UpdateGUI();
 
-			_mapControlPanel.SetActive(false, true); // collapse all subpanels
+            _mapControlPanel.SetActive(false, true); // collapse all subpanels
 
-			if (GameManager.instance.IsGamePaused())
-			{
-				_mapControlPanel.SetActive(true, false);
-			}
-		}
+            if (GameManager.instance.IsGamePaused())
+            {
+                _mapControlPanel.SetActive(true, false);
+            }
+        }
 
         // Called every frame
-		public static void Update()
-		{
-			if (_mapControlPanel == null || GameManager.instance == null)
-			{
-				return;
-			}
+        public static void Update()
+        {
+            if (_mapControlPanel == null || GameManager.instance == null)
+            {
+                return;
+            }
 
-			if (HeroController.instance == null || !GameManager.instance.IsGameplayScene() || !GameManager.instance.IsGamePaused())
-			{
+            if (HeroController.instance == null || !GameManager.instance.IsGameplayScene() || !GameManager.instance.IsGamePaused())
+            {
                 // Any time we aren't at the Pause Menu / don't want to show the UI otherwise
-				if (_mapControlPanel.Active) _mapControlPanel.SetActive(false, true);
-			}
-			else
-			{
+                if (_mapControlPanel.Active) _mapControlPanel.SetActive(false, true);
+            }
+            else
+            {
                 // On the frame that we enter the Pause Menu
-				if (!_mapControlPanel.Active)
-				{
+                if (!_mapControlPanel.Active)
+                {
                     _mapControlPanel.Destroy();
                     BuildMenu(Canvas);
                 }
-			}
-		}
+            }
+        }
 
         // Update all the buttons (text, color)
-		public static void UpdateGUI()
-		{
+        public static void UpdateGUI()
+        {
             foreach (string group in _groupButtons.Keys)
             {
                 UpdatePool(group);
@@ -165,6 +181,7 @@ namespace VanillaMapMod.UI
 
             UpdateShowPins();
             UpdateRevealFullMap();
+            UpdatePinSize();
         }
 
         private static void ShowPinsClicked(string buttonName)
@@ -241,6 +258,7 @@ namespace VanillaMapMod.UI
 
             UpdateGUI();
         }
+
         private static void UpdateRevealFullMap()
         {
             if (!VanillaMapMod.LS.RevealFullMap)
@@ -250,6 +268,29 @@ namespace VanillaMapMod.UI
             else
             {
                 _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.green);
+            }
+        }
+
+        private static void PinSizeClicked(string buttonName)
+        {
+            VanillaMapMod.GS.TogglePinSize();
+
+            UpdateGUI();
+        }
+
+        private static void UpdatePinSize()
+        {
+            switch (VanillaMapMod.GS.PinSizeSetting)
+            {
+                case Settings.GlobalSettings.PinSize.small:
+                    _mapControlPanel.GetButton("Pin Size").UpdateText("Pin Size\nsmall");
+                    break;
+                case Settings.GlobalSettings.PinSize.medium:
+                    _mapControlPanel.GetButton("Pin Size").UpdateText("Pin Size\nmedium");
+                    break;
+                case Settings.GlobalSettings.PinSize.large:
+                    _mapControlPanel.GetButton("Pin Size").UpdateText("Pin Size\nlarge");
+                    break;
             }
         }
     }

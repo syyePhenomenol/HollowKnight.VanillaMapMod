@@ -53,7 +53,7 @@ namespace VanillaMapMod
             }
             catch (Exception e)
             {
-                LogError($"Error loading MapData!\n{e}");
+                LogError($"Error loading data!\n{e}");
                 throw;
             }
 
