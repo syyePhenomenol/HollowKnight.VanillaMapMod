@@ -11,7 +11,7 @@
 
         //public float PinScaleSize = 0.36f;
 
-        public PinSize PinSizeSetting = PinSize.small;
+        public PinSize PinSizeSetting = PinSize.medium;
 
         public void TogglePinSize()
         {
