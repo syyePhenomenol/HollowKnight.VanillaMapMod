@@ -36,6 +36,18 @@ namespace VanillaMapMod.Shop
         {
             VanillaMapMod.LS.SetHasFromGroup(boolName, orig);
 
+            // Immediately update map with visited areas when quill is picked up, to avoid wasting time at bench
+            if (boolName == "hasQuill" && orig)
+            {
+                foreach (string scene in PlayerData.instance.scenesVisited)
+                {
+                    if (!PlayerData.instance.scenesMapped.Contains(scene))
+                    {
+                        PlayerData.instance.scenesMapped.Add(scene);
+                    }
+                }
+            }
+
             return orig;
         }
     }

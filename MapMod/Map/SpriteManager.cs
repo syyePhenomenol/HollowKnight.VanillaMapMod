@@ -24,7 +24,7 @@ namespace VanillaMapMod.Map
                 Sprite sprite = FromStream(a.GetManifestResourceStream(name));
                 _sprites[altName] = sprite;
 
-                VanillaMapMod.Instance.Log(altName);
+                VanillaMapMod.Instance.LogDebug(altName);
             }
         }
 
@@ -65,7 +65,7 @@ namespace VanillaMapMod.Map
                 return sprite;
             }
 
-            VanillaMapMod.Instance.Log("Failed to load sprite named '" + name + "'");
+            VanillaMapMod.Instance.LogWarn("Failed to load sprite named '" + name + "'");
             return null;
         }
 
