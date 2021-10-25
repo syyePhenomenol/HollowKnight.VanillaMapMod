@@ -24,7 +24,7 @@ namespace VanillaMapMod.Map
                 Sprite sprite = FromStream(a.GetManifestResourceStream(name));
                 _sprites[altName] = sprite;
 
-                VanillaMapMod.Instance.LogDebug(altName);
+                VanillaMapMod.Instance.Log(altName);
             }
         }
 

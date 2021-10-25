@@ -33,7 +33,7 @@ namespace VanillaMapMod
 
         public override void Initialize()
         {
-            LogDebug("Initializing...");
+            Log("Initializing...");
 
             Instance = this;
 
@@ -74,7 +74,7 @@ namespace VanillaMapMod
             // Add a Pause Menu GUI
             GUI.Hook();
 
-            LogDebug("Initialization complete.");
+            Log("Initialization complete.");
         }
     }
 }

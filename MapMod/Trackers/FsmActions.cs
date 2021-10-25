@@ -18,9 +18,9 @@ namespace VanillaMapMod.Trackers
         {
             VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
 
-            VanillaMapMod.Instance.LogDebug("Geo Rock broken");
-            VanillaMapMod.Instance.LogDebug(" ID: " + _grd.id);
-            VanillaMapMod.Instance.LogDebug(" Scene: " + _grd.sceneName);
+            VanillaMapMod.Instance.Log("Geo Rock broken");
+            VanillaMapMod.Instance.Log(" ID: " + _grd.id);
+            VanillaMapMod.Instance.Log(" Scene: " + _grd.sceneName);
 
             Finish();
         }
@@ -41,9 +41,9 @@ namespace VanillaMapMod.Trackers
 
             VanillaMapMod.LS.ObtainedItems[_oName + scene] = true;
 
-            VanillaMapMod.Instance.LogDebug("Item picked up");
-            VanillaMapMod.Instance.LogDebug(" Name: " + _oName);
-            VanillaMapMod.Instance.LogDebug(" Scene: " + scene);
+            VanillaMapMod.Instance.Log("Item picked up");
+            VanillaMapMod.Instance.Log(" Name: " + _oName);
+            VanillaMapMod.Instance.Log(" Scene: " + scene);
 
             Finish();
         }

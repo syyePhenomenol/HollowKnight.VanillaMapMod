@@ -53,7 +53,7 @@ namespace VanillaMapMod.Map
 
                 if (goCustomPins == null)
                 {
-                    VanillaMapMod.Instance.LogDebug("Adding Custom Pins...");
+                    VanillaMapMod.Instance.Log("Adding Custom Pins...");
 
                     goCustomPins = new GameObject($"VMM Custom Pin Group");
                     goCustomPins.AddComponent<PinsCustom>();
@@ -64,7 +64,7 @@ namespace VanillaMapMod.Map
 
                     CustomPins.MakePins(self);
 
-                    VanillaMapMod.Instance.LogDebug("Adding Custom Pins done.");
+                    VanillaMapMod.Instance.Log("Adding Custom Pins done.");
                 }
                 else
                 {

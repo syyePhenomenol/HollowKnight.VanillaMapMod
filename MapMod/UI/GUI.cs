@@ -1,4 +1,5 @@
-﻿using Modding;
+﻿using System;
+using Modding;
 using UnityEngine.SceneManagement;
 
 namespace VanillaMapMod.UI
@@ -7,12 +8,14 @@ namespace VanillaMapMod.UI
     {
         public static void Hook()
         {
-            ModHooks.AfterSavegameLoadHook += AfterSavegameLoadHook;
+            On.GameMap.Start += GameMap_Start;
             UnityEngine.SceneManagement.SceneManager.activeSceneChanged += HandleSceneChanges;
         }
 
-        public static void AfterSavegameLoadHook(SaveGameData self)
+        public static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
         {
+            orig(self);
+
             GUIController.Setup();
             GUIController.Instance.BuildMenus();
         }
