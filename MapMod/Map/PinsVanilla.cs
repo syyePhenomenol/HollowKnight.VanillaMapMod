@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VanillaMapMod.Settings;
+using VanillaMapMod.Data;
 
 namespace VanillaMapMod.Map
 {
@@ -92,7 +93,7 @@ namespace VanillaMapMod.Map
             mapKey.SetActive(false);
 
             // Clear all pin references from previous save load
-            foreach (string group in _Groups.Keys)
+            foreach (Pool group in _Groups.Keys)
             {
                 _Groups[group].Clear();
             }
@@ -100,16 +101,16 @@ namespace VanillaMapMod.Map
             SetupPins(go_gameMap);
         }
 
-        private static readonly Dictionary<string, List<GameObject>> _Groups = new()
+        private static readonly Dictionary<Pool, List<GameObject>> _Groups = new()
         {
-            { "Bench", new() },
-            { "Grave", new() },
-            { "Grub", new() },
-            { "Root", new() },
-            { "Spa", new() },
-            { "Stag", new() },
-            { "Tram", new() },
-            { "Vendor", new() },
+            { Pool.Bench, new() },
+            { Pool.Grave, new() },
+            { Pool.Grub, new() },
+            { Pool.Root, new() },
+            { Pool.Spa, new() },
+            { Pool.Stag, new() },
+            { Pool.Tram, new() },
+            { Pool.Vendor, new() },
         };
 
         // Add pins to their respective groups for easier reference later.
@@ -130,15 +131,15 @@ namespace VanillaMapMod.Map
                     {
                         case "pin_bench":
                             // Sprite is set persistently in other function
-                            _Groups["Bench"].Add(child.gameObject);
+                            _Groups[Pool.Bench].Add(child.gameObject);
                             break;
                         case "Pin_Backer Ghost":
                             SetNewSprite(child.gameObject, "pinBackerGhost");
-                            _Groups["Grave"].Add(child.gameObject);
+                            _Groups[Pool.Grave].Add(child.gameObject);
                             break;
                         case "pin_dream_tree":
                             SetNewSprite(child.gameObject, "pinRoot");
-                            _Groups["Root"].Add(child.gameObject);
+                            _Groups[Pool.Root].Add(child.gameObject);
 
                             // Move Ancestral Mound root pin
                             if (child.transform.parent.name == "Crossroads_ShamanTemple")
@@ -155,69 +156,69 @@ namespace VanillaMapMod.Map
                             break;
                         case "pin_spa":
                             SetNewSprite(child.gameObject, "pinSpa");
-                            _Groups["Spa"].Add(child.gameObject);
+                            _Groups[Pool.Spa].Add(child.gameObject);
                             break;
                         case "pin_stag_station":
                         case "pin_stag_station (7)":
                             SetNewSprite(child.gameObject, "pinStag");
-                            _Groups["Stag"].Add(child.gameObject);
+                            _Groups[Pool.Stag].Add(child.gameObject);
                             break;
                         case "pin_tram":
                             SetNewSprite(child.gameObject, "pinTramLocation");
-                            _Groups["Tram"].Add(child.gameObject);
+                            _Groups[Pool.Tram].Add(child.gameObject);
                             break;
                         case "pin_banker":
                             SetNewSprite(child.gameObject, "pinShopBanker");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_charm_slug":
                             SetNewSprite(child.gameObject, "pinCharmSlug");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_colosseum":
                             SetNewSprite(child.gameObject, "pinColosseum");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_dream moth":
                             SetNewSprite(child.gameObject, "pinEssenceBoss");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_grub_king":
                             SetNewSprite(child.gameObject, "pinGrubKing");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_hunter":
                             SetNewSprite(child.gameObject, "pinShopHunter");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_jiji":
                             SetNewSprite(child.gameObject, "pinShopJiji");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_leg eater":
                             SetNewSprite(child.gameObject, "pinShopLegEater");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_mapper":
                             SetNewSprite(child.gameObject, "pinShopMapper");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_nailsmith":
                             SetNewSprite(child.gameObject, "pinShopNailsmith");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_relic_dealer":
                             SetNewSprite(child.gameObject, "pinShopRelicDealer");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         case "pin_sly":
                             SetNewSprite(child.gameObject, "pinShopSly");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         // This is actually Godtuner
                         case "pin_sly (1)":
                             SetNewSprite(child.gameObject, "pinGodSeeker");
-                            _Groups["Vendor"].Add(child.gameObject);
+                            _Groups[Pool.Vendor].Add(child.gameObject);
                             break;
                         // These are super buggy in vanilla!
                         case "Map Markers":
@@ -242,7 +243,7 @@ namespace VanillaMapMod.Map
             orig(self);
 
             SetNewSprite(self.gameObject, "pinGrub");
-            _Groups["Grub"].Add(self.gameObject);
+            _Groups[Pool.Grub].Add(self.gameObject);
         }
 
         // Needed to properly disable Grub pins when turned off
@@ -250,7 +251,7 @@ namespace VanillaMapMod.Map
         {
             orig(self);
 
-            if (!VanillaMapMod.LS.GetOnFromGroup("Grub"))
+            if (!VanillaMapMod.LS.GetOnFromGroup(Pool.Grub))
             {
                 self.gameObject.SetActive(false);
             }
@@ -308,7 +309,7 @@ namespace VanillaMapMod.Map
         // Called every time the map is opened
         public static void RefreshGroups()
         {
-            foreach (string group in _Groups.Keys)
+            foreach (Pool group in _Groups.Keys)
             {
                 if (VanillaMapMod.LS.GetHasFromGroup(group) || VanillaMapMod.LS.RevealFullMap)
                 {
@@ -332,7 +333,7 @@ namespace VanillaMapMod.Map
 
         public static void ResizePins()
         {
-            foreach (string group in _Groups.Keys)
+            foreach (Pool group in _Groups.Keys)
             {
                 foreach (GameObject pinObject in _Groups[group])
                 {

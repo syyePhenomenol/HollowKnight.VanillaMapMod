@@ -1,4 +1,6 @@
-﻿namespace VanillaMapMod.Settings
+﻿using VanillaMapMod.Data;
+
+namespace VanillaMapMod.Settings
 {
     public static class SettingsUtil
     {
@@ -49,15 +51,15 @@
         public static void SyncPlayerDataSettings()
         {
             // The Has settings should be equivalent to the ORIGINAL PlayerData settings
-            VanillaMapMod.LS.GroupSettings["Bench"].Has = PlayerData.instance.GetBool("hasPinBench");
-            VanillaMapMod.LS.GroupSettings["Cocoon"].Has = PlayerData.instance.GetBool("hasPinCocoon");
-            VanillaMapMod.LS.GroupSettings["Grave"].Has = PlayerData.instance.GetBool("hasPinGhost");
-            VanillaMapMod.LS.GroupSettings["Grub"].Has = PlayerData.instance.GetBool("hasPinGrub");
-            VanillaMapMod.LS.GroupSettings["Root"].Has = PlayerData.instance.GetBool("hasPinDreamPlant");
-            VanillaMapMod.LS.GroupSettings["Spa"].Has = PlayerData.instance.GetBool("hasPinSpa");
-            VanillaMapMod.LS.GroupSettings["Stag"].Has = PlayerData.instance.GetBool("hasPinStag");
-            VanillaMapMod.LS.GroupSettings["Tram"].Has = PlayerData.instance.GetBool("hasPinTram");
-            VanillaMapMod.LS.GroupSettings["Vendor"].Has = PlayerData.instance.GetBool("hasPinShop");
+            VanillaMapMod.LS.GroupSettings[Pool.Bench].Has = PlayerData.instance.GetBool("hasPinBench");
+            VanillaMapMod.LS.GroupSettings[Pool.Cocoon].Has = PlayerData.instance.GetBool("hasPinCocoon");
+            VanillaMapMod.LS.GroupSettings[Pool.Grave].Has = PlayerData.instance.GetBool("hasPinGhost");
+            VanillaMapMod.LS.GroupSettings[Pool.Grub].Has = PlayerData.instance.GetBool("hasPinGrub");
+            VanillaMapMod.LS.GroupSettings[Pool.Root].Has = PlayerData.instance.GetBool("hasPinDreamPlant");
+            VanillaMapMod.LS.GroupSettings[Pool.Spa].Has = PlayerData.instance.GetBool("hasPinSpa");
+            VanillaMapMod.LS.GroupSettings[Pool.Stag].Has = PlayerData.instance.GetBool("hasPinStag");
+            VanillaMapMod.LS.GroupSettings[Pool.Tram].Has = PlayerData.instance.GetBool("hasPinTram");
+            VanillaMapMod.LS.GroupSettings[Pool.Vendor].Has = PlayerData.instance.GetBool("hasPinShop");
         }
 
         public static bool IsFSMMapState(string name)

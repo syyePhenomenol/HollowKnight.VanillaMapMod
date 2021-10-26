@@ -1,4 +1,6 @@
-﻿namespace VanillaMapMod.Data
+﻿using GlobalEnums;
+
+namespace VanillaMapMod.Data
 {
     public class PinDef
     {
@@ -15,9 +17,11 @@
 
         // The map area/zone the pin belongs to
         public string mapArea;
+        //public MapZone mapZone;
 
         // The pool/group the pin belongs to
-        public string pool;
+        //public string pool;
+        public Pool pool;
 
         // The local offset of the pin relative to its pinScene/sceneName map object
         public float offsetX;

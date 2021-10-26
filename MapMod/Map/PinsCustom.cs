@@ -9,7 +9,7 @@ namespace VanillaMapMod.Map
 {
     public class PinsCustom : MonoBehaviour
     {
-        private readonly Dictionary<string, GameObject> _Groups = new();
+        private readonly Dictionary<Pool, GameObject> _Groups = new();
 
         private readonly List<Pin> _pins = new();
 
@@ -41,7 +41,7 @@ namespace VanillaMapMod.Map
         // Called every time the map is opened
         public void RefreshGroups()
         {
-            foreach (string group in _Groups.Keys)
+            foreach (Pool group in _Groups.Keys)
             {
                 _Groups[group].SetActive(VanillaMapMod.LS.GetOnFromGroup(group));
             }
@@ -102,7 +102,7 @@ namespace VanillaMapMod.Map
             // Give the Grimm Troupe Lantern its unique sprite
             if (pinData.name == "Grimm Troupe Lantern")
             {
-                pinSprite = SpriteManager.GetSpriteFromPool("Flame");
+                pinSprite = SpriteManager.GetSprite("pinFlame");
             }
             else
             {

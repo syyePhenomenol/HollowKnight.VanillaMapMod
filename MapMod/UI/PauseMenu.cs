@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using VanillaMapMod.CanvasUtil;
+using VanillaMapMod.Data;
 using VanillaMapMod.Map;
 
 namespace VanillaMapMod.UI
@@ -10,33 +11,33 @@ namespace VanillaMapMod.UI
     {
         public static GameObject Canvas;
 
-        private static readonly Dictionary<string, (string, Vector2)> _groupButtons = new()
+        private static readonly Dictionary<Pool, (string, Vector2)> _groupButtons = new()
         {
-            ["Bench"] = ("Benches", new Vector2(0f, 0f)),
-            ["Vendor"] = ("Vendors", new Vector2(100f, 0f)),
-            ["Stag"] = ("Stag\nStations", new Vector2(200f, 0f)),
-            ["Spa"] = ("Hot\nSprings", new Vector2(300f, 0f)),
-            ["Root"] = ("Whispering\nRoots", new Vector2(400f, 0f)),
-            ["Grave"] = ("Warrior's\nGraves", new Vector2(500f, 0f)),
-            ["Tram"] = ("Trams", new Vector2(600f, 0f)),
-            ["Grub"] = ("Grubs", new Vector2(700f, 0f)),
+            [Pool.Bench] = ("Benches", new Vector2(0f, 0f)),
+            [Pool.Vendor] = ("Vendors", new Vector2(100f, 0f)),
+            [Pool.Stag] = ("Stag\nStations", new Vector2(200f, 0f)),
+            [Pool.Spa] = ("Hot\nSprings", new Vector2(300f, 0f)),
+            [Pool.Root] = ("Whispering\nRoots", new Vector2(400f, 0f)),
+            [Pool.Grave] = ("Warrior's\nGraves", new Vector2(500f, 0f)),
+            [Pool.Tram] = ("Trams", new Vector2(600f, 0f)),
+            [Pool.Grub] = ("Grubs", new Vector2(700f, 0f)),
 
-            ["Cocoon"] = ("Lifeblood\nCocoons", new Vector2(0f, 30f)),
+            [Pool.Cocoon] = ("Lifeblood\nCocoons", new Vector2(0f, 30f)),
 
-            ["Skill"] = ("Skills", new Vector2(100f, 30f)),
-            ["Charm"] = ("Charms", new Vector2(200f, 30f)),
-            ["Key"] = ("Keys", new Vector2(300f, 30f)),
-            ["Mask"] = ("Mask\nShards", new Vector2(400f, 30f)),
-            ["Vessel"] = ("Vessel\nFragments", new Vector2(500f, 30f)),
-            ["Notch"] = ("Charm\nNotches", new Vector2(600f, 30f)),
-            ["Ore"] = ("Pale Ore", new Vector2(700f, 30f)),
-            ["Egg"] = ("Rancid\nEggs", new Vector2(0f, 60f)),
-            ["Relic"] = ("Relics", new Vector2(100f, 60f)),
-            ["EssenceBoss"] = ("Hidden\nBosses", new Vector2(200f, 60f)),
-            ["Rock"] = ("Geo Rocks", new Vector2(300f, 60f)),
-            ["Geo"] = ("Geo Chests", new Vector2(400f, 60f)),
-            ["Totem"] = ("Soul\nTotems", new Vector2(500f, 60f)),
-            ["Lore"] = ("Lore\nTablets", new Vector2(600f, 60f)),
+            [Pool.Skill] = ("Skills", new Vector2(100f, 30f)),
+            [Pool.Charm] = ("Charms", new Vector2(200f, 30f)),
+            [Pool.Key] = ("Keys", new Vector2(300f, 30f)),
+            [Pool.Mask] = ("Mask\nShards", new Vector2(400f, 30f)),
+            [Pool.Vessel] = ("Vessel\nFragments", new Vector2(500f, 30f)),
+            [Pool.Notch] = ("Charm\nNotches", new Vector2(600f, 30f)),
+            [Pool.Ore] = ("Pale Ore", new Vector2(700f, 30f)),
+            [Pool.Egg] = ("Rancid\nEggs", new Vector2(0f, 60f)),
+            [Pool.Relic] = ("Relics", new Vector2(100f, 60f)),
+            [Pool.EssenceBoss] = ("Hidden\nBosses", new Vector2(200f, 60f)),
+            [Pool.Rock] = ("Geo Rocks", new Vector2(300f, 60f)),
+            [Pool.Geo] = ("Geo Chests", new Vector2(400f, 60f)),
+            [Pool.Totem] = ("Soul\nTotems", new Vector2(500f, 60f)),
+            [Pool.Lore] = ("Lore\nTablets", new Vector2(600f, 60f)),
         };
 
         private static CanvasPanel _mapControlPanel;
@@ -91,11 +92,11 @@ namespace VanillaMapMod.UI
             pools.SetActive(false, true);
 
             // Pool buttons
-            foreach (KeyValuePair<string, (string, Vector2)> pair in _groupButtons)
+            foreach (KeyValuePair<Pool, (string, Vector2)> pair in _groupButtons)
             {
                 pools.AddButton
                 (
-                    pair.Key,
+                    pair.Key.ToString(),
                     GUIController.Instance.Images["ButtonRectEmpty"],
                     pair.Value.Item2,
                     Vector2.zero,
@@ -174,7 +175,7 @@ namespace VanillaMapMod.UI
         // Update all the buttons (text, color)
         public static void UpdateGUI()
         {
-            foreach (string group in _groupButtons.Keys)
+            foreach (Pool group in _groupButtons.Keys)
             {
                 UpdatePool(group);
             }
@@ -231,17 +232,17 @@ namespace VanillaMapMod.UI
             }
         }
 
-        private static void UpdatePool(string buttonName)
+        private static void UpdatePool(Pool pool)
         {
-            if (!VanillaMapMod.LS.GetHasFromGroup(buttonName) && !VanillaMapMod.LS.RevealFullMap)
+            if (!VanillaMapMod.LS.GetHasFromGroup(pool) && !VanillaMapMod.LS.RevealFullMap)
             {
-                _mapControlPanel.GetPanel("PoolsPanel").GetButton(buttonName).SetTextColor(Color.red);
+                _mapControlPanel.GetPanel("PoolsPanel").GetButton(pool.ToString()).SetTextColor(Color.red);
                 return;
             }
 
-            bool setting = VanillaMapMod.LS.GetOnFromGroup(buttonName);
+            bool setting = VanillaMapMod.LS.GetOnFromGroup(pool);
 
-            _mapControlPanel.GetPanel("PoolsPanel").GetButton(buttonName).SetTextColor
+            _mapControlPanel.GetPanel("PoolsPanel").GetButton(pool.ToString()).SetTextColor
                 (
                     setting ? Color.green : Color.white
                 );

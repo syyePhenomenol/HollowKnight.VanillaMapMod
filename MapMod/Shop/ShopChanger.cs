@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using VanillaMapMod.Data;
 using VanillaMapMod.Map;
@@ -31,12 +32,12 @@ namespace VanillaMapMod.Shop
 
         public static void RefreshIseldaShop()
         {
-            foreach (GameObject shopObj in Object.FindObjectsOfType<GameObject>())
+            foreach (GameObject shopObj in UnityEngine.Object.FindObjectsOfType<GameObject>())
             {
                 if (shopObj.name != "Shop Menu") continue;
 
                 ShopMenuStock shop = shopObj.GetComponent<ShopMenuStock>();
-                GameObject itemPrefab = Object.Instantiate(shop.stock[0]);
+                GameObject itemPrefab = UnityEngine.Object.Instantiate(shop.stock[0]);
                 itemPrefab.SetActive(false);
 
                 List<GameObject> newStock = new();
@@ -53,13 +54,19 @@ namespace VanillaMapMod.Shop
 
                 foreach (ShopDef shopItem in _shopItems)
                 {
-                    if (VanillaMapMod.LS.GetHasFromGroup(shopItem.playerDataBoolName))
+                    if (!Enum.TryParse(shopItem.playerDataBoolName, out Pool pool))
+                    {
+                        VanillaMapMod.Instance.LogError("Shop: bool name not recognized as an enum");
+                        continue;
+                    }
+
+                    if (VanillaMapMod.LS.GetHasFromGroup(pool))
                     {
                         continue;
                     }
 
                     // Create a new shop item for this item def
-                    GameObject newItemObj = Object.Instantiate(itemPrefab);
+                    GameObject newItemObj = UnityEngine.Object.Instantiate(itemPrefab);
                     newItemObj.SetActive(false);
 
                     // Apply all the stored values

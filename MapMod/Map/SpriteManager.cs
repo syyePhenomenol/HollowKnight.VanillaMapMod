@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using VanillaMapMod.Data;
 
 // Code borrowed from homothety: https://github.com/homothetyhk/RandomizerMod/
 namespace VanillaMapMod.Map
@@ -27,31 +28,29 @@ namespace VanillaMapMod.Map
                 VanillaMapMod.Instance.Log(altName);
             }
         }
-
-        public static Sprite GetSpriteFromPool(string pool)
+        public static Sprite GetSpriteFromPool(Pool pool)
         {
             string spriteName = pool switch
             {
-                "Charm" => "pinCharm",
-                "Cocoon" => "pinCocoon",
-                "Egg" => "pinEgg",
-                "EssenceBoss" => "pinEssenceBoss",
-                "Flame" => "pinFlame",
-                "Geo" => "pinGeo",
-                "Grub" => "pinGrub",
-                "Key" => "pinKey",
-                "Lore" => "pinLore",
-                "Map" => "pinMap",
-                "Mask" => "pinMask",
-                "Notch" => "pinNotch",
-                "Ore" => "pinOre",
-                "Relic" => "pinRelic",
-                "Rock" => "pinRock",
-                "Root" => "pinRoot",
-                "Skill" => "pinSkill",
-                "Stag" => "pinStag",
-                "Totem" => "pinTotem",
-                "Vessel" => "pinVessel",
+                Pool.Charm => "pinCharm",
+                Pool.Cocoon => "pinCocoon",
+                Pool.Egg => "pinEgg",
+                Pool.EssenceBoss => "pinEssenceBoss",
+                Pool.Geo => "pinGeo",
+                Pool.Grub => "pinGrub",
+                Pool.Key => "pinKey",
+                Pool.Lore => "pinLore",
+                //Pool.Map => "pinMap", // todo: add map pins
+                Pool.Mask => "pinMask",
+                Pool.Notch => "pinNotch",
+                Pool.Ore => "pinOre",
+                Pool.Relic => "pinRelic",
+                Pool.Rock => "pinRock",
+                Pool.Root => "pinRoot",
+                Pool.Skill => "pinSkill",
+                Pool.Stag => "pinStag",
+                Pool.Totem => "pinTotem",
+                Pool.Vessel => "pinVessel",
                 _ => "pinUnknown",
             };
 

@@ -1,4 +1,5 @@
 ﻿using Modding;
+using System;
 using VanillaMapMod.Data;
 
 namespace VanillaMapMod.Shop
@@ -24,9 +25,9 @@ namespace VanillaMapMod.Shop
 
         public static bool BoolGetOverride(string boolName, bool orig)
         {
-            if (VanillaMapMod.LS.IsGroup(boolName))
+            if (Enum.TryParse(boolName, out Pool group))
             {
-                return VanillaMapMod.LS.GetHasFromGroup(boolName);
+                return VanillaMapMod.LS.GetHasFromGroup(group);
             }
 
             return orig;

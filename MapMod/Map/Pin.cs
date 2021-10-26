@@ -1,7 +1,7 @@
 ﻿using System;
+using UnityEngine;
 using VanillaMapMod.Data;
 using VanillaMapMod.Settings;
-using UnityEngine;
 
 namespace VanillaMapMod.Map
 {
@@ -47,15 +47,15 @@ namespace VanillaMapMod.Map
                 }
 
                 // Show these pins if the corresponding map item has been picked up
-                if (PinData.pool == "Skill"
-                    || PinData.pool == "Charm"
-                    || PinData.pool == "Key"
-                    || PinData.pool == "Notch"
-                    || PinData.pool == "Mask"
-                    || PinData.pool == "Vessel"
-                    || PinData.pool == "Ore"
-                    || PinData.pool == "EssenceBoss")
-                {
+                if (PinData.pool == Pool.Skill
+                    || PinData.pool == Pool.Charm
+                    || PinData.pool == Pool.Key
+                    || PinData.pool == Pool.Notch
+                    || PinData.pool == Pool.Mask
+                    || PinData.pool == Pool.Vessel
+                    || PinData.pool == Pool.Ore
+                    || PinData.pool == Pool.EssenceBoss)
+                    {
                     gameObject.SetActive(true);
                     return;
                 }

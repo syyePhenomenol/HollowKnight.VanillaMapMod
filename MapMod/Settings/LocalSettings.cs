@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
+using VanillaMapMod.Data;
 
 namespace VanillaMapMod.Settings
 {
@@ -20,37 +22,8 @@ namespace VanillaMapMod.Settings
 
 		public Dictionary<string, bool> ObtainedItems = new();
 
-		public Dictionary<string, GroupSettingPair> GroupSettings = new()
-		{
-			// Copied settings from PlayerData
-			{ "Bench", new() },
-			{ "Grave", new() },
-			{ "Grub", new() },
-			{ "Root", new() },
-			{ "Spa", new() },
-			{ "Stag", new() },
-			{ "Tram", new() },
-			{ "Vendor", new() },
-
-			// Also copied, but using custom pins
-			{ "Cocoon", new() },
-
-			// New settings, custom pins
-			{ "Charm", new() },
-			{ "Egg", new() },
-			{ "EssenceBoss", new() },
-			{ "Geo", new() },
-			{ "Key", new() },
-			{ "Lore", new() },
-			{ "Mask", new() },
-			{ "Notch", new() },
-			{ "Ore", new() },
-			{ "Relic", new() },
-			{ "Rock", new() },
-			{ "Skill", new() },
-			{ "Totem", new() },
-			{ "Vessel", new() },
-		};
+		public Dictionary<Pool , GroupSettingPair> GroupSettings = Enum.GetValues(typeof(Pool))
+			.Cast<Pool>().ToDictionary(t => t, t => new GroupSettingPair());
 
 		public bool RevealFullMap = false;
 
@@ -59,68 +32,64 @@ namespace VanillaMapMod.Settings
 			RevealFullMap = !RevealFullMap;
 
 			// Force all pins to show again
-			foreach (KeyValuePair<string, GroupSettingPair> entry in GroupSettings)
+			foreach (KeyValuePair<Pool, GroupSettingPair> entry in GroupSettings)
             {
                 entry.Value.On = true;
             }
         }
 
-		public bool IsGroup(string boolName)
-		{
-			if (GroupSettings.ContainsKey(boolName))
-			{
-				return true;
-			}
-			return false;
-		}
-
-		public bool GetHasFromGroup(string group)
-		{
-			if (GroupSettings.ContainsKey(group))
-			{
+        public bool GetHasFromGroup(string groupName)
+        {
+			if (Enum.TryParse(groupName, out Pool group))
+            {
 				return GroupSettings[group].Has;
 			}
 
-			return false;
+            return false;
+        }
+
+        public bool GetHasFromGroup(Pool group)
+		{
+			return GroupSettings[group].Has;
 		}
 
-		public void SetHasFromGroup(string group, bool value)
+		public void SetHasFromGroup(string groupName, bool value)
 		{
-			if (GroupSettings.ContainsKey(group))
+			if (Enum.TryParse(groupName, out Pool group))
 			{
 				GroupSettings[group].Has = value;
 			}
 			else
 			{
 				// Set based on ORIGINAL PlayerData settings
-				switch (group)
+				switch (groupName)
 				{
 					case "hasPinBench":
-						GroupSettings["Bench"].Has = value;
+						GroupSettings[Pool.Bench].Has = value;
 						break;
 					case "hasPinCocoon":
-						GroupSettings["Cocoon"].Has = value;
+						GroupSettings[Pool.Cocoon].Has = value;
 						break;
 					case "hasPinDreamPlant":
-						GroupSettings["Root"].Has = value;
+						GroupSettings[Pool.Root].Has = value;
 						break;
 					case "hasPinGhost":
-						GroupSettings["Grave"].Has = value;
+						GroupSettings[Pool.Grave].Has = value;
 						break;
 					case "hasPinGrub":
-						GroupSettings["Grub"].Has = value;
+						GroupSettings[Pool.Grub].Has = value;
 						break;
 					case "hasPinShop":
-						GroupSettings["Vendor"].Has = value;
+						GroupSettings[Pool.Vendor].Has = value;
 						break;
 					case "hasPinSpa":
-						GroupSettings["Spa"].Has = value;
+						GroupSettings[Pool.Spa].Has = value;
 						break;
 					case "hasPinStag":
-						GroupSettings["Stag"].Has = value;
+						GroupSettings[Pool.Stag].Has = value;
 						break;
 					case "hasPinTram":
-						GroupSettings["Tram"].Has = value;
+						GroupSettings[Pool.Tram].Has = value;
 						break;
 
 					default:
@@ -147,7 +116,17 @@ namespace VanillaMapMod.Settings
 			return true;
 		}
 
-		public bool GetOnFromGroup(string group)
+		public bool GetOnFromGroup(string groupName)
+		{
+			if (Enum.TryParse(groupName, out Pool group))
+			{
+				return GroupSettings[group].On;
+			}
+
+			return false;
+		}
+
+		public bool GetOnFromGroup(Pool group)
 		{
 			if (GroupSettings.ContainsKey(group))
 			{
@@ -157,13 +136,18 @@ namespace VanillaMapMod.Settings
 			return false;
 		}
 
-		public void SetOnFromGroup(string group, bool value)
-		{
-			if (GroupSettings.ContainsKey(group))
+        public void SetOnFromGroup(string groupName, bool value)
+        {
+			if (Enum.TryParse(groupName, out Pool group))
 			{
 				GroupSettings[group].On = value;
 			}
 		}
+
+  //      public void SetOnFromGroup(Pool group, bool value)
+		//{
+		//	GroupSettings[group].On = value;
+		//}
 
 		public void ToggleGroups()
 		{
