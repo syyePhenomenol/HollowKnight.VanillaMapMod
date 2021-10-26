@@ -1,12 +1,13 @@
-﻿using VanillaMapMod.Data;
+﻿using GlobalEnums;
+using VanillaMapMod.Data;
 
 namespace VanillaMapMod.Settings
 {
     public static class SettingsUtil
     {
-		//public static bool GetPlayerDataMapSetting(string mapArea)
+		//public static bool GetPlayerDataMapSetting(string mapZone)
 		//{
-		//	return mapArea switch
+		//	return mapZone switch
 		//	{
 		//		"Ancient_Basin" => PlayerData.instance.mapAbyss,
 		//		"City_of_Tears" => PlayerData.instance.mapCity,
@@ -26,24 +27,24 @@ namespace VanillaMapMod.Settings
 		//	};
   //      }
 
-        public static bool GetVMMMapSetting(string mapArea)
+        public static bool GetVMMMapSetting(MapZone mapZone)
         {
-            return mapArea switch
+            return mapZone switch
             {
-                "Ancient_Basin" => PlayerData.instance.GetBool("VMM_mapAbyss"),
-                "City_of_Tears" => PlayerData.instance.GetBool("VMM_mapCity"),
-                "Howling_Cliffs" => PlayerData.instance.GetBool("VMM_mapCliffs"),
-                "Forgotten_Crossroads" => PlayerData.instance.GetBool("VMM_mapCrossroads"),
-                "Crystal_Peak" => PlayerData.instance.GetBool("VMM_mapMines"),
-                "Deepnest" => PlayerData.instance.GetBool("VMM_mapDeepnest"),
-                "Dirtmouth" => PlayerData.instance.GetBool("VMM_mapDirtmouth"),
-                "Fog_Canyon" => PlayerData.instance.GetBool("VMM_mapFogCanyon"),
-                "Fungal_Wastes" => PlayerData.instance.GetBool("VMM_mapFungalWastes"),
-                "Greenpath" => PlayerData.instance.GetBool("VMM_mapGreenpath"),
-                "Kingdoms_Edge" => PlayerData.instance.GetBool("VMM_mapOutskirts"),
-                "Queens_Gardens" => PlayerData.instance.GetBool("VMM_mapRoyalGardens"),
-                "Resting_Grounds" => PlayerData.instance.GetBool("VMM_mapRestingGrounds"),
-                "Royal_Waterways" => PlayerData.instance.GetBool("VMM_mapWaterways"),
+                MapZone.ABYSS => PlayerData.instance.GetBool("VMM_mapAbyss"),
+                MapZone.CITY => PlayerData.instance.GetBool("VMM_mapCity"),
+                MapZone.CLIFFS => PlayerData.instance.GetBool("VMM_mapCliffs"),
+                MapZone.CROSSROADS => PlayerData.instance.GetBool("VMM_mapCrossroads"),
+                MapZone.MINES => PlayerData.instance.GetBool("VMM_mapMines"),
+                MapZone.DEEPNEST => PlayerData.instance.GetBool("VMM_mapDeepnest"),
+                MapZone.TOWN => PlayerData.instance.GetBool("VMM_mapDirtmouth"),
+                MapZone.FOG_CANYON => PlayerData.instance.GetBool("VMM_mapFogCanyon"),
+                MapZone.WASTES => PlayerData.instance.GetBool("VMM_mapFungalWastes"),
+                MapZone.GREEN_PATH => PlayerData.instance.GetBool("VMM_mapGreenpath"),
+                MapZone.OUTSKIRTS => PlayerData.instance.GetBool("VMM_mapOutskirts"),
+                MapZone.ROYAL_GARDENS => PlayerData.instance.GetBool("VMM_mapRoyalGardens"),
+                MapZone.RESTING_GROUNDS => PlayerData.instance.GetBool("VMM_mapRestingGrounds"),
+                MapZone.WATERWAYS => PlayerData.instance.GetBool("VMM_mapWaterways"),
                 _ => false,
             };
         }

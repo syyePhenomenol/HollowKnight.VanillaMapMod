@@ -16,11 +16,9 @@ namespace VanillaMapMod.Data
         public string pinScene;
 
         // The map area/zone the pin belongs to
-        public string mapArea;
-        //public MapZone mapZone;
+        public MapZone mapZone;
 
         // The pool/group the pin belongs to
-        //public string pool;
         public Pool pool;
 
         // The local offset of the pin relative to its pinScene/sceneName map object

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GlobalEnums;
+using System.Collections.Generic;
 using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
 using Modding;
@@ -78,7 +79,7 @@ namespace VanillaMapMod.Map
         {
             orig(self);
 
-            UpdateMap(self, "WorldMap");
+            UpdateMap(self, MapZone.NONE);
         }
 
         // Following two behaviours necessary since GameMap is actually persistently active
@@ -103,7 +104,8 @@ namespace VanillaMapMod.Map
         }
 
         // The main method for updating map objects and pins when opening either World Map or Quick Map
-        public static void UpdateMap(GameMap gameMap, string mapArea)
+        //public static void UpdateMap(GameMap gameMap, string mapZone)
+        public static void UpdateMap(GameMap gameMap, MapZone mapZone)
         {
             ItemTracker.UpdateObtainedItems();
 
@@ -116,7 +118,7 @@ namespace VanillaMapMod.Map
 
             if (goCustomPins != null)
             {
-                CustomPins.UpdatePins(mapArea);
+                CustomPins.UpdatePins(mapZone);
                 CustomPins.RefreshGroups();
                 CustomPins.ResizePins();
             }

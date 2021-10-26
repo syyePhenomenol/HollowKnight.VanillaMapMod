@@ -1,4 +1,5 @@
-﻿using HutongGames.PlayMaker;
+﻿using GlobalEnums;
+using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
 using VanillaMapMod.Settings;
 using Vasi;
@@ -31,100 +32,98 @@ namespace VanillaMapMod.Map
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Ancient_Basin");
+            WorldMap.UpdateMap(self, MapZone.ABYSS);
         }
 
         private static void GameMap_QuickMapCity(On.GameMap.orig_QuickMapCity orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "City_of_Tears");
+            WorldMap.UpdateMap(self, MapZone.CITY);
         }
 
         private static void GameMap_QuickMapCliffs(On.GameMap.orig_QuickMapCliffs orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Howling_Cliffs");
+            WorldMap.UpdateMap(self, MapZone.CLIFFS);
         }
 
         private static void GameMap_QuickMapCrossroads(On.GameMap.orig_QuickMapCrossroads orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Forgotten_Crossroads");
+            WorldMap.UpdateMap(self, MapZone.CROSSROADS);
         }
 
         private static void GameMap_QuickMapCrystalPeak(On.GameMap.orig_QuickMapCrystalPeak orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Crystal_Peak");
+            WorldMap.UpdateMap(self, MapZone.MINES);
         }
 
         private static void GameMap_QuickMapDeepnest(On.GameMap.orig_QuickMapDeepnest orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Deepnest");
+            WorldMap.UpdateMap(self, MapZone.DEEPNEST);
         }
 
         private static void GameMap_QuickMapDirtmouth(On.GameMap.orig_QuickMapDirtmouth orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Dirtmouth");
+            WorldMap.UpdateMap(self, MapZone.TOWN);
         }
 
         private static void GameMap_QuickMapFogCanyon(On.GameMap.orig_QuickMapFogCanyon orig, GameMap self)
         {
             orig(self);
 
-            PinsVanilla.UpdatePins(self.gameObject);
-
-            WorldMap.UpdateMap(self, "Fog_Canyon");
+            WorldMap.UpdateMap(self, MapZone.FOG_CANYON);
         }
 
         private static void GameMap_QuickMapFungalWastes(On.GameMap.orig_QuickMapFungalWastes orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Fungal_Wastes");
+            WorldMap.UpdateMap(self, MapZone.WASTES);
         }
 
         private static void GameMap_QuickMapGreenpath(On.GameMap.orig_QuickMapGreenpath orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Greenpath");
+            WorldMap.UpdateMap(self, MapZone.GREEN_PATH);
         }
 
         private static void GameMap_QuickMapKingdomsEdge(On.GameMap.orig_QuickMapKingdomsEdge orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Kingdoms_Edge");
+            WorldMap.UpdateMap(self, MapZone.OUTSKIRTS);
         }
 
         private static void GameMap_QuickMapQueensGardens(On.GameMap.orig_QuickMapQueensGardens orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Queens_Gardens");
+            WorldMap.UpdateMap(self, MapZone.ROYAL_GARDENS);
         }
 
         private static void GameMap_QuickMapRestingGrounds(On.GameMap.orig_QuickMapRestingGrounds orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Resting_Grounds");
+            WorldMap.UpdateMap(self, MapZone.RESTING_GROUNDS);
         }
 
         private static void GameMap_QuickMapWaterways(On.GameMap.orig_QuickMapWaterways orig, GameMap self)
         {
             orig(self);
 
-            WorldMap.UpdateMap(self, "Royal_Waterways");
+            WorldMap.UpdateMap(self, MapZone.WATERWAYS);
         }
 
         // Replace all PlayerData boolNames with our own so we can show all Quick Maps,

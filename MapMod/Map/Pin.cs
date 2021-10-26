@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlobalEnums;
+using System;
 using UnityEngine;
 using VanillaMapMod.Data;
 using VanillaMapMod.Settings;
@@ -14,7 +15,7 @@ namespace VanillaMapMod.Map
             PinData = pd;
         }
 
-        public void UpdatePin(string mapAreaName)
+        public void UpdatePin(MapZone mapZone)
         {
             try
             {
@@ -23,7 +24,7 @@ namespace VanillaMapMod.Map
                     throw new Exception("Cannot enable pin with null pindata. Ensure game object is disabled before adding as component, then call SetPinData(<pd>) before enabling.");
                 }
 
-                ShowBasedOnMap(mapAreaName);
+                ShowBasedOnMap(mapZone);
                 HideIfNotBought();
                 HideIfFound();
             }
@@ -33,11 +34,11 @@ namespace VanillaMapMod.Map
             }
         }
 
-        // Hides or shows the pin depending on the state of the map
-        private void ShowBasedOnMap(string mapAreaName)
+        // Hides or shows the pin depending on the state of the map (NONE is World Map)
+        private void ShowBasedOnMap(MapZone mapZone)
         {
-            if ((mapAreaName == PinData.mapArea || mapAreaName == "WorldMap")
-                && SettingsUtil.GetVMMMapSetting(PinData.mapArea))
+            if ((mapZone == PinData.mapZone || mapZone == MapZone.NONE)
+                && SettingsUtil.GetVMMMapSetting(PinData.mapZone))
             {
                 // Show everything if full map was revealed
                 if (VanillaMapMod.LS.RevealFullMap)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlobalEnums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -30,11 +31,11 @@ namespace VanillaMapMod.Map
             }
         }
 
-        public void UpdatePins(string mapName)
+        public void UpdatePins(MapZone mapZone)
         {
             foreach (Pin pin in _pins)
             {
-                pin.UpdatePin(mapName);
+                pin.UpdatePin(mapZone);
             }
         }
 
