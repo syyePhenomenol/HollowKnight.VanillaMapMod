@@ -13,6 +13,13 @@
     "cost": 200,
     "spriteName": "pinCharm"
   },
+  "Map Pin": {
+    "playerDataBoolName": "Map",
+    "nameConvo": "MAP_MOD_MAP_PIN_NAME",
+    "descConvo": "MAP_MOD_MAP_PIN_DESC",
+    "cost": 100,
+    "spriteName": "pinMap"
+  },
   "Key Pin": {
     "playerDataBoolName": "Key",
     "nameConvo": "MAP_MOD_KEY_PIN_NAME",

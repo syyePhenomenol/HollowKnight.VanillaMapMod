@@ -4,6 +4,8 @@
     "MAP_MOD_SKILL_PIN_DESC": "I've heard that there are certain items that could really help you on your adventure if you're stuck.\\n\\nOn top of that, there are those you might come across who are willing to teach you what they know.",
     "MAP_MOD_CHARM_PIN_NAME": "Charm Pin",
     "MAP_MOD_CHARM_PIN_DESC": "Hallownest is dangerous to explore, but if you are lucky enough or look in the right places, you''ll find many trinkets that can augment your abilities.",
+    "MAP_MOD_MAP_PIN_NAME": "Map Pin",
+    "MAP_MOD_MAP_PIN_DESC": "Now, I understand that Cornifer sold you a map, but what use is it if it's blank? I can mark his favorite locations down and you can go hassle him about it.",
     "MAP_MOD_KEY_PIN_NAME": "Key Pin",
     "MAP_MOD_KEY_PIN_DESC": "There are a handful of locked doors in Hallownest, and it seems like their matching keys have been either misplaced or left behind by beings of the past. These locations are likely to be of interest.",
     "MAP_MOD_MASK_PIN_NAME": "Mask Shard Pin",

@@ -37,18 +37,20 @@ namespace VanillaMapMod.Map
         // Hides or shows the pin depending on the state of the map (NONE is World Map)
         private void ShowBasedOnMap(MapZone mapZone)
         {
-            if ((mapZone == PinData.mapZone || mapZone == MapZone.NONE)
-                && SettingsUtil.GetVMMMapSetting(PinData.mapZone))
+            if (mapZone == PinData.mapZone || mapZone == MapZone.NONE)
             {
                 // Show everything if full map was revealed
-                if (VanillaMapMod.LS.RevealFullMap)
+                // Or, if it's a Map, always show the pin
+                if (VanillaMapMod.LS.RevealFullMap || PinData.pool == Pool.Map)
                 {
                     gameObject.SetActive(true);
                     return;
                 }
 
                 // Show these pins if the corresponding map item has been picked up
-                if (PinData.pool == Pool.Skill
+                if (SettingsUtil.GetVMMMapSetting(PinData.mapZone))
+                {
+                    if (PinData.pool == Pool.Skill
                     || PinData.pool == Pool.Charm
                     || PinData.pool == Pool.Key
                     || PinData.pool == Pool.Notch
@@ -57,25 +59,26 @@ namespace VanillaMapMod.Map
                     || PinData.pool == Pool.Ore
                     || PinData.pool == Pool.EssenceBoss)
                     {
-                    gameObject.SetActive(true);
-                    return;
-                }
-
-                // For the rest, show pin if the corresponding scene/room has been mapped
-                if (PinData.pinScene != null)
-                {
-                    if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
-                    {
                         gameObject.SetActive(true);
                         return;
                     }
-                }
-                else
-                {
-                    if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
+
+                    // Only show the rest if the corresponding scene/room has been mapped
+                    if (PinData.pinScene != null)
                     {
-                        gameObject.SetActive(true);
-                        return;
+                        if (PlayerData.instance.scenesMapped.Contains(PinData.pinScene))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (PlayerData.instance.scenesMapped.Contains(PinData.sceneName))
+                        {
+                            gameObject.SetActive(true);
+                            return;
+                        }
                     }
                 }
             }

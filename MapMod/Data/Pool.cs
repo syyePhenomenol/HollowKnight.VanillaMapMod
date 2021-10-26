@@ -19,6 +19,7 @@
         Geo,
         Key,
         Lore,
+        Map,
         Mask,
         Notch,
         Ore,

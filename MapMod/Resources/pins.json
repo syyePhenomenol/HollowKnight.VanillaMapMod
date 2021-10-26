@@ -569,15 +569,15 @@
   //  "offsetX": -0.8,
   //  "offsetY": -0.6
   //},
-  //"Collector's_Map": {
-  //  "name": "Collector's_Map",
-  //  "objectName": [ "Shiny Item CollectorMap" ],
-  //  "sceneName": "Ruins2_11",
-  //  "mapZone": "CITY",
-  //  "pool": "Map",
-  //  "offsetX": -0.6,
-  //  "offsetY": 1.3
-  //},
+  "Collector's_Map": {
+    "name": "Collector's_Map",
+    "objectName": [ "Collector's_Map" ],
+    "sceneName": "Ruins2_11",
+    "mapZone": "CITY",
+    "pool": "Map",
+    "offsetX": -0.6,
+    "offsetY": 1.3
+  },
   "Mask_Shard-Brooding_Mawlek": {
     "name": "Mask_Shard-Brooding_Mawlek",
     "objectName": [ "Heart Piece" ],
@@ -1880,103 +1880,134 @@
   //  "mapZone": "CITY",
   //  "pool": "Grub"
   //},
-  //"Crossroads_Map": {
-  //  "name": "Crossroads_Map",
-  //  "sceneName": "Crossroads_33",
-  //  "mapZone": "CROSSROADS",
-  //  "pool": "Map",
-  //  "offsetX": 0.1,
-  //  "offsetY": 0.2
-  //},
-  //"Greenpath_Map": {
-  //  "name": "Greenpath_Map",
-  //  "sceneName": "Fungus1_06",
-  //  "mapZone": "GREEN_PATH",
-  //  "pool": "Map",
-  //  "offsetX": 1.5,
-  //  "offsetY": -0.2
-  //},
-  //"Fog_Canyon_Map": {
-  //  "name": "Fog_Canyon_Map",
-  //  "sceneName": "Fungus3_25",
-  //  "mapZone": "FOG_CANYON",
-  //  "pool": "Map",
-  //  "offsetX": -0.3,
-  //  "offsetY": 0.2
-  //},
-  //"Fungal_Wastes_Map": {
-  //  "name": "Fungal_Wastes_Map",
-  //  "sceneName": "Fungus2_18",
-  //  "mapZone": "WASTES",
-  //  "pool": "Map",
-  //  "offsetX": -1.55,
-  //  "offsetY": 0.2
-  //},
-  //// The next two should share the same object
-  //"Deepnest_Map-Upper": {
-  //  "name": "Deepnest_Map-Upper",
-  //  "sceneName": "Deepnest_01b",
-  //  "mapZone": "DEEPNEST",
-  //  "pool": "Map",
-  //  "offsetX": -0.45,
-  //  "offsetY": -0.8
-  //},
-  //"Deepnest_Map-Right": {
-  //  "name": "Deepnest_Map-Right",
-  //  "sceneName": "Fungus2_25",
-  //  "mapZone": "DEEPNEST",
-  //  "pool": "Map",
-  //  "offsetX": -0.7,
-  //  "offsetY": 0.2
-  //},
-  //"ABYSS_Map": {
-  //  "name": "ABYSS_Map",
-  //  "sceneName": "Abyss_04",
-  //  "mapZone": "ABYSS",
-  //  "pool": "Map"
-  //},
-  //"Kingdom's_Edge_Map": {
-  //  "name": "Kingdom's_Edge_Map",
-  //  "sceneName": "Deepnest_East_03",
-  //  "mapZone": "OUTSKIRTS",
-  //  "pool": "Map"
-  //},
-  //"CITY_Map": {
-  //  "name": "CITY_Map",
-  //  "sceneName": "Ruins1_31",
-  //  "mapZone": "CITY",
-  //  "pool": "Map"
-  //},
-  //"Royal_Waterways_Map": {
-  //  "name": "Royal_Waterways_Map",
-  //  "sceneName": "Waterways_09",
-  //  "mapZone": "WATERWAYS",
-  //  "pool": "Map"
-  //},
-  //"CLIFFS_Map": {
-  //  "name": "CLIFFS_Map",
-  //  "sceneName": "Cliffs_01",
-  //  "mapZone": "CLIFFS",
-  //  "pool": "Map"
-  //},
-  //"MINES_Map": {
-  //  "name": "MINES_Map",
-  //  "sceneName": "Mines_30",
-  //  "mapZone": "MINES",
-  //  "pool": "Map"
-  //},
-  //"Queen's_Gardens_Map": {
-  //  "name": "Queen's_Gardens_Map",
-  //  "sceneName": "Fungus1_24",
-  //  "mapZone": "ROYAL_GARDENS",
-  //  "pool": "Map"
-  //},
-  //"Resting_Grounds_Map": {
-  //  "name": "Resting_Grounds_Map",
-  //  "sceneName": "RestingGrounds_09",
-  //  "mapZone": "RESTING_GROUNDS",
-  //  "pool": "Map"
-  //},
+  "Crossroads_Map": {
+    "name": "Crossroads_Map",
+    "objectName": [ "Crossroads_Map" ],
+    "sceneName": "Crossroads_33",
+    "mapZone": "CROSSROADS",
+    "pool": "Map",
+    "offsetX": 0.1,
+    "offsetY": 0.2
+  },
+  "Greenpath_Map": {
+    "name": "Greenpath_Map",
+    "objectName": [ "Greenpath_Map" ],
+    "sceneName": "Fungus1_06",
+    "mapZone": "GREEN_PATH",
+    "pool": "Map",
+    "offsetX": 1.45,
+    "offsetY": -0.3
+  },
+  "Fog_Canyon_Map": {
+    "name": "Fog_Canyon_Map",
+    "objectName": [ "Fog_Canyon_Map" ],
+    "sceneName": "Fungus3_25",
+    "mapZone": "FOG_CANYON",
+    "pool": "Map",
+    "offsetX": -0.3,
+    "offsetY": 0.2
+  },
+  "Fungal_Wastes_Map": {
+    "name": "Fungal_Wastes_Map",
+    "objectName": [ "Fungal_Wastes_Map" ],
+    "sceneName": "Fungus2_18",
+    "mapZone": "WASTES",
+    "pool": "Map",
+    "offsetX": -1.55,
+    "offsetY": 0.2
+  },
+  // The next two should share the same object
+  "Deepnest_Map-Upper": {
+    "name": "Deepnest_Map-Upper",
+    "objectName": [ "Deepnest_Map" ],
+    "sceneName": "Deepnest_01b",
+    "mapZone": "DEEPNEST",
+    "pool": "Map",
+    "offsetX": -0.45,
+    "offsetY": -0.8
+  },
+  "Deepnest_Map-Right": {
+    "name": "Deepnest_Map-Right",
+    "objectName": [ "Deepnest_Map" ],
+    "sceneName": "Fungus2_25",
+    "mapZone": "DEEPNEST",
+    "pool": "Map",
+    "offsetX": -0.7,
+    "offsetY": 0.2
+  },
+  "Ancient_Basin_Map": {
+    "name": "Ancient_Basin_Map",
+    "objectName": [ "Ancient_Basin_Map" ],
+    "sceneName": "Abyss_04",
+    "mapZone": "ABYSS",
+    "pool": "Map",
+    "offsetX": 0.5,
+    "offsetY": 0.4,
+    "offsetZ": 0.001
+  },
+  "Kingdom's_Edge_Map": {
+    "name": "Kingdom's_Edge_Map",
+    "objectName": [ "Kingdom's_Edge_Map" ],
+    "sceneName": "Deepnest_East_03",
+    "mapZone": "OUTSKIRTS",
+    "pool": "Map",
+    "offsetX": -0.7,
+    "offsetY": -0.1
+  },
+  "City_of_Tears_Map": {
+    "name": "City_of_Tears_Map",
+    "objectName": [ "City_of_Tears_Map" ],
+    "sceneName": "Ruins1_31",
+    "mapZone": "CITY",
+    "pool": "Map",
+    "offsetX": 0.2,
+    "offsetY": -0.375
+  },
+  "Royal_Waterways_Map": {
+    "name": "Royal_Waterways_Map",
+    "objectName": [ "Royal_Waterways_Map" ],
+    "sceneName": "Waterways_09",
+    "mapZone": "WATERWAYS",
+    "pool": "Map",
+    "offsetX": -0.2,
+    "offsetY": 0.2
+  },
+  "Howling_Cliffs_Map": {
+    "name": "Howling_Cliffs_Map",
+    "objectName": [ "Howling_Cliffs_Map" ],
+    "sceneName": "Cliffs_01",
+    "mapZone": "CLIFFS",
+    "pool": "Map",
+    "offsetX": 1.8,
+    "offsetY": -0.1
+  },
+  "Crystal_Peak_Map": {
+    "name": "Crystal_Peak_Map",
+    "objectName": [ "Crystal_Peak_Map" ],
+    "sceneName": "Mines_30",
+    "mapZone": "MINES",
+    "pool": "Map",
+    "offsetX": 1.35,
+    "offsetY": 0.0
+  },
+  "Queen's_Gardens_Map": {
+    "name": "Queen's_Gardens_Map",
+    "objectName": [ "Queen's_Gardens_Map" ],
+    "sceneName": "Fungus1_24",
+    "mapZone": "ROYAL_GARDENS",
+    "pool": "Map",
+    "offsetX": 0.4,
+    "offsetY": 0.1
+  },
+  "Resting_Grounds_Map": {
+    "name": "Resting_Grounds_Map",
+    "objectName": [ "Resting_Grounds_Map" ],
+    "sceneName": "RestingGrounds_09",
+    "mapZone": "RESTING_GROUNDS",
+    "pool": "Map",
+    "offsetX": -0.8,
+    "offsetY": -0.05
+  },
   //"Dirtmouth_Stag": {
   //  "name": "Dirtmouth_Stag",
   //  "sceneName": "Room_Town_Stag_Station",

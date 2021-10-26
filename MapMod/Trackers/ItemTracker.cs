@@ -299,6 +299,77 @@ namespace VanillaMapMod.Trackers
                 VanillaMapMod.LS.ObtainedItems["Grimm Troupe Lantern" + "Cliffs_06"] = true;
             }
 
+            if (PlayerData.instance.hasPinGrub)
+            {
+                VanillaMapMod.LS.ObtainedItems["Collector's_Map" + "Ruins2_11"] = true;
+            }
+
+            if (PlayerData.instance.mapCrossroads)
+            {
+                VanillaMapMod.LS.ObtainedItems["Crossroads_Map" + "Crossroads_33"] = true;
+            }
+
+            if (PlayerData.instance.mapGreenpath)
+            {
+                VanillaMapMod.LS.ObtainedItems["Greenpath_Map" + "Fungus1_06"] = true;
+            }
+
+            if (PlayerData.instance.mapFogCanyon)
+            {
+                VanillaMapMod.LS.ObtainedItems["Fog_Canyon_Map" + "Fungus3_25"] = true;
+            }
+
+            if (PlayerData.instance.mapFungalWastes)
+            {
+                VanillaMapMod.LS.ObtainedItems["Fungal_Wastes_Map" + "Fungus2_18"] = true;
+            }
+
+            if (PlayerData.instance.mapDeepnest)
+            {
+                VanillaMapMod.LS.ObtainedItems["Deepnest_Map" + "Deepnest_01b"] = true;
+                VanillaMapMod.LS.ObtainedItems["Deepnest_Map" + "Fungus2_25"] = true;
+            }
+
+            if (PlayerData.instance.mapAbyss)
+            {
+                VanillaMapMod.LS.ObtainedItems["Ancient_Basin_Map" + "Abyss_04"] = true;
+            }
+
+            if (PlayerData.instance.mapOutskirts)
+            {
+                VanillaMapMod.LS.ObtainedItems["Kingdom's_Edge_Map" + "Deepnest_East_03"] = true;
+            }
+
+            if (PlayerData.instance.mapCity)
+            {
+                VanillaMapMod.LS.ObtainedItems["City_of_Tears_Map" + "Ruins1_31"] = true;
+            }
+
+            if (PlayerData.instance.mapWaterways)
+            {
+                VanillaMapMod.LS.ObtainedItems["Royal_Waterways_Map" + "Waterways_09"] = true;
+            }
+
+            if (PlayerData.instance.mapCliffs)
+            {
+                VanillaMapMod.LS.ObtainedItems["Howling_Cliffs_Map" + "Cliffs_01"] = true;
+            }
+
+            if (PlayerData.instance.mapMines)
+            {
+                VanillaMapMod.LS.ObtainedItems["Crystal_Peak_Map" + "Mines_30"] = true;
+            }
+
+            if (PlayerData.instance.mapRoyalGardens)
+            {
+                VanillaMapMod.LS.ObtainedItems["Queen's_Gardens_Map" + "Fungus1_24"] = true;
+            }
+
+            if (PlayerData.instance.mapRestingGrounds)
+            {
+                VanillaMapMod.LS.ObtainedItems["Resting_Grounds_Map" + "RestingGrounds_09"] = true;
+            }
+
             // The following is needed in case the mod is installed halfway through an existing vanilla save
             foreach (GeoRockData grd in GameManager.instance.sceneData.geoRocks)
             {

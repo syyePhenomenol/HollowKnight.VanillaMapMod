@@ -40,7 +40,7 @@ namespace VanillaMapMod.Map
                 Pool.Grub => "pinGrub",
                 Pool.Key => "pinKey",
                 Pool.Lore => "pinLore",
-                //Pool.Map => "pinMap", // todo: add map pins
+                Pool.Map => "pinMap",
                 Pool.Mask => "pinMask",
                 Pool.Notch => "pinNotch",
                 Pool.Ore => "pinOre",
