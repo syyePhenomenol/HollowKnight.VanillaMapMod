@@ -19,10 +19,21 @@ namespace VanillaMapMod.Map
                     PlayerData.instance.scenesVisited.Add(to.name);
                 }
 
-                if (!PlayerData.instance.scenesMapped.Contains(to.name) && PlayerData.instance.hasQuill)
+                if (PlayerData.instance.hasQuill)
                 {
-                    PlayerData.instance.scenesMapped.Add(to.name);
+                    foreach (string scene in PlayerData.instance.scenesVisited)
+                    {
+                        if (!PlayerData.instance.scenesMapped.Contains(scene))
+                        {
+                            PlayerData.instance.scenesMapped.Add(scene);
+                        }
+                    }
                 }
+
+                //if (!PlayerData.instance.scenesMapped.Contains(to.name) && PlayerData.instance.hasQuill)
+                //{
+                //    PlayerData.instance.scenesMapped.Add(to.name);
+                //}
             }
         }
     }
