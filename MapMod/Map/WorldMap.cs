@@ -28,6 +28,7 @@ namespace VanillaMapMod.Map
             On.GameMap.SetupMapMarkers += GameMap_SetupMapMarkers;
             On.GameMap.DisableMarkers += GameMap_DisableMarkers;
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
+            On.GameManager.UpdateGameMap += UpdateGameMap;
             ModHooks.GetPlayerBoolHook += BoolGetOverride;
             ModHooks.GetPlayerVariableHook += VariableGetOverride;
         }
@@ -456,6 +457,14 @@ namespace VanillaMapMod.Map
             {
                 ReplaceBool(self, "Check", 0);
             }
+        }
+
+        // Remove the "Map Updated" idle animation, since it occurs when the return value is true
+        public static bool UpdateGameMap(On.GameManager.orig_UpdateGameMap orig, GameManager self)
+        {
+            orig(self);
+
+            return false;
         }
 
         public static bool BoolGetOverride(string boolName, bool orig)
