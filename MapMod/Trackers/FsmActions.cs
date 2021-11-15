@@ -17,6 +17,7 @@ namespace VanillaMapMod.Trackers
         public override void OnEnter()
         {
             VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
+            VanillaMapMod.LS.GeoRockCounter ++;
 
             VanillaMapMod.Instance.Log("Geo Rock broken");
             VanillaMapMod.Instance.Log(" ID: " + _grd.id);

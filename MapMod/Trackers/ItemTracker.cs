@@ -9,7 +9,7 @@ namespace VanillaMapMod.Trackers
             On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
         }
 
-        // Called after save load and every time the map is opened
+        // Called after every time the map is opened
         public static void UpdateObtainedItems()
         {
             if (PlayerData.instance.hasDash)

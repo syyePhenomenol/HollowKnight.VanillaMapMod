@@ -22,6 +22,8 @@ namespace VanillaMapMod.Settings
 
 		public Dictionary<string, bool> ObtainedItems = new();
 
+		public int GeoRockCounter = 0;
+
 		public Dictionary<Pool , GroupSettingPair> GroupSettings = Enum.GetValues(typeof(Pool))
 			.Cast<Pool>().ToDictionary(t => t, t => new GroupSettingPair());
 

@@ -3,6 +3,7 @@ using UnityEngine;
 using VanillaMapMod.CanvasUtil;
 using VanillaMapMod.Data;
 using VanillaMapMod.Map;
+using VanillaMapMod.Trackers;
 
 namespace VanillaMapMod.UI
 {
@@ -239,6 +240,15 @@ namespace VanillaMapMod.UI
             {
                 _mapControlPanel.GetPanel("PoolsPanel").GetButton(pool.ToString()).SetTextColor(Color.red);
                 return;
+            }
+
+            if (pool == Pool.Rock)
+            {
+                _mapControlPanel.GetPanel("PoolsPanel").GetButton(pool.ToString()).UpdateText
+                    (
+                        _groupButtons[pool].Item1 + "\n"
+                        + VanillaMapMod.LS.GeoRockCounter + " / " + "207"
+                    );
             }
 
             bool setting = VanillaMapMod.LS.GetOnFromGroup(pool);

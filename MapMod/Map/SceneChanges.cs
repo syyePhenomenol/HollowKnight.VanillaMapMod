@@ -9,8 +9,6 @@ namespace VanillaMapMod.Map
             UnityEngine.SceneManagement.SceneManager.activeSceneChanged += HandleSceneChanges;
         }
 
-
-
         // Force map to update every time we enter a new scene
         private static void HandleSceneChanges(Scene from, Scene to)
         {

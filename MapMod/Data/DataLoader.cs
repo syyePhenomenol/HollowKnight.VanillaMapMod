@@ -59,6 +59,8 @@ namespace VanillaMapMod.Data
             _shop = JsonUtil.Deserialize<Dictionary<string, ShopDef>>("VanillaMapMod.Resources.shop.json");
             _languageStrings = JsonUtil.Deserialize<Dictionary<string, Dictionary<string, string>>>("VanillaMapMod.Resources.language.json");
 
+            //int GeoRockTotal = 0;
+
             foreach (KeyValuePair<string, PinDef> entry in _pins)
             {
                 if (entry.Value.objectName == null
@@ -68,7 +70,14 @@ namespace VanillaMapMod.Data
                 {
                     VanillaMapMod.Instance.LogWarn($"There is a pin with no objectName that should have one: {entry.Key}");
                 }
+
+                //if (entry.Value.pool == Pool.Rock)
+                //{
+                //    GeoRockTotal += entry.Value.objectName.Length;
+                //}
             }
+
+            //VanillaMapMod.Instance.Log($"Total number of Geo Rocks: " + GeoRockTotal);
 
             return;
         }
