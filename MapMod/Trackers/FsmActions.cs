@@ -19,9 +19,9 @@ namespace VanillaMapMod.Trackers
             VanillaMapMod.LS.ObtainedItems[_grd.id + _grd.sceneName] = true;
             VanillaMapMod.LS.GeoRockCounter ++;
 
-            VanillaMapMod.Instance.Log("Geo Rock broken");
-            VanillaMapMod.Instance.Log(" ID: " + _grd.id);
-            VanillaMapMod.Instance.Log(" Scene: " + _grd.sceneName);
+            //VanillaMapMod.Instance.Log("Geo Rock broken");
+            //VanillaMapMod.Instance.Log(" ID: " + _grd.id);
+            //VanillaMapMod.Instance.Log(" Scene: " + _grd.sceneName);
 
             Finish();
         }
@@ -39,12 +39,11 @@ namespace VanillaMapMod.Trackers
         public override void OnEnter()
         {
             string scene = GameManager.instance.sceneName;
-
             VanillaMapMod.LS.ObtainedItems[_oName + scene] = true;
 
-            VanillaMapMod.Instance.Log("Item picked up");
-            VanillaMapMod.Instance.Log(" Name: " + _oName);
-            VanillaMapMod.Instance.Log(" Scene: " + scene);
+            //VanillaMapMod.Instance.Log("Item picked up");
+            //VanillaMapMod.Instance.Log(" Name: " + _oName);
+            //VanillaMapMod.Instance.Log(" Scene: " + scene);
 
             Finish();
         }
