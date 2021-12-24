@@ -42,6 +42,8 @@ If you want the complete Map with all locations, then click "Reveal Full Map" in
 - The "Map Updated" animation no longer occurs when sitting at a bench.
 - You can install the mod for an existing save and there will be no conflicts, nor will it change your save.
 
+- As of v1.0.2, VanillaMapMod is also fully compatible with AdditionalMaps.
+
 # How To Install
 Use Scarab: https://github.com/fifty-six/Scarab
 
