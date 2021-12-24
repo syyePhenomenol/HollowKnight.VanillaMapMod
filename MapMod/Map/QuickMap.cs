@@ -187,6 +187,7 @@ namespace VanillaMapMod.Map
             }
 
             WorldMap.UpdateMap(_GameMap, _customMapZone);
+            _GameMap.SetupMapMarkers();
 
             Finish();
         }

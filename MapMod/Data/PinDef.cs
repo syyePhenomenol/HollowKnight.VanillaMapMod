@@ -25,5 +25,8 @@ namespace VanillaMapMod.Data
         public float offsetX;
         public float offsetY;
         public float offsetZ;
+
+        // 0 = not affected by AdditionalMaps, 1 = show without, 2 = show with
+        public int additionalMaps;
     }
 }

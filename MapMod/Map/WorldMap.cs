@@ -19,26 +19,57 @@ namespace VanillaMapMod.Map
 
         public static void Hook()
         {
-            On.GameMap.Start += GameMap_Start;
+            //On.GameMap.Start += GameMap_Start;
+            On.GameManager.SetGameMap += GameManager_SetGameMap;
             On.GameMap.WorldMap += GameMap_WorldMap;
             On.GameMap.SetupMapMarkers += GameMap_SetupMapMarkers;
             On.GameMap.DisableMarkers += GameMap_DisableMarkers;
-            On.GameManager.UpdateGameMap += UpdateGameMap;
+            On.GameManager.UpdateGameMap += GameManager_UpdateGameMap;
         }
 
-        // The function that is called every time a new GameMap is created (once per save load)
-        private static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
-        {
-            orig(self);
+        //// The function that is called every time a new GameMap is created (once per save load)
+        //private static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
+        //{
+        //    orig(self);
 
-            if (self == null) return;
+            //if (self == null) return;
+
+            //// Necessary if player goes straight to Pause Menu
+            //SyncMap(self);
+
+            //if (goCustomPins != null)
+            //{
+            //    goCustomPins.transform.SetParent(self.transform);
+            //    return;
+            //}
+
+            //VanillaMapMod.Instance.Log("Adding Custom Pins...");
+
+            //goCustomPins = new GameObject($"VMM Custom Pin Group");
+            //goCustomPins.AddComponent<PinsCustom>();
+
+            //// Setting parent here is only for controlling local position,
+            //// not active/not active (need separate mechanism)
+            //goCustomPins.transform.SetParent(self.transform);
+
+            //CustomPins.MakePins(self);
+
+            //VanillaMapMod.Instance.Log("Adding Custom Pins done.");
+        //}
+
+        // The function that is called every time after a new GameMap is created (once per save load)
+        private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
+        {
+            orig(self, go_gameMap);
+
+            GameMap gameMap = go_gameMap.GetComponent<GameMap>();
 
             // Necessary if player goes straight to Pause Menu
-            SyncMap(self);
+            SyncMap(gameMap);
 
             if (goCustomPins != null)
             {
-                goCustomPins.transform.SetParent(self.transform);
+                goCustomPins.transform.SetParent(go_gameMap.transform);
                 return;
             }
 
@@ -49,9 +80,9 @@ namespace VanillaMapMod.Map
 
             // Setting parent here is only for controlling local position,
             // not active/not active (need separate mechanism)
-            goCustomPins.transform.SetParent(self.transform);
+            goCustomPins.transform.SetParent(go_gameMap.transform);
 
-            CustomPins.MakePins(self);
+            CustomPins.MakePins(gameMap);
 
             VanillaMapMod.Instance.Log("Adding Custom Pins done.");
         }
@@ -75,6 +106,16 @@ namespace VanillaMapMod.Map
             }
 
             UpdateMap(self, MapZone.NONE);
+
+            //foreach (Transform areaObj in self.transform)
+            //{
+            //    VanillaMapMod.Instance.Log(areaObj.name);
+
+            //    foreach (Transform roomObj in areaObj.transform)
+            //    {
+            //        VanillaMapMod.Instance.Log($"- {roomObj.name}");
+            //    }
+            //}
         }
 
         // Following two behaviours necessary since GameMap is actually persistently active
@@ -94,6 +135,14 @@ namespace VanillaMapMod.Map
             CustomPins.gameObject.SetActive(false);
 
             orig(self);
+        }
+
+        // Remove the "Map Updated" idle animation, since it occurs when the return value is true
+        public static bool GameManager_UpdateGameMap(On.GameManager.orig_UpdateGameMap orig, GameManager self)
+        {
+            orig(self);
+
+            return false;
         }
 
         // The main method for updating map objects and pins when opening either World Map or Quick Map
@@ -124,12 +173,6 @@ namespace VanillaMapMod.Map
             gameMap.SetupMap();
         }
 
-        // Remove the "Map Updated" idle animation, since it occurs when the return value is true
-        public static bool UpdateGameMap(On.GameManager.orig_UpdateGameMap orig, GameManager self)
-        {
-            orig(self);
-
-            return false;
-        }
+        
     }
 }

@@ -274,7 +274,7 @@ namespace VanillaMapMod.Map
                 if (child == null)
                     continue;
 
-                if (child.gameObject.name == "pin_bench")
+                if (child.gameObject.name == "pin_bench" || child.gameObject.name == "pin_bench(Clone)(Clone)")
                 {
                     if (child.parent.name == "Fungus3_50" && !PlayerData.instance.tollBenchQueensGardens
                         || child.parent.name == "Abyss_18" && !PlayerData.instance.tollBenchAbyss

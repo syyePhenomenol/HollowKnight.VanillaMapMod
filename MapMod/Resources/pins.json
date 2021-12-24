@@ -445,7 +445,18 @@
     "pool": "Charm",
     "offsetX": 0.6,
     "offsetY": -0.2,
-    "offsetZ": 0.005
+    "offsetZ": 0.005,
+    "additionalMaps": 1
+  },
+  "King_Fragment-White_Palace": {
+    "name": "King_Fragment-White_Palace",
+    "objectName": [ "King_Fragment" ],
+    "sceneName": "White_Palace_09",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Charm",
+    "offsetX": -0.3,
+    "offsetY": 0.3,
+    "additionalMaps": 2
   },
   "Void_Heart": {
     "name": "Void_Heart",
@@ -4467,74 +4478,108 @@
     "mapZone": "ABYSS",
     "pool": "Totem",
     "offsetX": 0.2,
-    "offsetY": -0.2
+    "offsetY": -0.2,
+    "additionalMaps": 1
   },
-  //"Soul_Totem-White_Palace_Hub": {
-  //  "name": "Soul_Totem-White_Palace_Hub",
-  //  "sceneName": "White_Palace_03_hub",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-White_Palace_Left": {
-  //  "name": "Soul_Totem-White_Palace_Left",
-  //  "sceneName": "White_Palace_04",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-White_Palace_Final": {
-  //  "name": "Soul_Totem-White_Palace_Final",
-  //  "sceneName": "White_Palace_09",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-White_Palace_Right": {
-  //  "name": "Soul_Totem-White_Palace_Right",
-  //  "sceneName": "White_Palace_15",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Below_Lever": {
-  //  "name": "Soul_Totem-Path_of_Pain_Below_Lever",
-  //  "sceneName": "White_Palace_17",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Left_of_Lever": {
-  //  "name": "Soul_Totem-Path_of_Pain_Left_of_Lever",
-  //  "sceneName": "White_Palace_17",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Entrance": {
-  //  "name": "Soul_Totem-Path_of_Pain_Entrance",
-  //  "sceneName": "White_Palace_18",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Second": {
-  //  "name": "Soul_Totem-Path_of_Pain_Second",
-  //  "sceneName": "White_Palace_18",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Hidden": {
-  //  "name": "Soul_Totem-Path_of_Pain_Hidden",
-  //  "sceneName": "White_Palace_19",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Below_Thornskip": {
-  //  "name": "Soul_Totem-Path_of_Pain_Below_Thornskip",
-  //  "sceneName": "White_Palace_19",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
-  //"Soul_Totem-Path_of_Pain_Final": {
-  //  "name": "Soul_Totem-Path_of_Pain_Final",
-  //  "sceneName": "White_Palace_20",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Totem"
-  //},
+  "Soul_Totem-White_Palace_Hub": {
+    "name": "Soul_Totem-White_Palace_Hub",
+    "sceneName": "White_Palace_03_hub",
+    "mapZone": "WHITE_PALACE",
+    "offsetX": -0.8,
+    "offsetY": -0.4,
+    "pool": "Totem",
+    "additionalMaps": 2
+  },
+  "Soul_Totem-White_Palace_Left": {
+    "name": "Soul_Totem-White_Palace_Left",
+    "sceneName": "White_Palace_04",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": -0.4,
+    "offsetY": 0.3,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-White_Palace_Final": {
+    "name": "Soul_Totem-White_Palace_Final",
+    "sceneName": "White_Palace_09",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": -0.4,
+    "offsetY": -0.8,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-White_Palace_Right": {
+    "name": "Soul_Totem-White_Palace_Right",
+    "sceneName": "White_Palace_15",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": -0.3,
+    "offsetY": 0.9,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Below_Lever": {
+    "name": "Soul_Totem-Path_of_Pain_Below_Lever",
+    "sceneName": "White_Palace_17",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": 0.3,
+    "offsetY": -0.6,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Left_of_Lever": {
+    "name": "Soul_Totem-Path_of_Pain_Left_of_Lever",
+    "sceneName": "White_Palace_17",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": 0.0,
+    "offsetY": 0.1,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Entrance": {
+    "name": "Soul_Totem-Path_of_Pain_Entrance",
+    "sceneName": "White_Palace_18",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": 1.8,
+    "offsetY": -0.9,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Second": {
+    "name": "Soul_Totem-Path_of_Pain_Second",
+    "sceneName": "White_Palace_18",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": 0.2,
+    "offsetY": -0.9,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Hidden": {
+    "name": "Soul_Totem-Path_of_Pain_Hidden",
+    "sceneName": "White_Palace_19",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": 1.2,
+    "offsetY": 0.6,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Below_Thornskip": {
+    "name": "Soul_Totem-Path_of_Pain_Below_Thornskip",
+    "sceneName": "White_Palace_19",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": 0.3,
+    "offsetY": -1.1,
+    "additionalMaps": 2
+  },
+  "Soul_Totem-Path_of_Pain_Final": {
+    "name": "Soul_Totem-Path_of_Pain_Final",
+    "sceneName": "White_Palace_20",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Totem",
+    "offsetX": -2.1,
+    "offsetY": 1.5,
+    "additionalMaps": 2
+  },
   "Soul_Totem-Pale_Lurker": {
     "name": "Soul_Totem-Pale_Lurker",
     "sceneName": "GG_Lurker",
@@ -4807,33 +4852,33 @@
     "offsetX": 1.2,
     "offsetY": -0.5
   },
-  //"Lore_Tablet-Palace_Workshop": {
-  //  "name": "Lore_Tablet-Palace_Workshop",
-  //  "sceneName": "White_Palace_08",
-  //  "pinScene": "Abyss_05",
-  //  "mapZone": "ABYSS",
-  //  "pool": "Lore",
-  //  "offsetX": 0.2,
-  //  "offsetY": 0.2
-  //},
-  //"Lore_Tablet-Palace_Throne": {
-  //  "name": "Lore_Tablet-Palace_Throne",
-  //  "sceneName": "White_Palace_09",
-  //  "pinScene": "Abyss_05",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Lore",
-  //  "offsetX": 0.6,
-  //  "offsetY": 0.2
-  //},
-  //"Lore_Tablet-Path_of_Pain_Entrance": {
-  //  "name": "Lore_Tablet-Path_of_Pain_Entrance",
-  //  "sceneName": "White_Palace_18",
-  //  "pinScene": "Abyss_05",
-  //  "mapZone": "White_Palace",
-  //  "pool": "Lore",
-  //  "offsetX": 1.0,
-  //  "offsetY": 0.2
-  //},
+  "Lore_Tablet-Palace_Workshop": {
+    "name": "Lore_Tablet-Palace_Workshop",
+    "sceneName": "White_Palace_08",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Lore",
+    "offsetX": 0.5,
+    "offsetY": -0.1,
+    "additionalMaps": 2
+  },
+  "Lore_Tablet-Palace_Throne": {
+    "name": "Lore_Tablet-Palace_Throne",
+    "sceneName": "White_Palace_09",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Lore",
+    "offsetX": 0.6,
+    "offsetY": 0.3,
+    "additionalMaps": 2
+  },
+  "Lore_Tablet-Path_of_Pain_Entrance": {
+    "name": "Lore_Tablet-Path_of_Pain_Entrance",
+    "sceneName": "White_Palace_18",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Lore",
+    "offsetX": 2.2,
+    "offsetY": -0.9,
+    "additionalMaps": 2
+  },
   "Journal_Entry-Void_Tendrils": {
     "name": "Journal_Entry-Void_Tendrils",
     "sceneName": "Abyss_09",
@@ -4866,6 +4911,16 @@
     "pool": "Lore",
     "offsetX": 1.0,
     "offsetY": -0.2,
-    "offsetZ": 0.008
+    "offsetZ": 0.008,
+    "additionalMaps": 1
+  },
+  "Journal_Entry-Seal_of_Binding-White_Palace": {
+    "name": "Journal_Entry-Seal_of_Binding",
+    "sceneName": "White_Palace_20",
+    "mapZone": "WHITE_PALACE",
+    "pool": "Lore",
+    "offsetX": 2.4,
+    "offsetY": 0.6,
+    "additionalMaps": 2
   }
 }
