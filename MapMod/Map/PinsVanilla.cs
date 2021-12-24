@@ -337,6 +337,15 @@ namespace VanillaMapMod.Map
                     }
                 }
             }
+
+            // Hot fix for Roots showing even when completed
+            foreach (GameObject rootPin in _Groups[Pool.Root])
+            {
+                if (PlayerData.instance.scenesEncounteredDreamPlantC.Contains(rootPin.transform.parent.name))
+                {
+                    rootPin.SetActive(false);
+                }
+            }
         }
 
         public static void ResizePins()
