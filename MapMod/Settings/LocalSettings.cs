@@ -146,11 +146,6 @@ namespace VanillaMapMod.Settings
 			}
 		}
 
-  //      public void SetOnFromGroup(Pool group, bool value)
-		//{
-		//	GroupSettings[group].On = value;
-		//}
-
 		public void ToggleGroups()
 		{
 			if (AllHasIsOff())

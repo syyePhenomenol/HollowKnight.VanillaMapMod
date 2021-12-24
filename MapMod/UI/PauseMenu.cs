@@ -138,8 +138,6 @@ namespace VanillaMapMod.UI
                     fontSize: 10
                 );
 
-            
-
             UpdateGUI();
 
             _mapControlPanel.SetActive(false, true); // collapse all subpanels
@@ -162,15 +160,14 @@ namespace VanillaMapMod.UI
             {
                 // Any time we aren't at the Pause Menu / don't want to show the UI otherwise
                 if (_mapControlPanel.Active) _mapControlPanel.SetActive(false, true);
+                return;
             }
-            else
+
+            // On the frame that we enter the Pause Menu
+            if (!_mapControlPanel.Active)
             {
-                // On the frame that we enter the Pause Menu
-                if (!_mapControlPanel.Active)
-                {
-                    _mapControlPanel.Destroy();
-                    BuildMenu(Canvas);
-                }
+                _mapControlPanel.Destroy();
+                BuildMenu(Canvas);
             }
         }
 
@@ -227,11 +224,10 @@ namespace VanillaMapMod.UI
 
         private static void PoolClicked(string buttonName)
         {
-            if (VanillaMapMod.LS.GetHasFromGroup(buttonName) || VanillaMapMod.LS.RevealFullMap)
-            {
-                VanillaMapMod.LS.SetOnFromGroup(buttonName, !VanillaMapMod.LS.GetOnFromGroup(buttonName));
-                UpdateGUI();
-            }
+            if (!VanillaMapMod.LS.GetHasFromGroup(buttonName) && !VanillaMapMod.LS.RevealFullMap) return;
+
+            VanillaMapMod.LS.SetOnFromGroup(buttonName, !VanillaMapMod.LS.GetOnFromGroup(buttonName));
+            UpdateGUI();
         }
 
         private static void UpdatePool(Pool pool)
@@ -265,7 +261,7 @@ namespace VanillaMapMod.UI
 
             if (!VanillaMapMod.LS.RevealFullMap)
             {
-                WorldMap.PurgeMap();
+                FullMap.PurgeMap();
             }
 
             UpdateGUI();
@@ -273,13 +269,14 @@ namespace VanillaMapMod.UI
 
         private static void UpdateRevealFullMap()
         {
-            if (!VanillaMapMod.LS.RevealFullMap)
+            switch (VanillaMapMod.LS.RevealFullMap)
             {
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.white);
-            }
-            else
-            {
-                _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.green);
+                case true:
+                    _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.green);
+                    break;
+                case false:
+                    _mapControlPanel.GetButton("Reveal\nFull Map").SetTextColor(Color.white);
+                    break;
             }
         }
 

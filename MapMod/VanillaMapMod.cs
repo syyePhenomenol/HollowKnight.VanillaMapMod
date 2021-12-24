@@ -13,7 +13,7 @@ namespace VanillaMapMod
     {
         public static VanillaMapMod Instance;
 
-        private readonly string _version = "1.0.1";
+        private readonly string _version = "1.0.2 DEBUG";
 
         public override string GetVersion() => _version;
 
@@ -68,8 +68,9 @@ namespace VanillaMapMod
             // Modify overall Map behaviour
             WorldMap.Hook();
             QuickMap.Hook();
+            FullMap.Hook();
             PinsVanilla.Hook();
-            SceneChanges.Hook();
+            Quill.Hook();
 
             // Add a Pause Menu GUI
             GUI.Hook();

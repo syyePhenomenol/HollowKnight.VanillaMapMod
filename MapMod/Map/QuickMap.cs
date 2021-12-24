@@ -1,6 +1,8 @@
-﻿using GlobalEnums;
+﻿using System.Linq;
+using GlobalEnums;
 using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
+using UnityEngine;
 using VanillaMapMod.Settings;
 using Vasi;
 
@@ -24,7 +26,7 @@ namespace VanillaMapMod.Map
             On.GameMap.QuickMapQueensGardens += GameMap_QuickMapQueensGardens;
             On.GameMap.QuickMapRestingGrounds += GameMap_QuickMapRestingGrounds;
             On.GameMap.QuickMapWaterways += GameMap_QuickMapWaterways;
-            On.PlayMakerFSM.OnEnable += PlayMakerFSM_OnEnable;
+            On.GameManager.SetGameMap += GameManager_SetGameMap;
         }
 
         // These are called every time we open the respective Quick Map
@@ -126,57 +128,67 @@ namespace VanillaMapMod.Map
             WorldMap.UpdateMap(self, MapZone.WATERWAYS);
         }
 
-        // Replace all PlayerData boolNames with our own so we can show all Quick Maps,
-        // without changing the existing PlayerData settings
-        private static void PlayMakerFSM_OnEnable(On.PlayMakerFSM.orig_OnEnable orig, PlayMakerFSM self)
+        private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
         {
-            orig(self);
+            orig(self, go_gameMap);
 
-            if (self.FsmName == "Quick Map")
+            GameObject quickMapGameObject = GameObject.Find("Quick Map");
+            PlayMakerFSM quickMapFSM = quickMapGameObject.LocateMyFSM("Quick Map");
+
+            // Replace all PlayerData boolNames with our own so we can show all Quick Maps,
+            // without changing the existing PlayerData settings
+
+            foreach (FsmState state in quickMapFSM.FsmStates)
             {
-                foreach (FsmState state in self.FsmStates)
+                if (SettingsUtil.IsFSMMapState(state.Name))
                 {
-                    if (SettingsUtil.IsFSMMapState(state.Name)) {
-                        string boolString = FsmUtil.GetAction<PlayerDataBoolTest>(state, 0).boolName.ToString();
-                        FsmUtil.GetAction<PlayerDataBoolTest>(state, 0).boolName = "VMM_" + boolString;
-                    }
+                    string boolString = FsmUtil.GetAction<PlayerDataBoolTest>(state, 0).boolName.ToString();
+                    FsmUtil.GetAction<PlayerDataBoolTest>(state, 0).boolName = "VMM_" + boolString;
                 }
             }
+
+            // Patch custom area quick map behaviour
+
+            GameMap gameMap = go_gameMap.GetComponent<GameMap>();
+
+            if (quickMapFSM.FsmStates.Any(state => state.Name == "WHITE_PALACE"))
+            {
+                VanillaMapMod.Instance.Log("AdditionalMaps WHITE_PALACE area detected");
+                FsmUtil.AddAction(FsmUtil.GetState(quickMapFSM, "WHITE_PALACE"), new QuickMapCustomArea(MapZone.WHITE_PALACE, gameMap));
+            }
+
+            if (quickMapFSM.FsmStates.Any(state => state.Name == "GODS_GLORY"))
+            {
+                VanillaMapMod.Instance.Log("AdditionalMaps GODS_GLORY area detected");
+                FsmUtil.AddAction(FsmUtil.GetState(quickMapFSM, "GODS_GLORY"), new QuickMapCustomArea(MapZone.GODS_GLORY, gameMap));
+            }
+        }
+    }
+
+    public class QuickMapCustomArea : FsmStateAction
+    {
+        private readonly MapZone _customMapZone;
+        private readonly GameMap _GameMap;
+        public QuickMapCustomArea(MapZone mapZone, GameMap gameMap)
+        {
+            _customMapZone = mapZone;
+            _GameMap = gameMap;
         }
 
-        //private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject goGameMap)
-        //{
-        //	orig(self, goGameMap);
+        public override void OnEnter()
+        {
+            // Need to force show the map for RevealFullMap
+            foreach (Transform child in _GameMap.transform)
+            {
+                if (child.name == _customMapZone.ToString())
+                {
+                    child.gameObject.SetActive(true);
+                }
+            }
 
-        //	GameObject goQuickMap = GameObject.Find("Quick Map");
+            WorldMap.UpdateMap(_GameMap, _customMapZone);
 
-        //	PlayMakerFSM fsmQuickMap = goQuickMap.LocateMyFSM("Quick Map");
-
-        //          if (fsmQuickMap.FsmStates.Any(state => state.Name == "WHITE_PALACE"))
-        //          {
-        //		MapMod.Instance.Log("AdditionalMaps WHITE_PALACE map detected");
-
-        //		FsmUtil.AddAction(fsmQuickMap, "WHITE_PALACE", new QuickMapWhitePalace());
-        //	} else
-        //          {
-        //		MapMod.Instance.Log("AdditionalMaps WHITE_PALACE map NOT detected");
-        //	}
-        //      }
-
-        //private class QuickMapWhitePalace : FsmStateAction
-        //{
-        //	public override void OnEnter()
-        //	{
-        //		WorldMap.PG.Show();
-
-        //		if (WorldMap.goPG != null)
-        //		{
-        //			Log("Update Pins White Palace");
-        //			WorldMap.PG.UpdatePins("White_Palace");
-        //		}
-
-        //		Finish();
-        //	}
-        //}
+            Finish();
+        }
     }
 }

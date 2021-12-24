@@ -30,12 +30,12 @@ namespace VanillaMapMod.Map
             }
             else if (self.FsmName == "Check Grub Map Owned")
             {
-                WorldMap.ReplaceBool(self, "Check", 1);
+                FullMap.ReplaceBool(self, "Check", 1);
             }
             else if (self.gameObject.name == "Pin_Backer Ghost" && self.FsmName == "FSM")
             {
-                WorldMap.ReplaceBool(self, "Check", 1);
-                WorldMap.ReplaceBool(self, "Check", 3);
+                FullMap.ReplaceBool(self, "Check", 1);
+                FullMap.ReplaceBool(self, "Check", 3);
             }
             else if ((self.gameObject.name == "pin_banker" && self.FsmName == "pin_activation")
                 || (self.gameObject.name == "pin_charm_slug" && self.FsmName == "FSM")
@@ -55,22 +55,24 @@ namespace VanillaMapMod.Map
                 || (self.gameObject.name == "pin_stag_station" && self.FsmName == "FSM")
                 || (self.gameObject.name == "pin_tram" && self.FsmName == "FSM"))
             {
-                WorldMap.ReplaceBool(self, "Check", 0);
-                WorldMap.ReplaceBool(self, "Check", 2);
+                FullMap.ReplaceBool(self, "Check", 0);
+                FullMap.ReplaceBool(self, "Check", 2);
             }
             else if ((self.gameObject.name == "pin_bench" && self.FsmName == "FSM")
+                // For AdditionalMaps
+                || (self.gameObject.name == "pin_bench(Clone)(Clone)" && self.FsmName == "FSM")
                 || (self.gameObject.name == "Pin_BlackEgg" && self.FsmName == "FSM"))
             {
                 if (self.FsmStates.FirstOrDefault(t => t.Name == "Check") != null)
                 {
-                    WorldMap.ReplaceBool(self, "Check", 0);
+                    FullMap.ReplaceBool(self, "Check", 0);
                 }
             }
             else if ((self.gameObject.name == "Pin_Beast" && self.FsmName == "Display")
                 || (self.gameObject.name == "Pin_Teacher" && self.FsmName == "Display")
                 || (self.gameObject.name == "Pin_Watcher" && self.FsmName == "Display"))
             {
-                WorldMap.ReplaceBool(self, "Init", 1);
+                FullMap.ReplaceBool(self, "Init", 1);
             }
             else if ((self.gameObject.name == "Pin_Beast" && self.FsmName == "FSM")
                 || (self.gameObject.name == "Pin_Teacher" && self.FsmName == "FSM")
@@ -78,7 +80,7 @@ namespace VanillaMapMod.Map
             {
                 if (self.FsmStates.FirstOrDefault(t => t.Name == "Deactivate") != null)
                 {
-                    WorldMap.ReplaceBool(self, "Check", 0);
+                    FullMap.ReplaceBool(self, "Check", 0);
                 }
             }
         }
@@ -86,6 +88,8 @@ namespace VanillaMapMod.Map
         private static void GameManager_SetGameMap(On.GameManager.orig_SetGameMap orig, GameManager self, GameObject go_gameMap)
         {
             orig(self, go_gameMap);
+
+            // At this point, if AdditionalMaps is installed, the new custom areas have been added
 
             // Disable map key since the UI is too busy otherwise
             GameObject mapKey = GameObject.Find("Map Key");
@@ -130,6 +134,8 @@ namespace VanillaMapMod.Map
                     switch (child.name)
                     {
                         case "pin_bench":
+                        // For AdditionalMaps compatibility
+                        case "pin_bench(Clone)(Clone)":
                             // Sprite is set persistently in other function
                             _Groups[Pool.Bench].Add(child.gameObject);
                             break;
@@ -311,6 +317,8 @@ namespace VanillaMapMod.Map
         {
             foreach (Pool group in _Groups.Keys)
             {
+                _Groups[group].RemoveAll(item => item == null);
+
                 if (VanillaMapMod.LS.GetHasFromGroup(group) || VanillaMapMod.LS.RevealFullMap)
                 {
                     if (VanillaMapMod.LS.GetOnFromGroup(group))
@@ -335,6 +343,8 @@ namespace VanillaMapMod.Map
         {
             foreach (Pool group in _Groups.Keys)
             {
+                _Groups[group].RemoveAll(item => item == null);
+
                 foreach (GameObject pinObject in _Groups[group])
                 {
                     ResizePin(pinObject);

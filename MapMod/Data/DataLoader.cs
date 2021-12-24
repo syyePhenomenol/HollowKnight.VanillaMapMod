@@ -11,12 +11,10 @@ namespace VanillaMapMod.Data
 
         public static PinDef GetPinDef(string name)
         {
-            if (_pins.TryGetValue(name, out PinDef def))
-            {
-                return def;
-            }
+            if (_pins.TryGetValue(name, out PinDef def)) return def;
 
             VanillaMapMod.Instance.LogWarn($"Unable to find ItemDef for {name}.");
+
             return null;
         }
 
@@ -37,15 +35,11 @@ namespace VanillaMapMod.Data
 
         public static bool IsCustomLanguage(string sheet, string key)
         {
-            if (_languageStrings.ContainsKey(sheet))
-            {
-                if (_languageStrings[sheet].ContainsKey(key))
-                {
-                    return true;
-                }
-            }
+            if (!_languageStrings.ContainsKey(sheet)) return false;
 
-            return false;
+            if (!_languageStrings[sheet].ContainsKey(key)) return false;
+
+            return true;
         }
 
         public static string GetCustomLanguage(string sheet, string key)
@@ -59,8 +53,6 @@ namespace VanillaMapMod.Data
             _shop = JsonUtil.Deserialize<Dictionary<string, ShopDef>>("VanillaMapMod.Resources.shop.json");
             _languageStrings = JsonUtil.Deserialize<Dictionary<string, Dictionary<string, string>>>("VanillaMapMod.Resources.language.json");
 
-            //int GeoRockTotal = 0;
-
             foreach (KeyValuePair<string, PinDef> entry in _pins)
             {
                 if (entry.Value.objectName == null
@@ -70,14 +62,7 @@ namespace VanillaMapMod.Data
                 {
                     VanillaMapMod.Instance.LogWarn($"There is a pin with no objectName that should have one: {entry.Key}");
                 }
-
-                //if (entry.Value.pool == Pool.Rock)
-                //{
-                //    GeoRockTotal += entry.Value.objectName.Length;
-                //}
             }
-
-            //VanillaMapMod.Instance.Log($"Total number of Geo Rocks: " + GeoRockTotal);
 
             return;
         }

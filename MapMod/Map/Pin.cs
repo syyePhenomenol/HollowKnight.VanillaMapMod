@@ -17,13 +17,13 @@ namespace VanillaMapMod.Map
 
         public void UpdatePin(MapZone mapZone)
         {
+            if (PinData == null)
+            {
+                throw new Exception("Cannot enable pin with null pindata. Ensure game object is disabled before adding as component, then call SetPinData(<pd>) before enabling.");
+            }
+
             try
             {
-                if (PinData == null)
-                {
-                    throw new Exception("Cannot enable pin with null pindata. Ensure game object is disabled before adding as component, then call SetPinData(<pd>) before enabling.");
-                }
-
                 ShowBasedOnMap(mapZone);
                 HideIfNotBought();
                 HideIfFound();
@@ -96,18 +96,12 @@ namespace VanillaMapMod.Map
 
         private void HideIfFound()
         {
-            if (PinData.objectName == null)
-            {
-                return;
-            }
+            if (PinData.objectName == null) return;
 
             // Don't hide pin if something isn't in the obtained items dictionary
             foreach (string oName in PinData.objectName)
             {
-                if (!VanillaMapMod.LS.ObtainedItems.ContainsKey(oName + PinData.sceneName))
-                {
-                    return;
-                }
+                if (!VanillaMapMod.LS.ObtainedItems.ContainsKey(oName + PinData.sceneName)) return;
             }
 
             gameObject.SetActive(false);

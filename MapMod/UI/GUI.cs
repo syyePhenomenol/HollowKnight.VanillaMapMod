@@ -10,7 +10,6 @@ namespace VanillaMapMod.UI
         {
             On.GameMap.Start += GameMap_Start;
             On.QuitToMenu.Start += OnQuitToMenu;
-            //UnityEngine.SceneManagement.SceneManager.activeSceneChanged += HandleSceneChanges;
         }
 
         private static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
@@ -27,13 +26,5 @@ namespace VanillaMapMod.UI
 
             return orig(self);
         }
-
-        //private static void HandleSceneChanges(Scene from, Scene to)
-        //{
-        //    if (to.name == "Quit_to_Menu")
-        //    {
-        //        GUIController.Unload();
-        //    }
-        //}
     }
 }

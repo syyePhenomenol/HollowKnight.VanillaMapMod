@@ -55,6 +55,7 @@ namespace VanillaMapMod.Map
                 ResizePin(pin.gameObject);
             }
         }
+
         public static void ResizePin(GameObject go)
         {
             float scale = VanillaMapMod.GS.PinSizeSetting switch
@@ -67,6 +68,7 @@ namespace VanillaMapMod.Map
 
             go.transform.localScale = 1.45f * scale * new Vector2(1.0f, 1.0f);
         }
+
         public void DestroyPins()
         {
             foreach (Pin pin in _pins)
@@ -98,19 +100,17 @@ namespace VanillaMapMod.Map
 
             // Attach sprite renderer to the GameObject
             SpriteRenderer sr = goPin.AddComponent<SpriteRenderer>();
-            Sprite pinSprite;
 
             // Give the Grimm Troupe Lantern its unique sprite
             if (pinData.name == "Grimm Troupe Lantern")
             {
-                pinSprite = SpriteManager.GetSprite("pinFlame");
+                sr.sprite = SpriteManager.GetSprite("pinFlame");
             }
             else
             {
-                pinSprite = SpriteManager.GetSpriteFromPool(pinData.pool);
+                sr.sprite = SpriteManager.GetSpriteFromPool(pinData.pool);
             }
             
-            sr.sprite = pinSprite;
             sr.sortingLayerName = "HUD";
             sr.size = new Vector2(1f, 1f);
 
@@ -123,9 +123,6 @@ namespace VanillaMapMod.Map
             vec.Scale(new Vector3(1.46f, 1.46f, 1));
             vec += new Vector3(pinData.offsetX, pinData.offsetY, pinData.offsetZ);
             goPin.transform.localPosition = new Vector3(vec.x, vec.y, vec.z - 0.01f);
-
-            //// Scale the pin
-            //goPin.transform.localScale = 1.46f * new Vector2(VanillaMapMod.GS.PinScaleSize, VanillaMapMod.GS.PinScaleSize);
         }
 
         private void AssignGroup(GameObject newPin, PinDef pinData)
