@@ -14,7 +14,7 @@ namespace VanillaMapMod
     {
         public static VanillaMapMod Instance;
 
-        private readonly string _version = "1.0.3 DEBUG";
+        private readonly string _version = "1.0.3";
 
         public override string GetVersion() => _version;
 
