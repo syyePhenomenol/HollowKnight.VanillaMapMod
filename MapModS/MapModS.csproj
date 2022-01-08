@@ -1,0 +1,320 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>{8B1AB441-2E8A-49EB-87BD-8E1C9729AD00}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>MapMod</AssemblyTitle>
+    <RootNamespace>MapModS</RootNamespace>
+    <AssemblyVersion>4.0.0</AssemblyVersion>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <AssemblyName>MapModS</AssemblyName>
+	<HollowKnightRefs>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</HollowKnightRefs>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <Target Name="CopyMod" AfterTargets="PostBuildEvent">
+    <RemoveDir Directories="$(ExportDir)/$(TargetName)/" />
+    <MakeDir Directories="$(ExportDir)/$(TargetName)/" />
+    <MakeDir Directories="$(ExportDir)/$(TargetName)/zip/" />
+    <MakeDir Condition="!Exists('$(HollowKnightRefs)/Mods/$(TargetName)/')" Directories="$(HollowKnightRefs)/Mods/$(TargetName)/" />
+    <Copy SourceFiles="$(TargetPath);$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(HollowKnightRefs)/Mods/$(TargetName)/" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ExportDir)/$(TargetName)/" />
+    <Copy SourceFiles="ReadMe.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
+    <ZipDirectory SourceDirectory="$(ExportDir)/$(TargetName)/zip/" DestinationFile="$(ExportDir)/$(TargetName)/$(TargetName).zip" />
+    <RemoveDir Directories="$(ExportDir)/$(TargetName)/zip/" />
+    
+    <GetFileHash Files="$(ExportDir)/$(TargetName)/$(TargetName).zip" Algorithm="SHA256">
+      <Output TaskParameter="Items" ItemName="FilesWithHashes" />
+    </GetFileHash>
+    <WriteLinesToFile File="$(ExportDir)/$(TargetName)/SHA.txt" Lines="@(FilesWithHashes->'%(FileHash)')" Overwrite="true" Encoding="UTF-8"/>
+  </Target>
+
+  <ItemGroup>
+    <Compile Remove="Unused\**" />
+    <EmbeddedResource Remove="Unused\**" />
+    <None Remove="Unused\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Compatibility.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\GUI\ButtonRect.png" />
+    <None Remove="Resources\GUI\ButtonRectEmpty.png" />
+    <None Remove="Resources\GUI\ButtonsMenuBG.png" />
+    <None Remove="Resources\GUI\DropdownBG.png" />
+    <None Remove="Resources\language.json" />
+    <None Remove="Resources\pins.json" />
+    <None Remove="Resources\Pins\pinBackerGhost.png" />
+    <None Remove="Resources\Pins\pinBench.png" />
+    <None Remove="Resources\Pins\pinBenchGrey.png" />
+    <None Remove="Resources\Pins\pinCharm.png" />
+    <None Remove="Resources\Pins\pinCharmSlug.png" />
+    <None Remove="Resources\Pins\pinCocoon.png" />
+    <None Remove="Resources\Pins\pinColosseum.png" />
+    <None Remove="Resources\Pins\pinDreamer.png" />
+    <None Remove="Resources\Pins\pinEgg.png" />
+    <None Remove="Resources\Pins\pinEssenceBoss.png" />
+    <None Remove="Resources\Pins\pinFlame.png" />
+    <None Remove="Resources\Pins\pinGeo.png" />
+    <None Remove="Resources\Pins\pinGodSeeker.png" />
+    <None Remove="Resources\Pins\pinGrub.png" />
+    <None Remove="Resources\Pins\pinGrubKing.png" />
+    <None Remove="Resources\Pins\pinKey.png" />
+    <None Remove="Resources\Pins\pinLore.png" />
+    <None Remove="Resources\Pins\pinMap.png" />
+    <None Remove="Resources\Pins\pinMask.png" />
+    <None Remove="Resources\Pins\pinNotch.png" />
+    <None Remove="Resources\Pins\pinOre.png" />
+    <None Remove="Resources\Pins\pinQWhite.png" />
+    <None Remove="Resources\Pins\pinRelic.png" />
+    <None Remove="Resources\Pins\pinRock.png" />
+    <None Remove="Resources\Pins\pinRoot.png" />
+    <None Remove="Resources\Pins\pinShop.png" />
+    <None Remove="Resources\Pins\pinShopBanker.png" />
+    <None Remove="Resources\Pins\pinShopHunter.png" />
+    <None Remove="Resources\Pins\pinShopJiji.png" />
+    <None Remove="Resources\Pins\pinShopLegEater.png" />
+    <None Remove="Resources\Pins\pinShopMapper.png" />
+    <None Remove="Resources\Pins\pinShopNailsmith.png" />
+    <None Remove="Resources\Pins\pinShopRelicDealer.png" />
+    <None Remove="Resources\Pins\pinShopSly.png" />
+    <None Remove="Resources\Pins\pinSkill.png" />
+    <None Remove="Resources\Pins\pinSpa.png" />
+    <None Remove="Resources\Pins\pinStag.png" />
+    <None Remove="Resources\Pins\pinTotem.png" />
+    <None Remove="Resources\Pins\pinTramLocation.png" />
+    <None Remove="Resources\Pins\pinUnknown.png" />
+    <None Remove="Resources\Pins\pinUnknown_GeoRock.png" />
+    <None Remove="Resources\Pins\pinUnknown_GeoRockInv.png" />
+    <None Remove="Resources\Pins\pinUnknown_Grub.png" />
+    <None Remove="Resources\Pins\pinUnknown_GrubInv.png" />
+    <None Remove="Resources\Pins\pinUnknown_Lifeblood.png" />
+    <None Remove="Resources\Pins\pinUnknown_LifebloodInv.png" />
+    <None Remove="Resources\Pins\pinUnknown_Totem.png" />
+    <None Remove="Resources\Pins\pinUnknown_TotemInv.png" />
+    <None Remove="Resources\Pins\pinVessel.png" />
+    <None Remove="Resources\shop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GUI\ButtonRect.png" />
+    <EmbeddedResource Include="Resources\GUI\ButtonRectEmpty.png" />
+    <EmbeddedResource Include="Resources\GUI\ButtonsMenuBG.png" />
+    <EmbeddedResource Include="Resources\GUI\DropdownBG.png" />
+    <EmbeddedResource Include="Resources\language.json" />
+    <EmbeddedResource Include="Resources\pins.json" />
+    <EmbeddedResource Include="Resources\Pins\pinBackerGhost.png" />
+    <EmbeddedResource Include="Resources\Pins\pinBench.png" />
+    <EmbeddedResource Include="Resources\Pins\pinBenchGrey.png" />
+    <EmbeddedResource Include="Resources\Pins\pinCharm.png" />
+    <EmbeddedResource Include="Resources\Pins\pinCharmSlug.png" />
+    <EmbeddedResource Include="Resources\Pins\pinCocoon.png" />
+    <EmbeddedResource Include="Resources\Pins\pinColosseum.png" />
+    <EmbeddedResource Include="Resources\Pins\pinDreamer.png" />
+    <EmbeddedResource Include="Resources\Pins\pinEgg.png" />
+    <EmbeddedResource Include="Resources\Pins\pinEssenceBoss.png" />
+    <EmbeddedResource Include="Resources\Pins\pinFlame.png" />
+    <EmbeddedResource Include="Resources\Pins\pinGeo.png" />
+    <EmbeddedResource Include="Resources\Pins\pinGodSeeker.png" />
+    <EmbeddedResource Include="Resources\Pins\pinGrub.png" />
+    <EmbeddedResource Include="Resources\Pins\pinGrubKing.png" />
+    <EmbeddedResource Include="Resources\Pins\pinKey.png" />
+    <EmbeddedResource Include="Resources\Pins\pinLore.png" />
+    <EmbeddedResource Include="Resources\Pins\pinMap.png" />
+    <EmbeddedResource Include="Resources\Pins\pinMask.png" />
+    <EmbeddedResource Include="Resources\Pins\pinNotch.png" />
+    <EmbeddedResource Include="Resources\Pins\pinOre.png" />
+    <EmbeddedResource Include="Resources\Pins\pinQWhite.png" />
+    <EmbeddedResource Include="Resources\Pins\pinRelic.png" />
+    <EmbeddedResource Include="Resources\Pins\pinRock.png" />
+    <EmbeddedResource Include="Resources\Pins\pinRoot.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShop.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopBanker.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopHunter.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopJiji.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopLegEater.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopMapper.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopNailsmith.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopRelicDealer.png" />
+    <EmbeddedResource Include="Resources\Pins\pinShopSly.png" />
+    <EmbeddedResource Include="Resources\Pins\pinSkill.png" />
+    <EmbeddedResource Include="Resources\Pins\pinSpa.png" />
+    <EmbeddedResource Include="Resources\Pins\pinStag.png" />
+    <EmbeddedResource Include="Resources\Pins\pinTotem.png" />
+    <EmbeddedResource Include="Resources\Pins\pinTramLocation.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_GeoRock.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_GeoRockInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_Grub.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_GrubInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_Lifeblood.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_LifebloodInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_Totem.png" />
+    <EmbeddedResource Include="Resources\Pins\pinUnknown_TotemInv.png" />
+    <EmbeddedResource Include="Resources\Pins\pinVessel.png" />
+    <EmbeddedResource Include="Resources\shop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MMHOOK_Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MMHOOK_PlayMaker">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MMHOOK_PlayMaker.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mono.Cecil.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MonoMod.Utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\mscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PlayMaker">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\PlayMaker.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Vasi">
+      <HintPath>H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\Vasi\Vasi.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+
+
+    <Target Name="CopyMod" AfterTargets="PostBuildEvent">
+        <Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="H:\Programs\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\$(TargetName)" SkipUnchangedFiles="true" />
+    </Target>
+
+
+
+    <ItemGroup>
+      <Reference Update="System">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Core">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Data">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Drawing">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.IO.Compression.FileSystem">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Numerics">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Runtime.Serialization">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Xml">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Reference Update="System.Xml.Linq">
+        <Private>false</Private>
+      </Reference>
+    </ItemGroup>
+
+</Project>
