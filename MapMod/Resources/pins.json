@@ -4915,7 +4915,7 @@
     "additionalMaps": 1
   },
   "Journal_Entry-Seal_of_Binding-White_Palace": {
-    "name": "Journal_Entry-Seal_of_Binding",
+    "name": "Journal_Entry-Seal_of_Binding-White_Palace",
     "sceneName": "White_Palace_20",
     "mapZone": "WHITE_PALACE",
     "pool": "Lore",

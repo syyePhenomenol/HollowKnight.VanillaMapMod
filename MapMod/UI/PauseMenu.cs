@@ -50,7 +50,7 @@ namespace VanillaMapMod.UI
 
             _mapControlPanel = new CanvasPanel
                 (_canvas, GUIController.Instance.Images["ButtonsMenuBG"], new Vector2(10f, 870f), new Vector2(1346f, 0f), new Rect(0f, 0f, 0f, 0f));
-            _mapControlPanel.AddText("MapModLabel", "Vanilla Map Mod", new Vector2(0f, -25f), Vector2.zero, GUIController.Instance.TrajanNormal, 18);
+            _mapControlPanel.AddText("MapModLabel", "VanillaMapMod", new Vector2(0f, -25f), Vector2.zero, GUIController.Instance.TrajanNormal, 18);
 
             Rect buttonRect = new(0, 0, GUIController.Instance.Images["ButtonRect"].width, GUIController.Instance.Images["ButtonRect"].height);
 

@@ -26,6 +26,7 @@ namespace VanillaMapMod.Map
             On.GameMap.QuickMapQueensGardens += GameMap_QuickMapQueensGardens;
             On.GameMap.QuickMapRestingGrounds += GameMap_QuickMapRestingGrounds;
             On.GameMap.QuickMapWaterways += GameMap_QuickMapWaterways;
+
             On.GameManager.SetGameMap += GameManager_SetGameMap;
         }
 

@@ -130,29 +130,37 @@ namespace VanillaMapMod.Map
         // We need to purge the map after turning RevealFullMap off. Essentially the opposite of SetupMap()
         public static void PurgeMap()
         {
-            GameObject go_gameMap = GameObject.Find("Game_Map(Clone)");
+            GameObject go_gameMap = GameManager.instance.gameMap;
 
-            for (int i = 0; i < go_gameMap.transform.childCount; i++)
+            foreach (Transform areaObj in go_gameMap.transform)
             {
-                GameObject gameObject = go_gameMap.transform.GetChild(i).gameObject;
+                if (areaObj.name == "Grub Pins"
+                    || areaObj.name == "Dream_Gate_Pin"
+                    || areaObj.name == "Compass Icon"
+                    || areaObj.name == "Shade Pos"
+                    || areaObj.name == "Flame Pins"
+                    || areaObj.name == "Dreamer Pins"
+                    || areaObj.name == "Map Markers"
+                    || areaObj.name == "WHITE_PALACE"
+                    || areaObj.name == "GODS_GLORY"
+                    || areaObj.name == "Map Mod Pin Group") continue;
 
-                for (int j = 0; j < gameObject.transform.childCount; j++)
+                foreach (Transform roomObj in areaObj.transform)
                 {
-                    GameObject gameObject2 = gameObject.transform.GetChild(j).gameObject;
+                    roomObj.gameObject.SetActive(_persistentMapObjects.Contains(roomObj.name));
 
-                    if (gameObject2.name.Contains("Area Name")
-                        || gameObject2.name == "Grub Pins"
-                        || gameObject.name == "Dream_Gate_Pin"
-                        || gameObject.name == "Compass Icon"
-                        || gameObject.name == "Shade Pos"
-                        || gameObject.name == "Flame Pins"
-                        || gameObject.name == "Dreamer Pins"
-                        || gameObject.name == "Map Markers"
-                        || gameObject.name == "Map Mod Pin Group") continue;
+                    if (roomObj.name.Contains("Area Name"))
+                    {
+                        roomObj.gameObject.SetActive(true);
+                    }
 
-                    if (_persistentMapObjects.Contains(gameObject2.name)) continue;
-
-                    gameObject2.SetActive(false);
+                    foreach (Transform roomObj2 in roomObj.transform)
+                    {
+                        if (roomObj2.name.Contains("Area Name"))
+                        {
+                            roomObj2.gameObject.SetActive(true);
+                        }
+                    }
                 }
             }
         }
@@ -240,6 +248,12 @@ namespace VanillaMapMod.Map
             {
                 ReplaceBool(self, "Button Down Check", 1);
                 FsmUtil.GetAction<GetPlayerDataBool>(self, "Has Map?", 3).boolName = "VMM_hasMap";
+            }
+            else if (self.gameObject.name == "Inventory" && self.FsmName == "Inventory Control")
+            {
+                ReplaceBool(self, "Next Map", 0);
+                ReplaceBool(self, "Next Map 2", 0);
+                ReplaceBool(self, "Next Map 3", 0);
             }
 
             // Patch the zoomed out map UI when we reveal the full map
@@ -343,6 +357,11 @@ namespace VanillaMapMod.Map
             else if (SettingsUtil.IsFSMMapState(self.gameObject.name) && self.FsmName == "deactivate")
             {
                 ReplaceBool(self, "Check", 0);
+            }
+
+            else if (self.FsmName == "Bench Control")
+            {
+                FsmUtil.GetAction<GetPlayerDataBool>(self, "Open Map", 0).boolName = "VMM_hasMap";
             }
         }
 

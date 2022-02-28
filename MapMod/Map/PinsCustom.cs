@@ -87,8 +87,8 @@ namespace VanillaMapMod.Map
                 return;
             }
 
-            if (pinData.additionalMaps == 1 && VanillaMapMod.AdditionalMapsInstalled
-            || pinData.additionalMaps == 2 && !VanillaMapMod.AdditionalMapsInstalled)
+            if (pinData.additionalMaps == 1 && VanillaMapMod.AdditionalMapsInstalled()
+            || pinData.additionalMaps == 2 && !VanillaMapMod.AdditionalMapsInstalled())
             {
                 return;
             }

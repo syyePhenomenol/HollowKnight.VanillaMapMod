@@ -9,7 +9,6 @@ namespace VanillaMapMod.UI
         public static void Hook()
         {
             On.GameMap.Start += GameMap_Start;
-            On.QuitToMenu.Start += OnQuitToMenu;
         }
 
         private static void GameMap_Start(On.GameMap.orig_Start orig, GameMap self)
@@ -18,13 +17,6 @@ namespace VanillaMapMod.UI
 
             GUIController.Setup();
             GUIController.Instance.BuildMenus();
-        }
-
-        private static IEnumerator OnQuitToMenu(On.QuitToMenu.orig_Start orig, QuitToMenu self)
-        {
-            GUIController.Unload();
-
-            return orig(self);
         }
     }
 }

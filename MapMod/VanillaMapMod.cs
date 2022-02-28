@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection;
+using System.Collections;
 using Modding;
 using VanillaMapMod.Data;
 using VanillaMapMod.Map;
@@ -14,7 +14,7 @@ namespace VanillaMapMod
     {
         public static VanillaMapMod Instance;
 
-        private readonly string _version = "1.0.3";
+        private readonly string _version = "1.0.4";
 
         public override string GetVersion() => _version;
 
@@ -32,15 +32,22 @@ namespace VanillaMapMod
 
         public GlobalSettings OnSaveGlobal() => GS;
 
-        public static bool AdditionalMapsInstalled = false;
-
         public override void Initialize()
         {
             Log("Initializing...");
 
             Instance = this;
 
-            AdditionalMapsInstalled = HasAdditionalMaps();
+            if (ModHooks.GetMod("Randomizer 4", true) is Mod)
+            {
+                Instance.LogWarn("VanillaMapMod is not meant to be used with Randomizer. Consider installing MapModS instead.");
+
+                if (ModHooks.GetMod("MapModS", true) is Mod)
+                {
+                    Instance.LogWarn("MapModS is already installed. Mod disabled");
+                    return;
+                }
+            }
 
             try
             {
@@ -83,26 +90,9 @@ namespace VanillaMapMod
             Log("Initialization complete.");
         }
 
-        public static bool HasAdditionalMaps()
+        public static bool AdditionalMapsInstalled()
         {
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                foreach (Type type in assembly.GetTypes())
-                {
-                    if (type.Name == "AdditionalMaps")
-                    {
-                        Instance.Log("Additional Maps detected");
-                        return true;
-                    }
-
-                        //foreach (FieldInfo field in type.GetFields())
-                        //{
-                        //    VanillaMapMod.Instance.Log(field.Name);
-                        //}
-                }
-            }
-
-            return false;
+            return (ModHooks.GetMod("Additional Maps", true) is Mod);
         }
     }
 }

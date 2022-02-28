@@ -1,4 +1,5 @@
-﻿using Vasi;
+﻿using HutongGames.PlayMaker;
+using Vasi;
 
 namespace VanillaMapMod.Trackers
 {
@@ -398,25 +399,38 @@ namespace VanillaMapMod.Trackers
             orig(self);
 
             string goName = self.gameObject.name;
+            FsmState fsmState;
 
             // Most items: charms, charm notches, pale ore, rancid eggs, relics
             if (self.FsmName == "Shiny Control")
             {
-                FsmUtil.AddAction(FsmUtil.GetState(self, "Finish"), new TrackItem(goName));
+                if (!FsmUtil.TryGetState(self, "Finish", out fsmState)) return;
             }
 
             // Mask/Vessel
-            else if (goName == "Heart Piece"
-                || goName == "Vessel Fragment")
+            else if (goName == "Heart Piece" || goName == "Vessel Fragment")
             {
-                FsmUtil.AddAction(FsmUtil.GetState(self, "Get"), new TrackItem(goName));
+                if (!FsmUtil.TryGetState(self, "Get", out fsmState)) return;
             }
 
             // Geo Chests
-            else if (goName.Contains("Chest"))
+            else if (self.FsmName == "Chest Control")
             {
-                FsmUtil.AddAction(FsmUtil.GetState(self, "Open"), new TrackItem(goName));
+                if (!FsmUtil.TryGetState(self, "Open", out fsmState)) return;
             }
+
+            // Mimics
+            else if (goName.Contains("Mimic") && self.FsmName == "Bottle Control")
+            {
+                if (!FsmUtil.TryGetState(self, "Shatter", out fsmState)) return;
+            }
+
+            else
+            {
+                return;
+            }
+
+            FsmUtil.AddAction(fsmState, new TrackItem(goName));
         }
     }
 }
