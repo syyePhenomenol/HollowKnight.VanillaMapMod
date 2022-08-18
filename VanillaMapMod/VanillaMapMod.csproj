@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RootNamespace>VanillaMapMod</RootNamespace>
+		<AssemblyName>VanillaMapMod</AssemblyName>
+		<TargetFramework>net472</TargetFramework>
+		<AssemblyTitle>VanillaMapMod</AssemblyTitle>
+		<Product>VanillaMapMod</Product>
+		<Description>A Hollow Knight mod that adds extra pins for all item locations on the map.</Description>
+		<Copyright>Copyright © syyePhenomenol 2022</Copyright>
+		<Authors>syyePhenomenol</Authors>
+		<AssemblyVersion>1.5.*</AssemblyVersion>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<Deterministic>false</Deterministic>
+		<NoWarn>CS7035</NoWarn>
+		<OutputPath>bin\$(Configuration)\</OutputPath>
+		<LangVersion>latest</LangVersion>
+		<HollowKnightRefs>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</HollowKnightRefs>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>portable</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE;RELEASE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+	<Target Name="CopyMod" AfterTargets="PostBuildEvent">
+		<RemoveDir Directories="$(ExportDir)/$(TargetName)/" />
+		<MakeDir Directories="$(ExportDir)/$(TargetName)/" />
+		<MakeDir Directories="$(ExportDir)/$(TargetName)/zip/" />
+		<MakeDir Condition="!Exists('$(HollowKnightRefs)/Mods/$(TargetName)/')" Directories="$(HollowKnightRefs)/Mods/$(TargetName)/" />
+		<Copy SourceFiles="$(TargetPath);$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(HollowKnightRefs)/Mods/$(TargetName)/" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ExportDir)/$(TargetName)/" />
+		<Copy SourceFiles="../README.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
+		<ZipDirectory SourceDirectory="$(ExportDir)/$(TargetName)/zip/" DestinationFile="$(ExportDir)/$(TargetName)/$(TargetName).zip" />
+		<RemoveDir Directories="$(ExportDir)/$(TargetName)/zip/" />
+
+		<GetFileHash Files="$(ExportDir)/$(TargetName)/$(TargetName).zip" Algorithm="SHA256">
+			<Output TaskParameter="Items" ItemName="FilesWithHashes" />
+		</GetFileHash>
+		<WriteLinesToFile File="$(ExportDir)/$(TargetName)/SHA.txt" Lines="@(FilesWithHashes->'%(FileHash)')" Overwrite="true" Encoding="UTF-8" />
+
+		<GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+			<Output TaskParameter="Assemblies" ItemName="Targets" />
+		</GetAssemblyIdentity>
+		<ItemGroup>
+			<VersionNumber Include="@(Targets->'%(Version)')" />
+		</ItemGroup>
+		<WriteLinesToFile File="$(ExportDir)/$(TargetName)/version.txt" Lines="@(VersionNumber)" Overwrite="true" Encoding="UTF-8" />
+	</Target>
+	
+	<ItemGroup>
+	<Reference Include="Assembly-CSharp">
+		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
+	</Reference>
+	<Reference Include="ConnectionMetadataInjector">
+	  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ConnectionMetadataInjector\ConnectionMetadataInjector.dll</HintPath>
+	</Reference>
+	<Reference Include="MagicUI">
+	  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\MagicUI\MagicUI.dll</HintPath>
+	</Reference>
+	<Reference Include="MapChanger">
+		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\MapChanger\MapChanger.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.CoreModule">
+		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEngine.UI">
+		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UI.dll</HintPath>
+	</Reference>
+	</ItemGroup>
+
+</Project>
