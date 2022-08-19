@@ -6,6 +6,7 @@ namespace VanillaMapMod
     {
         public VmmTitle() : base("VanillaMapMod")
         {
+
         }
     }
 }

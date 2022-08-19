@@ -7,11 +7,9 @@ namespace VanillaMapMod
 {
     internal class PinSizeButton : MainButton
     {
-        public static PinSizeButton Instance { get; private set; }
-
         public PinSizeButton() : base("Pin Size", "VanillaMapMod", 1, 1)
         {
-            Instance = this;
+
         }
 
         protected override void OnClick()

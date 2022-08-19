@@ -7,11 +7,9 @@ namespace VanillaMapMod
 {
     public class ModEnabledButton : MainButton
     {
-        public static ModEnabledButton Instance { get; private set; }
-
         public ModEnabledButton() : base("Mod Enabled", "VanillaMapMod", 0, 0)
         {
-            Instance = this;
+
         }
 
         protected override void OnClick()
