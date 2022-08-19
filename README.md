@@ -18,7 +18,7 @@ Optional and compatible:
 <details>
 <summary>Click to expand</summary>
     <img src="./ReadmeAssets/Screenshots/WorldMap.jpg" alt="World Map">
-    <img src="./ReadmeAssets/Screenshots/Pause.jpg" alt="Pause Menu">
+    <img src="./ReadmeAssets/Screenshots/Pause.JPG" alt="Pause Menu">
 </details>
 
 # Quick Start Guide
@@ -34,6 +34,9 @@ Optional and compatible:
 - "Mode": Toggle the map mode
     - "Normal": Adds new pins over the existing map
     - "Full Map": Shows all pins and the full map regardless of progression
+- "Mod Pins": Toggles the new pins on/off.
+- "Vanilla Pins": Toggles the game's existing pins on/off.
+- "Pin Size": Toggles the size of the new pins on/off.
 - "Customize Pins": Toggle each pool on/off.
 
 # How To Install
