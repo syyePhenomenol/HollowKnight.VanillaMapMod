@@ -47,7 +47,7 @@ namespace VanillaMapMod
             Instance = this;
         }
 
-        public override string GetVersion() => "2.0.0";
+        public override string GetVersion() => "2.0.1";
         public override int LoadPriority() => 10;
 
         internal static LocalSettings LS = new();
