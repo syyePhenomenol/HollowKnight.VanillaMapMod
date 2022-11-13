@@ -1,4 +1,5 @@
 ﻿using MapChanger;
+using MapChanger.MonoBehaviours;
 
 namespace VanillaMapMod
 {
@@ -25,5 +26,7 @@ namespace VanillaMapMod
         public override OverrideType MapMarkers => OverrideType.ForceOff;
         public override bool ImmediateMapUpdate => true;
         public override bool FullMap => true;
+        public override bool? NextAreaNameActiveOverride(NextAreaName nextAreaName) => true;
+        public override bool? NextAreaArrowActiveOverride(NextAreaArrow nextAreaArrow) => true;
     }
 }
