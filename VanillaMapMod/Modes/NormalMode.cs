@@ -8,7 +8,7 @@ namespace VanillaMapMod
         public override float Priority => 10f;
         public override string Mod => VanillaMapMod.MOD;
         public override string ModeName => "Normal";
-        public override OverrideType MapMarkers => OverrideType.ForceOff;
+        public override bool? VanillaPins => VanillaMapMod.LS.VanillaPinsOn ? null : false;
         public override bool ImmediateMapUpdate => true;
     }
 }
