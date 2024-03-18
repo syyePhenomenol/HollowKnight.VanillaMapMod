@@ -2,10 +2,23 @@
 {
     public enum PinSize
     {
+        Tiny,
         Small,
         Medium,
-        Large
+        Large,
+        Huge
     }
+
+    public enum PinShape
+    {
+        Circle,
+        Diamond,
+        Square,
+        Pentagon,
+        Hexagon,
+        NoBorder
+    }
+
     public enum VMMMode
     {
         Normal,

@@ -30,6 +30,7 @@ namespace VanillaMapMod
             new ModEnabledButton(),
             new ModeButton(),
             new PinSizeButton(),
+            new PinShapeButton(),
             new ModPinsButton(),
             new VanillaPinsButton(),
             new PoolsPanelButton(),
@@ -47,7 +48,7 @@ namespace VanillaMapMod
             Instance = this;
         }
 
-        public override string GetVersion() => "2.0.2";
+        public override string GetVersion() => "2.1.0";
         public override int LoadPriority() => 10;
 
         internal static LocalSettings LS = new();

@@ -25,6 +25,10 @@ namespace VanillaMapMod
 
             switch (VanillaMapMod.GS.PinSize)
             {
+                case PinSize.Tiny:
+                    text += "tiny";
+                    break;
+
                 case PinSize.Small:
                     text += "small";
                     break;
@@ -35,6 +39,10 @@ namespace VanillaMapMod
 
                 case PinSize.Large:
                     text += "large";
+                    break;
+
+                case PinSize.Huge:
+                    text += "huge";
                     break;
             }
 

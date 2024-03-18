@@ -5,7 +5,7 @@ namespace VanillaMapMod
 {
     internal class PoolsPanelButton : MainButton
     {
-        public PoolsPanelButton() : base("Pools Panel Button", "VanillaMapMod", 1, 2)
+        public PoolsPanelButton() : base("Pools Panel Button", "VanillaMapMod", 0, 3)
         {
 
         }

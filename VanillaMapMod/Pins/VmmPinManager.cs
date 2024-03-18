@@ -20,6 +20,8 @@ namespace VanillaMapMod
 
         internal static void MakePins(GameObject goMap)
         {
+            VanillaMapMod.Instance.LogDebug("Make Pins");
+
             Pins = new();
             PinGroups = new();
 
@@ -48,14 +50,7 @@ namespace VanillaMapMod
                 transform.localPosition = new(transform.localPosition.x, transform.localPosition.y, OFFSETZ_BASE + (float)i / Pins.Count() * OFFSETZ_RANGE);
             }
         }
-
-        internal static void UpdatePinSize()
-        {
-            foreach (VmmPin pin in Pins.Values)
-            {
-                pin.UpdatePinSize();
-            }
-        }
+        
         internal static string GetPoolGroupCounter(PoolGroup poolGroup)
         {
             string text;

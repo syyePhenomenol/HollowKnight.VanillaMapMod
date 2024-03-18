@@ -9,7 +9,7 @@ namespace VanillaMapMod
     {
         internal static PoolsPanel Instance { get; private set; }
 
-        public PoolsPanel() : base("Pools Panel", "VanillaMapMod", 295f, 10)
+        public PoolsPanel() : base("Pools Panel", "VanillaMapMod", 395f, 10)
         {
             Instance = this;
         }

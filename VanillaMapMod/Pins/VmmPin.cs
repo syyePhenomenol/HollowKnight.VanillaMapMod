@@ -9,34 +9,23 @@ using VanillaMapMod.Settings;
 
 namespace VanillaMapMod
 {
-    internal class VmmPin : Pin, ISelectable
+    internal class VmmPin : BorderedBackgroundPin
     {
+        private const float TINY_SCALE = 0.47f;
         private const float SMALL_SCALE = 0.56f;
         private const float MEDIUM_SCALE = 0.67f;
         private const float LARGE_SCALE = 0.8f;
-
-        private const float SELECTED_MULTIPLIER = 1.5f;
+        private const float HUGE_SCALE = 0.96f;
+        private protected const float NO_BORDER_MULTIPLIER = 1.3f;
 
         private static readonly Dictionary<PinSize, float> pinSizes = new()
         {
+            { PinSize.Tiny, TINY_SCALE },
             { PinSize.Small, SMALL_SCALE },
             { PinSize.Medium, MEDIUM_SCALE },
-            { PinSize.Large, LARGE_SCALE }
+            { PinSize.Large, LARGE_SCALE },
+            { PinSize.Huge, HUGE_SCALE }
         };
-
-        private bool selected = false;
-        public bool Selected
-        {
-            get => selected;
-            set
-            {
-                if (Selected != value)
-                {
-                    selected = value;
-                    UpdatePinSize();
-                }
-            }
-        }
 
         internal MapRoomPosition Mlp { get; private set; }
 
@@ -62,27 +51,33 @@ namespace VanillaMapMod
 
         public override void OnMainUpdate(bool active)
         {
+            if (!active) return;
+
             UpdatePinSize();
+            UpdatePinShape();
         }
 
         internal void UpdatePinSize()
         {
             Size = pinSizes[VanillaMapMod.GS.PinSize];
 
-            if (selected)
+            if (VanillaMapMod.GS.PinShape is PinShape.NoBorder)
             {
-                Size *= SELECTED_MULTIPLIER;
+                Size *= NO_BORDER_MULTIPLIER;
             }
         }
 
-        public bool CanSelect()
+        internal void UpdatePinShape()
         {
-            return Sr.isVisible;
-        }
+            if (VanillaMapMod.GS.PinShape is PinShape.NoBorder)
+            {
+                BackgroundSprite = null;
+                BorderSprite = null;
+                return;
+            }
 
-        public (string, Vector2) GetKeyAndPosition()
-        {
-            return (name, transform.position);
+            BackgroundSprite = SpriteManager.Instance.GetSprite($"Pins.Background{VanillaMapMod.GS.PinShape}");
+            BorderSprite = SpriteManager.Instance.GetSprite($"Pins.Border{VanillaMapMod.GS.PinShape}");
         }
 
         private bool CorrectMapOpen()

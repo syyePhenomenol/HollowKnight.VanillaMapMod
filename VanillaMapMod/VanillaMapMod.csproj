@@ -15,7 +15,6 @@
 		<NoWarn>CS7035</NoWarn>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
 		<LangVersion>latest</LangVersion>
-		<HollowKnightRefs>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</HollowKnightRefs>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -62,24 +61,24 @@
 	</Target>
 	
 	<ItemGroup>
-	<Reference Include="Assembly-CSharp">
-		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
-	</Reference>
-	<Reference Include="ConnectionMetadataInjector">
-	  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ConnectionMetadataInjector\ConnectionMetadataInjector.dll</HintPath>
-	</Reference>
-	<Reference Include="MagicUI">
-	  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\MagicUI\MagicUI.dll</HintPath>
-	</Reference>
-	<Reference Include="MapChanger">
-		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\MapChanger\MapChanger.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEngine.CoreModule">
-		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEngine.UI">
-		<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UI.dll</HintPath>
-	</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(HollowKnightRefs)\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="ConnectionMetadataInjector">
+		<HintPath>$(HollowKnightRefs)\Mods\ConnectionMetadataInjector\ConnectionMetadataInjector.dll</HintPath>
+		</Reference>
+		<Reference Include="MagicUI">
+		<HintPath>$(HollowKnightRefs)\Mods\MagicUI\MagicUI.dll</HintPath>
+		</Reference>
+		<Reference Include="MapChanger">
+			<HintPath>$(HollowKnightRefs)\Mods\MapChanger\MapChanger.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(HollowKnightRefs)\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(HollowKnightRefs)\UnityEngine.UI.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 </Project>
