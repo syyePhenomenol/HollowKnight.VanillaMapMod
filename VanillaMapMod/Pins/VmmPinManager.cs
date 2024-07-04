@@ -14,16 +14,16 @@ namespace VanillaMapMod
         private const float OFFSETZ_BASE = -1.4f;
         private const float OFFSETZ_RANGE = 0.4f;
 
-        internal static Dictionary<string, VmmPin> Pins { get; private set; } = new();
+        internal static Dictionary<string, VmmPin> Pins { get; private set; } = [];
 
-        internal static Dictionary<PoolGroup, VmmPinGroup> PinGroups { get; private set; } = new();
+        internal static Dictionary<PoolGroup, VmmPinGroup> PinGroups { get; private set; } = [];
 
         internal static void MakePins(GameObject goMap)
         {
             VanillaMapMod.Instance.LogDebug("Make Pins");
 
-            Pins = new();
-            PinGroups = new();
+            Pins = [];
+            PinGroups = [];
 
             foreach (PoolGroup poolGroup in Enum.GetValues(typeof(PoolGroup)).Cast<PoolGroup>().Where(poolGroup => poolGroup is not PoolGroup.Other))
             {

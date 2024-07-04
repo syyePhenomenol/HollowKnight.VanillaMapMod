@@ -11,22 +11,22 @@ namespace VanillaMapMod
     {
         internal const string MOD = "VanillaMapMod";
 
-        private static readonly string[] dependencies = new string[] 
-        { 
+        private static readonly string[] dependencies =
+        [
             "MapChangerMod", 
             "CMICore"
-        };
+        ];
 
-        private static readonly MapMode[] modes = new MapMode[]
-        {
+        private static readonly MapMode[] modes =
+        [
             new NormalMode(),
             new FullMapMode()
-        };
+        ];
 
         private static readonly Title title = new VmmTitle();
 
-        private static readonly MainButton[] mainButtons = new MainButton[] 
-        { 
+        private static readonly MainButton[] mainButtons =
+        [
             new ModEnabledButton(),
             new ModeButton(),
             new PinSizeButton(),
@@ -34,12 +34,12 @@ namespace VanillaMapMod
             new ModPinsButton(),
             new VanillaPinsButton(),
             new PoolsPanelButton(),
-        };
+        ];
 
-        private static readonly ExtraButtonPanel[] extraButtonPanels = new ExtraButtonPanel[]
-        {
+        private static readonly ExtraButtonPanel[] extraButtonPanels =
+        [
             new PoolsPanel() 
-        };
+        ];
 
         internal static VanillaMapMod Instance { get; private set; }
 
@@ -48,7 +48,7 @@ namespace VanillaMapMod
             Instance = this;
         }
 
-        public override string GetVersion() => "2.1.0";
+        public override string GetVersion() => "2.1.1";
         public override int LoadPriority() => 10;
 
         internal static LocalSettings LS = new();

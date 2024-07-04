@@ -5,14 +5,9 @@ using MapChanger.UI;
 
 namespace VanillaMapMod
 {
-    internal class PoolButton : ExtraButton
+    internal class PoolButton(PoolGroup poolGroup) : ExtraButton(poolGroup.FriendlyName(), "VanillaMapMod")
     {
-        internal PoolGroup PoolGroup { get; init; }
-
-        public PoolButton(PoolGroup poolGroup) : base(poolGroup.FriendlyName(), "VanillaMapMod")
-        {
-            PoolGroup = poolGroup;
-        }
+        internal PoolGroup PoolGroup { get; init; } = poolGroup;
 
         protected override void OnClick()
         {
