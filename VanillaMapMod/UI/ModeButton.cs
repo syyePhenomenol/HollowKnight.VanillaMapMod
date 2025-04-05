@@ -1,41 +1,37 @@
-﻿using MagicUI.Core;
-using MagicUI.Elements;
+﻿using MagicUI.Elements;
 using MapChanger;
 using MapChanger.UI;
 
-namespace VanillaMapMod
+namespace VanillaMapMod;
+
+public class ModeButton : MainButton
 {
-    public class ModeButton : MainButton
+    public ModeButton()
+        : base("Mode", nameof(VanillaMapMod), 1, 0) { }
+
+    protected override void OnClick()
     {
-        public ModeButton() : base("Mode", "VanillaMapMod", 1, 0)
-        {
+        MapChanger.Settings.ToggleMode();
+    }
 
+    public override void Update()
+    {
+        base.Update();
+
+        var text = "Mode\n";
+
+        if (MapChanger.Settings.CurrentMode() is NormalMode)
+        {
+            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
+            text += "Normal";
         }
 
-        protected override void OnClick()
+        if (MapChanger.Settings.CurrentMode() is FullMapMode)
         {
-            MapChanger.Settings.ToggleMode();
+            Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
+            text += "Full Map";
         }
 
-        public override void Update()
-        {
-            base.Update();
-
-            string text = "Mode\n";
-
-            if (MapChanger.Settings.CurrentMode() is NormalMode)
-            {
-                Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
-                text += "Normal";
-            }
-
-            if (MapChanger.Settings.CurrentMode() is FullMapMode)
-            {
-                Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
-                text += "Full Map";
-            }
-
-            Button.Content = text;
-        }
+        Button.Content = text;
     }
 }

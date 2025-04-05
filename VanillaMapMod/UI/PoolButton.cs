@@ -3,30 +3,29 @@ using MagicUI.Elements;
 using MapChanger;
 using MapChanger.UI;
 
-namespace VanillaMapMod
+namespace VanillaMapMod;
+
+internal class PoolButton(PoolGroup poolGroup) : ExtraButton(poolGroup.FriendlyName(), nameof(VanillaMapMod))
 {
-    internal class PoolButton(PoolGroup poolGroup) : ExtraButton(poolGroup.FriendlyName(), "VanillaMapMod")
+    internal PoolGroup PoolGroup { get; } = poolGroup;
+
+    protected override void OnClick()
     {
-        internal PoolGroup PoolGroup { get; init; } = poolGroup;
+        VanillaMapMod.LS.TogglePoolGroupSetting(PoolGroup);
+    }
 
-        protected override void OnClick()
+    public override void Update()
+    {
+        Button.Content =
+            PoolGroup.FriendlyName().Replace(" ", "\n") + "\n" + VmmPinManager.GetPoolGroupCounter(PoolGroup);
+
+        if (VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup))
         {
-            VanillaMapMod.LS.TogglePoolGroupSetting(PoolGroup);
+            Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
         }
-
-        public override void Update()
+        else
         {
-            Button.Content = PoolGroup.FriendlyName().Replace(" ", "\n")
-                + "\n" + VmmPinManager.GetPoolGroupCounter(PoolGroup);
-
-            if (VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup))
-            {
-                Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
-            }
-            else
-            {
-                Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
-            }
+            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
         }
     }
 }

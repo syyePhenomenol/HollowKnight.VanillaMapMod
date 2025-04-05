@@ -3,75 +3,84 @@ using System.Collections.Generic;
 using System.Linq;
 using ConnectionMetadataInjector.Util;
 using MapChanger;
-using MapChanger.Defs;
 using MapChanger.MonoBehaviours;
 using UnityEngine;
+using VanillaMapMod.Pins;
 
-namespace VanillaMapMod
+namespace VanillaMapMod;
+
+internal static class VmmPinManager
 {
-    internal static class VmmPinManager
+    private const float OFFSETZ_BASE = -1.4f;
+    private const float OFFSETZ_RANGE = 0.4f;
+
+    internal static Dictionary<string, VmmPin> Pins { get; private set; } = [];
+
+    internal static Dictionary<PoolGroup, VmmPinGroup> PinGroups { get; private set; } = [];
+
+    internal static void MakePins(GameObject goMap)
     {
-        private const float OFFSETZ_BASE = -1.4f;
-        private const float OFFSETZ_RANGE = 0.4f;
+        VanillaMapMod.Instance.LogDebug("Make Pins");
 
-        internal static Dictionary<string, VmmPin> Pins { get; private set; } = [];
+        Pins = [];
+        PinGroups = [];
 
-        internal static Dictionary<PoolGroup, VmmPinGroup> PinGroups { get; private set; } = [];
-
-        internal static void MakePins(GameObject goMap)
+        foreach (
+            var poolGroup in Enum.GetValues(typeof(PoolGroup))
+                .Cast<PoolGroup>()
+                .Where(poolGroup => poolGroup is not PoolGroup.Other)
+        )
         {
-            VanillaMapMod.Instance.LogDebug("Make Pins");
+            var pinGroup = Utils.MakeMonoBehaviour<VmmPinGroup>(goMap, poolGroup.FriendlyName());
+            pinGroup.Initialize(poolGroup);
 
-            Pins = [];
-            PinGroups = [];
-
-            foreach (PoolGroup poolGroup in Enum.GetValues(typeof(PoolGroup)).Cast<PoolGroup>().Where(poolGroup => poolGroup is not PoolGroup.Other))
-            {
-                VmmPinGroup pinGroup = Utils.MakeMonoBehaviour<VmmPinGroup>(goMap, poolGroup.FriendlyName());
-                pinGroup.Initialize(poolGroup);
-
-                PinGroups[poolGroup] = pinGroup;
-            }
-
-            foreach (MapLocationDef mld in Finder.GetAllVanillaLocations().Values)
-            {
-                VmmPin pin = Utils.MakeMonoBehaviour<VmmPin>(goMap, mld.Name);
-                pin.Initialize(mld, PinGroups[SubcategoryFinder.GetLocationPoolGroup(mld.Name)]);
-
-                Pins[mld.Name] = pin;
-            }
-
-            // Stagger the Z offset of each pin
-            IEnumerable<MapObject> PinsSorted = Pins.Values.OrderBy(mapObj => mapObj.transform.position.x).ThenBy(mapObj => mapObj.transform.position.y);
-
-            for (int i = 0; i < PinsSorted.Count(); i++)
-            {
-                Transform transform = PinsSorted.ElementAt(i).transform;
-                transform.localPosition = new(transform.localPosition.x, transform.localPosition.y, OFFSETZ_BASE + (float)i / Pins.Count() * OFFSETZ_RANGE);
-            }
-        }
-        
-        internal static string GetPoolGroupCounter(PoolGroup poolGroup)
-        {
-            string text;
-
-            IReadOnlyCollection<MapObject> pins = PinGroups[poolGroup].Children;
-
-            if (IsPersistent(poolGroup))
-            {
-                text = "";
-            }
-            else
-            {
-                text = pins.Where(pin => Tracker.HasClearedLocation(pin.name)).Count().ToString() + " / ";
-            }
-
-            return text + pins.Count().ToString();
+            PinGroups[poolGroup] = pinGroup;
         }
 
-        private static bool IsPersistent(PoolGroup poolGroup)
+        foreach (var mld in Finder.GetAllVanillaLocations().Values)
         {
-            return poolGroup is PoolGroup.LifebloodCocoons or PoolGroup.SoulTotems or PoolGroup.LoreTablets;
+            var pin = Utils.MakeMonoBehaviour<VmmPin>(goMap, mld.Name);
+            pin.Initialize(mld, PinGroups[SubcategoryFinder.GetLocationPoolGroup(mld.Name)]);
+
+            Pins[mld.Name] = pin;
         }
+
+        // Stagger the Z offset of each pin
+        IEnumerable<MapObject> pinsSorted = Pins
+            .Values.OrderBy(mapObj => mapObj.transform.position.x)
+            .ThenBy(mapObj => mapObj.transform.position.y);
+
+        for (var i = 0; i < pinsSorted.Count(); i++)
+        {
+            var transform = pinsSorted.ElementAt(i).transform;
+            transform.localPosition = new(
+                transform.localPosition.x,
+                transform.localPosition.y,
+                OFFSETZ_BASE + ((float)i / Pins.Count() * OFFSETZ_RANGE)
+            );
+        }
+    }
+
+    internal static string GetPoolGroupCounter(PoolGroup poolGroup)
+    {
+        string text;
+
+        IReadOnlyCollection<MapObject> pins = PinGroups[poolGroup].Children;
+
+        if (IsPersistent(poolGroup))
+        {
+            text = "";
+        }
+        else
+        {
+            text = pins.Where(pin => Tracker.HasClearedLocation(pin.name)).Count().ToString() + " / ";
+        }
+
+        return text + pins.Count().ToString();
+    }
+
+    private static bool IsPersistent(PoolGroup poolGroup)
+    {
+        return poolGroup is PoolGroup.LifebloodCocoons or PoolGroup.SoulTotems or PoolGroup.LoreTablets;
     }
 }

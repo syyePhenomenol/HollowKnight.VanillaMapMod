@@ -2,25 +2,24 @@
 using MapChanger;
 using MapChanger.MonoBehaviours;
 
-namespace VanillaMapMod
+namespace VanillaMapMod;
+
+internal class VmmPinGroup : MapObject
 {
-    internal class VmmPinGroup : MapObject
+    internal PoolGroup PoolGroup { get; private set; }
+
+    internal void Initialize(PoolGroup poolGroup)
     {
-        internal PoolGroup PoolGroup { get; private set; }
+        base.Initialize();
 
-        internal void Initialize(PoolGroup poolGroup)
-        {
-            base.Initialize();
+        ActiveModifiers.Add(PoolSettingOn);
 
-            ActiveModifiers.Add(PoolSettingOn);
+        PoolGroup = poolGroup;
+        MapObjectUpdater.Add(this);
+    }
 
-            PoolGroup = poolGroup;
-            MapObjectUpdater.Add(this);
-        }
-
-        private bool PoolSettingOn()
-        {
-            return VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup);
-        }
+    private bool PoolSettingOn()
+    {
+        return VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup);
     }
 }

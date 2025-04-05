@@ -1,30 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ConnectionMetadataInjector.Util;
 using MapChanger.UI;
 
-namespace VanillaMapMod
+namespace VanillaMapMod;
+
+internal class PoolsPanel : ExtraButtonPanel
 {
-    internal class PoolsPanel : ExtraButtonPanel
+    internal static PoolsPanel Instance { get; private set; }
+
+    public PoolsPanel()
+        : base("Pools Panel", nameof(VanillaMapMod), GetPoolButtons(), 395f, 10)
     {
-        internal static PoolsPanel Instance { get; private set; }
+        Instance = this;
+    }
 
-        public PoolsPanel() : base("Pools Panel", "VanillaMapMod", 395f, 10)
-        {
-            Instance = this;
-        }
-
-        protected override void MakeButtons()
-        {
-            foreach (PoolGroup poolGroup in Enum.GetValues(typeof(PoolGroup)).Cast<PoolGroup>())
-            {
-                if (poolGroup is PoolGroup.Other) continue;
-
-                PoolButton poolButton = new(poolGroup);
-                poolButton.Make();
-                ExtraButtonsGrid.Children.Add(poolButton.Button);
-                ExtraButtons.Add(poolButton);
-            }
-        }
+    private static IEnumerable<ExtraButton> GetPoolButtons()
+    {
+        return Enum.GetValues(typeof(PoolGroup))
+            .Cast<PoolGroup>()
+            .Except([PoolGroup.Other])
+            .Select(p => new PoolButton(p));
     }
 }

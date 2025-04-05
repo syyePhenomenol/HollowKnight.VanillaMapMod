@@ -3,41 +3,38 @@ using MagicUI.Elements;
 using MapChanger;
 using MapChanger.UI;
 
-namespace VanillaMapMod
+namespace VanillaMapMod;
+
+public class ModEnabledButton : MainButton
 {
-    public class ModEnabledButton : MainButton
+    public ModEnabledButton()
+        : base("Mod Enabled", nameof(VanillaMapMod), 0, 0) { }
+
+    protected override void OnClick()
     {
-        public ModEnabledButton() : base("Mod Enabled", "VanillaMapMod", 0, 0)
-        {
+        MapChanger.Settings.ToggleModEnabled();
+    }
 
+    public override void Update()
+    {
+        if (MapChanger.Settings.CurrentMode().Mod is nameof(VanillaMapMod))
+        {
+            Button.Visibility = Visibility.Visible;
+        }
+        else
+        {
+            Button.Visibility = Visibility.Hidden;
         }
 
-        protected override void OnClick()
+        if (MapChanger.Settings.MapModEnabled())
         {
-            MapChanger.Settings.ToggleModEnabled();
+            Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
+            Button.Content = "Map Mod\nEnabled";
         }
-
-        public override void Update()
+        else
         {
-            if (MapChanger.Settings.CurrentMode().Mod is "VanillaMapMod")
-            {
-                Button.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Button.Visibility = Visibility.Hidden;
-            }
-
-            if (MapChanger.Settings.MapModEnabled())
-            {
-                Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
-                Button.Content = "Map Mod\nEnabled";
-            }
-            else
-            {
-                Button.ContentColor = Colors.GetColor(ColorSetting.UI_Disabled);
-                Button.Content = "Map Mod\nDisabled";
-            }
+            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Disabled);
+            Button.Content = "Map Mod\nDisabled";
         }
     }
 }

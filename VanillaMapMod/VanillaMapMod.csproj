@@ -75,6 +75,9 @@
 		<Reference Include="MapChanger">
 			<HintPath>$(HollowKnightRefs)\Mods\MapChanger\MapChanger.dll</HintPath>
 		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(HollowKnightRefs)\Newtonsoft.Json.dll</HintPath>
+		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
 			<HintPath>$(HollowKnightRefs)\UnityEngine.CoreModule.dll</HintPath>
 		</Reference>
