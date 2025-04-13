@@ -5,5 +5,5 @@ namespace VanillaMapMod;
 internal class VmmTitle : Title
 {
     public VmmTitle()
-        : base(nameof(VanillaMapMod), nameof(VanillaMapMod)) { }
+        : base("Mod Title", nameof(VanillaMapMod)) { }
 }
