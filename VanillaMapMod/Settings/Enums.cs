@@ -18,9 +18,3 @@ public enum PinShape
     Hexagon,
     NoBorder,
 }
-
-public enum VMMMode
-{
-    Normal,
-    Full_Map,
-}

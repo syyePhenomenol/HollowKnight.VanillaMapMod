@@ -55,7 +55,9 @@ internal class VmmPin : BorderedBackgroundPin
         Size = _pinSizes[VanillaMapMod.GS.PinSize];
 
         if (VanillaMapMod.GS.PinShape is PinShape.NoBorder)
+        {
             Size *= NO_BORDER_MULTIPLIER;
+        }
     }
 
     internal void UpdatePinShape()
@@ -78,8 +80,8 @@ internal class VmmPin : BorderedBackgroundPin
 
     private bool ActiveByCurrentMode()
     {
-        return (MapChanger.Settings.CurrentMode() is NormalMode && Utils.HasMapSetting(Mlp.MapZone))
-            || MapChanger.Settings.CurrentMode() is FullMapMode;
+        return (ModeManager.CurrentMode() is NormalMode && Utils.HasMapSetting(Mlp.MapZone))
+            || ModeManager.CurrentMode() is FullMapMode;
     }
 
     private bool LocationNotCleared()

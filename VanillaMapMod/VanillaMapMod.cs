@@ -1,9 +1,9 @@
 ﻿using System;
 using MapChanger;
-using MapChanger.UI;
 using Modding;
 using UnityEngine;
 using VanillaMapMod.Settings;
+using VanillaMapMod.UI;
 
 namespace VanillaMapMod;
 
@@ -13,35 +13,20 @@ public sealed class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalS
 
     private static readonly MapMode[] _modes = [new NormalMode(), new FullMapMode()];
 
-    private static readonly Title _title = new VmmTitle();
-
-    private static readonly MainButton[] _mainButtons =
-    [
-        new ModEnabledButton(),
-        new ModeButton(),
-        new PinSizeButton(),
-        new PinShapeButton(),
-        new ModPinsButton(),
-        new VanillaPinsButton(),
-        new PoolsPanelButton(),
-    ];
-
-    private static readonly ExtraButtonPanel[] _extraButtonPanels = [new PoolsPanel()];
-
     public VanillaMapMod()
     {
         Instance = this;
     }
 
     internal static VanillaMapMod Instance { get; private set; }
-
     internal static LocalSettings LS { get; private set; } = new();
-
     internal static GlobalSettings GS { get; private set; } = new();
+
+    internal static VmmPauseMenu PauseMenu { get; private set; }
 
     public override string GetVersion()
     {
-        return "2.1.2";
+        return "2.1.3";
     }
 
     public override int LoadPriority()
@@ -82,28 +67,25 @@ public sealed class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalS
             }
         }
 
-        try
-        {
-            Events.OnEnterGame += OnEnterGame;
-            Events.OnQuitToMenu += OnQuitToMenu;
-        }
-        catch (Exception e)
-        {
-            LogError(e);
-        }
+        Events.OnEnterGame += OnEnterGame;
+        Events.OnQuitToMenu += OnQuitToMenu;
 
         LogDebug($"Initialization complete.");
     }
 
     private static void OnEnterGame()
     {
-        MapChanger.Settings.AddModes(_modes);
+        ModeManager.AddModes(_modes);
+
         Events.OnSetGameMap += OnSetGameMap;
     }
 
     private static void OnQuitToMenu()
     {
         Events.OnSetGameMap -= OnSetGameMap;
+
+        PauseMenu?.Destroy();
+        PauseMenu = null;
     }
 
     private static void OnSetGameMap(GameObject goMap)
@@ -111,18 +93,7 @@ public sealed class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalS
         try
         {
             VmmPinManager.MakePins(goMap);
-
-            PauseMenu.Add(_title);
-
-            foreach (var button in _mainButtons)
-            {
-                PauseMenu.Add(button);
-            }
-
-            foreach (var ebp in _extraButtonPanels)
-            {
-                PauseMenu.Add(ebp);
-            }
+            PauseMenu = new();
         }
         catch (Exception e)
         {

@@ -1,42 +1,29 @@
 ﻿using System.Linq;
-using MagicUI.Elements;
 using MapChanger;
 using MapChanger.UI;
 
-namespace VanillaMapMod;
+namespace VanillaMapMod.UI;
 
 internal class ModPinsButton : MainButton
 {
-    public ModPinsButton()
-        : base("Mod Pins", nameof(VanillaMapMod), 0, 1) { }
-
     protected override void OnClick()
     {
         VanillaMapMod.LS.ToggleAllPools();
     }
 
-    public override void Update()
+    protected override TextFormat GetTextFormat()
     {
-        base.Update();
-
         var text = $"Mod Pins:\n";
 
         if (VanillaMapMod.LS.PoolSettings.Values.All(value => value))
         {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
-            text += "On";
+            return new(text + "On", Colors.GetColor(ColorSetting.UI_On));
         }
         else if (VanillaMapMod.LS.PoolSettings.Values.All(value => !value))
         {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
-            text += "Off";
-        }
-        else
-        {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Custom);
-            text += "Custom";
+            return new(text + "Off", Colors.GetColor(ColorSetting.UI_Neutral));
         }
 
-        Button.Content = text;
+        return new(text + "Custom", Colors.GetColor(ColorSetting.UI_Custom));
     }
 }

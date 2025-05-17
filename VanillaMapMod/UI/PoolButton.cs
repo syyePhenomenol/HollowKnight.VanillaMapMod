@@ -1,12 +1,12 @@
 ﻿using ConnectionMetadataInjector.Util;
-using MagicUI.Elements;
 using MapChanger;
 using MapChanger.UI;
 
-namespace VanillaMapMod;
+namespace VanillaMapMod.UI;
 
-internal class PoolButton(PoolGroup poolGroup) : ExtraButton(poolGroup.FriendlyName(), nameof(VanillaMapMod))
+internal class PoolButton(PoolGroup poolGroup) : ExtraButton
 {
+    public override string Name => $"{Layout.Mod} : {PoolGroup}";
     internal PoolGroup PoolGroup { get; } = poolGroup;
 
     protected override void OnClick()
@@ -14,18 +14,13 @@ internal class PoolButton(PoolGroup poolGroup) : ExtraButton(poolGroup.FriendlyN
         VanillaMapMod.LS.TogglePoolGroupSetting(PoolGroup);
     }
 
-    public override void Update()
+    protected override TextFormat GetTextFormat()
     {
-        Button.Content =
-            PoolGroup.FriendlyName().Replace(" ", "\n") + "\n" + VmmPinManager.GetPoolGroupCounter(PoolGroup);
-
-        if (VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup))
-        {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
-        }
-        else
-        {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
-        }
+        return new(
+            PoolGroup.FriendlyName().Replace(" ", "\n") + "\n" + VmmPinManager.GetPoolGroupCounter(PoolGroup),
+            Colors.GetColor(
+                VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup) ? ColorSetting.UI_On : ColorSetting.UI_Neutral
+            )
+        );
     }
 }

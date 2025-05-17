@@ -1,36 +1,21 @@
-﻿using MagicUI.Elements;
-using MapChanger;
+﻿using MapChanger;
 using MapChanger.UI;
 
-namespace VanillaMapMod;
+namespace VanillaMapMod.UI;
 
 internal class VanillaPinsButton : MainButton
 {
-    public VanillaPinsButton()
-        : base("Vanilla Toggle", nameof(VanillaMapMod), 0, 2) { }
-
     protected override void OnClick()
     {
         VanillaMapMod.LS.ToggleVanillaPins();
     }
 
-    public override void Update()
+    protected override TextFormat GetTextFormat()
     {
-        base.Update();
-
         var text = $"Vanilla Pins:\n";
 
-        if (VanillaMapMod.LS.VanillaPinsOn)
-        {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_On);
-            text += "On";
-        }
-        else
-        {
-            Button.ContentColor = Colors.GetColor(ColorSetting.UI_Neutral);
-            text += "Off";
-        }
-
-        Button.Content = text;
+        return VanillaMapMod.LS.VanillaPinsOn
+            ? new(text + "On", Colors.GetColor(ColorSetting.UI_On))
+            : new(text + "Off", Colors.GetColor(ColorSetting.UI_Neutral));
     }
 }
