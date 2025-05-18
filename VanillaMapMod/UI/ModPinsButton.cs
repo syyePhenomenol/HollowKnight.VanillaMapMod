@@ -13,17 +13,17 @@ internal class ModPinsButton : MainButton
 
     protected override TextFormat GetTextFormat()
     {
-        var text = $"Mod Pins:\n";
+        var text = $"Mod Pins:\n".L();
 
         if (VanillaMapMod.LS.PoolSettings.Values.All(value => value))
         {
-            return new(text + "On", Colors.GetColor(ColorSetting.UI_On));
+            return new(text + "On".L(), Colors.GetColor(ColorSetting.UI_On));
         }
         else if (VanillaMapMod.LS.PoolSettings.Values.All(value => !value))
         {
-            return new(text + "Off", Colors.GetColor(ColorSetting.UI_Neutral));
+            return new(text + "Off".L(), Colors.GetColor(ColorSetting.UI_Neutral));
         }
 
-        return new(text + "Custom", Colors.GetColor(ColorSetting.UI_Custom));
+        return new(text + "Custom".L(), Colors.GetColor(ColorSetting.UI_Custom));
     }
 }

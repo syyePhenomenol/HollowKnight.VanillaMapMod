@@ -13,7 +13,7 @@ internal class PinShapeButton : MainButton
     protected override TextFormat GetTextFormat()
     {
         return new(
-            $"Pin Shape:\n" + VanillaMapMod.GS.PinShape.ToString().ToWhitespaced() + "s",
+            $"{"Pin Shape".L()}:\n" + VanillaMapMod.GS.PinShape.ToString().ToWhitespaced().L(),
             Colors.GetColor(ColorSetting.UI_Neutral)
         );
     }

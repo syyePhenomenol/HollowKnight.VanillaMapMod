@@ -17,7 +17,7 @@ internal class PoolButton(PoolGroup poolGroup) : ExtraButton
     protected override TextFormat GetTextFormat()
     {
         return new(
-            PoolGroup.FriendlyName().Replace(" ", "\n") + "\n" + VmmPinManager.GetPoolGroupCounter(PoolGroup),
+            PoolGroup.FriendlyName().L().Replace(" ", "\n") + "\n" + VmmPinManager.GetPoolGroupCounter(PoolGroup),
             Colors.GetColor(
                 VanillaMapMod.LS.GetPoolGroupSetting(PoolGroup) ? ColorSetting.UI_On : ColorSetting.UI_Neutral
             )

@@ -11,7 +11,9 @@ public class VmmPauseMenu : PauseMenuLayout
 
     protected override bool ActiveCondition()
     {
-        return MapChangerMod.IsEnabled() && ModeManager.CurrentMode().Mod is nameof(VanillaMapMod);
+        return base.ActiveCondition()
+            && MapChangerMod.IsEnabled()
+            && ModeManager.CurrentMode().Mod is nameof(VanillaMapMod);
     }
 
     protected override PauseMenuTitle GetTitle()

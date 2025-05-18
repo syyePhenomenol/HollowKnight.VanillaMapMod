@@ -12,6 +12,6 @@ internal class UIScaleButton : MainButton
 
     protected override TextFormat GetTextFormat()
     {
-        return new($"{"UI Scale"}\n{MapChangerMod.GS.UIScale:n1} ×", Colors.GetColor(ColorSetting.UI_Neutral));
+        return new($"{"UI Scale".L()}\n{MapChangerMod.GS.UIScale:n1} ×", Colors.GetColor(ColorSetting.UI_Neutral));
     }
 }

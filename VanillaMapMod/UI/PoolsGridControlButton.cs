@@ -9,7 +9,7 @@ internal class PoolsGridControlButton : GridControlButton<PoolsGrid>
     protected override TextFormat GetTextFormat()
     {
         return new(
-            "Customize\nPins",
+            "Customize\nPins".L(),
             (PoolsGrid.Instance?.Grid?.IsEffectivelyVisible ?? false)
                 ? Colors.GetColor(ColorSetting.UI_Custom)
                 : Colors.GetColor(ColorSetting.UI_Neutral)

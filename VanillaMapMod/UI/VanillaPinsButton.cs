@@ -12,10 +12,10 @@ internal class VanillaPinsButton : MainButton
 
     protected override TextFormat GetTextFormat()
     {
-        var text = $"Vanilla Pins:\n";
+        var text = $"{"Vanilla Pins".L()}:\n";
 
         return VanillaMapMod.LS.VanillaPinsOn
-            ? new(text + "On", Colors.GetColor(ColorSetting.UI_On))
-            : new(text + "Off", Colors.GetColor(ColorSetting.UI_Neutral));
+            ? new(text + "On".L(), Colors.GetColor(ColorSetting.UI_On))
+            : new(text + "Off".L(), Colors.GetColor(ColorSetting.UI_Neutral));
     }
 }

@@ -12,11 +12,11 @@ public class ModeButton : MainButton
 
     protected override TextFormat GetTextFormat()
     {
-        var text = "Mode\n";
+        var text = $"{"Mode".L()}\n";
         return ModeManager.CurrentMode() switch
         {
-            NormalMode normalMode => new(text + normalMode.ModeName, Colors.GetColor(ColorSetting.UI_Neutral)),
-            FullMapMode fullMapMode => new(text + fullMapMode.ModeName, Colors.GetColor(ColorSetting.UI_On)),
+            NormalMode normalMode => new(text + normalMode.ModeName.L(), Colors.GetColor(ColorSetting.UI_Neutral)),
+            FullMapMode fullMapMode => new(text + fullMapMode.ModeName.L(), Colors.GetColor(ColorSetting.UI_On)),
             _ => default,
         };
     }

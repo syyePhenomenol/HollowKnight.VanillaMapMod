@@ -26,7 +26,7 @@ public sealed class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalS
 
     public override string GetVersion()
     {
-        return "2.1.3";
+        return "2.1.4";
     }
 
     public override int LoadPriority()

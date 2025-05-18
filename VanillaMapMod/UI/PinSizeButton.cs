@@ -13,7 +13,7 @@ internal class PinSizeButton : MainButton
     protected override TextFormat GetTextFormat()
     {
         return new(
-            $"Pin Size\n" + VanillaMapMod.GS.PinSize.ToString().ToWhitespaced(),
+            $"{"Pin Size".L()}\n" + VanillaMapMod.GS.PinSize.ToString().ToWhitespaced().L(),
             Colors.GetColor(ColorSetting.UI_Neutral)
         );
     }
