@@ -26,7 +26,7 @@ public sealed class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalS
 
     public override string GetVersion()
     {
-        return "2.1.4";
+        return "2.1.5";
     }
 
     public override int LoadPriority()
@@ -62,10 +62,12 @@ public sealed class VanillaMapMod : Mod, ILocalSettings<LocalSettings>, IGlobalS
         {
             if (ModHooks.GetMod(dependency) is not Mod)
             {
-                MapChangerMod.Instance.LogWarn($"Dependency not found for {GetType().Name}: {dependency}");
+                Instance.LogWarn($"Dependency not found for {GetType().Name}: {dependency}");
                 return;
             }
         }
+
+        Localization.Load();
 
         Events.OnEnterGame += OnEnterGame;
         Events.OnQuitToMenu += OnQuitToMenu;
