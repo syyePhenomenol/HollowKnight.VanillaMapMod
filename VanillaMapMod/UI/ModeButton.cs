@@ -3,7 +3,7 @@ using MapChanger.UI;
 
 namespace VanillaMapMod.UI;
 
-public class ModeButton : MainButton
+internal class ModeButton : MainButton
 {
     protected override void OnClick()
     {

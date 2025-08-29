@@ -36,8 +36,11 @@ Optional and compatible:
     - "Full Map": Shows all pins and the full map regardless of progression
 - "Mod Pins": Toggles the new pins on/off.
 - "Vanilla Pins": Toggles the game's existing pins on/off.
-- "Pin Size": Toggles the size of the new pins on/off.
+- "Pin Shape": Toggles the shape of the new pins.
+- "Pin Size": Toggles the size of the new pins.
 - "Customize Pins": Toggle each pool on/off.
+- "Fast Map Update (Normal Mode only)": When enabled and you have Quill, your map will update as soon as you enter a new room.
+- "UI Scale": Change the scaling of UI text and buttons.
 
 # How To Install
 Use Scarab: https://github.com/fifty-six/Scarab

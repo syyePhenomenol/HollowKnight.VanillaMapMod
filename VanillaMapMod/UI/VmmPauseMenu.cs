@@ -4,9 +4,9 @@ using MapChanger.UI;
 
 namespace VanillaMapMod.UI;
 
-public class VmmPauseMenu : PauseMenuLayout
+internal class VmmPauseMenu : PauseMenuLayout
 {
-    public VmmPauseMenu()
+    internal VmmPauseMenu()
         : base(nameof(VanillaMapMod), nameof(VmmPauseMenu)) { }
 
     protected override bool ActiveCondition()
