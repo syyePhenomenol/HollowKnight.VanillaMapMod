@@ -32,6 +32,7 @@ public class VmmPauseMenu : PauseMenuLayout
             new ModeButton(),
             new PinShapeButton(),
             new PinSizeButton(),
+            new FastMapUpdateButton(),
             new UIScaleButton(),
         ];
     }
