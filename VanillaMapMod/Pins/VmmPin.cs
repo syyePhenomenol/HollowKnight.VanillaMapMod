@@ -80,7 +80,11 @@ internal class VmmPin : BorderedBackgroundPin
 
     private bool ActiveByCurrentMode()
     {
-        return (ModeManager.CurrentMode() is NormalMode && Utils.HasMapSetting(Mlp.MapZone))
+        return (
+                ModeManager.CurrentMode() is NormalMode
+                && Utils.HasMapSetting(Mlp.MapZone)
+                && PlayerData.instance.GetVariable<List<string>>("scenesMapped").Contains(Mlp.MappedScene)
+            )
             || ModeManager.CurrentMode() is FullMapMode;
     }
 
